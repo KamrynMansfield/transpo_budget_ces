@@ -33,86 +33,107 @@ key-points:
   - Here are some more key points
 date: last-modified
 bibliography: references.bib
-citation:
-  container-title: Earth and Space Science
 number-sections: true
 ---
 
 ## Introduction
 
-```{r}
-eruptions <- c(1492, 1585, 1646, 1677, 1712, 1949, 1971, 2021)
-n_eruptions <- length(eruptions)
-```
+Households juggle how to allocate their budgets: whether to invest in a reliable car, pay for quality childcare, secure housing in a good school district, or set money aside for leisure. These everyday choices shape how families live and move, reflecting the trade-offs they make to balance competing priorities. Transportation often sits at the center of these decisions, not only because it can be a significant expense, but also because choosing to buy and maintain a car versus relying on public transit represents a long-term commitment and a broader lifestyle choice. Its relative weight compared to housing, childcare, and other spending varies widely across families. The relationship between household budgeting and mobility is shaped not only by causal direction but also by how families prioritize and weight different needs. On one hand, mobility resources such as car ownership can structure the household budget: households with no or only one vehicle may spend far less on transportation, freeing up income for other essential or discretionary categories. On the other hand, underlying family structures and preferences can drive budget allocation choices that, in turn, shape transportation behavior. Larger families may prioritize childcare or invest in higher-quality housing in areas with better schools, limiting what remains for transportation. Others may emphasize frugality across all categories or deliberately substitute toward lower-cost transit options. Understanding both the direction of influence and the weight assigned to different budget categories is critical for transportation planning and policy, as these dynamics reveal how families navigate competing priorities under varying demographic and mobility contexts.
 
-```{r}
-#| label: fig-timeline
-#| fig-cap: Timeline of recent earthquakes on La Palma
-#| fig-alt: An event plot of the years of the last 8 eruptions on La Palma.
-#| fig-height: 1.5
-#| fig-width: 6
-par(mar = c(3, 1, 1, 1) + 0.1)
-plot(eruptions, rep(0, n_eruptions), 
-  pch = "|", axes = FALSE)
-axis(1)
-box()
-```
+The purpose of this research is to explore how household budgets are structured around transportation decisions and how this impacts other spending categories. Using the Consumer Expenditure Survey (CEX), we will perform a Latent Class Analysis (LCA) to find groupings based on a household's transportation expenses. Theses groupings can help us find groups of spenders with similar patterns to help us predict transportation expenses based on the household's characteristics. 
 
-```{r}
-#| output: false
-avg_years_between_eruptions <- mean(diff(eruptions[-n_eruptions]))
-avg_years_between_eruptions
-```
+## Literature Review
 
-Based on data up to and including 1971, eruptions on La Palma happen every `{r} round(avg_years_between_eruptions, 1)` years on average.
+### Modeling decisions and behavior around family 
 
-Studies of the magma systems feeding the volcano, such as @marrero2019, have proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).
+- Ones related to family behavior
 
-Eight eruptions have been recorded since the late 1400s (@fig-timeline).
+@sener_analysis_2007 - male children more likely to participate with their fathers than female children, African-American children less likely to  participate in health-enhancing active recreation pursuits
 
-Data and methods are discussed in @sec-data-methods.
+@copperman_exploratory_2007 - The age of childrend has an effect on the types of activities they pursue
 
-Let $x$ denote the number of eruptions in a year. Then, $x$ can be modeled by a Poisson distribution
+@sener_analysis_2008 - Children in households with  parents who are employed, higher income, or higher education were found to participate in  structured outdoor activities at higher rates. 
 
-$$
-p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-$$ {#eq-poisson}
+@paleti_empirical_2011 - The results show that a wide variety of demographic, attitudinal,  environmental, and others’ activity-travel pattern characteristics impact children’s after school  activity engagement patterns.
 
-where $\lambda$ is the rate of eruptions per year. Using @eq-poisson, the probability of an eruption in the next $t$ years can be calculated.
+@bernardo_empirical_2015 - the presence  of a child in dual-earner households not only leads to a reduction in in-home non-work activity  participation (excluding child care activities) but also a substantially larger decrease in out-of-home non-work activity participation (excluding child care and shopping activities)
 
-| Name                 | Year   |
-| -------------------- | ------ |
-| Current              | 2021   |
-| Teneguía             | 1971   |
-| Nambroque            | 1949   |
-| El Charco            | 1712   |
-| Volcán San Antonio   | 1677   |
-| Volcán San Martin    | 1646   |
-| Tajuya near El Paso  | 1585   |
-| Montaña Quemada      | 1492   |
+@leung_environment-people_2019 - 
+childrens activities can differ a lot based on neighborhood enfironment and family sociodemographic background. 
 
-: Recent historic eruptions on La Palma {#tbl-history}
 
-@tbl-history summarises the eruptions recorded since the colonization of the islands by Europeans in the late 1400s.
+- Ones related to transportation
 
-![Map of La Palma](images/la-palma-map.png){#fig-map}
+@copperman_analysis_2007 - The “number of children” variable suggests an overall  higher likelihood of participation in utilitarian active travel among households with many children  relative to households with few children
 
-La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands (@fig-map). 
+@souche_measuring_2010 - urban density and cost of transport mode were statisticalliy significan in their model
 
-{{< embed notebooks/explore-earthquakes.qmd#fig-cars >}}
+@mccarthy_factors_2017 - many factores influence decisions about mode choice when traveling with young children. 
 
-@fig-cars shows the distance and speed of cars on a graph. 
+@lu_role_2022 - joint travel contributes least to modal shift from car to active transport when there is improved infrastructure of trains and things
 
-As @paleti_empirical_2011 said, there is something awesome about this. [@osborne_updated_2021]
+@amirnazmiafshar_review_2022 - There are lots of factors that might affect people's willingness to use car sharing
 
-## Data & Methods {#sec-data-methods}
+@klein_subsidizing_2024 - Having a car gave people more opportunities than before, and they usually had more time to spend with the family. At the beginning and end of the day.
 
-One more citation [@nayga_sample_1998]
+@bilgin_investigating_2025 - Suggests that households are less likely to qcquire a car in the presence of ridesourcing, but car disposal is mainly driven by household compositions and residential relocation factors. 
 
-## Conclusion
 
-## References {.unnumbered}
+- Ones related to Budgets and money 
 
-:::{#refs}
+@hargunani_study_2024 - The data analysis reveals distinct spending, saving, and investment patterns among married couples, with a clear prioritization towards ensuring the well-being and future security of their families.”
 
+@skinner_variable_1985 - Changes in inflation will prompt changes in consumer expenditures
+
+@nayga_sample_1998 - Most of the variables analysed significantly affect prepared food expenditures. For example, results suggest that frozen meals expenditures are higher for households without children, for smaller households, and for households headed by a non-white individual
+
+@fontes_effects_2006 - Asian Americans allocate more of their budget to housing, African Americans allocate more of their budget to apparel, and Hispanics allocate more of their budget to both housing and apparel, but to a lesser extent than Asian Americans with respect to housing and African Americans with respect to apparel.
+
+@sabelhaus_is_2013 - the highest income thresholds are underrepresented in the survey
+
+@hargunani_study_2024 - The data analysis reveals distinct spending, saving, and investment patterns among married couples, with a clear prioritization towards ensuring the well-being and future security of their families.”
+
+- spending on kids
+
+@lino_expenditures_2017 - Many observations on the expenditures of children
+
+@osborne_updated_2021 - Regardless of the method of calculation, we find that it is nearly impossible for two minimum wage earners to meet the basic costs of raising children in Texas, especially when child care is included
+
+@hastings_parental_2022 - Both sociodemographic and economic factors play a substantial role in these differences, and the racial and ethnic gaps in parental investments of money are nearly eliminated when both are accounted for
+
+@duncan_estimating_2023 - The more income, the more spending on kids.
+
+
+- ones related to budgets and transportation 
+
+@morris_family_1979 - transport takes about 17 percent of expenditures, at least part of the consumption expenditure by low income families is financed from savings, loans or other sources besides "income".
+
+@blumenberg_transportation_2003 - Cost comparisons fall short of finding if transportation costs are a barrier for economic opportunity among the poor
+
+@thakuriah_analysis_2005 - For vehicle-owning households, of every additional dollar that households spend, 18 cents is spent on vehicles after controlling for socioeconomic, demographic, life cycle, and other factors relating to households.
+
+@hong_leisure_2005 - Marrieds without children are more likely to spend on leisure travel than singles, whereas single parents and solitary survivors are less likely to spend on leisure travel than singles.  
+
+@thakuriah_vonu_transportation_2006 - Transportation expenditures made by households are better explained by permanent income levels of households than by annual incomes.
+
+@choo_transportation_2007 - New tech doesn't substitue Personal Vehicle travel probably
+
+@haas_estimating_2008 - Their model can help in travel demand modeling
+
+@ferdous_comprehensive_2010 - Adjustments are made with increased fuel prices
+
+@deka_relationship_2015 - More housing costs = more transportation costs, people the take transit spend less on transportation
+
+@mattson_relationships_2019 - denser areas are more likely to use transit to commute. People in single-family homes tend to spend more money on transportation
+
+@mattson_relationships_2020 - single family homes spend more on transportation, higher income is correlated with higher tranportation costs. 
+
+@molloy_new_2024 - "Captive Riders" have less spending allocated to transportation than captive drivers. 
+
+@bureau_of_transportation_statistics_transportation_2024 - Lots of summaries
+
+
+## References
+
+::: {#refs}
 :::
