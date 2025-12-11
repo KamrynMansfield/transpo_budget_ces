@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.12">
+<meta name="generator" content="quarto-1.9.13">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -55,13 +55,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0a61af393cc41664e89a7addda21b354.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -69,35 +66,6 @@ div.csl-indent {
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <meta name="citation_title" content="Unpacking Household Budgeting Strategies through a Transportation Lens">
 <meta name="citation_abstract" content="This is where we will put our abstract.
@@ -110,7 +78,6 @@ window.Quarto = {
 <meta name="citation_year" content="2025">
 <meta name="citation_online_date" content="2025-12-11">
 <meta name="citation_language" content="en">
-<meta name="citation_journal_title" content="Earth and Space Science">
 <meta name="citation_reference" content="citation_title=Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands);,citation_author=José Marrero;,citation_author=Alicia García;,citation_author=Manuel Berrocoso;,citation_author=Ángeles Llinares;,citation_author=Antonio Rodríguez-Losada;,citation_author=R. Ortiz;,citation_publication_date=2019-07;,citation_cover_date=2019-07;,citation_year=2019;,citation_doi=10.1186/s13617-019-0085-5;,citation_volume=8;,citation_journal_title=Journal of Applied Volcanology;">
 <meta name="citation_reference" content="citation_title=An empirical investigation into the time-use and activity patterns of dual-earner couples with and without young children;,citation_author=Christina Bernardo;,citation_author=Rajesh Paleti;,citation_author=Megan Hoklas;,citation_author=Chandra Bhat;,citation_publication_date=2015-06;,citation_cover_date=2015-06;,citation_year=2015;,citation_fulltext_html_url=https://linkinghub.elsevier.com/retrieve/pii/S0965856414002985;,citation_doi=10.1016/j.tra.2014.12.006;,citation_issn=09658564;,citation_volume=76;,citation_journal_title=Transportation Research Part A: Policy and Practice;">
 <meta name="citation_reference" content="citation_title=An Exploratory Analysis of Children’s Daily Time-Use and Activity Patterns Using the Child Development Supplement (CDS) to the US Panel Study of Income Dynamics (PSID);,citation_author=Rachel B Copperman;,citation_author=Chandra R Bhat;,citation_publication_date=2007;,citation_cover_date=2007;,citation_year=2007;">
@@ -229,11 +196,13 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#sec-data-methods" id="toc-sec-data-methods" class="nav-link" data-scroll-target="#sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#literature-review" id="toc-literature-review" class="nav-link" data-scroll-target="#literature-review"><span class="header-section-number">2</span> Literature Review</a>
+  <ul class="collapse">
+  <li><a href="#modeling-decisions-and-behavior-around-family" id="toc-modeling-decisions-and-behavior-around-family" class="nav-link" data-scroll-target="#modeling-decisions-and-behavior-around-family"><span class="header-section-number">2.1</span> Modeling decisions and behavior around family</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3</span> References</a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li><li><a href="notebooks/explore-earthquakes-preview.html"><i class="bi bi-journal-code"></i>Explore Earthquakes</a></li></ul></div></nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="notebooks/explore-earthquakes-preview.html"><i class="bi bi-journal-code"></i>Explore Earthquakes</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -246,123 +215,143 @@ window.Quarto = {
 
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<div id="cell-fig-timeline" class="cell">
-<div class="cell-output-display">
-<div id="fig-timeline" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An event plot of the years of the last 8 eruptions on La Palma.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-timeline-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Timeline of recent earthquakes on La Palma"><img src="index_files/figure-html/fig-timeline-1.png" class="img-fluid figure-img" alt="An event plot of the years of the last 8 eruptions on La Palma." width="576"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Timeline of recent earthquakes on La Palma
-</figcaption>
-</figure>
-</div>
-</div>
-<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html#cell-fig-timeline">Source: Article Notebook</a></div>
-<p>Based on data up to and including 1971, eruptions on La Palma happen every 79.8 years on average.</p>
-<p>Studies of the magma systems feeding the volcano, such as <span class="citation" data-cites="marrero2019">Marrero et al. (<a href="#ref-marrero2019" role="doc-biblioref">2019</a>)</span>, have proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
-<p>Eight eruptions have been recorded since the late 1400s (<a href="#fig-timeline" class="quarto-xref">Figure&nbsp;1</a>).</p>
-<p>Data and methods are discussed in <a href="#sec-data-methods" class="quarto-xref">Section&nbsp;2</a>.</p>
-<p>Let <span class="math inline">\(x\)</span> denote the number of eruptions in a year. Then, <span class="math inline">\(x\)</span> can be modeled by a Poisson distribution</p>
-<p><span id="eq-poisson"><span class="math display">\[
-p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-\tag{1}\]</span></span></p>
-<p>where <span class="math inline">\(\lambda\)</span> is the rate of eruptions per year. Using <a href="#eq-poisson" class="quarto-xref">Equation&nbsp;1</a>, the probability of an eruption in the next <span class="math inline">\(t\)</span> years can be calculated.</p>
-<div id="tbl-history" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-history-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Recent historic eruptions on La Palma
-</figcaption>
-<div aria-describedby="tbl-history-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Year</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Current</td>
-<td>2021</td>
-</tr>
-<tr class="even">
-<td>Teneguía</td>
-<td>1971</td>
-</tr>
-<tr class="odd">
-<td>Nambroque</td>
-<td>1949</td>
-</tr>
-<tr class="even">
-<td>El Charco</td>
-<td>1712</td>
-</tr>
-<tr class="odd">
-<td>Volcán San Antonio</td>
-<td>1677</td>
-</tr>
-<tr class="even">
-<td>Volcán San Martin</td>
-<td>1646</td>
-</tr>
-<tr class="odd">
-<td>Tajuya near El Paso</td>
-<td>1585</td>
-</tr>
-<tr class="even">
-<td>Montaña Quemada</td>
-<td>1492</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p><a href="#tbl-history" class="quarto-xref">Table&nbsp;1</a> summarises the eruptions recorded since the colonization of the islands by Europeans in the late 1400s.</p>
-<div id="fig-map" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/la-palma-map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Map of La Palma"><img src="images/la-palma-map.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Map of La Palma
-</figcaption>
-</figure>
-</div>
-<p>La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands (<a href="#fig-map" class="quarto-xref">Figure&nbsp;2</a>).</p>
-<div class="quarto-embed-nb-cell">
-<div id="cell-fig-cars" class="cell">
-<div class="cell-output cell-output-display">
-<div id="fig-cars" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A figure showing car information">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-cars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/notebooks-explore-earthquakes-fig-cars-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: The test figure"><img src="index_files/figure-html/notebooks-explore-earthquakes-fig-cars-output-1.png" class="img-fluid figure-img" alt="A figure showing car information"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: The test figure
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p><a href="#fig-cars" class="quarto-xref">Figure&nbsp;3</a> shows the distance and speed of cars on a graph.</p>
-<p>As <span class="citation" data-cites="paleti_empirical_2011">Paleti, Copperman, and Bhat (<a href="#ref-paleti_empirical_2011" role="doc-biblioref">2011</a>)</span> said, there is something awesome about this. <span class="citation" data-cites="osborne_updated_2021">(<a href="#ref-osborne_updated_2021" role="doc-biblioref">Osborne, Wu, and Benson 2021</a>)</span></p>
+<p>Households juggle how to allocate their budgets: whether to invest in a reliable car, pay for quality childcare, secure housing in a good school district, or set money aside for leisure. These everyday choices shape how families live and move, reflecting the trade-offs they make to balance competing priorities. Transportation often sits at the center of these decisions, not only because it can be a significant expense, but also because choosing to buy and maintain a car versus relying on public transit represents a long-term commitment and a broader lifestyle choice. Its relative weight compared to housing, childcare, and other spending varies widely across families. The relationship between household budgeting and mobility is shaped not only by causal direction but also by how families prioritize and weight different needs. On one hand, mobility resources such as car ownership can structure the household budget: households with no or only one vehicle may spend far less on transportation, freeing up income for other essential or discretionary categories. On the other hand, underlying family structures and preferences can drive budget allocation choices that, in turn, shape transportation behavior. Larger families may prioritize childcare or invest in higher-quality housing in areas with better schools, limiting what remains for transportation. Others may emphasize frugality across all categories or deliberately substitute toward lower-cost transit options. Understanding both the direction of influence and the weight assigned to different budget categories is critical for transportation planning and policy, as these dynamics reveal how families navigate competing priorities under varying demographic and mobility contexts.</p>
+<p>The purpose of this research is to explore how household budgets are structured around transportation decisions and how this impacts other spending categories. Using the Consumer Expenditure Survey (CEX), we will perform a Latent Class Analysis (LCA) to find groupings based on a household’s transportation expenses. Theses groupings can help us find groups of spenders with similar patterns to help us predict transportation expenses based on the household’s characteristics.</p>
 </section>
-<section id="sec-data-methods" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</h2>
-<p>One more citation <span class="citation" data-cites="nayga_sample_1998">(<a href="#ref-nayga_sample_1998" role="doc-biblioref">Nayga 1998</a>)</span></p>
+<section id="literature-review" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="literature-review"><span class="header-section-number">2</span> Literature Review</h2>
+<section id="modeling-decisions-and-behavior-around-family" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="modeling-decisions-and-behavior-around-family"><span class="header-section-number">2.1</span> Modeling decisions and behavior around family</h3>
+<ul>
+<li>Ones related to family behavior</li>
+</ul>
+<p><span class="citation" data-cites="sener_analysis_2007">Sener and Bhat (<a href="#ref-sener_analysis_2007" role="doc-biblioref">2007</a>)</span> - male children more likely to participate with their fathers than female children, African-American children less likely to participate in health-enhancing active recreation pursuits</p>
+<p><span class="citation" data-cites="copperman_exploratory_2007">Rachel B. Copperman and Bhat (<a href="#ref-copperman_exploratory_2007" role="doc-biblioref">2007b</a>)</span> - The age of childrend has an effect on the types of activities they pursue</p>
+<p><span class="citation" data-cites="sener_analysis_2008">Sener et al. (<a href="#ref-sener_analysis_2008" role="doc-biblioref">2008</a>)</span> - Children in households with parents who are employed, higher income, or higher education were found to participate in structured outdoor activities at higher rates.</p>
+<p><span class="citation" data-cites="paleti_empirical_2011">Paleti, Copperman, and Bhat (<a href="#ref-paleti_empirical_2011" role="doc-biblioref">2011</a>)</span> - The results show that a wide variety of demographic, attitudinal, environmental, and others’ activity-travel pattern characteristics impact children’s after school activity engagement patterns.</p>
+<p><span class="citation" data-cites="bernardo_empirical_2015">Bernardo et al. (<a href="#ref-bernardo_empirical_2015" role="doc-biblioref">2015</a>)</span> - the presence of a child in dual-earner households not only leads to a reduction in in-home non-work activity participation (excluding child care activities) but also a substantially larger decrease in out-of-home non-work activity participation (excluding child care and shopping activities)</p>
+<p><span class="citation" data-cites="leung_environment-people_2019">Leung et al. (<a href="#ref-leung_environment-people_2019" role="doc-biblioref">2019</a>)</span> - childrens activities can differ a lot based on neighborhood enfironment and family sociodemographic background.</p>
+<ul>
+<li>Ones related to transportation</li>
+</ul>
+<p><span class="citation" data-cites="copperman_analysis_2007">Rachel B. Copperman and Bhat (<a href="#ref-copperman_analysis_2007" role="doc-biblioref">2007a</a>)</span> - The “number of children” variable suggests an overall higher likelihood of participation in utilitarian active travel among households with many children relative to households with few children</p>
+<p><span class="citation" data-cites="souche_measuring_2010">Souche (<a href="#ref-souche_measuring_2010" role="doc-biblioref">2010</a>)</span> - urban density and cost of transport mode were statisticalliy significan in their model</p>
+<p><span class="citation" data-cites="mccarthy_factors_2017">McCarthy et al. (<a href="#ref-mccarthy_factors_2017" role="doc-biblioref">2017</a>)</span> - many factores influence decisions about mode choice when traveling with young children.</p>
+<p><span class="citation" data-cites="lu_role_2022">Lu et al. (<a href="#ref-lu_role_2022" role="doc-biblioref">2022</a>)</span> - joint travel contributes least to modal shift from car to active transport when there is improved infrastructure of trains and things</p>
+<p><span class="citation" data-cites="amirnazmiafshar_review_2022">Amirnazmiafshar and Diana (<a href="#ref-amirnazmiafshar_review_2022" role="doc-biblioref">2022</a>)</span> - There are lots of factors that might affect people’s willingness to use car sharing</p>
+<p><span class="citation" data-cites="klein_subsidizing_2024">Klein (<a href="#ref-klein_subsidizing_2024" role="doc-biblioref">2024</a>)</span> - Having a car gave people more opportunities than before, and they usually had more time to spend with the family. At the beginning and end of the day.</p>
+<p><span class="citation" data-cites="bilgin_investigating_2025">Bilgin et al. (<a href="#ref-bilgin_investigating_2025" role="doc-biblioref">2025</a>)</span> - Suggests that households are less likely to qcquire a car in the presence of ridesourcing, but car disposal is mainly driven by household compositions and residential relocation factors.</p>
+<ul>
+<li>Ones related to Budgets and money</li>
+</ul>
+<p><span class="citation" data-cites="hargunani_study_2024">Hargunani, Vernekar, and Vernekar (<a href="#ref-hargunani_study_2024" role="doc-biblioref">2024</a>)</span> - The data analysis reveals distinct spending, saving, and investment patterns among married couples, with a clear prioritization towards ensuring the well-being and future security of their families.”</p>
+<p><span class="citation" data-cites="skinner_variable_1985">Skinner (<a href="#ref-skinner_variable_1985" role="doc-biblioref">1985</a>)</span> - Changes in inflation will prompt changes in consumer expenditures</p>
+<p><span class="citation" data-cites="nayga_sample_1998">Nayga (<a href="#ref-nayga_sample_1998" role="doc-biblioref">1998</a>)</span> - Most of the variables analysed significantly affect prepared food expenditures. For example, results suggest that frozen meals expenditures are higher for households without children, for smaller households, and for households headed by a non-white individual</p>
+<p><span class="citation" data-cites="fontes_effects_2006">Fontes and Fan (<a href="#ref-fontes_effects_2006" role="doc-biblioref">2006</a>)</span> - Asian Americans allocate more of their budget to housing, African Americans allocate more of their budget to apparel, and Hispanics allocate more of their budget to both housing and apparel, but to a lesser extent than Asian Americans with respect to housing and African Americans with respect to apparel.</p>
+<p><span class="citation" data-cites="sabelhaus_is_2013">Sabelhaus et al. (<a href="#ref-sabelhaus_is_2013" role="doc-biblioref">2013</a>)</span> - the highest income thresholds are underrepresented in the survey</p>
+<p><span class="citation" data-cites="hargunani_study_2024">Hargunani, Vernekar, and Vernekar (<a href="#ref-hargunani_study_2024" role="doc-biblioref">2024</a>)</span> - The data analysis reveals distinct spending, saving, and investment patterns among married couples, with a clear prioritization towards ensuring the well-being and future security of their families.”</p>
+<ul>
+<li>spending on kids</li>
+</ul>
+<p><span class="citation" data-cites="lino_expenditures_2017">Lino et al. (<a href="#ref-lino_expenditures_2017" role="doc-biblioref">2017</a>)</span> - Many observations on the expenditures of children</p>
+<p><span class="citation" data-cites="osborne_updated_2021">Osborne, Wu, and Benson (<a href="#ref-osborne_updated_2021" role="doc-biblioref">2021</a>)</span> - Regardless of the method of calculation, we find that it is nearly impossible for two minimum wage earners to meet the basic costs of raising children in Texas, especially when child care is included</p>
+<p><span class="citation" data-cites="hastings_parental_2022">Hastings (<a href="#ref-hastings_parental_2022" role="doc-biblioref">2022</a>)</span> - Both sociodemographic and economic factors play a substantial role in these differences, and the racial and ethnic gaps in parental investments of money are nearly eliminated when both are accounted for</p>
+<p><span class="citation" data-cites="duncan_estimating_2023">Duncan, Frank, and Guèvremont (<a href="#ref-duncan_estimating_2023" role="doc-biblioref">2023</a>)</span> - The more income, the more spending on kids.</p>
+<ul>
+<li>ones related to budgets and transportation</li>
+</ul>
+<p><span class="citation" data-cites="morris_family_1979">Morris and Wigan (<a href="#ref-morris_family_1979" role="doc-biblioref">1979</a>)</span> - transport takes about 17 percent of expenditures, at least part of the consumption expenditure by low income families is financed from savings, loans or other sources besides “income”.</p>
+<p><span class="citation" data-cites="blumenberg_transportation_2003">Blumenberg (<a href="#ref-blumenberg_transportation_2003" role="doc-biblioref">2003</a>)</span> - Cost comparisons fall short of finding if transportation costs are a barrier for economic opportunity among the poor</p>
+<p><span class="citation" data-cites="thakuriah_analysis_2005">Thakuriah and Liao (<a href="#ref-thakuriah_analysis_2005" role="doc-biblioref">2005</a>)</span> - For vehicle-owning households, of every additional dollar that households spend, 18 cents is spent on vehicles after controlling for socioeconomic, demographic, life cycle, and other factors relating to households.</p>
+<p><span class="citation" data-cites="hong_leisure_2005">Hong et al. (<a href="#ref-hong_leisure_2005" role="doc-biblioref">2005</a>)</span> - Marrieds without children are more likely to spend on leisure travel than singles, whereas single parents and solitary survivors are less likely to spend on leisure travel than singles.</p>
+<p><span class="citation" data-cites="thakuriah_vonu_transportation_2006">Thakuriah (Vonu) and Liao (<a href="#ref-thakuriah_vonu_transportation_2006" role="doc-biblioref">2006</a>)</span> - Transportation expenditures made by households are better explained by permanent income levels of households than by annual incomes.</p>
+<p><span class="citation" data-cites="choo_transportation_2007">Choo, Lee, and Mokhtarian (<a href="#ref-choo_transportation_2007" role="doc-biblioref">2007</a>)</span> - New tech doesn’t substitue Personal Vehicle travel probably</p>
+<p><span class="citation" data-cites="haas_estimating_2008">Haas et al. (<a href="#ref-haas_estimating_2008" role="doc-biblioref">2008</a>)</span> - Their model can help in travel demand modeling</p>
+<p><span class="citation" data-cites="ferdous_comprehensive_2010">Ferdous et al. (<a href="#ref-ferdous_comprehensive_2010" role="doc-biblioref">2010</a>)</span> - Adjustments are made with increased fuel prices</p>
+<p><span class="citation" data-cites="deka_relationship_2015">Deka (<a href="#ref-deka_relationship_2015" role="doc-biblioref">2015</a>)</span> - More housing costs = more transportation costs, people the take transit spend less on transportation</p>
+<p><span class="citation" data-cites="mattson_relationships_2019">Mattson and Peterson (<a href="#ref-mattson_relationships_2019" role="doc-biblioref">2019</a>)</span> - denser areas are more likely to use transit to commute. People in single-family homes tend to spend more money on transportation</p>
+<p><span class="citation" data-cites="mattson_relationships_2020">Mattson (<a href="#ref-mattson_relationships_2020" role="doc-biblioref">2020</a>)</span> - single family homes spend more on transportation, higher income is correlated with higher tranportation costs.</p>
+<p><span class="citation" data-cites="molloy_new_2024">Molloy, Garrick, and Atkinson-Palombo (<a href="#ref-molloy_new_2024" role="doc-biblioref">2024</a>)</span> - “Captive Riders” have less spending allocated to transportation than captive drivers.</p>
+<p><span class="citation" data-cites="bureau_of_transportation_statistics_transportation_2024">Bureau of Transportation Statistics (<a href="#ref-bureau_of_transportation_statistics_transportation_2024" role="doc-biblioref">2024</a>)</span> - Lots of summaries</p>
 </section>
-<section id="conclusion" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3</span> Conclusion</h2>
 </section>
-<section id="references" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<section id="references" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="references"><span class="header-section-number">3</span> References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-marrero2019" class="csl-entry" role="listitem">
-Marrero, José, Alicia García, Manuel Berrocoso, Ángeles Llinares, Antonio Rodríguez-Losada, and R. Ortiz. 2019. <span>“Strategies for the Development of Volcanic Hazard Maps in Monogenetic Volcanic Fields: The Example of <span>La</span> <span>Palma</span> (<span>Canary</span> <span>Islands</span>).”</span> <em>Journal of Applied Volcanology</em> 8 (July). <a href="https://doi.org/10.1186/s13617-019-0085-5">https://doi.org/10.1186/s13617-019-0085-5</a>.
+<div id="ref-amirnazmiafshar_review_2022" class="csl-entry" role="listitem">
+Amirnazmiafshar, Ehsan, and Marco Diana. 2022. <span>“A Review of the Socio-Demographic Characteristics Affecting the Demand for Different Car-Sharing Operational Schemes.”</span> <em>Transportation Research Interdisciplinary Perspectives</em> 14 (June): 100616. <a href="https://doi.org/10.1016/j.trip.2022.100616">https://doi.org/10.1016/j.trip.2022.100616</a>.
+</div>
+<div id="ref-bernardo_empirical_2015" class="csl-entry" role="listitem">
+Bernardo, Christina, Rajesh Paleti, Megan Hoklas, and Chandra Bhat. 2015. <span>“An Empirical Investigation into the Time-Use and Activity Patterns of Dual-Earner Couples with and Without Young Children.”</span> <em>Transportation Research Part A: Policy and Practice</em> 76 (June): 71–91. <a href="https://doi.org/10.1016/j.tra.2014.12.006">https://doi.org/10.1016/j.tra.2014.12.006</a>.
+</div>
+<div id="ref-bilgin_investigating_2025" class="csl-entry" role="listitem">
+Bilgin, Pinar, Giulio Mattioli, Malcolm Morgan, and Zia Wadud. 2025. <span>“Investigating the Effects of Ridesourcing on the Dynamics of Household Car Ownership.”</span> <em>Transportation Research Part D: Transport and Environment</em> 146 (September): 104886. <a href="https://doi.org/10.1016/j.trd.2025.104886">https://doi.org/10.1016/j.trd.2025.104886</a>.
+</div>
+<div id="ref-blumenberg_transportation_2003" class="csl-entry" role="listitem">
+Blumenberg, Evelyn. 2003. <span>“Transportation <span>Costs</span> and <span>Economic</span> <span>Opportunity</span> <span>Among</span> the <span>Poor</span>,”</span> October.
+</div>
+<div id="ref-bureau_of_transportation_statistics_transportation_2024" class="csl-entry" role="listitem">
+Bureau of Transportation Statistics. 2024. <span>“Transportation <span>Statistics</span> <span>Annual</span> <span>Report</span> 2024.”</span> Bureau of Transportation Statistics. <a href="https://doi.org/10.21949/E0KQ-GF72">https://doi.org/10.21949/E0KQ-GF72</a>.
+</div>
+<div id="ref-choo_transportation_2007" class="csl-entry" role="listitem">
+Choo, Sangho, Taihyeong Lee, and Patricia L. Mokhtarian. 2007. <span>“Do <span>Transportation</span> and <span>Communications</span> <span>Tend</span> to Be <span>Substitutes</span>, <span>Complements</span>, or <span>Neither</span>?: <span>U</span>.<span>S</span>. <span>Consumer</span> <span>Expenditures</span> <span>Perspective</span>, 1984–2002.”</span> <em>Transportation Research Record</em> 2010 (1): 121–32. <a href="https://doi.org/10.3141/2010-14">https://doi.org/10.3141/2010-14</a>.
+</div>
+<div id="ref-copperman_analysis_2007" class="csl-entry" role="listitem">
+Copperman, Rachel B., and Chandra R. Bhat. 2007a. <span>“An Analysis of the Determinants of Children’s Weekend Physical Activity Participation.”</span> <em>Transportation</em> 34 (1): 67–87. <a href="https://doi.org/10.1007/s11116-006-0005-5">https://doi.org/10.1007/s11116-006-0005-5</a>.
+</div>
+<div id="ref-copperman_exploratory_2007" class="csl-entry" role="listitem">
+Copperman, Rachel B, and Chandra R Bhat. 2007b. <span>“An <span>Exploratory</span> <span>Analysis</span> of <span>Children</span>’s <span>Daily</span> <span>Time</span>-<span>Use</span> and <span>Activity</span> <span>Patterns</span> <span>Using</span> the <span>Child</span> <span>Development</span> <span>Supplement</span> (<span>CDS</span>) to the <span>US</span> <span>Panel</span> <span>Study</span> of <span>Income</span> <span>Dynamics</span> (<span>PSID</span>).”</span>
+</div>
+<div id="ref-deka_relationship_2015" class="csl-entry" role="listitem">
+Deka, Devajyoti. 2015. <span>“Relationship Between <span>Households</span>’ <span>Housing</span> and <span>Transportation</span> <span>Expenditures</span>: <span>Examination</span> from <span>Lifestyle</span> <span>Perspective</span>.”</span> <em>Transportation Research Record</em> 2531 (1): 26–35. <a href="https://doi.org/10.3141/2531-04">https://doi.org/10.3141/2531-04</a>.
+</div>
+<div id="ref-duncan_estimating_2023" class="csl-entry" role="listitem">
+Duncan, Karen A., Kristyn Frank, and Anne Guèvremont. 2023. <span>“Estimating <span>Expenditures</span> on <span>Children</span> by <span>Families</span> in <span>Canada</span>, 2014 to 2017,”</span> September. <a href="https://doi.org/10.25318/11F0019M2023007-ENG">https://doi.org/10.25318/11F0019M2023007-ENG</a>.
+</div>
+<div id="ref-ferdous_comprehensive_2010" class="csl-entry" role="listitem">
+Ferdous, Nazneen, Abdul Rawoof Pinjari, Chandra R. Bhat, and Ram M. Pendyala. 2010. <span>“A Comprehensive Analysis of Household Transportation Expenditures Relative to Other Goods and Services: An Application to <span>United</span> <span>States</span> Consumer Expenditure Data.”</span> <em>Transportation</em> 37 (3): 363–90. <a href="https://doi.org/10.1007/s11116-010-9264-2">https://doi.org/10.1007/s11116-010-9264-2</a>.
+</div>
+<div id="ref-fontes_effects_2006" class="csl-entry" role="listitem">
+Fontes, Angela, and Jessie Fan. 2006. <span>“The <span>Effects</span> of <span>Ethnic</span> <span>Identity</span> on <span>Household</span> <span>Budget</span> <span>Allocation</span> to <span>Status</span> <span>Conveying</span> <span>Goods</span>.”</span> <em>Journal of Family and Economic Issues</em> 27 (February): 643–63. <a href="https://doi.org/10.1007/s10834-006-9031-x">https://doi.org/10.1007/s10834-006-9031-x</a>.
+</div>
+<div id="ref-haas_estimating_2008" class="csl-entry" role="listitem">
+Haas, Peter M., Carrie Makarewicz, Albert Benedict, and Scott Bernstein. 2008. <span>“Estimating <span>Transportation</span> <span>Costs</span> by <span>Characteristics</span> of <span>Neighborhood</span> and <span>Household</span>.”</span> <em>Transportation Research Record</em> 2077 (1): 62–70. <a href="https://doi.org/10.3141/2077-09">https://doi.org/10.3141/2077-09</a>.
+</div>
+<div id="ref-hargunani_study_2024" class="csl-entry" role="listitem">
+Hargunani, Chahat, Sachin Vernekar, and Shradha Vernekar. 2024. <span>“A <span>STUDY</span> <span>OF</span> <span>SPENDING</span>, <span>SAVING</span> <span>AND</span> <span>INVESTMENT</span> <span>PATTERNS</span> <span>OF</span> <span>MARRIED</span> <span>COUPLES</span> <span>WITH</span> <span>CHILDREN</span>(<span>NON</span>-<span>DINK</span>) <span>IN</span> <span>MUMBAI</span>”</span> 20 (1).
+</div>
+<div id="ref-hastings_parental_2022" class="csl-entry" role="listitem">
+Hastings, Orestes P. 2022. <span>“Parental <span>Investments</span> of <span>Money</span> for <span>White</span>, <span>Black</span>, and <span>Hispanic</span> <span>Children</span> in the <span>United</span> <span>States</span>.”</span> <em>Socius: Sociological Research for a Dynamic World</em> 8 (January): 23780231221103054. <a href="https://doi.org/10.1177/23780231221103054">https://doi.org/10.1177/23780231221103054</a>.
+</div>
+<div id="ref-hong_leisure_2005" class="csl-entry" role="listitem">
+Hong, Gong-Soog, Jessie X. Fan, Lance Palmer, and Vibha Bhargava. 2005. <span>“Leisure <span>Travel</span> <span>Expenditure</span> <span>Patterns</span> by <span>Family</span> <span>Life</span> <span>Cycle</span> <span>Stages</span>.”</span> <em>Journal of Travel &amp; Tourism Marketing</em> 18 (2): 15–30. <a href="https://doi.org/10.1300/J073v18n02_02">https://doi.org/10.1300/J073v18n02_02</a>.
+</div>
+<div id="ref-klein_subsidizing_2024" class="csl-entry" role="listitem">
+Klein, Nicholas J. 2024. <span>“Subsidizing <span>Car</span> <span>Ownership</span> for <span>Low</span>-<span>Income</span> <span>Individuals</span> and <span>Households</span>.”</span> <em>Journal of Planning Education and Research</em> 44 (1): 165–77. <a href="https://doi.org/10.1177/0739456X20950428">https://doi.org/10.1177/0739456X20950428</a>.
+</div>
+<div id="ref-leung_environment-people_2019" class="csl-entry" role="listitem">
+Leung, Kevin Y. K., Sebastian Astroza, Becky P. Y. Loo, and Chandra R. Bhat. 2019. <span>“An Environment-People Interactions Framework for Analysing Children’s Extra-Curricular Activities and Active Transport.”</span> <em>Journal of Transport Geography</em> 74 (January): 341–58. <a href="https://doi.org/10.1016/j.jtrangeo.2018.12.015">https://doi.org/10.1016/j.jtrangeo.2018.12.015</a>.
+</div>
+<div id="ref-lino_expenditures_2017" class="csl-entry" role="listitem">
+Lino, Mark, Kevin Kuczynski, Nestor Rodriguez, and TusaRebecca Schap. 2017. <span>“Expenditures on <span>Children</span> by <span>Families</span>, 2015.”</span> United States Department of Agriculture. <a href="https://doi.org/10.22004/ag.econ.327257">https://doi.org/10.22004/ag.econ.327257</a>.
+</div>
+<div id="ref-lu_role_2022" class="csl-entry" role="listitem">
+Lu, Ying, Carlo G. Prato, Neil Sipe, Anthony Kimpton, and Jonathan Corcoran. 2022. <span>“The Role of Household Modality Style in First and Last Mile Travel Mode Choice.”</span> <em>Transportation Research Part A: Policy and Practice</em> 158 (April): 95–109. <a href="https://doi.org/10.1016/j.tra.2022.02.003">https://doi.org/10.1016/j.tra.2022.02.003</a>.
+</div>
+<div id="ref-mattson_relationships_2020" class="csl-entry" role="listitem">
+Mattson, Jeremy. 2020. <span>“Relationships Between Density, Transit, and Household Expenditures in Small Urban Areas.”</span> <em>Transportation Research Interdisciplinary Perspectives</em> 8 (November): 100260. <a href="https://doi.org/10.1016/j.trip.2020.100260">https://doi.org/10.1016/j.trip.2020.100260</a>.
+</div>
+<div id="ref-mattson_relationships_2019" class="csl-entry" role="listitem">
+Mattson, Jeremy, and Del Peterson. 2019. <span>“Relationships Between <span>Land</span> <span>Use</span>, <span>Transportation</span>, <span>Household</span> <span>Expenditures</span>, and <span>Municipal</span> <span>Spending</span> in <span>Small</span> <span>Urban</span> <span>Areas</span>,”</span> December.
+</div>
+<div id="ref-mccarthy_factors_2017" class="csl-entry" role="listitem">
+McCarthy, Laura, Alexa Delbosc, Graham Currie, and Andrew Molloy. 2017. <span>“Factors Influencing Travel Mode Choice Among Families with Young Children (Aged 0–4): A Review of the Literature.”</span> <em>Transport Reviews</em> 37 (6): 767–81. <a href="https://doi.org/10.1080/01441647.2017.1354942">https://doi.org/10.1080/01441647.2017.1354942</a>.
+</div>
+<div id="ref-molloy_new_2024" class="csl-entry" role="listitem">
+Molloy, Quinn, Norman Garrick, and Carol Atkinson-Palombo. 2024. <span>“A <span>New</span> <span>Approach</span> to <span>Understanding</span> the <span>Impact</span> of <span>Automobile</span> <span>Ownership</span> on <span>Transportation</span> <span>Equity</span>.”</span> <em>Transportation Research Record</em> 2678 (2): 366–76. <a href="https://doi.org/10.1177/03611981231174444">https://doi.org/10.1177/03611981231174444</a>.
+</div>
+<div id="ref-morris_family_1979" class="csl-entry" role="listitem">
+Morris, J. M., and M. R. Wigan. 1979. <span>“A Family Expenditure Perspective on Transport Planning: <span>Australian</span> Evidence in Context.”</span> <em>Transportation Research Part A: General</em> 13 (4): 249–85. <a href="https://doi.org/10.1016/0191-2607(79)90051-7">https://doi.org/10.1016/0191-2607(79)90051-7</a>.
 </div>
 <div id="ref-nayga_sample_1998" class="csl-entry" role="listitem">
 Nayga, Rodolfo M. 1998. <span>“A Sample Selection Model for Prepared Food Expenditures.”</span> <em>Applied Economics</em> 30 (3): 345–52. <a href="https://doi.org/10.1080/000368498325868">https://doi.org/10.1080/000368498325868</a>.
@@ -373,22 +362,31 @@ Osborne, Cynthia, Erin Wu, and Kaeley Benson. 2021. <span>“An <span>Updated</s
 <div id="ref-paleti_empirical_2011" class="csl-entry" role="listitem">
 Paleti, Rajesh, Rachel B. Copperman, and Chandra R. Bhat. 2011. <span>“An Empirical Analysis of Children’s After School Out-of-Home Activity-Location Engagement Patterns and Time Allocation.”</span> <em>Transportation</em> 38 (2): 273–303. <a href="https://doi.org/10.1007/s11116-010-9300-2">https://doi.org/10.1007/s11116-010-9300-2</a>.
 </div>
+<div id="ref-sabelhaus_is_2013" class="csl-entry" role="listitem">
+Sabelhaus, John, David Johnson, Stephen Ash, David Swanson, Thesia Garner, John Greenlees, and Steve Henderson. 2013. <span>“Is the <span>Consumer</span> <span>Expenditure</span> <span>Survey</span> <span>Representative</span> by <span>Income</span>?”</span> w19589. National Bureau of Economic Research. <a href="https://doi.org/10.3386/w19589">https://doi.org/10.3386/w19589</a>.
+</div>
+<div id="ref-sener_analysis_2007" class="csl-entry" role="listitem">
+Sener, Ipek N., and Chandra R. Bhat. 2007. <span>“An Analysis of the Social Context of Children’s Weekend Discretionary Activity Participation.”</span> <em>Transportation</em> 34 (6): 697–721. <a href="https://doi.org/10.1007/s11116-007-9125-9">https://doi.org/10.1007/s11116-007-9125-9</a>.
+</div>
+<div id="ref-sener_analysis_2008" class="csl-entry" role="listitem">
+Sener, Ipek N., Rachel B. Copperman, Ram M. Pendyala, and Chandra R. Bhat. 2008. <span>“An Analysis of Children’s Leisure Activity Engagement: Examining the Day of Week, Location, Physical Activity Level, and Fixity Dimensions.”</span> <em>Transportation</em> 35 (5): 673–96. <a href="https://doi.org/10.1007/s11116-008-9173-9">https://doi.org/10.1007/s11116-008-9173-9</a>.
+</div>
+<div id="ref-skinner_variable_1985" class="csl-entry" role="listitem">
+Skinner, Jonathan. 1985. <span>“Variable <span>Lifespan</span> and the <span>Intertemporal</span> <span>Elasticity</span> of <span>Consumption</span>.”</span> <em>The Review of Economics and Statistics</em> 67 (4): 616–23. <a href="https://doi.org/10.2307/1924806">https://doi.org/10.2307/1924806</a>.
+</div>
+<div id="ref-souche_measuring_2010" class="csl-entry" role="listitem">
+Souche, Stéphanie. 2010. <span>“Measuring the Structural Determinants of Urban Travel Demand.”</span> <em>Transport Policy</em> 17 (3): 127–34. <a href="https://doi.org/10.1016/j.tranpol.2009.12.003">https://doi.org/10.1016/j.tranpol.2009.12.003</a>.
+</div>
+<div id="ref-thakuriah_analysis_2005" class="csl-entry" role="listitem">
+Thakuriah, Piyushimita (Vonu), and Yihua Liao. 2005. <span>“Analysis of <span>Variations</span> in <span>Vehicle</span> <span>Ownership</span> <span>Expenditures</span>.”</span> <em>Transportation Research Record: Journal of the Transportation Research Board</em> 1926 (1): 1–9. <a href="https://doi.org/10.1177/0361198105192600101">https://doi.org/10.1177/0361198105192600101</a>.
+</div>
+<div id="ref-thakuriah_vonu_transportation_2006" class="csl-entry" role="listitem">
+Thakuriah (Vonu), Piyushimita, and Yihua Liao. 2006. <span>“Transportation <span>Expenditures</span> and <span>Ability</span> to <span>Pay</span>: <span>Evidence</span> from <span>Consumer</span> <span>Expenditure</span> <span>Survey</span>.”</span> <em>Transportation Research Record</em> 1985 (1): 257–65. <a href="https://doi.org/10.1177/0361198106198500128">https://doi.org/10.1177/0361198106198500128</a>.
+</div>
 </div>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{mansfield2025,
-  author = {Mansfield, Kamryn and Asmussen, Katie},
-  title = {Unpacking {Household} {Budgeting} {Strategies} Through a
-    {Transportation} {Lens}},
-  date = {2025-12-11},
-  langid = {en},
-  abstract = {This is where we will put our abstract.}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-mansfield2025" class="csl-entry quarto-appendix-citeas" role="listitem">
-Mansfield, Kamryn, and Katie Asmussen. 2025. <span>“Unpacking Household
-Budgeting Strategies Through a Transportation Lens.”</span> Earth and
-Space Science. December 11, 2025.
-</div></div></section></div></main>
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -791,38 +789,6 @@ Space Science. December 11, 2025.
   });
   </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

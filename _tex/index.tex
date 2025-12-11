@@ -199,7 +199,6 @@ Spending, Family Spending, Budget},
   pdfcreator={LaTeX via pandoc}}
 
 
-\journalname{Earth and Space Science}
 
 \draftfalse
 
@@ -225,136 +224,369 @@ This is a plain language summary
 
 \section{Introduction}\label{introduction}
 
-\textsubscript{Source:
-\href{https://KamrynMansfield.github.io/transpo_budget_ces/index.qmd.html}{Article
-Notebook}}
+Households juggle how to allocate their budgets: whether to invest in a
+reliable car, pay for quality childcare, secure housing in a good school
+district, or set money aside for leisure. These everyday choices shape
+how families live and move, reflecting the trade-offs they make to
+balance competing priorities. Transportation often sits at the center of
+these decisions, not only because it can be a significant expense, but
+also because choosing to buy and maintain a car versus relying on public
+transit represents a long-term commitment and a broader lifestyle
+choice. Its relative weight compared to housing, childcare, and other
+spending varies widely across families. The relationship between
+household budgeting and mobility is shaped not only by causal direction
+but also by how families prioritize and weight different needs. On one
+hand, mobility resources such as car ownership can structure the
+household budget: households with no or only one vehicle may spend far
+less on transportation, freeing up income for other essential or
+discretionary categories. On the other hand, underlying family
+structures and preferences can drive budget allocation choices that, in
+turn, shape transportation behavior. Larger families may prioritize
+childcare or invest in higher-quality housing in areas with better
+schools, limiting what remains for transportation. Others may emphasize
+frugality across all categories or deliberately substitute toward
+lower-cost transit options. Understanding both the direction of
+influence and the weight assigned to different budget categories is
+critical for transportation planning and policy, as these dynamics
+reveal how families navigate competing priorities under varying
+demographic and mobility contexts.
 
-\phantomsection\label{cell-fig-timeline}
-\begin{figure}[H]
+The purpose of this research is to explore how household budgets are
+structured around transportation decisions and how this impacts other
+spending categories. Using the Consumer Expenditure Survey (CEX), we
+will perform a Latent Class Analysis (LCA) to find groupings based on a
+household's transportation expenses. Theses groupings can help us find
+groups of spenders with similar patterns to help us predict
+transportation expenses based on the household's characteristics.
 
-\centering{
+\section{Literature Review}\label{literature-review}
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-timeline-1.pdf}}
+\subsection{Modeling decisions and behavior around
+family}\label{modeling-decisions-and-behavior-around-family}
 
-}
+\begin{itemize}
+\tightlist
+\item
+  Ones related to family behavior
+\end{itemize}
 
-\caption{\label{fig-timeline}Timeline of recent earthquakes on La Palma}
+Sener \& Bhat (2007) - male children more likely to participate with
+their fathers than female children, African-American children less
+likely to participate in health-enhancing active recreation pursuits
 
-\end{figure}%
+Rachel B. Copperman \& Bhat (2007b) - The age of childrend has an effect
+on the types of activities they pursue
 
-\textsubscript{Source:
-\href{https://KamrynMansfield.github.io/transpo_budget_ces/index.qmd.html}{Article
-Notebook}}
+Sener et al. (2008) - Children in households with parents who are
+employed, higher income, or higher education were found to participate
+in structured outdoor activities at higher rates.
 
-\textsubscript{Source:
-\href{https://KamrynMansfield.github.io/transpo_budget_ces/index.qmd.html}{Article
-Notebook}}
+Paleti et al. (2011) - The results show that a wide variety of
+demographic, attitudinal, environmental, and others' activity-travel
+pattern characteristics impact children's after school activity
+engagement patterns.
 
-Based on data up to and including 1971, eruptions on La Palma happen
-every 79.8 years on average.
+Bernardo et al. (2015) - the presence of a child in dual-earner
+households not only leads to a reduction in in-home non-work activity
+participation (excluding child care activities) but also a substantially
+larger decrease in out-of-home non-work activity participation
+(excluding child care and shopping activities)
 
-Studies of the magma systems feeding the volcano, such as Marrero et al.
-(2019), have proposed that there are two main magma reservoirs feeding
-the Cumbre Vieja volcano; one in the mantle (30-40km depth) which
-charges and in turn feeds a shallower crustal reservoir (10-20km depth).
+Leung et al. (2019) - childrens activities can differ a lot based on
+neighborhood enfironment and family sociodemographic background.
 
-Eight eruptions have been recorded since the late 1400s
-(Figure~\ref{fig-timeline}).
+\begin{itemize}
+\tightlist
+\item
+  Ones related to transportation
+\end{itemize}
 
-Data and methods are discussed in Section~\ref{sec-data-methods}.
+Rachel B. Copperman \& Bhat (2007a) - The ``number of children''
+variable suggests an overall higher likelihood of participation in
+utilitarian active travel among households with many children relative
+to households with few children
 
-Let \(x\) denote the number of eruptions in a year. Then, \(x\) can be
-modeled by a Poisson distribution
+Souche (2010) - urban density and cost of transport mode were
+statisticalliy significan in their model
 
-\begin{equation}\phantomsection\label{eq-poisson}{
-p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-}\end{equation}
+McCarthy et al. (2017) - many factores influence decisions about mode
+choice when traveling with young children.
 
-where \(\lambda\) is the rate of eruptions per year. Using
-Equation~\ref{eq-poisson}, the probability of an eruption in the next
-\(t\) years can be calculated.
+Lu et al. (2022) - joint travel contributes least to modal shift from
+car to active transport when there is improved infrastructure of trains
+and things
 
-\begin{longtable}[]{@{}ll@{}}
-\caption{Recent historic eruptions on La
-Palma}\label{tbl-history}\tabularnewline
-\toprule\noalign{}
-Name & Year \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-Name & Year \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Current & 2021 \\
-Teneguía & 1971 \\
-Nambroque & 1949 \\
-El Charco & 1712 \\
-Volcán San Antonio & 1677 \\
-Volcán San Martin & 1646 \\
-Tajuya near El Paso & 1585 \\
-Montaña Quemada & 1492 \\
-\end{longtable}
+Amirnazmiafshar \& Diana (2022) - There are lots of factors that might
+affect people's willingness to use car sharing
 
-Table~\ref{tbl-history} summarises the eruptions recorded since the
-colonization of the islands by Europeans in the late 1400s.
+Klein (2024) - Having a car gave people more opportunities than before,
+and they usually had more time to spend with the family. At the
+beginning and end of the day.
 
-\begin{figure}
+Bilgin et al. (2025) - Suggests that households are less likely to
+qcquire a car in the presence of ridesourcing, but car disposal is
+mainly driven by household compositions and residential relocation
+factors.
 
-\centering{
+\begin{itemize}
+\tightlist
+\item
+  Ones related to Budgets and money
+\end{itemize}
 
-\pandocbounded{\includegraphics[keepaspectratio]{images/la-palma-map.png}}
+Hargunani et al. (2024) - The data analysis reveals distinct spending,
+saving, and investment patterns among married couples, with a clear
+prioritization towards ensuring the well-being and future security of
+their families.''
 
-}
+Skinner (1985) - Changes in inflation will prompt changes in consumer
+expenditures
 
-\caption{\label{fig-map}Map of La Palma}
+Nayga (1998) - Most of the variables analysed significantly affect
+prepared food expenditures. For example, results suggest that frozen
+meals expenditures are higher for households without children, for
+smaller households, and for households headed by a non-white individual
 
-\end{figure}%
+Fontes \& Fan (2006) - Asian Americans allocate more of their budget to
+housing, African Americans allocate more of their budget to apparel, and
+Hispanics allocate more of their budget to both housing and apparel, but
+to a lesser extent than Asian Americans with respect to housing and
+African Americans with respect to apparel.
 
-La Palma is one of the west most islands in the Volcanic Archipelago of
-the Canary Islands (Figure~\ref{fig-map}).
+Sabelhaus et al. (2013) - the highest income thresholds are
+underrepresented in the survey
 
-\begin{figure}[H]
+Hargunani et al. (2024) - The data analysis reveals distinct spending,
+saving, and investment patterns among married couples, with a clear
+prioritization towards ensuring the well-being and future security of
+their families.''
 
-\centering{
+\begin{itemize}
+\tightlist
+\item
+  spending on kids
+\end{itemize}
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-latex/notebooks-explore-earthquakes-fig-cars-output-1.png}}
+Lino et al. (2017) - Many observations on the expenditures of children
 
-}
+Osborne et al. (2021) - Regardless of the method of calculation, we find
+that it is nearly impossible for two minimum wage earners to meet the
+basic costs of raising children in Texas, especially when child care is
+included
 
-\caption{\label{fig-cars}The test figure}
+Hastings (2022) - Both sociodemographic and economic factors play a
+substantial role in these differences, and the racial and ethnic gaps in
+parental investments of money are nearly eliminated when both are
+accounted for
 
-\end{figure}%
+Duncan et al. (2023) - The more income, the more spending on kids.
 
-\textsubscript{Source:
-\href{https://KamrynMansfield.github.io/transpo_budget_ces/notebooks/explore-earthquakes-preview.html\#cell-fig-cars}{Explore
-Earthquakes}}
+\begin{itemize}
+\tightlist
+\item
+  ones related to budgets and transportation
+\end{itemize}
 
-Figure~\ref{fig-cars} shows the distance and speed of cars on a graph.
+Morris \& Wigan (1979) - transport takes about 17 percent of
+expenditures, at least part of the consumption expenditure by low income
+families is financed from savings, loans or other sources besides
+``income''.
 
-As Paleti et al. (2011) said, there is something awesome about this.
-(Osborne et al., 2021)
+Blumenberg (2003) - Cost comparisons fall short of finding if
+transportation costs are a barrier for economic opportunity among the
+poor
 
-\section{Data \& Methods}\label{sec-data-methods}
+Thakuriah \& Liao (2005) - For vehicle-owning households, of every
+additional dollar that households spend, 18 cents is spent on vehicles
+after controlling for socioeconomic, demographic, life cycle, and other
+factors relating to households.
 
-One more citation (Nayga, 1998)
+Hong et al. (2005) - Marrieds without children are more likely to spend
+on leisure travel than singles, whereas single parents and solitary
+survivors are less likely to spend on leisure travel than singles.
 
-\section{Conclusion}\label{conclusion}
+Thakuriah (Vonu) \& Liao (2006) - Transportation expenditures made by
+households are better explained by permanent income levels of households
+than by annual incomes.
 
-\section*{References}\label{references}
-\addcontentsline{toc}{section}{References}
+Choo et al. (2007) - New tech doesn't substitue Personal Vehicle travel
+probably
+
+Haas et al. (2008) - Their model can help in travel demand modeling
+
+Ferdous et al. (2010) - Adjustments are made with increased fuel prices
+
+Deka (2015) - More housing costs = more transportation costs, people the
+take transit spend less on transportation
+
+Mattson \& Peterson (2019) - denser areas are more likely to use transit
+to commute. People in single-family homes tend to spend more money on
+transportation
+
+Mattson (2020) - single family homes spend more on transportation,
+higher income is correlated with higher tranportation costs.
+
+Molloy et al. (2024) - ``Captive Riders'' have less spending allocated
+to transportation than captive drivers.
+
+Bureau of Transportation Statistics (2024) - Lots of summaries
+
+\section{References}\label{references}
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
 \vspace{1em}
 
-\bibitem[\citeproctext]{ref-marrero2019}
-Marrero, J., García, A., Berrocoso, M., Llinares, Á., Rodríguez-Losada,
-A., \& Ortiz, R. (2019). Strategies for the development of volcanic
-hazard maps in monogenetic volcanic fields: The example of {La} {Palma}
-({Canary} {Islands}). \emph{Journal of Applied Volcanology}, \emph{8}.
-\url{https://doi.org/10.1186/s13617-019-0085-5}
+\bibitem[\citeproctext]{ref-amirnazmiafshar_review_2022}
+Amirnazmiafshar, E., \& Diana, M. (2022). A review of the
+socio-demographic characteristics affecting the demand for different
+car-sharing operational schemes. \emph{Transportation Research
+Interdisciplinary Perspectives}, \emph{14}, 100616.
+\url{https://doi.org/10.1016/j.trip.2022.100616}
+
+\bibitem[\citeproctext]{ref-bernardo_empirical_2015}
+Bernardo, C., Paleti, R., Hoklas, M., \& Bhat, C. (2015). An empirical
+investigation into the time-use and activity patterns of dual-earner
+couples with and without young children. \emph{Transportation Research
+Part A: Policy and Practice}, \emph{76}, 71--91.
+\url{https://doi.org/10.1016/j.tra.2014.12.006}
+
+\bibitem[\citeproctext]{ref-bilgin_investigating_2025}
+Bilgin, P., Mattioli, G., Morgan, M., \& Wadud, Z. (2025). Investigating
+the effects of ridesourcing on the dynamics of household car ownership.
+\emph{Transportation Research Part D: Transport and Environment},
+\emph{146}, 104886. \url{https://doi.org/10.1016/j.trd.2025.104886}
+
+\bibitem[\citeproctext]{ref-blumenberg_transportation_2003}
+Blumenberg, E. (2003). Transportation {Costs} and {Economic}
+{Opportunity} {Among} the {Poor}.
+
+\bibitem[\citeproctext]{ref-bureau_of_transportation_statistics_transportation_2024}
+Bureau of Transportation Statistics. (2024). \emph{Transportation
+{Statistics} {Annual} {Report} 2024} (pp. 219 pages, 35.3 Megabytes).
+Bureau of Transportation Statistics.
+\url{https://doi.org/10.21949/E0KQ-GF72}
+
+\bibitem[\citeproctext]{ref-choo_transportation_2007}
+Choo, S., Lee, T., \& Mokhtarian, P. L. (2007). Do {Transportation} and
+{Communications} {Tend} to be {Substitutes}, {Complements}, or
+{Neither}?: {U}.{S}. {Consumer} {Expenditures} {Perspective},
+1984--2002. \emph{Transportation Research Record}, \emph{2010}(1),
+121--132. \url{https://doi.org/10.3141/2010-14}
+
+\bibitem[\citeproctext]{ref-copperman_analysis_2007}
+Copperman, Rachel B., \& Bhat, C. R. (2007a). An analysis of the
+determinants of children's weekend physical activity participation.
+\emph{Transportation}, \emph{34}(1), 67--87.
+\url{https://doi.org/10.1007/s11116-006-0005-5}
+
+\bibitem[\citeproctext]{ref-copperman_exploratory_2007}
+Copperman, Rachel B., \& Bhat, C. R. (2007b). An {Exploratory}
+{Analysis} of {Children}'s {Daily} {Time}-{Use} and {Activity}
+{Patterns} {Using} the {Child} {Development} {Supplement} ({CDS}) to the
+{US} {Panel} {Study} of {Income} {Dynamics} ({PSID}).
+
+\bibitem[\citeproctext]{ref-deka_relationship_2015}
+Deka, D. (2015). Relationship between {Households}' {Housing} and
+{Transportation} {Expenditures}: {Examination} from {Lifestyle}
+{Perspective}. \emph{Transportation Research Record}, \emph{2531}(1),
+26--35. \url{https://doi.org/10.3141/2531-04}
+
+\bibitem[\citeproctext]{ref-duncan_estimating_2023}
+Duncan, K. A., Frank, K., \& Guèvremont, A. (2023). Estimating
+{Expenditures} on {Children} by {Families} in {Canada}, 2014 to 2017.
+\url{https://doi.org/10.25318/11F0019M2023007-ENG}
+
+\bibitem[\citeproctext]{ref-ferdous_comprehensive_2010}
+Ferdous, N., Pinjari, A. R., Bhat, C. R., \& Pendyala, R. M. (2010). A
+comprehensive analysis of household transportation expenditures relative
+to other goods and services: An application to {United} {States}
+consumer expenditure data. \emph{Transportation}, \emph{37}(3),
+363--390. \url{https://doi.org/10.1007/s11116-010-9264-2}
+
+\bibitem[\citeproctext]{ref-fontes_effects_2006}
+Fontes, A., \& Fan, J. (2006). The {Effects} of {Ethnic} {Identity} on
+{Household} {Budget} {Allocation} to {Status} {Conveying} {Goods}.
+\emph{Journal of Family and Economic Issues}, \emph{27}, 643--663.
+\url{https://doi.org/10.1007/s10834-006-9031-x}
+
+\bibitem[\citeproctext]{ref-haas_estimating_2008}
+Haas, P. M., Makarewicz, C., Benedict, A., \& Bernstein, S. (2008).
+Estimating {Transportation} {Costs} by {Characteristics} of
+{Neighborhood} and {Household}. \emph{Transportation Research Record},
+\emph{2077}(1), 62--70. \url{https://doi.org/10.3141/2077-09}
+
+\bibitem[\citeproctext]{ref-hargunani_study_2024}
+Hargunani, C., Vernekar, S., \& Vernekar, S. (2024). A {STUDY} {OF}
+{SPENDING}, {SAVING} {AND} {INVESTMENT} {PATTERNS} {OF} {MARRIED}
+{COUPLES} {WITH} {CHILDREN}({NON}-{DINK}) {IN} {MUMBAI}, \emph{20}(1).
+
+\bibitem[\citeproctext]{ref-hastings_parental_2022}
+Hastings, O. P. (2022). Parental {Investments} of {Money} for {White},
+{Black}, and {Hispanic} {Children} in the {United} {States}.
+\emph{Socius: Sociological Research for a Dynamic World}, \emph{8},
+23780231221103054. \url{https://doi.org/10.1177/23780231221103054}
+
+\bibitem[\citeproctext]{ref-hong_leisure_2005}
+Hong, G.-S., Fan, J. X., Palmer, L., \& Bhargava, V. (2005). Leisure
+{Travel} {Expenditure} {Patterns} by {Family} {Life} {Cycle} {Stages}.
+\emph{Journal of Travel \& Tourism Marketing}, \emph{18}(2), 15--30.
+\url{https://doi.org/10.1300/J073v18n02_02}
+
+\bibitem[\citeproctext]{ref-klein_subsidizing_2024}
+Klein, N. J. (2024). Subsidizing {Car} {Ownership} for {Low}-{Income}
+{Individuals} and {Households}. \emph{Journal of Planning Education and
+Research}, \emph{44}(1), 165--177.
+\url{https://doi.org/10.1177/0739456X20950428}
+
+\bibitem[\citeproctext]{ref-leung_environment-people_2019}
+Leung, K. Y. K., Astroza, S., Loo, B. P. Y., \& Bhat, C. R. (2019). An
+environment-people interactions framework for analysing children's
+extra-curricular activities and active transport. \emph{Journal of
+Transport Geography}, \emph{74}, 341--358.
+\url{https://doi.org/10.1016/j.jtrangeo.2018.12.015}
+
+\bibitem[\citeproctext]{ref-lino_expenditures_2017}
+Lino, M., Kuczynski, K., Rodriguez, N., \& Schap, T. (2017).
+\emph{Expenditures on {Children} by {Families}, 2015}. United States
+Department of Agriculture. \url{https://doi.org/10.22004/ag.econ.327257}
+
+\bibitem[\citeproctext]{ref-lu_role_2022}
+Lu, Y., Prato, C. G., Sipe, N., Kimpton, A., \& Corcoran, J. (2022). The
+role of household modality style in first and last mile travel mode
+choice. \emph{Transportation Research Part A: Policy and Practice},
+\emph{158}, 95--109. \url{https://doi.org/10.1016/j.tra.2022.02.003}
+
+\bibitem[\citeproctext]{ref-mattson_relationships_2020}
+Mattson, J. (2020). Relationships between density, transit, and
+household expenditures in small urban areas. \emph{Transportation
+Research Interdisciplinary Perspectives}, \emph{8}, 100260.
+\url{https://doi.org/10.1016/j.trip.2020.100260}
+
+\bibitem[\citeproctext]{ref-mattson_relationships_2019}
+Mattson, J., \& Peterson, D. (2019). Relationships between {Land} {Use},
+{Transportation}, {Household} {Expenditures}, and {Municipal} {Spending}
+in {Small} {Urban} {Areas}.
+
+\bibitem[\citeproctext]{ref-mccarthy_factors_2017}
+McCarthy, L., Delbosc, A., Currie, G., \& Molloy, A. (2017). Factors
+influencing travel mode choice among families with young children (aged
+0--4): A review of the literature. \emph{Transport Reviews},
+\emph{37}(6), 767--781.
+\url{https://doi.org/10.1080/01441647.2017.1354942}
+
+\bibitem[\citeproctext]{ref-molloy_new_2024}
+Molloy, Q., Garrick, N., \& Atkinson-Palombo, C. (2024). A {New}
+{Approach} to {Understanding} the {Impact} of {Automobile} {Ownership}
+on {Transportation} {Equity}. \emph{Transportation Research Record},
+\emph{2678}(2), 366--376.
+\url{https://doi.org/10.1177/03611981231174444}
+
+\bibitem[\citeproctext]{ref-morris_family_1979}
+Morris, J. M., \& Wigan, M. R. (1979). A family expenditure perspective
+on transport planning: {Australian} evidence in context.
+\emph{Transportation Research Part A: General}, \emph{13}(4), 249--285.
+\url{https://doi.org/10.1016/0191-2607(79)90051-7}
 
 \bibitem[\citeproctext]{ref-nayga_sample_1998}
 Nayga, R. M. (1998). A sample selection model for prepared food
@@ -370,6 +602,48 @@ Paleti, R., Copperman, R. B., \& Bhat, C. R. (2011). An empirical
 analysis of children's after school out-of-home activity-location
 engagement patterns and time allocation. \emph{Transportation},
 \emph{38}(2), 273--303. \url{https://doi.org/10.1007/s11116-010-9300-2}
+
+\bibitem[\citeproctext]{ref-sabelhaus_is_2013}
+Sabelhaus, J., Johnson, D., Ash, S., Swanson, D., Garner, T., Greenlees,
+J., \& Henderson, S. (2013). \emph{Is the {Consumer} {Expenditure}
+{Survey} {Representative} by {Income}?} (No. w19589). National Bureau of
+Economic Research. \url{https://doi.org/10.3386/w19589}
+
+\bibitem[\citeproctext]{ref-sener_analysis_2007}
+Sener, I. N., \& Bhat, C. R. (2007). An analysis of the social context
+of children's weekend discretionary activity participation.
+\emph{Transportation}, \emph{34}(6), 697--721.
+\url{https://doi.org/10.1007/s11116-007-9125-9}
+
+\bibitem[\citeproctext]{ref-sener_analysis_2008}
+Sener, I. N., Copperman, R. B., Pendyala, R. M., \& Bhat, C. R. (2008).
+An analysis of children's leisure activity engagement: Examining the day
+of week, location, physical activity level, and fixity dimensions.
+\emph{Transportation}, \emph{35}(5), 673--696.
+\url{https://doi.org/10.1007/s11116-008-9173-9}
+
+\bibitem[\citeproctext]{ref-skinner_variable_1985}
+Skinner, J. (1985). Variable {Lifespan} and the {Intertemporal}
+{Elasticity} of {Consumption}. \emph{The Review of Economics and
+Statistics}, \emph{67}(4), 616--623.
+\url{https://doi.org/10.2307/1924806}
+
+\bibitem[\citeproctext]{ref-souche_measuring_2010}
+Souche, S. (2010). Measuring the structural determinants of urban travel
+demand. \emph{Transport Policy}, \emph{17}(3), 127--134.
+\url{https://doi.org/10.1016/j.tranpol.2009.12.003}
+
+\bibitem[\citeproctext]{ref-thakuriah_analysis_2005}
+Thakuriah, P. (Vonu)., \& Liao, Y. (2005). Analysis of {Variations} in
+{Vehicle} {Ownership} {Expenditures}. \emph{Transportation Research
+Record: Journal of the Transportation Research Board}, \emph{1926}(1),
+1--9. \url{https://doi.org/10.1177/0361198105192600101}
+
+\bibitem[\citeproctext]{ref-thakuriah_vonu_transportation_2006}
+Thakuriah (Vonu), P., \& Liao, Y. (2006). Transportation {Expenditures}
+and {Ability} to {Pay}: {Evidence} from {Consumer} {Expenditure}
+{Survey}. \emph{Transportation Research Record}, \emph{1985}(1),
+257--265. \url{https://doi.org/10.1177/0361198106198500128}
 
 \end{CSLReferences}
 
