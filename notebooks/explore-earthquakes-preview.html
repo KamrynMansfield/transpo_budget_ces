@@ -224,10 +224,10 @@
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.0     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
+✔ forcats   1.0.0     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -249,22 +249,20 @@ dttm (1): DateTime
 </div>
 </div></div>
 <p>Create spatial plot:</p>
-<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="cell-fig-spatial-plot" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|   against longitude."</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>la_palma <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Longitude, Latitude)) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Magnitude, <span class="at">size =</span> <span class="dv">40</span><span class="sc">-</span><span class="st">`</span><span class="at">Depth(km)</span><span class="st">`</span>)) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">2</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Here is a test plot</p>
+<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="cell-fig-cars" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cars <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> dist, <span class="at">y =</span> speed)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-spatial-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot of earthquake locations plotting latitude against longitude.">
+<div id="fig-cars" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A figure showing car information">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-spatial-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="explore-earthquakes_files/figure-html/fig-spatial-plot-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Locations of earthquakes on La Palma since 2017"><img src="explore-earthquakes_files/figure-html/fig-spatial-plot-1.png" class="img-fluid figure-img" alt="A scatterplot of earthquake locations plotting latitude against longitude." width="672"></a>
+<div aria-describedby="fig-cars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="explore-earthquakes_files/figure-html/fig-cars-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The test figure"><img src="explore-earthquakes_files/figure-html/fig-cars-1.png" class="img-fluid figure-img" alt="A figure showing car information" width="672"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spatial-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Locations of earthquakes on La Palma since 2017
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+The test figure
 </figcaption>
 </figure>
 </div>
