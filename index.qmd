@@ -1,33 +1,36 @@
 ---
-title: La Palma Earthquakes
+title: Unpacking Household Budgeting Strategies through a Transportation Lens
 author:
-  - name: Steve Purves
-    orcid: 0000-0002-0760-5497
+  - name: Kamryn Mansfield
+    orcid: 0009-0003-5466-0821
     corresponding: true
-    email: steve@curvenote.com
+    email: kmansfi4@vols.utk.edu
     roles:
-      - Investigation
-      - Project administration
-      - Software
-      - Visualization
+      - Writing
+      - Etc.
     affiliations:
-      - Curvenote
-  - name: Rowan Cockett
-    orcid: 0000-0002-7859-8394
+      - University of Tennessee
+  - name: Katie Asmussen
+    orcid: 0000-0002-5615-0708
     corresponding: false
-    roles: []
+    roles: 
+      - Writing
+      - Etc.
     affiliations:
-      - Curvenote
+      - University of Tenenessee
 keywords:
-  - La Palma
-  - Earthquakes
+  - Consumer Expenditure Survey
+  - Transportation Spending
+  - Family Spending
+  - Budget
 abstract: |
-  In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). ...
+  This is where we will put our abstract.
 plain-language-summary: |
-  Earthquake data for the island of La Palma from the September 2021 eruption is found ...
+  This is a plain language summary
 key-points:
-  - A web scraping script was developed to pull data from the Instituto Geogràphico Nacional into a machine-readable form for analysis
-  - Earthquake events on La Palma are consistent with the presence of both mantle and crustal reservoirs.
+  - Consumer Expenditur Survey data was used to categorize family spending
+  - Three latent classes were created
+  - Here are some more key points
 date: last-modified
 bibliography: references.bib
 citation:
@@ -96,11 +99,15 @@ where $\lambda$ is the rate of eruptions per year. Using @eq-poisson, the probab
 
 La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands (@fig-map). 
 
-{{< embed notebooks/explore-earthquakes.qmd#fig-spatial-plot >}}
+{{< embed notebooks/explore-earthquakes.qmd#fig-cars >}}
 
-@fig-spatial-plot shows the location of recent Earthquakes on La Palma.
+@fig-cars shows the distance and speed of cars on a graph. 
+
+As @paleti_empirical_2011 said, there is something awesome about this. [@osborne_updated_2021]
 
 ## Data & Methods {#sec-data-methods}
+
+One more citation [@nayga_sample_1998]
 
 ## Conclusion
 

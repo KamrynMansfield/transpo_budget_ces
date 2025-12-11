@@ -16,16 +16,15 @@ la_palma <- read_csv("la-palma.csv")
 
 Create spatial plot:
 
+Here is a test plot
+
 ```{r}
-#| label: fig-spatial-plot
-#| fig-cap: "Locations of earthquakes on La Palma since 2017"
-#| fig-alt: "A scatterplot of earthquake locations plotting latitude
-#|   against longitude."
-la_palma |> 
-  ggplot(aes(Longitude, Latitude)) +
-  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
-  scale_color_viridis_c(direction = -1) + 
-  scale_size(range = c(0.5, 2), guide = "none") +
-  theme_bw()
+#| label: fig-cars
+#| fig-cap: "The test figure"
+#| fig-alt: "A figure showing car information"
+
+cars |>
+  ggplot(aes(x = dist, y = speed)) +
+  geom_point()
 ```
 
