@@ -40,60 +40,54 @@ number-sections: true
 
 Households juggle how to allocate their budgets: whether to invest in a reliable car, pay for quality childcare, secure housing in a good school district, or set money aside for leisure. These everyday choices shape how families live and move, reflecting the trade-offs they make to balance competing priorities. Transportation often sits at the center of these decisions, not only because it can be a significant expense, but also because choosing to buy and maintain a car versus relying on public transit represents a long-term commitment and a broader lifestyle choice. Its relative weight compared to housing, childcare, and other spending varies widely across families. The relationship between household budgeting and mobility is shaped not only by causal direction but also by how families prioritize and weight different needs. On one hand, mobility resources such as car ownership can structure the household budget: households with no or only one vehicle may spend far less on transportation, freeing up income for other essential or discretionary categories. On the other hand, underlying family structures and preferences can drive budget allocation choices that, in turn, shape transportation behavior. Larger families may prioritize childcare or invest in higher-quality housing in areas with better schools, limiting what remains for transportation. Others may emphasize frugality across all categories or deliberately substitute toward lower-cost transit options. Understanding both the direction of influence and the weight assigned to different budget categories is critical for transportation planning and policy, as these dynamics reveal how families navigate competing priorities under varying demographic and mobility contexts.
 
-The purpose of this research is to explore how household budgets are structured around transportation decisions and how this impacts other spending categories. Using the Consumer Expenditure Survey (CEX), we will perform a Latent Class Analysis (LCA) to find groupings based on a household's transportation expenses. Theses groupings can help us find groups of spenders with similar patterns to help us predict transportation expenses based on the household's characteristics. 
+The purpose of this research is to explore how household budgets are structured around transportation decisions and how this impacts other spending categories. Using the Consumer Expenditure Survey (CEX), we will perform a Latent Class Analysis (LCA) to find groupings based on a household's transportation expenses. Theses groupings can help us find groups of spenders with similar patterns to help us predict transportation expenses based on the household's characteristics.
 
 ## Literature Review
 
-### Modeling decisions and behavior around family 
+Family Choices and Activity Patterns 
+Family Transportation Choices 
+Family Spending and Budgets 
+Family Transportation Budgets
 
-- Ones related to family behavior
+The literature that relates to our study can be 
 
-@sener_analysis_2007 - male children more likely to participate with their fathers than female children, African-American children less likely to  participate in health-enhancing active recreation pursuits
+### Family Choices and Activity Patterns
 
-@copperman_exploratory_2007 - The age of childrend has an effect on the types of activities they pursue
+There have been many studies done on the choices and activities of families [@sener_analysis_2007; @copperman_exploratory_2007; @sener_analysis_2008; @leung_environment-people_2019]. @paleti_empirical_2011 performed a study where....
 
-@sener_analysis_2008 - Children in households with  parents who are employed, higher income, or higher education were found to participate in  structured outdoor activities at higher rates. 
+Another study on family choices was done by @bernardo_empirical_2015. They...
 
-@paleti_empirical_2011 - The results show that a wide variety of demographic, attitudinal,  environmental, and others’ activity-travel pattern characteristics impact children’s after school  activity engagement patterns.
+@paleti_empirical_2011 - The results show that a wide variety of demographic, attitudinal, environmental, and others’ activity-travel pattern characteristics impact children’s after school activity engagement patterns.
 
-@bernardo_empirical_2015 - the presence  of a child in dual-earner households not only leads to a reduction in in-home non-work activity  participation (excluding child care activities) but also a substantially larger decrease in out-of-home non-work activity participation (excluding child care and shopping activities)
+@bernardo_empirical_2015 - the presence of a child in dual-earner households not only leads to a reduction in in-home non-work activity participation (excluding child care activities) but also a substantially larger decrease in out-of-home non-work activity participation (excluding child care and shopping activities)
 
-@leung_environment-people_2019 - 
-childrens activities can differ a lot based on neighborhood enfironment and family sociodemographic background. 
+### Family Transportation Choices
 
+Many studies exploring household choices have focused on their connection to and effects on transportation [@copperman_analysis_2007; @souche_measuring_2010; @lu_role_2022; @amirnazmiafshar_review_2022].
 
-- Ones related to transportation
+@mccarthy_factors_2017 talks about this...
 
-@copperman_analysis_2007 - The “number of children” variable suggests an overall  higher likelihood of participation in utilitarian active travel among households with many children  relative to households with few children
+@klein_subsidizing_2024 talks about this...
 
-@souche_measuring_2010 - urban density and cost of transport mode were statisticalliy significan in their model
+@bilgin_investigating_2025 talks about this...
 
-@mccarthy_factors_2017 - many factores influence decisions about mode choice when traveling with young children. 
-
-@lu_role_2022 - joint travel contributes least to modal shift from car to active transport when there is improved infrastructure of trains and things
-
-@amirnazmiafshar_review_2022 - There are lots of factors that might affect people's willingness to use car sharing
+@mccarthy_factors_2017 - many factores influence decisions about mode choice when traveling with young children.
 
 @klein_subsidizing_2024 - Having a car gave people more opportunities than before, and they usually had more time to spend with the family. At the beginning and end of the day.
 
-@bilgin_investigating_2025 - Suggests that households are less likely to qcquire a car in the presence of ridesourcing, but car disposal is mainly driven by household compositions and residential relocation factors. 
+@bilgin_investigating_2025 - Suggests that households are less likely to acquire a car in the presence of ridesourcing, but car disposal is mainly driven by household compositions and residential relocation factors.
 
+### Family Spending and Budgets
 
-- Ones related to Budgets and money 
+Another set of studies focuses on household budgets and household spending patterns [@skinner_variable_1985; @nayga_sample_1998; @fontes_effects_2006; @sabelhaus_is_2013].
 
-@hargunani_study_2024 - The data analysis reveals distinct spending, saving, and investment patterns among married couples, with a clear prioritization towards ensuring the well-being and future security of their families.”
-
-@skinner_variable_1985 - Changes in inflation will prompt changes in consumer expenditures
-
-@nayga_sample_1998 - Most of the variables analysed significantly affect prepared food expenditures. For example, results suggest that frozen meals expenditures are higher for households without children, for smaller households, and for households headed by a non-white individual
-
-@fontes_effects_2006 - Asian Americans allocate more of their budget to housing, African Americans allocate more of their budget to apparel, and Hispanics allocate more of their budget to both housing and apparel, but to a lesser extent than Asian Americans with respect to housing and African Americans with respect to apparel.
-
-@sabelhaus_is_2013 - the highest income thresholds are underrepresented in the survey
+@hargunani_study_2024 said this...
 
 @hargunani_study_2024 - The data analysis reveals distinct spending, saving, and investment patterns among married couples, with a clear prioritization towards ensuring the well-being and future security of their families.”
 
-- spending on kids
+-   spending on kids
+
+These four studies were focused on budget choices and spending related to children.
 
 @lino_expenditures_2017 - Many observations on the expenditures of children
 
@@ -103,8 +97,7 @@ childrens activities can differ a lot based on neighborhood enfironment and fami
 
 @duncan_estimating_2023 - The more income, the more spending on kids.
 
-
-- ones related to budgets and transportation 
+### Family Transportation Budgets
 
 @morris_family_1979 - transport takes about 17 percent of expenditures, at least part of the consumption expenditure by low income families is financed from savings, loans or other sources besides "income".
 
@@ -112,7 +105,7 @@ childrens activities can differ a lot based on neighborhood enfironment and fami
 
 @thakuriah_analysis_2005 - For vehicle-owning households, of every additional dollar that households spend, 18 cents is spent on vehicles after controlling for socioeconomic, demographic, life cycle, and other factors relating to households.
 
-@hong_leisure_2005 - Marrieds without children are more likely to spend on leisure travel than singles, whereas single parents and solitary survivors are less likely to spend on leisure travel than singles.  
+@hong_leisure_2005 - Marrieds without children are more likely to spend on leisure travel than singles, whereas single parents and solitary survivors are less likely to spend on leisure travel than singles.
 
 @thakuriah_vonu_transportation_2006 - Transportation expenditures made by households are better explained by permanent income levels of households than by annual incomes.
 
@@ -126,12 +119,11 @@ childrens activities can differ a lot based on neighborhood enfironment and fami
 
 @mattson_relationships_2019 - denser areas are more likely to use transit to commute. People in single-family homes tend to spend more money on transportation
 
-@mattson_relationships_2020 - single family homes spend more on transportation, higher income is correlated with higher tranportation costs. 
+@mattson_relationships_2020 - single family homes spend more on transportation, higher income is correlated with higher tranportation costs.
 
-@molloy_new_2024 - "Captive Riders" have less spending allocated to transportation than captive drivers. 
+@molloy_new_2024 - "Captive Riders" have less spending allocated to transportation than captive drivers.
 
 @bureau_of_transportation_statistics_transportation_2024 - Lots of summaries
-
 
 ## References
 
