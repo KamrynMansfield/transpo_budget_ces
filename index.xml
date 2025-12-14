@@ -155,24 +155,49 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     <xref alt="Sener et al. 2008" rid="ref-sener_analysis_2008" ref-type="bibr">Sener
     et al. 2008</xref>;
     <xref alt="Leung et al. 2019" rid="ref-leung_environment-people_2019" ref-type="bibr">Leung
-    et al. 2019</xref>). Paleti, Copperman, and Bhat
-    (<xref alt="2011" rid="ref-paleti_empirical_2011" ref-type="bibr">2011</xref>)
-    performed a study where….</p>
-    <p>Another study on family choices was done by Bernardo et al.
-    (<xref alt="2015" rid="ref-bernardo_empirical_2015" ref-type="bibr">2015</xref>).
-    They…</p>
+    et al. 2019</xref>).</p>
     <p>Paleti, Copperman, and Bhat
     (<xref alt="2011" rid="ref-paleti_empirical_2011" ref-type="bibr">2011</xref>)
-    - The results show that a wide variety of demographic, attitudinal,
-    environmental, and others’ activity-travel pattern characteristics
-    impact children’s after school activity engagement patterns.</p>
-    <p>Bernardo et al.
-    (<xref alt="2015" rid="ref-bernardo_empirical_2015" ref-type="bibr">2015</xref>)
-    - the presence of a child in dual-earner households not only leads
-    to a reduction in in-home non-work activity participation (excluding
-    child care activities) but also a substantially larger decrease in
-    out-of-home non-work activity participation (excluding child care
-    and shopping activities)</p>
+    performed a study where they wanted to characterize the activity
+    patterns of children after school. Their data were gathered from the
+    Child Development Supplement to the Panel Study of Income Dynamics
+    which has household demographics and time-use diaries for children.
+    They looked at travel patterns using combinations of three
+    activity-travel scenarios: staying at school, going home from
+    school, and going somewhere else after school. They further
+    identified specific after-school activities (e.g. Organized
+    activities at school, recreation at the home of someone else, meals
+    at restaurants, etc.) to use in a multiple discrete-continuous
+    extreme value (MDCEV) model. The MDCEV is a type of discrete choice
+    model that works when multiple options can be chosen, and was used
+    to find predictors of children’s participation in the different
+    after school activities. In their analysis, they found that 57.7% of
+    children in the survey participated in at least one out-of-home
+    activity after school. They also found that children’s activities
+    were connected to household income, family dynamics, environment,
+    and other things. For example, children in households with higher
+    income were more likely to participate in activities after school.
+    Children with no siblings along with children having a working
+    primary caregiver were more likely to stay at school or go somewhere
+    besides home directly after school. Children living close to a large
+    city were less likely to go somewhere after school, go home, and
+    then go back out. The findings of this study show the variety of
+    factors that might affect a family’s activity, and therefore
+    transportation, patterns.</p>
+    <p>Another study on family choices was done by Bernardo et al.
+    (<xref alt="2015" rid="ref-bernardo_empirical_2015" ref-type="bibr">2015</xref>).
+    They used the American Time Use Survey and a Multiple Discrete
+    Continuous Nested Extreme Value (MDCNEV) model to examine the
+    activities of duel-earner
+    households<xref ref-type="fn" rid="fn1">1</xref>. The variables they
+    used relate to household demographics, respondent demographics,
+    couple characteristics, and day of the week. Findings indicated that
+    women are more likely to participate in out-of-home maintenance,
+    shopping, and social activities than men. They also found that
+    respondents with higher education and with children are more likely
+    to work from home. One key finding of this study is that couples
+    with children are much less likely to participate in out-of-home,
+    non-work activities.</p>
   </sec>
   <sec id="family-transportation-choices">
     <title>2.2 Family Transportation Choices</title>
@@ -188,10 +213,27 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     and Diana 2022</xref>).</p>
     <p>McCarthy et al.
     (<xref alt="2017" rid="ref-mccarthy_factors_2017" ref-type="bibr">2017</xref>)
-    talks about this…</p>
-    <p>Klein
-    (<xref alt="2024" rid="ref-klein_subsidizing_2024" ref-type="bibr">2024</xref>)
-    talks about this…</p>
+    is a literature review with some good findings, but I don’t know if
+    I should site the literature review or if I should find individual
+    papers from the review to talk about.</p>
+    <p>A unique study to understand the effects of transportation study
+    was done by Nicholas Klein
+    (<xref alt="2024" rid="ref-klein_subsidizing_2024" ref-type="bibr">2024</xref>).
+    In order to understand how access to a car can effect a family in
+    the United States, he interviewed 30 people in Maryland and Virginia
+    who received a subsidized car. To main findings of this study relate
+    to travel behavior changes and access to opportunities. The people
+    interviewed generally changed their travel behavior in similar ways
+    after receiving a car. Before receiving the car, they would rely on
+    public transit and others for transportation, but after receiving a
+    car, they made many trips in their own cars, including some trips
+    that they had to forgo before having a car. Another general
+    conclusion Klein makes is that people had more access to
+    opportunities after receiving a car. They had easier access to more
+    potential jobs, but some also mentioned the ability to get more
+    hours at the their current jobs. With less reliance on public
+    transit, many respondents spend more time with their families at the
+    beginning and end of the day.</p>
     <p>Bilgin et al.
     (<xref alt="2025" rid="ref-bilgin_investigating_2025" ref-type="bibr">2025</xref>)
     talks about this…</p>
@@ -199,11 +241,6 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     (<xref alt="2017" rid="ref-mccarthy_factors_2017" ref-type="bibr">2017</xref>)
     - many factores influence decisions about mode choice when traveling
     with young children.</p>
-    <p>Klein
-    (<xref alt="2024" rid="ref-klein_subsidizing_2024" ref-type="bibr">2024</xref>)
-    - Having a car gave people more opportunities than before, and they
-    usually had more time to spend with the family. At the beginning and
-    end of the day.</p>
     <p>Bilgin et al.
     (<xref alt="2025" rid="ref-bilgin_investigating_2025" ref-type="bibr">2025</xref>)
     - Suggests that households are less likely to acquire a car in the
@@ -257,54 +294,42 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     (<xref alt="2023" rid="ref-duncan_estimating_2023" ref-type="bibr">2023</xref>)
     - The more income, the more spending on kids.</p>
   </sec>
-  <sec id="family-transportation-budgets">
-    <title>2.4 Family Transportation Budgets</title>
-    <p>Morris and Wigan
-    (<xref alt="1979" rid="ref-morris_family_1979" ref-type="bibr">1979</xref>)
-    - transport takes about 17 percent of expenditures, at least part of
-    the consumption expenditure by low income families is financed from
-    savings, loans or other sources besides “income”.</p>
-    <p>Blumenberg
-    (<xref alt="2003" rid="ref-blumenberg_transportation_2003" ref-type="bibr">2003</xref>)
-    - Cost comparisons fall short of finding if transportation costs are
-    a barrier for economic opportunity among the poor</p>
+  <sec id="family-transportation-expenses-and-budgets">
+    <title>2.4 Family Transportation Expenses and Budgets</title>
+    <p>There have been many studies on family budgets and transportation
+    expenses
+    (<xref alt="Morris and Wigan 1979" rid="ref-morris_family_1979" ref-type="bibr">Morris
+    and Wigan 1979</xref>;
+    <xref alt="Blumenberg 2003" rid="ref-blumenberg_transportation_2003" ref-type="bibr">Blumenberg
+    2003</xref>;
+    <xref alt="Hong et al. 2005" rid="ref-hong_leisure_2005" ref-type="bibr">Hong
+    et al. 2005</xref>;
+    <xref alt="Thakuriah (Vonu) and Liao 2006" rid="ref-thakuriah_vonu_transportation_2006" ref-type="bibr">Thakuriah
+    (Vonu) and Liao 2006</xref>;
+    <xref alt="Choo, Lee, and Mokhtarian 2007" rid="ref-choo_transportation_2007" ref-type="bibr">Choo,
+    Lee, and Mokhtarian 2007</xref>;
+    <xref alt="Haas et al. 2008" rid="ref-haas_estimating_2008" ref-type="bibr">Haas
+    et al. 2008</xref>;
+    <xref alt="Ferdous et al. 2010" rid="ref-ferdous_comprehensive_2010" ref-type="bibr">Ferdous
+    et al. 2010</xref>).</p>
     <p>Thakuriah and Liao
     (<xref alt="2005" rid="ref-thakuriah_analysis_2005" ref-type="bibr">2005</xref>)
     - For vehicle-owning households, of every additional dollar that
     households spend, 18 cents is spent on vehicles after controlling
     for socioeconomic, demographic, life cycle, and other factors
     relating to households.</p>
-    <p>Hong et al.
-    (<xref alt="2005" rid="ref-hong_leisure_2005" ref-type="bibr">2005</xref>)
-    - Marrieds without children are more likely to spend on leisure
-    travel than singles, whereas single parents and solitary survivors
-    are less likely to spend on leisure travel than singles.</p>
-    <p>Thakuriah (Vonu) and Liao
-    (<xref alt="2006" rid="ref-thakuriah_vonu_transportation_2006" ref-type="bibr">2006</xref>)
-    - Transportation expenditures made by households are better
-    explained by permanent income levels of households than by annual
-    incomes.</p>
-    <p>Choo, Lee, and Mokhtarian
-    (<xref alt="2007" rid="ref-choo_transportation_2007" ref-type="bibr">2007</xref>)
-    - New tech doesn’t substitue Personal Vehicle travel probably</p>
-    <p>Haas et al.
-    (<xref alt="2008" rid="ref-haas_estimating_2008" ref-type="bibr">2008</xref>)
-    - Their model can help in travel demand modeling</p>
-    <p>Ferdous et al.
-    (<xref alt="2010" rid="ref-ferdous_comprehensive_2010" ref-type="bibr">2010</xref>)
-    - Adjustments are made with increased fuel prices</p>
     <p>Deka
     (<xref alt="2015" rid="ref-deka_relationship_2015" ref-type="bibr">2015</xref>)
     - More housing costs = more transportation costs, people the take
     transit spend less on transportation</p>
-    <p>Mattson and Peterson
-    (<xref alt="2019" rid="ref-mattson_relationships_2019" ref-type="bibr">2019</xref>)
-    - denser areas are more likely to use transit to commute. People in
-    single-family homes tend to spend more money on transportation</p>
     <p>Mattson
     (<xref alt="2020" rid="ref-mattson_relationships_2020" ref-type="bibr">2020</xref>)
+    Mattson and Peterson
+    (<xref alt="2019" rid="ref-mattson_relationships_2019" ref-type="bibr">2019</xref>)
     - single family homes spend more on transportation, higher income is
-    correlated with higher tranportation costs.</p>
+    correlated with higher transportation costs. - denser areas are more
+    likely to use transit to commute. People in single-family homes tend
+    to spend more money on transportation</p>
     <p>Molloy, Garrick, and Atkinson-Palombo
     (<xref alt="2024" rid="ref-molloy_new_2024" ref-type="bibr">2024</xref>)
     - “Captive Riders” have less spending allocated to transportation
@@ -937,6 +962,12 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     </element-citation>
   </ref>
 </ref-list>
+<fn-group>
+  <fn id="fn1">
+    <label>1</label><p>This is just me making sure I understand how to
+    put a footnote here.</p>
+  </fn>
+</fn-group>
 </back>
 
 <sub-article article-type="notebook" id="nb-4-nb-1">
