@@ -44,13 +44,11 @@ The purpose of this research is to explore how household budgets are structured 
 
 ## Literature Review
 
-Family Choices and Activity Patterns Family Transportation Choices Family Spending and Budgets Family Transportation Budgets
-
-The literature that relates to our study can be
+The literature relating to this study has be classified into four groups: (1) Family Choices and Activity Patterns, (2) Family Transportation Choices, (3) Family Spending and Budgets, and (4) Family Transportation Budgets. The following sections describe the relevant findings from literature in each of these groups.
 
 ### Family Choices and Activity Patterns
 
-There have been many studies done on the choices and activities of families [@sener_analysis_2007; @copperman_exploratory_2007; @sener_analysis_2008; @leung_environment-people_2019].
+There have been many studies done on the choices and activities of families [see @sener_analysis_2007; @copperman_exploratory_2007; @sener_analysis_2008; @leung_environment-people_2019]. These studies often focus on the activities choices of households and children.
 
 @paleti_empirical_2011 performed a study where they wanted to characterize the activity patterns of children after school. Their data were gathered from the Child Development Supplement to the Panel Study of Income Dynamics which has household demographics and time-use diaries for children. They looked at travel patterns using combinations of three activity-travel scenarios: staying at school, going home from school, and going somewhere else after school. They further identified specific after-school activities (e.g. Organized activities at school, recreation at the home of someone else, meals at restaurants, etc.) to use in a multiple discrete-continuous extreme value (MDCEV) model. The MDCEV is a type of discrete choice model that works when multiple options can be chosen, and was used to find predictors of children's participation in the different after school activities. In their analysis, they found that 57.7% of children in the survey participated in at least one out-of-home activity after school. They also found that children's activities were connected to household income, family dynamics, environment, and other things. For example, children in households with higher income were more likely to participate in activities after school. Children with no siblings along with children having a working primary caregiver were more likely to stay at school or go somewhere besides home directly after school. Children living close to a large city were less likely to go somewhere after school, go home, and then go back out. The findings of this study show the variety of factors that might affect a family's activity, and therefore transportation, patterns.
 
@@ -60,15 +58,13 @@ Another study on family choices was done by @bernardo_empirical_2015. They used 
 
 ### Family Transportation Choices
 
-Many studies exploring household choices have focused on their connection to transportation and mobility [@copperman_analysis_2007; @souche_measuring_2010; @lu_role_2022; @amirnazmiafshar_review_2022].
+Among the studies on family choices is a group of studies that focus on family transportation choices [@copperman_analysis_2007; @souche_measuring_2010; @lu_role_2022; @amirnazmiafshar_review_2022]. These studies look at the connection between family mobility and family decisions.
 
 @mccarthy_factors_2017 is a literature review with some good findings, but I don't know if I should site the literature review or if I should find individual papers from the review to talk about.
 
 A unique study to understand the effects car ownership has on household decisions was done by Nicholas @klein_subsidizing_2024. In order to understand how access to a car can effect a family in the United States, he interviewed 30 people in Maryland and Virginia who received a subsidized car. Two main findings of this study relate to travel behavior changes and access to opportunities. The people interviewed generally changed their travel behavior in similar ways after receiving a car. Before receiving the car, they would rely on public transit and others for transportation, but after receiving a car, they made many trips in their own cars, including some trips that they had to forgo before having a car. Another general conclusion Klein makes is that people had more access to opportunities after receiving a car. They had easier access to more potential jobs, but some also mentioned the ability to get more hours at the their current jobs. With less reliance on public transit, many respondents spent more time with their families at the beginning and end of the day.
 
 Another study interested in car ownership was done by \@bilgin_investigating_2025. They analyzed car ownership across multiple years using the United Kingdom Household Longitudinal Study dataset to see if ridesourcing availability affects car ownership. They used two fixed effects logit models: one to model the effect of ridesourcing on the decision to increase the number of cars in the household and the other to model the effect of ridesourcing on the decision to decrease the number of cars in the household. Their results suggested that households with more than one car are more likely to get rid of a car and less likely to add a car compared to households with one car. Even with this tendency, their models did not show a strong connection between the presence of ride sourcing and changes in car ownership. They concluded that changes in household composition have a stronger impact on the change in number of cars of a household.
-
-Theses studies about household transportation decisions teach us these things...
 
 ### Family Spending and Budgets
 
