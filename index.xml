@@ -141,21 +141,24 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 </sec>
 <sec id="literature-review">
   <title>2 Literature Review</title>
-  <p>Family Choices and Activity Patterns Family Transportation Choices
-  Family Spending and Budgets Family Transportation Budgets</p>
-  <p>The literature that relates to our study can be</p>
+  <p>The literature relating to this study has be classified into four
+  groups: (1) Family Choices and Activity Patterns, (2) Family
+  Transportation Choices, (3) Family Spending and Budgets, and (4)
+  Family Transportation Budgets. The following sections describe the
+  relevant findings from literature in each of these groups.</p>
   <sec id="family-choices-and-activity-patterns">
     <title>2.1 Family Choices and Activity Patterns</title>
     <p>There have been many studies done on the choices and activities
-    of families
-    (<xref alt="Sener and Bhat 2007" rid="ref-sener_analysis_2007" ref-type="bibr">Sener
+    of families (see
+    <xref alt="Sener and Bhat 2007" rid="ref-sener_analysis_2007" ref-type="bibr">Sener
     and Bhat 2007</xref>;
     <xref alt="Rachel B. Copperman and Bhat 2007b" rid="ref-copperman_exploratory_2007" ref-type="bibr">Rachel
     B. Copperman and Bhat 2007b</xref>;
     <xref alt="Sener et al. 2008" rid="ref-sener_analysis_2008" ref-type="bibr">Sener
     et al. 2008</xref>;
     <xref alt="Leung et al. 2019" rid="ref-leung_environment-people_2019" ref-type="bibr">Leung
-    et al. 2019</xref>).</p>
+    et al. 2019</xref>). These studies often focus on the activities
+    choices of households and children.</p>
     <p>Paleti, Copperman, and Bhat
     (<xref alt="2011" rid="ref-paleti_empirical_2011" ref-type="bibr">2011</xref>)
     performed a study where they wanted to characterize the activity
@@ -201,8 +204,8 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
   </sec>
   <sec id="family-transportation-choices">
     <title>2.2 Family Transportation Choices</title>
-    <p>Many studies exploring household choices have focused on their
-    connection to and effects on transportation
+    <p>Among the studies on family choices is a group of studies that
+    focus on family transportation choices
     (<xref alt="Rachel B. Copperman and Bhat 2007a" rid="ref-copperman_analysis_2007" ref-type="bibr">Rachel
     B. Copperman and Bhat 2007a</xref>;
     <xref alt="Souche 2010" rid="ref-souche_measuring_2010" ref-type="bibr">Souche
@@ -210,42 +213,46 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     <xref alt="Lu et al. 2022" rid="ref-lu_role_2022" ref-type="bibr">Lu
     et al. 2022</xref>;
     <xref alt="Amirnazmiafshar and Diana 2022" rid="ref-amirnazmiafshar_review_2022" ref-type="bibr">Amirnazmiafshar
-    and Diana 2022</xref>).</p>
+    and Diana 2022</xref>). These studies look at the connection between
+    family mobility and family decisions.</p>
     <p>McCarthy et al.
     (<xref alt="2017" rid="ref-mccarthy_factors_2017" ref-type="bibr">2017</xref>)
     is a literature review with some good findings, but I don’t know if
     I should site the literature review or if I should find individual
     papers from the review to talk about.</p>
-    <p>A unique study to understand the effects of transportation study
-    was done by Nicholas Klein
+    <p>A unique study to understand the effects car ownership has on
+    household decisions was done by Nicholas Klein
     (<xref alt="2024" rid="ref-klein_subsidizing_2024" ref-type="bibr">2024</xref>).
     In order to understand how access to a car can effect a family in
     the United States, he interviewed 30 people in Maryland and Virginia
-    who received a subsidized car. To main findings of this study relate
-    to travel behavior changes and access to opportunities. The people
-    interviewed generally changed their travel behavior in similar ways
-    after receiving a car. Before receiving the car, they would rely on
-    public transit and others for transportation, but after receiving a
-    car, they made many trips in their own cars, including some trips
-    that they had to forgo before having a car. Another general
-    conclusion Klein makes is that people had more access to
-    opportunities after receiving a car. They had easier access to more
-    potential jobs, but some also mentioned the ability to get more
-    hours at the their current jobs. With less reliance on public
-    transit, many respondents spend more time with their families at the
-    beginning and end of the day.</p>
-    <p>Bilgin et al.
-    (<xref alt="2025" rid="ref-bilgin_investigating_2025" ref-type="bibr">2025</xref>)
-    talks about this…</p>
-    <p>McCarthy et al.
-    (<xref alt="2017" rid="ref-mccarthy_factors_2017" ref-type="bibr">2017</xref>)
-    - many factores influence decisions about mode choice when traveling
-    with young children.</p>
-    <p>Bilgin et al.
-    (<xref alt="2025" rid="ref-bilgin_investigating_2025" ref-type="bibr">2025</xref>)
-    - Suggests that households are less likely to acquire a car in the
-    presence of ridesourcing, but car disposal is mainly driven by
-    household compositions and residential relocation factors.</p>
+    who received a subsidized car. Two main findings of this study
+    relate to travel behavior changes and access to opportunities. The
+    people interviewed generally changed their travel behavior in
+    similar ways after receiving a car. Before receiving the car, they
+    would rely on public transit and others for transportation, but
+    after receiving a car, they made many trips in their own cars,
+    including some trips that they had to forgo before having a car.
+    Another general conclusion Klein makes is that people had more
+    access to opportunities after receiving a car. They had easier
+    access to more potential jobs, but some also mentioned the ability
+    to get more hours at the their current jobs. With less reliance on
+    public transit, many respondents spent more time with their families
+    at the beginning and end of the day.</p>
+    <p>Another study interested in car ownership was done by
+    @bilgin_investigating_2025. They analyzed car ownership across
+    multiple years using the United Kingdom Household Longitudinal Study
+    dataset to see if ridesourcing availability affects car ownership.
+    They used two fixed effects logit models: one to model the effect of
+    ridesourcing on the decision to increase the number of cars in the
+    household and the other to model the effect of ridesourcing on the
+    decision to decrease the number of cars in the household. Their
+    results suggested that households with more than one car are more
+    likely to get rid of a car and less likely to add a car compared to
+    households with one car. Even with this tendency, their models did
+    not show a strong connection between the presence of ride sourcing
+    and changes in car ownership. They concluded that changes in
+    household composition have a stronger impact on the change in number
+    of cars of a household.</p>
   </sec>
   <sec id="family-spending-and-budgets">
     <title>2.3 Family Spending and Budgets</title>
@@ -258,41 +265,47 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     <xref alt="Fontes and Fan 2006" rid="ref-fontes_effects_2006" ref-type="bibr">Fontes
     and Fan 2006</xref>;
     <xref alt="Sabelhaus et al. 2013" rid="ref-sabelhaus_is_2013" ref-type="bibr">Sabelhaus
-    et al. 2013</xref>).</p>
-    <p>Hargunani, Vernekar, and Vernekar
+    et al. 2013</xref>). Many of the studies reviewed had an emphasis on
+    the budgets related to raising children. Hargunani, Vernekar, and
+    Vernekar
     (<xref alt="2024" rid="ref-hargunani_study_2024" ref-type="bibr">2024</xref>)
-    said this…</p>
-    <p>Hargunani, Vernekar, and Vernekar
-    (<xref alt="2024" rid="ref-hargunani_study_2024" ref-type="bibr">2024</xref>)
-    - The data analysis reveals distinct spending, saving, and
-    investment patterns among married couples, with a clear
-    prioritization towards ensuring the well-being and future security
-    of their families.”</p>
-    <list list-type="bullet">
-      <list-item>
-        <p>spending on kids</p>
-      </list-item>
-    </list>
-    <p>These four studies were focused on budget choices and spending
-    related to children.</p>
-    <p>Lino et al.
-    (<xref alt="2017" rid="ref-lino_expenditures_2017" ref-type="bibr">2017</xref>)
-    - Many observations on the expenditures of children</p>
-    <p>Osborne, Wu, and Benson
+    analyzed family spending patterns in Mumbai and concluded that many
+    families focus their expenditures on the current and future
+    wellbeing of their children. This is evidenced by money spent on
+    basic necessities and setting aside money for the future.</p>
+    <p>The United States Department of Agriculture (USDA) has produced
+    reports that use the CEX to specifically analyze the costs of
+    raising a child in the United States. The most recent report
+    (<xref alt="Lino et al. 2017" rid="ref-lino_expenditures_2017" ref-type="bibr">Lino
+    et al. 2017</xref>) found the top expenditure for married-couple
+    families with two children to be housing. The rankings of other
+    expenditures were different depending on the age of children, but
+    food, child care/education, and transportation were always the next
+    highest expenditures on children. Similar to the USDA report on the
+    cost of raising children, Osborne, Wu, and Benson
     (<xref alt="2021" rid="ref-osborne_updated_2021" ref-type="bibr">2021</xref>)
-    - Regardless of the method of calculation, we find that it is nearly
-    impossible for two minimum wage earners to meet the basic costs of
-    raising children in Texas, especially when child care is
-    included</p>
-    <p>Hastings
-    (<xref alt="2022" rid="ref-hastings_parental_2022" ref-type="bibr">2022</xref>)
-    - Both sociodemographic and economic factors play a substantial role
-    in these differences, and the racial and ethnic gaps in parental
-    investments of money are nearly eliminated when both are accounted
-    for</p>
-    <p>Duncan, Frank, and Guèvremont
+    modeled the cost of raising children in Texas by following similar
+    methodologies but using Texas-specific data for housing and
+    childcare costs. They looked not only at married-couple families,
+    but also at single-parent households and duel households where
+    children spend time with both parents in different locations. They
+    found differing expenditures on children among the different family
+    make-ups and among different incomes.</p>
+    <p>Other studies with similar analyses have had similar findings.
+    @hastings_parental_2022 used the CEX to compare expenditures between
+    different racial and ethnic groups. When controlling for both family
+    characteristics and income, he found that there was not a
+    significant difference in total expenditures on children among
+    racial and ethnic groups. This suggests that income and family
+    characteristics play a larger role in family budgeting than race and
+    ethnicity. Duncan, Frank, and Guèvremont
     (<xref alt="2023" rid="ref-duncan_estimating_2023" ref-type="bibr">2023</xref>)
-    - The more income, the more spending on kids.</p>
+    performed a study in Canada using the country’s Survey of Household
+    Spending (SHS) to analyze family expenditures. They found similar
+    results as previously mentioned studies. Different income groups had
+    different amounts allocated to children, but housing was always the
+    highest expenditure with food, child care/education, and
+    transportation being the next highest expenditures.</p>
   </sec>
   <sec id="family-transportation-expenses-and-budgets">
     <title>2.4 Family Transportation Expenses and Budgets</title>
@@ -312,12 +325,21 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     et al. 2008</xref>;
     <xref alt="Ferdous et al. 2010" rid="ref-ferdous_comprehensive_2010" ref-type="bibr">Ferdous
     et al. 2010</xref>).</p>
-    <p>Thakuriah and Liao
-    (<xref alt="2005" rid="ref-thakuriah_analysis_2005" ref-type="bibr">2005</xref>)
-    - For vehicle-owning households, of every additional dollar that
-    households spend, 18 cents is spent on vehicles after controlling
-    for socioeconomic, demographic, life cycle, and other factors
-    relating to households.</p>
+    <p>One study focused on transportation budgets was done by Thakuriah
+    and Liao
+    (<xref alt="2005" rid="ref-thakuriah_analysis_2005" ref-type="bibr">2005</xref>).
+    Using CEX data, they made multiple models to analyze the
+    expenditures related to vehicle ownership of households in the
+    United States. In each model, they used a variety of variables
+    (income, household demographics, spatial factors, economic factors,
+    and family condition factors) to predict the amount of money a
+    household spends on vehicles. Their model results indicate 18
+    percent of additional household expenditures is a vehicle expense.
+    They results also indicate many factors influence household vehicle
+    expenses. The models showed that homeowners spend more on vehicle
+    expenses. They also showed that vehicle expenses are connected with
+    the sex of the head of household and the number of people in the
+    household.</p>
     <p>Deka
     (<xref alt="2015" rid="ref-deka_relationship_2015" ref-type="bibr">2015</xref>)
     - More housing costs = more transportation costs, people the take
@@ -420,23 +442,6 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
       <volume>20</volume>
       <issue>1</issue>
       <issn>2347-4777</issn>
-    </element-citation>
-  </ref>
-  <ref id="ref-hastings_parental_2022">
-    <element-citation publication-type="article-journal">
-      <person-group person-group-type="author">
-        <name><surname>Hastings</surname><given-names>Orestes P.</given-names></name>
-      </person-group>
-      <article-title>Parental Investments of Money for White, Black, and Hispanic Children in the United States</article-title>
-      <source>Socius: Sociological Research for a Dynamic World</source>
-      <year iso-8601-date="2022-01">2022</year><month>01</month>
-      <date-in-citation content-type="access-date"><year iso-8601-date="2025-08-28">2025</year><month>08</month><day>28</day></date-in-citation>
-      <volume>8</volume>
-      <issn>2378-0231, 2378-0231</issn>
-      <uri>https://journals.sagepub.com/doi/10.1177/23780231221103054</uri>
-      <pub-id pub-id-type="doi">10.1177/23780231221103054</pub-id>
-      <fpage>23780231221103054</fpage>
-      <lpage></lpage>
     </element-citation>
   </ref>
   <ref id="ref-leung_environment-people_2019">
@@ -664,26 +669,6 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
       <pub-id pub-id-type="doi">10.1177/0361198105192600101</pub-id>
       <fpage>1</fpage>
       <lpage>9</lpage>
-    </element-citation>
-  </ref>
-  <ref id="ref-bilgin_investigating_2025">
-    <element-citation publication-type="article-journal">
-      <person-group person-group-type="author">
-        <name><surname>Bilgin</surname><given-names>Pinar</given-names></name>
-        <name><surname>Mattioli</surname><given-names>Giulio</given-names></name>
-        <name><surname>Morgan</surname><given-names>Malcolm</given-names></name>
-        <name><surname>Wadud</surname><given-names>Zia</given-names></name>
-      </person-group>
-      <article-title>Investigating the effects of ridesourcing on the dynamics of household car ownership</article-title>
-      <source>Transportation Research Part D: Transport and Environment</source>
-      <year iso-8601-date="2025-09">2025</year><month>09</month>
-      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-06">2025</year><month>09</month><day>06</day></date-in-citation>
-      <volume>146</volume>
-      <issn>1361-9209</issn>
-      <uri>https://www.sciencedirect.com/science/article/pii/S1361920925002962</uri>
-      <pub-id pub-id-type="doi">10.1016/j.trd.2025.104886</pub-id>
-      <fpage>104886</fpage>
-      <lpage></lpage>
     </element-citation>
   </ref>
   <ref id="ref-mccarthy_factors_2017">
