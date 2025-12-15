@@ -60,37 +60,23 @@ Another study on family choices was done by @bernardo_empirical_2015. They used 
 
 ### Family Transportation Choices
 
-Many studies exploring household choices have focused on their connection to and effects on transportation [@copperman_analysis_2007; @souche_measuring_2010; @lu_role_2022; @amirnazmiafshar_review_2022].
+Many studies exploring household choices have focused on their connection to transportation and mobility [@copperman_analysis_2007; @souche_measuring_2010; @lu_role_2022; @amirnazmiafshar_review_2022].
 
 @mccarthy_factors_2017 is a literature review with some good findings, but I don't know if I should site the literature review or if I should find individual papers from the review to talk about.
 
-A unique study to understand the effects of transportation study was done by Nicholas @klein_subsidizing_2024. In order to understand how access to a car can effect a family in the United States, he interviewed 30 people in Maryland and Virginia who received a subsidized car. To main findings of this study relate to travel behavior changes and access to opportunities. The people interviewed generally changed their travel behavior in similar ways after receiving a car. Before receiving the car, they would rely on public transit and others for transportation, but after receiving a car, they made many trips in their own cars, including some trips that they had to forgo before having a car. Another general conclusion Klein makes is that people had more access to opportunities after receiving a car. They had easier access to more potential jobs, but some also mentioned the ability to get more hours at the their current jobs. With less reliance on public transit, many respondents spend more time with their families at the beginning and end of the day.
+A unique study to understand the effects car ownership has on household decisions was done by Nicholas @klein_subsidizing_2024. In order to understand how access to a car can effect a family in the United States, he interviewed 30 people in Maryland and Virginia who received a subsidized car. Two main findings of this study relate to travel behavior changes and access to opportunities. The people interviewed generally changed their travel behavior in similar ways after receiving a car. Before receiving the car, they would rely on public transit and others for transportation, but after receiving a car, they made many trips in their own cars, including some trips that they had to forgo before having a car. Another general conclusion Klein makes is that people had more access to opportunities after receiving a car. They had easier access to more potential jobs, but some also mentioned the ability to get more hours at the their current jobs. With less reliance on public transit, many respondents spent more time with their families at the beginning and end of the day.
 
-@bilgin_investigating_2025 talks about this...
+Another study interested in car ownership was done by \@bilgin_investigating_2025. They analyzed car ownership across multiple years using the United Kingdom Household Longitudinal Study dataset to see if ridesourcing availability affects car ownership. They used two fixed effects logit models: one to model the effect of ridesourcing on the decision to increase the number of cars in the household and the other to model the effect of ridesourcing on the decision to decrease the number of cars in the household. Their results suggested that households with more than one car are more likely to get rid of a car and less likely to add a car compared to households with one car. Even with this tendency, their models did not show a strong connection between the presence of ride sourcing and changes in car ownership. They concluded that changes in household composition have a stronger impact on the change in number of cars of a household.
 
-@mccarthy_factors_2017 - many factores influence decisions about mode choice when traveling with young children.
-
-@bilgin_investigating_2025 - Suggests that households are less likely to acquire a car in the presence of ridesourcing, but car disposal is mainly driven by household compositions and residential relocation factors.
+Theses studies about household transportation decisions teach us these things...
 
 ### Family Spending and Budgets
 
-Another set of studies focuses on household budgets and household spending patterns [@skinner_variable_1985; @nayga_sample_1998; @fontes_effects_2006; @sabelhaus_is_2013].
+Another set of studies focuses on household budgets and household spending patterns [@skinner_variable_1985; @nayga_sample_1998; @fontes_effects_2006; @sabelhaus_is_2013]. Many of the studies reviewed had an emphasis on the budgets related to raising children. @hargunani_study_2024 analyzed family spending patterns in Mumbai and concluded that many families focus their expenditures on the current and future wellbeing of their children. This is evidenced by money spent on basic necessities and setting aside money for the future.
 
-@hargunani_study_2024 said this...
+The United States Department of Agriculture (USDA) has produced reports that use the CEX to specifically analyze the costs of raising a child in the United States. The most recent report [@lino_expenditures_2017] found the top expenditure for married-couple families with two children to be housing. The rankings of other expenditures were different depending on the age of children, but food, child care/education, and transportation were always the next highest expenditures on children. Similar to the USDA report on the cost of raising children, @osborne_updated_2021 modeled the cost of raising children in Texas by following similar methodologies but using Texas-specific data for housing and childcare costs. They looked not only at married-couple families, but also at single-parent households and duel households where children spend time with both parents in different locations. They found differing expenditures on children among the different family make-ups and among different incomes.
 
-@hargunani_study_2024 - The data analysis reveals distinct spending, saving, and investment patterns among married couples, with a clear prioritization towards ensuring the well-being and future security of their families.”
-
--   spending on kids
-
-These four studies were focused on budget choices and spending related to children.
-
-@lino_expenditures_2017 - Many observations on the expenditures of children
-
-@osborne_updated_2021 - Regardless of the method of calculation, we find that it is nearly impossible for two minimum wage earners to meet the basic costs of raising children in Texas, especially when child care is included
-
-@hastings_parental_2022 - Both sociodemographic and economic factors play a substantial role in these differences, and the racial and ethnic gaps in parental investments of money are nearly eliminated when both are accounted for
-
-@duncan_estimating_2023 - The more income, the more spending on kids.
+Other studies with similar analyses have had similar findings. \@hastings_parental_2022 used the CEX to compare expenditures between different racial and ethnic groups. When controlling for both family characteristics and income, he found that there was not a significant difference in total expenditures on children among racial and ethnic groups. This suggests that income and family characteristics play a larger role in family budgeting than race and ethnicity. @duncan_estimating_2023 performed a study in Canada using the country's Survey of Household Spending (SHS) to analyze family expenditures. They found similar results as previously mentioned studies. Different income groups had different amounts allocated to children, but housing was always the highest expenditure with food, child care/education, and transportation being the next highest expenditures.
 
 ### Family Transportation Expenses and Budgets
 
