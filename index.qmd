@@ -82,7 +82,7 @@ Other studies with similar analyses have had similar findings. \@hastings_parent
 
 There have been many studies on family budgets and transportation expenses [@morris_family_1979; @blumenberg_transportation_2003; @hong_leisure_2005; @thakuriah_vonu_transportation_2006; @choo_transportation_2007; @haas_estimating_2008; @ferdous_comprehensive_2010].
 
-@thakuriah_analysis_2005 - For vehicle-owning households, of every additional dollar that households spend, 18 cents is spent on vehicles after controlling for socioeconomic, demographic, life cycle, and other factors relating to households.
+One study focused on transportation budgets was done by @thakuriah_analysis_2005. Using CEX data, they made multiple models to analyze the expenditures related to vehicle ownership of households in the United States. In each model, they used a variety of variables (income, household demographics, spatial factors, economic factors, and family condition factors) to predict the amount of money a household spends on vehicles. Their model results indicate 18 percent of additional household expenditures is a vehicle expense. They results also indicate many factors influence household vehicle expenses. The models showed that homeowners spend more on vehicle expenses. They also showed that vehicle expenses are connected with the sex of the head of household and the number of people in the household.
 
 @deka_relationship_2015 - More housing costs = more transportation costs, people the take transit spend less on transportation
 
