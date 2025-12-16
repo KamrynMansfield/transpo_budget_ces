@@ -46,6 +46,10 @@ The purpose of this research is to explore how household budgets are structured 
 
 The literature relating to this study has be classified into four groups: (1) Family Choices and Activity Patterns, (2) Family Transportation Choices, (3) Family Spending and Budgets, and (4) Family Transportation Budgets. The following sections describe the relevant findings from literature in each of these groups.
 
+@tbl-lit-summary summarizes the literature we reviewed
+
+{{< embed notebooks/lit_review_table.qmd#tbl-lit-summary >}}
+
 ### Family Choices and Activity Patterns
 
 There have been many studies done on the choices and activities of families [see @sener_analysis_2007; @copperman_exploratory_2007; @sener_analysis_2008; @leung_environment-people_2019]. These studies often focus on the activities choices of households and children.
