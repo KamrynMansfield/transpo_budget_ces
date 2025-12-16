@@ -8,17 +8,14 @@ library(tidyverse)
 library(knitr)
 ```
 
-
-Read a clean version of data:
+Read in the csv of the lit review table:
 
 ```{r}
 lit_tbl <- read_csv("lit_review_table.csv") |>
-  select(Title, Authors = Author, Year, Findings = `Main Findings`)
+  select(Title, Citation = `bibtex name`, Dataset, Findings = `Main Findings`)
 ```
 
-Create spatial plot:
-
-Here is a test plot
+Output the table:
 
 ```{r}
 #| label: tbl-lit-summary
