@@ -12,7 +12,7 @@ Read in the csv of the lit review table:
 
 ```{r}
 lit_tbl <- read_csv("lit_review_table.csv") |>
-  select(Title, Authors = Author, Year, Findings = `Main Findings`)
+  select(Title, Citation = `bibtex name`, Dataset, Findings = `Main Findings`)
 ```
 
 Output the table:
