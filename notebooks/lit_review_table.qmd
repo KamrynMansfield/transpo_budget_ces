@@ -1,0 +1,31 @@
+---
+title: Lit Review Table
+author: Kamryn Mansfield
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
+
+Read a clean version of data:
+
+```{r}
+lit_tbl <- read_csv("lit_review_table.csv") |>
+  select(Title, Authors = Author, Year, Findings = `Main Findings`)
+```
+
+Create spatial plot:
+
+Here is a test plot
+
+```{r}
+#| label: tbl-lit-summary
+#| tbl-cap: "Summary of the Literature"
+#| tbl-alt: "A table listing and describing the literature used in this review"
+
+kable(lit_tbl)
+
+```
+
