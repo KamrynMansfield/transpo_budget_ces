@@ -121,7 +121,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
   only one vehicle may spend far less on transportation, freeing up
   income for other essential or discretionary categories. On the other
   hand, underlying family structures and preferences can drive budget
-  allocation choices that, in turn, shape transportation behavior.
+  allocation choipces that, in turn, shape transportation behavior.
   Larger families may prioritize childcare or invest in higher-quality
   housing in areas with better schools, limiting what remains for
   transportation. Others may emphasize frugality across all categories
@@ -141,13 +141,10 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 </sec>
 <sec id="literature-review">
   <title>2 Literature Review</title>
-  <p>The literature relating to this study has be classified into four
-  groups: (1) Family Choices and Activity Patterns, (2) Family
-  Transportation Choices, (3) Family Spending and Budgets, and (4)
-  Family Transportation Budgets. The following sections describe the
-  relevant findings from literature in each of these groups.</p>
   <p><xref alt="Table 1" rid="tbl-lit-summary">Table 1</xref> summarizes
-  the literature we reviewed</p>
+  the literature that was reviewed for this study. As seen in the table,
+  there were a total of 35 studies reviewed with 19 studies that use the
+  consumer expenditure survey.</p>
   <fig id="tbl-lit-summary">
     <caption><p>Table 1: Summary of the Literature</p></caption>
     <table-wrap>
@@ -544,6 +541,11 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
       </table>
     </table-wrap>
   </fig>
+  <p>The literature relating to this study has been classified into four
+  groups: (1) Family Choices and Activity Patterns, (2) Family
+  Transportation Choices, (3) Family Spending and Budgets, and (4)
+  Family Transportation Budgets. The following sections describe the
+  relevant findings from literature in each of these groups.</p>
   <sec id="family-choices-and-activity-patterns">
     <title>2.1 Family Choices and Activity Patterns</title>
     <p>There have been many studies done on the choices and activities
@@ -1437,6 +1439,1456 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 </ref-list>
 </back>
 
+<sub-article article-type="notebook" id="nb-8-nb-article">
+<front-stub>
+<title-group>
+<article-title>Unpacking Household Budgeting Strategies through a
+Transportation Lens</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">0009-0003-5466-0821</contrib-id>
+<name>
+<surname>Mansfield</surname>
+<given-names>Kamryn</given-names>
+</name>
+<string-name>Kamryn Mansfield</string-name>
+
+<email>kmansfi4@vols.utk.edu</email>
+<role vocab="https://credit.niso.org" vocab-term="writing – original
+draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">Writing</role>
+<role>Etc.</role>
+<xref ref-type="aff" rid="aff-1-nb-article">a</xref>
+<xref ref-type="corresp" rid="cor-1-nb-article">&#x002A;</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0002-5615-0708</contrib-id>
+<name>
+<surname>Asmussen</surname>
+<given-names>Katie</given-names>
+</name>
+<string-name>Katie Asmussen</string-name>
+
+<role vocab="https://credit.niso.org" vocab-term="writing – original
+draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">Writing</role>
+<role>Etc.</role>
+<xref ref-type="aff" rid="aff-2-nb-article">b</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1-nb-article">
+<institution-wrap>
+<institution>University of Tennessee</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<aff id="aff-2-nb-article">
+<institution-wrap>
+<institution>University of Tenenessee</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<author-notes>
+<corresp id="cor-1-nb-article">kmansfi4@vols.utk.edu</corresp>
+</author-notes>
+<abstract>
+<p>This is where we will put our abstract.</p>
+</abstract>
+</front-stub>
+
+<body>
+<sec id="introduction-nb-article">
+  <title>1 Introduction</title>
+  <p>Households juggle how to allocate their budgets: whether to invest
+  in a reliable car, pay for quality childcare, secure housing in a good
+  school district, or set money aside for leisure. These everyday
+  choices shape how families live and move, reflecting the trade-offs
+  they make to balance competing priorities. Transportation often sits
+  at the center of these decisions, not only because it can be a
+  significant expense, but also because choosing to buy and maintain a
+  car versus relying on public transit represents a long-term commitment
+  and a broader lifestyle choice. Its relative weight compared to
+  housing, childcare, and other spending varies widely across families.
+  The relationship between household budgeting and mobility is shaped
+  not only by causal direction but also by how families prioritize and
+  weight different needs. On one hand, mobility resources such as car
+  ownership can structure the household budget: households with no or
+  only one vehicle may spend far less on transportation, freeing up
+  income for other essential or discretionary categories. On the other
+  hand, underlying family structures and preferences can drive budget
+  allocation choipces that, in turn, shape transportation behavior.
+  Larger families may prioritize childcare or invest in higher-quality
+  housing in areas with better schools, limiting what remains for
+  transportation. Others may emphasize frugality across all categories
+  or deliberately substitute toward lower-cost transit options.
+  Understanding both the direction of influence and the weight assigned
+  to different budget categories is critical for transportation planning
+  and policy, as these dynamics reveal how families navigate competing
+  priorities under varying demographic and mobility contexts.</p>
+  <p>The purpose of this research is to explore how household budgets
+  are structured around transportation decisions and how this impacts
+  other spending categories. Using the Consumer Expenditure Survey
+  (CEX), we will perform a Latent Class Analysis (LCA) to find groupings
+  based on a household’s transportation expenses. These groupings can
+  help us find groups of spenders with similar patterns to help us
+  predict transportation expenses based on the household’s
+  characteristics.</p>
+</sec>
+<sec id="literature-review-nb-article">
+  <title>2 Literature Review</title>
+  <sec specific-use="notebook-content">
+  <code language="r script">library(tidyverse)</code>
+  <boxed-text>
+    <preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
+  </boxed-text>
+  <code language="r script">library(knitr)
+lit_rev_tbl &lt;- read_csv(&quot;notebooks/lit_review_table.csv&quot;)</code>
+  <boxed-text>
+    <preformat>Rows: 35 Columns: 21
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (10): Author, Title, bibtex name, Brief summary of what the study is abo...
+dbl (11): Study Number, Year, Use Consumer Expenditure Survey Data?, Transpo...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
+  </boxed-text>
+  </sec>
+  <p><xref alt="Table 1" rid="tbl-lit-summary-nb-article">Table 1</xref> summarizes
+  the literature that was reviewed for this study. As seen in the table,
+  there were a total of 35 studies reviewed with 19 studies that use the
+  consumer expenditure survey.</p>
+  <sec specific-use="notebook-content">
+  <code language="python">kable(lit_tbl)</code>
+  <fig id="tbl-lit-summary-nb-article">
+    <caption><p>Table 1: Summary of the Literature</p></caption>
+    <boxed-text>
+      <table-wrap>
+        <table>
+          <colgroup>
+            <col width="16%" />
+            <col width="44%" />
+            <col width="11%" />
+            <col width="28%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th align="left">Title</th>
+              <th align="left">Citation</th>
+              <th align="left">Dataset</th>
+              <th align="left">Findings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left">A family expenditure perspective on
+              transport planning: Australian evidence in context</td>
+              <td align="left">Morris and Wigan
+              (<xref alt="1979" rid="ref-morris_family_1979-nb-article" ref-type="bibr">1979</xref>)</td>
+              <td align="left">Australian Expenditure Survey</td>
+              <td align="left">transport takes about o17 percent of
+              expenditures, at least part of the consumption expenditure
+              by low income families is financed from savings, loans or
+              other sourCEX besides “income”.</td>
+            </tr>
+            <tr>
+              <td align="left">Variable Lifespan and the Intertemporal
+              Elasticity of Consumption</td>
+              <td align="left">Skinner
+              (<xref alt="1985" rid="ref-skinner_variable_1985-nb-article" ref-type="bibr">1985</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">Changes in inflation will prompt changes
+              in consumer expenditures</td>
+            </tr>
+            <tr>
+              <td align="left">A sample selection model for prepared
+              food expenditures</td>
+              <td align="left">Nayga
+              (<xref alt="1998" rid="ref-nayga_sample_1998-nb-article" ref-type="bibr">1998</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">Most of the variables analysed
+              significantly affect prepared food expenditures. For
+              example, results suggest that frozen meals expenditures
+              are higher for households without children, for smaller
+              households, and for households headed by a non-white
+              individual</td>
+            </tr>
+            <tr>
+              <td align="left">Transportation Costs and Economic
+              Opportunity Among the Poor</td>
+              <td align="left">Blumenberg
+              (<xref alt="2003" rid="ref-blumenberg_transportation_2003-nb-article" ref-type="bibr">2003</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">Cost comparisons fall short of finding if
+              transportation costs are a barrier for economic
+              opportunity among the poor</td>
+            </tr>
+            <tr>
+              <td align="left">Analysis of Variations in Vehicle
+              Ownership Expenditures</td>
+              <td align="left">Thakuriah and Liao
+              (<xref alt="2005" rid="ref-thakuriah_analysis_2005-nb-article" ref-type="bibr">2005</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">For vehicle-owning households, of every
+              additional dollar that households spend, 18 cents is spent
+              on vehicles after controlling for socioeconomic,
+              demographic, life cycle, and other factors relating to
+              households.</td>
+            </tr>
+            <tr>
+              <td align="left">Leisure Travel Expenditure Patterns by
+              Family Life Cycle Stages</td>
+              <td align="left">Hong et al.
+              (<xref alt="2005" rid="ref-hong_leisure_2005-nb-article" ref-type="bibr">2005</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">Marrieds without children are more likely
+              to spend on leisure travel than singles, whereas single
+              parents and solitary survivors are less likely to spend on
+              leisure travel than singles.</td>
+            </tr>
+            <tr>
+              <td align="left">Transportation Expenditures and Ability
+              to Pay: Evidence from Consumer Expenditure Survey</td>
+              <td align="left">Thakuriah (Vonu) and Liao
+              (<xref alt="2006" rid="ref-thakuriah_vonu_transportation_2006-nb-article" ref-type="bibr">2006</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">Transportation expenditures made by
+              households are better explained by permanent income levels
+              of households than by annual incomes.</td>
+            </tr>
+            <tr>
+              <td align="left">The Effects of Ethnic Identity on
+              Household Budget Allocation to Status Conveying Goods</td>
+              <td align="left">Fontes and Fan
+              (<xref alt="2006" rid="ref-fontes_effects_2006-nb-article" ref-type="bibr">2006</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">Asian Americans allocate more of their
+              budget to housing, African Americans allocate more of
+              their budget to apparel, and Hispanics allocate more of
+              their budget to both housing and apparel, but to a lesser
+              extent than Asian Americans with respect to housing and
+              African Americans with respect to apparel.</td>
+            </tr>
+            <tr>
+              <td align="left">Do Transportation and Communications Tend
+              to be Substitutes, Complements, or Neither?: U.S. Consumer
+              Expenditures Perspective, 1984–2002</td>
+              <td align="left">Choo, Lee, and Mokhtarian
+              (<xref alt="2007" rid="ref-choo_transportation_2007-nb-article" ref-type="bibr">2007</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">New tech doesn’t substitue Personal
+              Vehicle travel probably</td>
+            </tr>
+            <tr>
+              <td align="left">An analysis of the determinants of
+              children’s weekend physical activity participation</td>
+              <td align="left">Rachel B. Copperman and Bhat
+              (<xref alt="2007a" rid="ref-copperman_analysis_2007-nb-article" ref-type="bibr">2007a</xref>)</td>
+              <td align="left">San Francisco Bay Area Travel Survey</td>
+              <td align="left">The “number of children” variable
+              suggests an overall higher likelihood of participation in
+              utilitarian active travel among households with many
+              children relative to households with few children</td>
+            </tr>
+            <tr>
+              <td align="left">An analysis of the social context of
+              children’s weekend discretionary activity
+              participation</td>
+              <td align="left">Sener and Bhat
+              (<xref alt="2007" rid="ref-sener_analysis_2007-nb-article" ref-type="bibr">2007</xref>)</td>
+              <td align="left">Panel Study of Income Dynamics
+              (PSID)</td>
+              <td align="left">male children more likely to participate
+              with their fathers than female children, African-American
+              children less likely to participate in health-enhancing
+              active recreation pursuits</td>
+            </tr>
+            <tr>
+              <td align="left">An Exploratory Analysis of Children’s
+              Daily Time-Use and Activity Patterns Using the Child
+              Development Supplement (CDS) to the US Panel Study of
+              Income Dynamics (PSID)</td>
+              <td align="left">Rachel B. Copperman and Bhat
+              (<xref alt="2007b" rid="ref-copperman_exploratory_2007-nb-article" ref-type="bibr">2007b</xref>)</td>
+              <td align="left">Panel Study of Income Dynamics
+              (PSID)</td>
+              <td align="left">The age of childrend has an effect on the
+              types of activities they pursue</td>
+            </tr>
+            <tr>
+              <td align="left">Estimating Transportation Costs by
+              Characteristics of Neighborhood and Household</td>
+              <td align="left">Haas et al.
+              (<xref alt="2008" rid="ref-haas_estimating_2008-nb-article" ref-type="bibr">2008</xref>)</td>
+              <td align="left">CEX and others</td>
+              <td align="left">Their model can help in travel demand
+              modeling</td>
+            </tr>
+            <tr>
+              <td align="left">An analysis of children’s leisure
+              activity engagement: Examining the day of week, location,
+              physical activity level, and fixity dimensions</td>
+              <td align="left">Sener et al.
+              (<xref alt="2008" rid="ref-sener_analysis_2008-nb-article" ref-type="bibr">2008</xref>)</td>
+              <td align="left">Panel Study of Income Dynamics
+              (PSID)</td>
+              <td align="left">Children in households with parents who
+              are employed, higher income, or higher education were
+              found to participate in structured outdoor activities at
+              higher rates.</td>
+            </tr>
+            <tr>
+              <td align="left">A comprehensive analysis of household
+              transportation expenditures relative to other goods and
+              serviCEX: An application to United States consumer
+              expenditure data</td>
+              <td align="left">Ferdous et al.
+              (<xref alt="2010" rid="ref-ferdous_comprehensive_2010-nb-article" ref-type="bibr">2010</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">Adjustments are made with increased fuel
+              priCEX</td>
+            </tr>
+            <tr>
+              <td align="left">Measuring the Structureal Determinants of
+              Urban Travel Demand</td>
+              <td align="left">Souche
+              (<xref alt="2010" rid="ref-souche_measuring_2010-nb-article" ref-type="bibr">2010</xref>)</td>
+              <td align="left">IUTP database</td>
+              <td align="left">urban density and cost of transport mode
+              were statisticalliy significan in their model</td>
+            </tr>
+            <tr>
+              <td align="left">An empirical analysis of children’s after
+              school out-of-home activity-location engagement patterns
+              and time allocation</td>
+              <td align="left">Paleti, Copperman, and Bhat
+              (<xref alt="2011" rid="ref-paleti_empirical_2011-nb-article" ref-type="bibr">2011</xref>)</td>
+              <td align="left">Panel Study of Income Dynamics
+              (PSID)</td>
+              <td align="left">The results show that a wide variety of
+              demographic, attitudinal, environmental, and others’
+              activity-travel pattern characteristics impact children’s
+              after school activity engagement patterns.</td>
+            </tr>
+            <tr>
+              <td align="left">Is the Consumer Expenditure Survey
+              Representative by Income?</td>
+              <td align="left">Sabelhaus et al.
+              (<xref alt="2013" rid="ref-sabelhaus_is_2013-nb-article" ref-type="bibr">2013</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">the highest income thresholds are
+              underrepresented in the survey</td>
+            </tr>
+            <tr>
+              <td align="left">Relationship between Households’ Housing
+              and Transportation Expenditures: Examination from
+              Lifestyle Perspective</td>
+              <td align="left">Deka
+              (<xref alt="2015" rid="ref-deka_relationship_2015-nb-article" ref-type="bibr">2015</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">More housing costs = more transportation
+              costs, people the take transit spend less on
+              transportation</td>
+            </tr>
+            <tr>
+              <td align="left">An empirical investigation into the
+              time-use and activity patterns of dual-earner couples with
+              and without young children</td>
+              <td align="left">Bernardo et al.
+              (<xref alt="2015" rid="ref-bernardo_empirical_2015-nb-article" ref-type="bibr">2015</xref>)</td>
+              <td align="left">ATUS</td>
+              <td align="left">the presence of a child in dual-earner
+              households not only leads to a reduction in in-home
+              non-work activity participation (excluding child care
+              activities) but also a substantially larger decrease in
+              out-of-home non-work activity participation (excluding
+              child care and shopping activities),</td>
+            </tr>
+            <tr>
+              <td align="left">Expenditures on Children by Families,
+              2015</td>
+              <td align="left">Lino et al.
+              (<xref alt="2017" rid="ref-lino_expenditures_2017-nb-article" ref-type="bibr">2017</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">Many observations on the expenditures of
+              children</td>
+            </tr>
+            <tr>
+              <td align="left">Factors influencing travel mode choice
+              among families with young children (aged 0–4): A review of
+              the literature</td>
+              <td align="left">McCarthy et al.
+              (<xref alt="2017" rid="ref-mccarthy_factors_2017-nb-article" ref-type="bibr">2017</xref>)</td>
+              <td align="left">Lit Review</td>
+              <td align="left">many factores influence decisions about
+              mode choice when traveling with young children.</td>
+            </tr>
+            <tr>
+              <td align="left">Relationships between Land Use,
+              Transportation, Household Expenditures, and Municipal
+              Spending in Small Urban Areas</td>
+              <td align="left">Mattson and Peterson
+              (<xref alt="2019" rid="ref-mattson_relationships_2019-nb-article" ref-type="bibr">2019</xref>)</td>
+              <td align="left">CEX, Ammerican Community Survey</td>
+              <td align="left">denser areas are more likely to use
+              transit to commute. People in single-family homes tend to
+              spend more money on transportation</td>
+            </tr>
+            <tr>
+              <td align="left">An environment-people interactions
+              framework for analysing children’s extra-curricular
+              activities and active transport</td>
+              <td align="left">Leung et al.
+              (<xref alt="2019" rid="ref-leung_environment-people_2019-nb-article" ref-type="bibr">2019</xref>)</td>
+              <td align="left">Survey in Hong Kong Schools</td>
+              <td align="left">childrens activities can differ a lot
+              based on neighborhood enfironment and family
+              sociodemographic background.</td>
+            </tr>
+            <tr>
+              <td align="left">Relationships between density, transit,
+              and household expenditures in small urban areas</td>
+              <td align="left">Mattson
+              (<xref alt="2020" rid="ref-mattson_relationships_2020-nb-article" ref-type="bibr">2020</xref>)</td>
+              <td align="left">CEX, Ammerican Community Survey</td>
+              <td align="left">single family homes spend more on
+              transportation, higher income is correlated with higher
+              tranportation costs.</td>
+            </tr>
+            <tr>
+              <td align="left">An Updated Estimation Model of the Cost
+              of Raising Children in Texas</td>
+              <td align="left">Osborne, Wu, and Benson
+              (<xref alt="2021" rid="ref-osborne_updated_2021-nb-article" ref-type="bibr">2021</xref>)</td>
+              <td align="left">NHTS, CEX</td>
+              <td align="left">Regardless of the method of calculation,
+              we find that it is nearly impossible for two minimum wage
+              earners to meet the basic costs of raising children in
+              Texas, especially when child care is included</td>
+            </tr>
+            <tr>
+              <td align="left">Parental Investments of Money for White,
+              Black, and Hispanic Children in the United States</td>
+              <td align="left">Hastings
+              (<xref alt="2022" rid="ref-hastings_parental_2022-nb-article" ref-type="bibr">2022</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">. Both sociodemographic and economic
+              factors play a substantial role in these differenCEX, and
+              the racial and ethnic gaps in parental investments of
+              money are nearly eliminated when both are accounted
+              for</td>
+            </tr>
+            <tr>
+              <td align="left">The role of household modality style in
+              first and last mile travel mode choice</td>
+              <td align="left">Lu et al.
+              (<xref alt="2022" rid="ref-lu_role_2022-nb-article" ref-type="bibr">2022</xref>)</td>
+              <td align="left">Southeast Queensland Travel Survey
+              (SEQTS)</td>
+              <td align="left">joint travel contributes least to modal
+              shift from car to active transport when there is improved
+              infrastructure of trains and things</td>
+            </tr>
+            <tr>
+              <td align="left">A review of the socio-demographic
+              characteristics affecting the demand for different
+              car-sharing operational schemes</td>
+              <td align="left">Amirnazmiafshar and Diana
+              (<xref alt="2022" rid="ref-amirnazmiafshar_review_2022-nb-article" ref-type="bibr">2022</xref>)</td>
+              <td align="left">NA</td>
+              <td align="left">There are lots of factors that might
+              affect people’s willingness to use car sharing</td>
+            </tr>
+            <tr>
+              <td align="left">Estimating Expenditures on Children by
+              Families in Canada, 2014 to 2017</td>
+              <td align="left">Duncan, Frank, and Guèvremont
+              (<xref alt="2023" rid="ref-duncan_estimating_2023-nb-article" ref-type="bibr">2023</xref>)</td>
+              <td align="left">Survey of Household Spending (SHS)</td>
+              <td align="left">The more income, the more spending on
+              kids.</td>
+            </tr>
+            <tr>
+              <td align="left">A New Approach to Understanding the
+              Impact of Automobile Ownership on Transportation
+              Equity</td>
+              <td align="left">Molloy, Garrick, and Atkinson-Palombo
+              (<xref alt="2024" rid="ref-molloy_new_2024-nb-article" ref-type="bibr">2024</xref>)</td>
+              <td align="left">CEX</td>
+              <td align="left">“Captive Riders” have less spending
+              allocated to transportation than captive drivers.</td>
+            </tr>
+            <tr>
+              <td align="left">Transportation Statistics Annual Report
+              2024</td>
+              <td align="left">Bureau of Transportation Statistics
+              (<xref alt="2024" rid="ref-bureau_of_transportation_statistics_transportation_2024-nb-article" ref-type="bibr">2024</xref>)</td>
+              <td align="left">CEX and others</td>
+              <td align="left">Lots of summaries</td>
+            </tr>
+            <tr>
+              <td align="left">A STUDY OF SPENDING, SAVING AND
+              INVESTMENT PATTERNS OF MARRIED COUPLES WITH
+              CHILDREN(NON-DINK) IN MUMBAI</td>
+              <td align="left">Hargunani, Vernekar, and Vernekar
+              (<xref alt="2024" rid="ref-hargunani_study_2024-nb-article" ref-type="bibr">2024</xref>)</td>
+              <td align="left">Data from Mumbai</td>
+              <td align="left">The data analysis reveals distinct
+              spending, saving, and investment patterns among married
+              couples, with a clear prioritization towards ensuring the
+              well-being and future security of their families.”</td>
+            </tr>
+            <tr>
+              <td align="left">Subsidizing Car Ownership for Low-Income
+              Individuals and Households</td>
+              <td align="left">Klein
+              (<xref alt="2024" rid="ref-klein_subsidizing_2024-nb-article" ref-type="bibr">2024</xref>)</td>
+              <td align="left">Personal Survey Created by Dr. Klein</td>
+              <td align="left">Having a car gave people more
+              opportunities than before, and they usually had more time
+              to spend with the family. At the beginning and end of the
+              day.</td>
+            </tr>
+            <tr>
+              <td align="left">Investigating the effects of ridesourcing
+              on the dynamics of household car ownership</td>
+              <td align="left">Bilgin et al.
+              (<xref alt="2025" rid="ref-bilgin_investigating_2025-nb-article" ref-type="bibr">2025</xref>)</td>
+              <td align="left">United Kingdom Household Longitudinal
+              Study</td>
+              <td align="left">Suggests that households are less likely
+              to qcquire a car in the presence of ridesourcing, but car
+              disposal is mainly driven by household compositions and
+              residential relocation factors.</td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+    </boxed-text>
+  </fig>
+  </sec>
+  <p>The literature relating to this study has been classified into four
+  groups: (1) Family Choices and Activity Patterns, (2) Family
+  Transportation Choices, (3) Family Spending and Budgets, and (4)
+  Family Transportation Budgets. The following sections describe the
+  relevant findings from literature in each of these groups.</p>
+  <sec id="family-choices-and-activity-patterns-nb-article">
+    <title>2.1 Family Choices and Activity Patterns</title>
+    <p>There have been many studies done on the choices and activities
+    of families (see
+    <xref alt="Sener and Bhat 2007" rid="ref-sener_analysis_2007-nb-article" ref-type="bibr">Sener
+    and Bhat 2007</xref>;
+    <xref alt="Rachel B. Copperman and Bhat 2007b" rid="ref-copperman_exploratory_2007-nb-article" ref-type="bibr">Rachel
+    B. Copperman and Bhat 2007b</xref>;
+    <xref alt="Sener et al. 2008" rid="ref-sener_analysis_2008-nb-article" ref-type="bibr">Sener
+    et al. 2008</xref>;
+    <xref alt="Leung et al. 2019" rid="ref-leung_environment-people_2019-nb-article" ref-type="bibr">Leung
+    et al. 2019</xref>). These studies often focus on the activities
+    choices of households and children.</p>
+    <p>Paleti, Copperman, and Bhat
+    (<xref alt="2011" rid="ref-paleti_empirical_2011-nb-article" ref-type="bibr">2011</xref>)
+    performed a study where they wanted to characterize the activity
+    patterns of children after school. Their data were gathered from the
+    Child Development Supplement to the Panel Study of Income Dynamics
+    which has household demographics and time-use diaries for children.
+    They looked at travel patterns using combinations of three
+    activity-travel scenarios: staying at school, going home from
+    school, and going somewhere else after school. They further
+    identified specific after-school activities (e.g. Organized
+    activities at school, recreation at the home of someone else, meals
+    at restaurants, etc.) to use in a multiple discrete-continuous
+    extreme value (MDCEV) model. The MDCEV is a type of discrete choice
+    model that works when multiple options can be chosen, and was used
+    to find predictors of children’s participation in the different
+    after school activities. In their analysis, they found that 57.7% of
+    children in the survey participated in at least one out-of-home
+    activity after school. They also found that children’s activities
+    were connected to household income, family dynamics, environment,
+    and other things. For example, children in households with higher
+    income were more likely to participate in activities after school.
+    Children with no siblings along with children having a working
+    primary caregiver were more likely to stay at school or go somewhere
+    besides home directly after school. Children living close to a large
+    city were less likely to go somewhere after school, go home, and
+    then go back out. The findings of this study show the variety of
+    factors that might affect a family’s activity, and therefore
+    transportation, patterns.</p>
+    <p>Another study on family choices was done by Bernardo et al.
+    (<xref alt="2015" rid="ref-bernardo_empirical_2015-nb-article" ref-type="bibr">2015</xref>).
+    They used the American Time Use Survey and a Multiple Discrete
+    Continuous Nested Extreme Value (MDCNEV) model to examine the
+    activities of duel-earner households. The variables they used relate
+    to household demographics, respondent demographics, couple
+    characteristics, and day of the week. Findings indicated that women
+    are more likely to participate in out-of-home maintenance, shopping,
+    and social activities than men. They also found that respondents
+    with higher education and with children are more likely to work from
+    home. One key finding of this study is that couples with children
+    are much less likely to participate in out-of-home, non-work
+    activities.</p>
+  </sec>
+  <sec id="family-transportation-choices-nb-article">
+    <title>2.2 Family Transportation Choices</title>
+    <p>Among the studies on family choices is a group of studies that
+    focus on family transportation choices
+    (<xref alt="Rachel B. Copperman and Bhat 2007a" rid="ref-copperman_analysis_2007-nb-article" ref-type="bibr">Rachel
+    B. Copperman and Bhat 2007a</xref>;
+    <xref alt="Souche 2010" rid="ref-souche_measuring_2010-nb-article" ref-type="bibr">Souche
+    2010</xref>;
+    <xref alt="Lu et al. 2022" rid="ref-lu_role_2022-nb-article" ref-type="bibr">Lu
+    et al. 2022</xref>;
+    <xref alt="Amirnazmiafshar and Diana 2022" rid="ref-amirnazmiafshar_review_2022-nb-article" ref-type="bibr">Amirnazmiafshar
+    and Diana 2022</xref>). These studies look at the connection between
+    family mobility and family decisions.</p>
+    <p>McCarthy et al.
+    (<xref alt="2017" rid="ref-mccarthy_factors_2017-nb-article" ref-type="bibr">2017</xref>)
+    is a literature review with some good findings, but I don’t know if
+    I should site the literature review or if I should find individual
+    papers from the review to talk about.</p>
+    <p>A unique study to understand the effects car ownership has on
+    household decisions was done by Nicholas Klein
+    (<xref alt="2024" rid="ref-klein_subsidizing_2024-nb-article" ref-type="bibr">2024</xref>).
+    In order to understand how access to a car can effect a family in
+    the United States, he interviewed 30 people in Maryland and Virginia
+    who received a subsidized car. Two main findings of this study
+    relate to travel behavior changes and access to opportunities. The
+    people interviewed generally changed their travel behavior in
+    similar ways after receiving a car. Before receiving the car, they
+    would rely on public transit and others for transportation, but
+    after receiving a car, they made many trips in their own cars,
+    including some trips that they had to forgo before having a car.
+    Another general conclusion Klein makes is that people had more
+    access to opportunities after receiving a car. They had easier
+    access to more potential jobs, but some also mentioned the ability
+    to get more hours at the their current jobs. With less reliance on
+    public transit, many respondents spent more time with their families
+    at the beginning and end of the day.</p>
+    <p>Another study interested in car ownership was done by
+    @bilgin_investigating_2025. They analyzed car ownership across
+    multiple years using the United Kingdom Household Longitudinal Study
+    dataset to see if ridesourcing availability affects car ownership.
+    They used two fixed effects logit models: one to model the effect of
+    ridesourcing on the decision to increase the number of cars in the
+    household and the other to model the effect of ridesourcing on the
+    decision to decrease the number of cars in the household. Their
+    results suggested that households with more than one car are more
+    likely to get rid of a car and less likely to add a car compared to
+    households with one car. Even with this tendency, their models did
+    not show a strong connection between the presence of ride sourcing
+    and changes in car ownership. They concluded that changes in
+    household composition have a stronger impact on the change in number
+    of cars of a household.</p>
+  </sec>
+  <sec id="family-spending-and-budgets-nb-article">
+    <title>2.3 Family Spending and Budgets</title>
+    <p>Another set of studies focuses on household budgets and household
+    spending patterns
+    (<xref alt="Skinner 1985" rid="ref-skinner_variable_1985-nb-article" ref-type="bibr">Skinner
+    1985</xref>;
+    <xref alt="Nayga 1998" rid="ref-nayga_sample_1998-nb-article" ref-type="bibr">Nayga
+    1998</xref>;
+    <xref alt="Fontes and Fan 2006" rid="ref-fontes_effects_2006-nb-article" ref-type="bibr">Fontes
+    and Fan 2006</xref>;
+    <xref alt="Sabelhaus et al. 2013" rid="ref-sabelhaus_is_2013-nb-article" ref-type="bibr">Sabelhaus
+    et al. 2013</xref>). Many of the studies reviewed had an emphasis on
+    the budgets related to raising children. Hargunani, Vernekar, and
+    Vernekar
+    (<xref alt="2024" rid="ref-hargunani_study_2024-nb-article" ref-type="bibr">2024</xref>)
+    analyzed family spending patterns in Mumbai and concluded that many
+    families focus their expenditures on the current and future
+    wellbeing of their children. This is evidenced by money spent on
+    basic necessities and setting aside money for the future.</p>
+    <p>The United States Department of Agriculture (USDA) has produced
+    reports that use the CEX to specifically analyze the costs of
+    raising a child in the United States. The most recent report
+    (<xref alt="Lino et al. 2017" rid="ref-lino_expenditures_2017-nb-article" ref-type="bibr">Lino
+    et al. 2017</xref>) found the top expenditure for married-couple
+    families with two children to be housing. The rankings of other
+    expenditures were different depending on the age of children, but
+    food, child care/education, and transportation were always the next
+    highest expenditures on children. Similar to the USDA report on the
+    cost of raising children, Osborne, Wu, and Benson
+    (<xref alt="2021" rid="ref-osborne_updated_2021-nb-article" ref-type="bibr">2021</xref>)
+    modeled the cost of raising children in Texas by following similar
+    methodologies but using Texas-specific data for housing and
+    childcare costs. They looked not only at married-couple families,
+    but also at single-parent households and duel households where
+    children spend time with both parents in different locations. They
+    found differing expenditures on children among the different family
+    make-ups and among different incomes.</p>
+    <p>Other studies with similar analyses have had similar findings.
+    @hastings_parental_2022 used the CEX to compare expenditures between
+    different racial and ethnic groups. When controlling for both family
+    characteristics and income, he found that there was not a
+    significant difference in total expenditures on children among
+    racial and ethnic groups. This suggests that income and family
+    characteristics play a larger role in family budgeting than race and
+    ethnicity. Duncan, Frank, and Guèvremont
+    (<xref alt="2023" rid="ref-duncan_estimating_2023-nb-article" ref-type="bibr">2023</xref>)
+    performed a study in Canada using the country’s Survey of Household
+    Spending (SHS) to analyze family expenditures. They found similar
+    results as previously mentioned studies. Different income groups had
+    different amounts allocated to children, but housing was always the
+    highest expenditure with food, child care/education, and
+    transportation being the next highest expenditures.</p>
+  </sec>
+  <sec id="family-transportation-expenses-and-budgets-nb-article">
+    <title>2.4 Family Transportation Expenses and Budgets</title>
+    <p>There have been many studies on family budgets and transportation
+    expenses
+    (<xref alt="Morris and Wigan 1979" rid="ref-morris_family_1979-nb-article" ref-type="bibr">Morris
+    and Wigan 1979</xref>;
+    <xref alt="Blumenberg 2003" rid="ref-blumenberg_transportation_2003-nb-article" ref-type="bibr">Blumenberg
+    2003</xref>;
+    <xref alt="Hong et al. 2005" rid="ref-hong_leisure_2005-nb-article" ref-type="bibr">Hong
+    et al. 2005</xref>;
+    <xref alt="Thakuriah (Vonu) and Liao 2006" rid="ref-thakuriah_vonu_transportation_2006-nb-article" ref-type="bibr">Thakuriah
+    (Vonu) and Liao 2006</xref>;
+    <xref alt="Choo, Lee, and Mokhtarian 2007" rid="ref-choo_transportation_2007-nb-article" ref-type="bibr">Choo,
+    Lee, and Mokhtarian 2007</xref>;
+    <xref alt="Haas et al. 2008" rid="ref-haas_estimating_2008-nb-article" ref-type="bibr">Haas
+    et al. 2008</xref>;
+    <xref alt="Ferdous et al. 2010" rid="ref-ferdous_comprehensive_2010-nb-article" ref-type="bibr">Ferdous
+    et al. 2010</xref>).</p>
+    <p>One study focused on transportation budgets was done by Thakuriah
+    and Liao
+    (<xref alt="2005" rid="ref-thakuriah_analysis_2005-nb-article" ref-type="bibr">2005</xref>).
+    Using CEX data, they made multiple models to analyze the
+    expenditures related to vehicle ownership of households in the
+    United States. In each model, they used a variety of variables
+    (income, household demographics, spatial factors, economic factors,
+    and family condition factors) to predict the amount of money a
+    household spends on vehicles. Their model results indicate 18
+    percent of additional household expenditures is a vehicle expense.
+    They results also indicate many factors influence household vehicle
+    expenses. The models showed that homeowners spend more on vehicle
+    expenses. They also showed that vehicle expenses are connected with
+    the sex of the head of household and the number of people in the
+    household.</p>
+    <p>In a study by Deka
+    (<xref alt="2015" rid="ref-deka_relationship_2015-nb-article" ref-type="bibr">2015</xref>),
+    they used two years of the CEX to see the connection between housing
+    expenses and transportation expenses. They created three least
+    squares models: one to describe expenditures in dollar amounts, one
+    to describe expenditures as percentages of income, and one to
+    describe expenditures as shares of total household expenditures.
+    They found a positive association between transportation expenses
+    and housing expenses. Similarly, share of income on transportation
+    was positively affected by share of income on housing, but there was
+    no significant evidence showing the share of income on housing being
+    affected by share of income on transportation. Both housing and
+    transportation expenditures were found to be higher for those living
+    in single-family detached homes and lower for those living in older
+    homes.</p>
+    <p>Mattson
+    (<xref alt="2020" rid="ref-mattson_relationships_2020-nb-article" ref-type="bibr">2020</xref>)
+    Mattson and Peterson
+    (<xref alt="2019" rid="ref-mattson_relationships_2019-nb-article" ref-type="bibr">2019</xref>)
+    - single family homes spend more on transportation, higher income is
+    correlated with higher transportation costs. - denser areas are more
+    likely to use transit to commute. People in single-family homes tend
+    to spend more money on transportation</p>
+    <p>Mattson and Peterson
+    (<xref alt="2019" rid="ref-mattson_relationships_2019-nb-article" ref-type="bibr">2019</xref>)
+    looked at how density, land use, transportation, and household
+    expenditures are related. They developed a regression model using
+    CEX data where transportation expenditures were estimated using type
+    of housing, population, family characteristics, and other factors.
+    Similar to other studies, they found that income is positively
+    associated with transportation expenditures. Their model showed
+    single-family homes to have higher transportation expenditures than
+    other types of dwellings. Using data from the U.S. Census Bureau’s
+    Annual Survey of State and Local Government Finances, they also
+    created models to explore how land use might affect municipal
+    spending. In these models, increase in density was associated with a
+    decrease in many per capita operational costs, including fire
+    protection, streets and highways, parks and recreation, and
+    others.</p>
+    <p>A similar study was published by Mattson
+    (<xref alt="2020" rid="ref-mattson_relationships_2020-nb-article" ref-type="bibr">2020</xref>)
+    where he modeled transportation expenditures using CEX data. The
+    results showed, like the previous publication, that single-family
+    dwellings spend more on transportation compared to other types. He
+    also found that larger household sizes and newer homes contribute to
+    higher transportation spending.</p>
+    <p>Molloy, Garrick, and Atkinson-Palombo
+    (<xref alt="2024" rid="ref-molloy_new_2024-nb-article" ref-type="bibr">2024</xref>)
+    - “Captive Riders” have less spending allocated to transportation
+    than captive drivers.</p>
+    <p>In their study, Molloy, Garrick, and Atkinson-Palombo
+    (<xref alt="2024" rid="ref-molloy_new_2024-nb-article" ref-type="bibr">2024</xref>)
+    look at CEX data through after proposing new framework to look at
+    transit users and vehicle users. In past studies, three categories
+    have been used to analyze transportation users: “drivers” are those
+    who own a car, “captive riders” are those who use transit because
+    they ca not afford a car, and “choice riders” are those who can
+    afford a car but do not. Instead of having one grouping for those
+    that own cars, Molloy, Garrick, and Atkinson-Palombo
+    (<xref alt="2024" rid="ref-molloy_new_2024-nb-article" ref-type="bibr">2024</xref>)
+    propose splitting that category into “captive drivers” and “choice
+    drivers”. Captive drivers would be those in the population that are
+    low income but have a car representing people with less
+    transportation freedom. They analyzed the CEX with this new way of
+    classifying transportation users and found that captive drivers
+    carry the most transportation burden. The transportation
+    expenditures of captive drivers average more than 16% of total
+    household expenditures while the transportation expenditures of
+    captive riders was only around 7% of total expenditures.</p>
+    <p>Bureau of Transportation Statistics
+    (<xref alt="2024" rid="ref-bureau_of_transportation_statistics_transportation_2024-nb-article" ref-type="bibr">2024</xref>)
+    - Chapter 2 has a whole section where they analyze household
+    expenditures gettting much of their data from the CEX.</p>
+  </sec>
+</sec>
+</body>
+
+
+
+<back>
+<ref-list>
+  <title>3 References</title>
+  <ref id="ref-bernardo_empirical_2015-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Bernardo</surname><given-names>Christina</given-names></name>
+        <name><surname>Paleti</surname><given-names>Rajesh</given-names></name>
+        <name><surname>Hoklas</surname><given-names>Megan</given-names></name>
+        <name><surname>Bhat</surname><given-names>Chandra</given-names></name>
+      </person-group>
+      <article-title>An empirical investigation into the time-use and activity patterns of dual-earner couples with and without young children</article-title>
+      <source>Transportation Research Part A: Policy and Practice</source>
+      <year iso-8601-date="2015-06">2015</year><month>06</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-08-28">2025</year><month>08</month><day>28</day></date-in-citation>
+      <volume>76</volume>
+      <issn>09658564</issn>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0965856414002985</uri>
+      <pub-id pub-id-type="doi">10.1016/j.tra.2014.12.006</pub-id>
+      <fpage>71</fpage>
+      <lpage>91</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-copperman_exploratory_2007-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Copperman</surname><given-names>Rachel B</given-names></name>
+        <name><surname>Bhat</surname><given-names>Chandra R</given-names></name>
+      </person-group>
+      <article-title>An Exploratory Analysis of Children’s Daily Time-Use and Activity Patterns Using the Child Development Supplement (CDS) to the US Panel Study of Income Dynamics (PSID)</article-title>
+      <year iso-8601-date="2007">2007</year>
+    </element-citation>
+  </ref>
+  <ref id="ref-copperman_analysis_2007-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Copperman</surname><given-names>Rachel B.</given-names></name>
+        <name><surname>Bhat</surname><given-names>Chandra R.</given-names></name>
+      </person-group>
+      <article-title>An analysis of the determinants of children’s weekend physical activity participation</article-title>
+      <source>Transportation</source>
+      <year iso-8601-date="2007-01">2007</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-08-28">2025</year><month>08</month><day>28</day></date-in-citation>
+      <volume>34</volume>
+      <issue>1</issue>
+      <issn>0049-4488, 1572-9435</issn>
+      <uri>http://link.springer.com/10.1007/s11116-006-0005-5</uri>
+      <pub-id pub-id-type="doi">10.1007/s11116-006-0005-5</pub-id>
+      <fpage>67</fpage>
+      <lpage>87</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-duncan_estimating_2023-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Duncan</surname><given-names>Karen A.</given-names></name>
+        <name><surname>Frank</surname><given-names>Kristyn</given-names></name>
+        <name><surname>Guèvremont</surname><given-names>Anne</given-names></name>
+      </person-group>
+      <article-title>Estimating Expenditures on Children by Families in Canada, 2014 to 2017</article-title>
+      <year iso-8601-date="2023-09">2023</year><month>09</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-08-28">2025</year><month>08</month><day>28</day></date-in-citation>
+      <issn>1205-9153</issn>
+      <uri>https://www150.statcan.gc.ca/n1/pub/11f0019m/11f0019m2023007-eng.htm</uri>
+      <pub-id pub-id-type="doi">10.25318/11F0019M2023007-ENG</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-hargunani_study_2024-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hargunani</surname><given-names>Chahat</given-names></name>
+        <name><surname>Vernekar</surname><given-names>Sachin</given-names></name>
+        <name><surname>Vernekar</surname><given-names>Shradha</given-names></name>
+      </person-group>
+      <article-title>A STUDY OF SPENDING, SAVING AND INVESTMENT PATTERNS OF MARRIED COUPLES WITH CHILDREN(NON-DINK) IN MUMBAI</article-title>
+      <year iso-8601-date="2024-10">2024</year><month>10</month>
+      <volume>20</volume>
+      <issue>1</issue>
+      <issn>2347-4777</issn>
+    </element-citation>
+  </ref>
+  <ref id="ref-hastings_parental_2022-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hastings</surname><given-names>Orestes P.</given-names></name>
+      </person-group>
+      <article-title>Parental Investments of Money for White, Black, and Hispanic Children in the United States</article-title>
+      <source>Socius: Sociological Research for a Dynamic World</source>
+      <year iso-8601-date="2022-01">2022</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-08-28">2025</year><month>08</month><day>28</day></date-in-citation>
+      <volume>8</volume>
+      <issn>2378-0231, 2378-0231</issn>
+      <uri>https://journals.sagepub.com/doi/10.1177/23780231221103054</uri>
+      <pub-id pub-id-type="doi">10.1177/23780231221103054</pub-id>
+      <fpage>23780231221103054</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-leung_environment-people_2019-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Leung</surname><given-names>Kevin Y. K.</given-names></name>
+        <name><surname>Astroza</surname><given-names>Sebastian</given-names></name>
+        <name><surname>Loo</surname><given-names>Becky P. Y.</given-names></name>
+        <name><surname>Bhat</surname><given-names>Chandra R.</given-names></name>
+      </person-group>
+      <article-title>An environment-people interactions framework for analysing children’s extra-curricular activities and active transport</article-title>
+      <source>Journal of Transport Geography</source>
+      <year iso-8601-date="2019-01">2019</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-08-28">2025</year><month>08</month><day>28</day></date-in-citation>
+      <volume>74</volume>
+      <issn>09666923</issn>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0966692318304587</uri>
+      <pub-id pub-id-type="doi">10.1016/j.jtrangeo.2018.12.015</pub-id>
+      <fpage>341</fpage>
+      <lpage>358</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-paleti_empirical_2011-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Paleti</surname><given-names>Rajesh</given-names></name>
+        <name><surname>Copperman</surname><given-names>Rachel B.</given-names></name>
+        <name><surname>Bhat</surname><given-names>Chandra R.</given-names></name>
+      </person-group>
+      <article-title>An empirical analysis of children’s after school out-of-home activity-location engagement patterns and time allocation</article-title>
+      <source>Transportation</source>
+      <year iso-8601-date="2011-03">2011</year><month>03</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-08-28">2025</year><month>08</month><day>28</day></date-in-citation>
+      <volume>38</volume>
+      <issue>2</issue>
+      <issn>0049-4488, 1572-9435</issn>
+      <uri>http://link.springer.com/10.1007/s11116-010-9300-2</uri>
+      <pub-id pub-id-type="doi">10.1007/s11116-010-9300-2</pub-id>
+      <fpage>273</fpage>
+      <lpage>303</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-sener_analysis_2007-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Sener</surname><given-names>Ipek N.</given-names></name>
+        <name><surname>Bhat</surname><given-names>Chandra R.</given-names></name>
+      </person-group>
+      <article-title>An analysis of the social context of children’s weekend discretionary activity participation</article-title>
+      <source>Transportation</source>
+      <year iso-8601-date="2007-09">2007</year><month>09</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-08-28">2025</year><month>08</month><day>28</day></date-in-citation>
+      <volume>34</volume>
+      <issue>6</issue>
+      <issn>0049-4488, 1572-9435</issn>
+      <uri>http://link.springer.com/10.1007/s11116-007-9125-9</uri>
+      <pub-id pub-id-type="doi">10.1007/s11116-007-9125-9</pub-id>
+      <fpage>697</fpage>
+      <lpage>721</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-sener_analysis_2008-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Sener</surname><given-names>Ipek N.</given-names></name>
+        <name><surname>Copperman</surname><given-names>Rachel B.</given-names></name>
+        <name><surname>Pendyala</surname><given-names>Ram M.</given-names></name>
+        <name><surname>Bhat</surname><given-names>Chandra R.</given-names></name>
+      </person-group>
+      <article-title>An analysis of children’s leisure activity engagement: Examining the day of week, location, physical activity level, and fixity dimensions</article-title>
+      <source>Transportation</source>
+      <year iso-8601-date="2008-08">2008</year><month>08</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-08-28">2025</year><month>08</month><day>28</day></date-in-citation>
+      <volume>35</volume>
+      <issue>5</issue>
+      <issn>0049-4488, 1572-9435</issn>
+      <uri>http://link.springer.com/10.1007/s11116-008-9173-9</uri>
+      <pub-id pub-id-type="doi">10.1007/s11116-008-9173-9</pub-id>
+      <fpage>673</fpage>
+      <lpage>696</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-osborne_updated_2021-nb-article">
+    <element-citation publication-type="report">
+      <person-group person-group-type="author">
+        <name><surname>Osborne</surname><given-names>Cynthia</given-names></name>
+        <name><surname>Wu</surname><given-names>Erin</given-names></name>
+        <name><surname>Benson</surname><given-names>Kaeley</given-names></name>
+      </person-group>
+      <article-title>An Updated Estimation Model of the Cost of Raising Children in Texas</article-title>
+      <year iso-8601-date="2021-08">2021</year><month>08</month>
+    </element-citation>
+  </ref>
+  <ref id="ref-lino_expenditures_2017-nb-article">
+    <element-citation publication-type="report">
+      <person-group person-group-type="author">
+        <name><surname>Lino</surname><given-names>Mark</given-names></name>
+        <name><surname>Kuczynski</surname><given-names>Kevin</given-names></name>
+        <name><surname>Rodriguez</surname><given-names>Nestor</given-names></name>
+        <name><surname>Schap</surname><given-names>TusaRebecca</given-names></name>
+      </person-group>
+      <article-title>Expenditures on Children by Families, 2015</article-title>
+      <publisher-name>United States Department of Agriculture</publisher-name>
+      <year iso-8601-date="2017">2017</year>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-01">2025</year><month>09</month><day>01</day></date-in-citation>
+      <uri>https://ageconsearch.umn.edu/record/327257</uri>
+      <pub-id pub-id-type="doi">10.22004/ag.econ.327257</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-molloy_new_2024-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Molloy</surname><given-names>Quinn</given-names></name>
+        <name><surname>Garrick</surname><given-names>Norman</given-names></name>
+        <name><surname>Atkinson-Palombo</surname><given-names>Carol</given-names></name>
+      </person-group>
+      <article-title>A New Approach to Understanding the Impact of Automobile Ownership on Transportation Equity</article-title>
+      <source>Transportation Research Record</source>
+      <year iso-8601-date="2024-02">2024</year><month>02</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-05">2025</year><month>09</month><day>05</day></date-in-citation>
+      <volume>2678</volume>
+      <issue>2</issue>
+      <issn>0361-1981</issn>
+      <uri>https://doi.org/10.1177/03611981231174444</uri>
+      <pub-id pub-id-type="doi">10.1177/03611981231174444</pub-id>
+      <fpage>366</fpage>
+      <lpage>376</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-mattson_relationships_2020-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Mattson</surname><given-names>Jeremy</given-names></name>
+      </person-group>
+      <article-title>Relationships between density, transit, and household expenditures in small urban areas</article-title>
+      <source>Transportation Research Interdisciplinary Perspectives</source>
+      <year iso-8601-date="2020-11">2020</year><month>11</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-05">2025</year><month>09</month><day>05</day></date-in-citation>
+      <volume>8</volume>
+      <issn>2590-1982</issn>
+      <uri>https://www.sciencedirect.com/science/article/pii/S2590198220301718</uri>
+      <pub-id pub-id-type="doi">10.1016/j.trip.2020.100260</pub-id>
+      <fpage>100260</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-mattson_relationships_2019-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Mattson</surname><given-names>Jeremy</given-names></name>
+        <name><surname>Peterson</surname><given-names>Del</given-names></name>
+      </person-group>
+      <article-title>Relationships between Land Use, Transportation, Household Expenditures, and Municipal Spending in Small Urban Areas</article-title>
+      <year iso-8601-date="2019-12">2019</year><month>12</month>
+    </element-citation>
+  </ref>
+  <ref id="ref-bureau_of_transportation_statistics_transportation_2024-nb-article">
+    <element-citation publication-type="report">
+      <person-group person-group-type="author">
+        <string-name>Bureau of Transportation Statistics</string-name>
+      </person-group>
+      <article-title>Transportation Statistics Annual Report 2024</article-title>
+      <publisher-name>Bureau of Transportation Statistics</publisher-name>
+      <year iso-8601-date="2024-12">2024</year><month>12</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-05">2025</year><month>09</month><day>05</day></date-in-citation>
+      <uri>https://rosap.ntl.bts.gov/view/dot/79039</uri>
+      <pub-id pub-id-type="doi">10.21949/E0KQ-GF72</pub-id>
+      <fpage>219 pages, 35.3 Megabytes</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-deka_relationship_2015-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Deka</surname><given-names>Devajyoti</given-names></name>
+      </person-group>
+      <article-title>Relationship between Households’ Housing and Transportation Expenditures: Examination from Lifestyle Perspective</article-title>
+      <source>Transportation Research Record</source>
+      <year iso-8601-date="2015-01">2015</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-05">2025</year><month>09</month><day>05</day></date-in-citation>
+      <volume>2531</volume>
+      <issue>1</issue>
+      <issn>0361-1981</issn>
+      <uri>https://doi.org/10.3141/2531-04</uri>
+      <pub-id pub-id-type="doi">10.3141/2531-04</pub-id>
+      <fpage>26</fpage>
+      <lpage>35</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-ferdous_comprehensive_2010-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Ferdous</surname><given-names>Nazneen</given-names></name>
+        <name><surname>Pinjari</surname><given-names>Abdul Rawoof</given-names></name>
+        <name><surname>Bhat</surname><given-names>Chandra R.</given-names></name>
+        <name><surname>Pendyala</surname><given-names>Ram M.</given-names></name>
+      </person-group>
+      <article-title>A comprehensive analysis of household transportation expenditures relative to other goods and services: An application to United States consumer expenditure data</article-title>
+      <source>Transportation</source>
+      <year iso-8601-date="2010-05">2010</year><month>05</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-06">2025</year><month>09</month><day>06</day></date-in-citation>
+      <volume>37</volume>
+      <issue>3</issue>
+      <issn>0049-4488, 1572-9435</issn>
+      <uri>http://link.springer.com/10.1007/s11116-010-9264-2</uri>
+      <pub-id pub-id-type="doi">10.1007/s11116-010-9264-2</pub-id>
+      <fpage>363</fpage>
+      <lpage>390</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-thakuriah_analysis_2005-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Thakuriah</surname><given-names>Piyushimita (Vonu)</given-names></name>
+        <name><surname>Liao</surname><given-names>Yihua</given-names></name>
+      </person-group>
+      <article-title>Analysis of Variations in Vehicle Ownership Expenditures</article-title>
+      <source>Transportation Research Record: Journal of the Transportation Research Board</source>
+      <year iso-8601-date="2005-01">2005</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-06">2025</year><month>09</month><day>06</day></date-in-citation>
+      <volume>1926</volume>
+      <issue>1</issue>
+      <issn>0361-1981, 2169-4052</issn>
+      <uri>https://journals.sagepub.com/doi/10.1177/0361198105192600101</uri>
+      <pub-id pub-id-type="doi">10.1177/0361198105192600101</pub-id>
+      <fpage>1</fpage>
+      <lpage>9</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-bilgin_investigating_2025-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Bilgin</surname><given-names>Pinar</given-names></name>
+        <name><surname>Mattioli</surname><given-names>Giulio</given-names></name>
+        <name><surname>Morgan</surname><given-names>Malcolm</given-names></name>
+        <name><surname>Wadud</surname><given-names>Zia</given-names></name>
+      </person-group>
+      <article-title>Investigating the effects of ridesourcing on the dynamics of household car ownership</article-title>
+      <source>Transportation Research Part D: Transport and Environment</source>
+      <year iso-8601-date="2025-09">2025</year><month>09</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-06">2025</year><month>09</month><day>06</day></date-in-citation>
+      <volume>146</volume>
+      <issn>1361-9209</issn>
+      <uri>https://www.sciencedirect.com/science/article/pii/S1361920925002962</uri>
+      <pub-id pub-id-type="doi">10.1016/j.trd.2025.104886</pub-id>
+      <fpage>104886</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-mccarthy_factors_2017-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>McCarthy</surname><given-names>Laura</given-names></name>
+        <name><surname>Delbosc</surname><given-names>Alexa</given-names></name>
+        <name><surname>Currie</surname><given-names>Graham</given-names></name>
+        <name><surname>Molloy</surname><given-names>Andrew</given-names></name>
+      </person-group>
+      <article-title>Factors influencing travel mode choice among families with young children (aged 0–4): A review of the literature</article-title>
+      <source>Transport Reviews</source>
+      <year iso-8601-date="2017-11">2017</year><month>11</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-08">2025</year><month>09</month><day>08</day></date-in-citation>
+      <volume>37</volume>
+      <issue>6</issue>
+      <issn>0144-1647</issn>
+      <uri>https://doi.org/10.1080/01441647.2017.1354942</uri>
+      <pub-id pub-id-type="doi">10.1080/01441647.2017.1354942</pub-id>
+      <fpage>767</fpage>
+      <lpage>781</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-lu_role_2022-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Lu</surname><given-names>Ying</given-names></name>
+        <name><surname>Prato</surname><given-names>Carlo G.</given-names></name>
+        <name><surname>Sipe</surname><given-names>Neil</given-names></name>
+        <name><surname>Kimpton</surname><given-names>Anthony</given-names></name>
+        <name><surname>Corcoran</surname><given-names>Jonathan</given-names></name>
+      </person-group>
+      <article-title>The role of household modality style in first and last mile travel mode choice</article-title>
+      <source>Transportation Research Part A: Policy and Practice</source>
+      <year iso-8601-date="2022-04">2022</year><month>04</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-08">2025</year><month>09</month><day>08</day></date-in-citation>
+      <volume>158</volume>
+      <issn>0965-8564</issn>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0965856422000313</uri>
+      <pub-id pub-id-type="doi">10.1016/j.tra.2022.02.003</pub-id>
+      <fpage>95</fpage>
+      <lpage>109</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-blumenberg_transportation_2003-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Blumenberg</surname><given-names>Evelyn</given-names></name>
+      </person-group>
+      <article-title>Transportation Costs and Economic Opportunity Among the Poor</article-title>
+      <year iso-8601-date="2003-10">2003</year><month>10</month>
+    </element-citation>
+  </ref>
+  <ref id="ref-haas_estimating_2008-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Haas</surname><given-names>Peter M.</given-names></name>
+        <name><surname>Makarewicz</surname><given-names>Carrie</given-names></name>
+        <name><surname>Benedict</surname><given-names>Albert</given-names></name>
+        <name><surname>Bernstein</surname><given-names>Scott</given-names></name>
+      </person-group>
+      <article-title>Estimating Transportation Costs by Characteristics of Neighborhood and Household</article-title>
+      <source>Transportation Research Record</source>
+      <year iso-8601-date="2008-01">2008</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-08">2025</year><month>09</month><day>08</day></date-in-citation>
+      <volume>2077</volume>
+      <issue>1</issue>
+      <issn>0361-1981</issn>
+      <uri>https://doi.org/10.3141/2077-09</uri>
+      <pub-id pub-id-type="doi">10.3141/2077-09</pub-id>
+      <fpage>62</fpage>
+      <lpage>70</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-morris_family_1979-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Morris</surname><given-names>J. M.</given-names></name>
+        <name><surname>Wigan</surname><given-names>M. R.</given-names></name>
+      </person-group>
+      <article-title>A family expenditure perspective on transport planning: Australian evidence in context</article-title>
+      <source>Transportation Research Part A: General</source>
+      <year iso-8601-date="1979-08">1979</year><month>08</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-08">2025</year><month>09</month><day>08</day></date-in-citation>
+      <volume>13</volume>
+      <issue>4</issue>
+      <issn>0191-2607</issn>
+      <uri>https://www.sciencedirect.com/science/article/pii/0191260779900517</uri>
+      <pub-id pub-id-type="doi">10.1016/0191-2607(79)90051-7</pub-id>
+      <fpage>249</fpage>
+      <lpage>285</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-hong_leisure_2005-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hong</surname><given-names>Gong-Soog</given-names></name>
+        <name><surname>Fan</surname><given-names>Jessie X.</given-names></name>
+        <name><surname>Palmer</surname><given-names>Lance</given-names></name>
+        <name><surname>Bhargava</surname><given-names>Vibha</given-names></name>
+      </person-group>
+      <article-title>Leisure Travel Expenditure Patterns by Family Life Cycle Stages</article-title>
+      <source>Journal of Travel &amp; Tourism Marketing</source>
+      <year iso-8601-date="2005-09">2005</year><month>09</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-08">2025</year><month>09</month><day>08</day></date-in-citation>
+      <volume>18</volume>
+      <issue>2</issue>
+      <issn>1054-8408</issn>
+      <uri>https://doi.org/10.1300/J073v18n02_02</uri>
+      <pub-id pub-id-type="doi">10.1300/J073v18n02_02</pub-id>
+      <fpage>15</fpage>
+      <lpage>30</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-choo_transportation_2007-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Choo</surname><given-names>Sangho</given-names></name>
+        <name><surname>Lee</surname><given-names>Taihyeong</given-names></name>
+        <name><surname>Mokhtarian</surname><given-names>Patricia L.</given-names></name>
+      </person-group>
+      <article-title>Do Transportation and Communications Tend to be Substitutes, Complements, or Neither?: U.S. Consumer Expenditures Perspective, 1984–2002</article-title>
+      <source>Transportation Research Record</source>
+      <year iso-8601-date="2007-01">2007</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-08">2025</year><month>09</month><day>08</day></date-in-citation>
+      <volume>2010</volume>
+      <issue>1</issue>
+      <issn>0361-1981</issn>
+      <uri>https://doi.org/10.3141/2010-14</uri>
+      <pub-id pub-id-type="doi">10.3141/2010-14</pub-id>
+      <fpage>121</fpage>
+      <lpage>132</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-thakuriah_vonu_transportation_2006-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Thakuriah (Vonu)</surname><given-names>Piyushimita</given-names></name>
+        <name><surname>Liao</surname><given-names>Yihua</given-names></name>
+      </person-group>
+      <article-title>Transportation Expenditures and Ability to Pay: Evidence from Consumer Expenditure Survey</article-title>
+      <source>Transportation Research Record</source>
+      <year iso-8601-date="2006-01">2006</year><month>01</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-08">2025</year><month>09</month><day>08</day></date-in-citation>
+      <volume>1985</volume>
+      <issue>1</issue>
+      <issn>0361-1981</issn>
+      <uri>https://doi.org/10.1177/0361198106198500128</uri>
+      <pub-id pub-id-type="doi">10.1177/0361198106198500128</pub-id>
+      <fpage>257</fpage>
+      <lpage>265</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-klein_subsidizing_2024-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Klein</surname><given-names>Nicholas J.</given-names></name>
+      </person-group>
+      <article-title>Subsidizing Car Ownership for Low-Income Individuals and Households</article-title>
+      <source>Journal of Planning Education and Research</source>
+      <year iso-8601-date="2024-03">2024</year><month>03</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-08">2025</year><month>09</month><day>08</day></date-in-citation>
+      <volume>44</volume>
+      <issue>1</issue>
+      <issn>0739-456X</issn>
+      <uri>https://doi.org/10.1177/0739456X20950428</uri>
+      <pub-id pub-id-type="doi">10.1177/0739456X20950428</pub-id>
+      <fpage>165</fpage>
+      <lpage>177</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-amirnazmiafshar_review_2022-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Amirnazmiafshar</surname><given-names>Ehsan</given-names></name>
+        <name><surname>Diana</surname><given-names>Marco</given-names></name>
+      </person-group>
+      <article-title>A review of the socio-demographic characteristics affecting the demand for different car-sharing operational schemes</article-title>
+      <source>Transportation Research Interdisciplinary Perspectives</source>
+      <year iso-8601-date="2022-06">2022</year><month>06</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-09-08">2025</year><month>09</month><day>08</day></date-in-citation>
+      <volume>14</volume>
+      <issn>2590-1982</issn>
+      <uri>https://www.sciencedirect.com/science/article/pii/S2590198222000781</uri>
+      <pub-id pub-id-type="doi">10.1016/j.trip.2022.100616</pub-id>
+      <fpage>100616</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-sabelhaus_is_2013-nb-article">
+    <element-citation publication-type="report">
+      <person-group person-group-type="author">
+        <name><surname>Sabelhaus</surname><given-names>John</given-names></name>
+        <name><surname>Johnson</surname><given-names>David</given-names></name>
+        <name><surname>Ash</surname><given-names>Stephen</given-names></name>
+        <name><surname>Swanson</surname><given-names>David</given-names></name>
+        <name><surname>Garner</surname><given-names>Thesia</given-names></name>
+        <name><surname>Greenlees</surname><given-names>John</given-names></name>
+        <name><surname>Henderson</surname><given-names>Steve</given-names></name>
+      </person-group>
+      <article-title>Is the Consumer Expenditure Survey Representative by Income?</article-title>
+      <publisher-name>National Bureau of Economic Research</publisher-name>
+      <year iso-8601-date="2013-10">2013</year><month>10</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-10-18">2025</year><month>10</month><day>18</day></date-in-citation>
+      <uri>https://www.nber.org/papers/w19589</uri>
+      <pub-id pub-id-type="doi">10.3386/w19589</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-skinner_variable_1985-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Skinner</surname><given-names>Jonathan</given-names></name>
+      </person-group>
+      <article-title>Variable Lifespan and the Intertemporal Elasticity of Consumption</article-title>
+      <source>The Review of Economics and Statistics</source>
+      <year iso-8601-date="1985">1985</year>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-11-22">2025</year><month>11</month><day>22</day></date-in-citation>
+      <volume>67</volume>
+      <issue>4</issue>
+      <issn>0034-6535</issn>
+      <uri>https://www.jstor.org/stable/1924806</uri>
+      <pub-id pub-id-type="doi">10.2307/1924806</pub-id>
+      <fpage>616</fpage>
+      <lpage>623</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-nayga_sample_1998-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Nayga</surname><given-names>Rodolfo M.</given-names></name>
+      </person-group>
+      <article-title>A sample selection model for prepared food expenditures</article-title>
+      <source>Applied Economics</source>
+      <year iso-8601-date="1998-03">1998</year><month>03</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-11-22">2025</year><month>11</month><day>22</day></date-in-citation>
+      <volume>30</volume>
+      <issue>3</issue>
+      <issn>0003-6846</issn>
+      <uri>https://doi.org/10.1080/000368498325868</uri>
+      <pub-id pub-id-type="doi">10.1080/000368498325868</pub-id>
+      <fpage>345</fpage>
+      <lpage>352</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-fontes_effects_2006-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Fontes</surname><given-names>Angela</given-names></name>
+        <name><surname>Fan</surname><given-names>Jessie</given-names></name>
+      </person-group>
+      <article-title>The Effects of Ethnic Identity on Household Budget Allocation to Status Conveying Goods</article-title>
+      <source>Journal of Family and Economic Issues</source>
+      <year iso-8601-date="2006-02">2006</year><month>02</month>
+      <volume>27</volume>
+      <pub-id pub-id-type="doi">10.1007/s10834-006-9031-x</pub-id>
+      <fpage>643</fpage>
+      <lpage>663</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-souche_measuring_2010-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Souche</surname><given-names>Stéphanie</given-names></name>
+      </person-group>
+      <article-title>Measuring the structural determinants of urban travel demand</article-title>
+      <source>Transport Policy</source>
+      <year iso-8601-date="2010-05">2010</year><month>05</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2025-11-22">2025</year><month>11</month><day>22</day></date-in-citation>
+      <volume>17</volume>
+      <issue>3</issue>
+      <issn>0967070X</issn>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0967070X09001449</uri>
+      <pub-id pub-id-type="doi">10.1016/j.tranpol.2009.12.003</pub-id>
+      <fpage>127</fpage>
+      <lpage>134</lpage>
+    </element-citation>
+  </ref>
+</ref-list>
+</back>
+
+
+</sub-article>
 <sub-article article-type="notebook" id="nb-4-nb-1">
 <front-stub>
 <title-group>
