@@ -38,17 +38,24 @@ number-sections: true
 
 ## Introduction
 
-Households juggle how to allocate their budgets: whether to invest in a reliable car, pay for quality childcare, secure housing in a good school district, or set money aside for leisure. These everyday choices shape how families live and move, reflecting the trade-offs they make to balance competing priorities. Transportation often sits at the center of these decisions, not only because it can be a significant expense, but also because choosing to buy and maintain a car versus relying on public transit represents a long-term commitment and a broader lifestyle choice. Its relative weight compared to housing, childcare, and other spending varies widely across families. The relationship between household budgeting and mobility is shaped not only by causal direction but also by how families prioritize and weight different needs. On one hand, mobility resources such as car ownership can structure the household budget: households with no or only one vehicle may spend far less on transportation, freeing up income for other essential or discretionary categories. On the other hand, underlying family structures and preferences can drive budget allocation choices that, in turn, shape transportation behavior. Larger families may prioritize childcare or invest in higher-quality housing in areas with better schools, limiting what remains for transportation. Others may emphasize frugality across all categories or deliberately substitute toward lower-cost transit options. Understanding both the direction of influence and the weight assigned to different budget categories is critical for transportation planning and policy, as these dynamics reveal how families navigate competing priorities under varying demographic and mobility contexts.
+Households juggle how to allocate their budgets: whether to invest in a reliable car, pay for quality childcare, secure housing in a good school district, or set money aside for leisure. These everyday choices shape how families live and move, reflecting the trade-offs they make to balance competing priorities. Transportation often sits at the center of these decisions, not only because it can be a significant expense, but also because choosing to buy and maintain a car versus relying on public transit represents a long-term commitment and a broader lifestyle choice. Its relative weight compared to housing, childcare, and other spending varies widely across families. The relationship between household budgeting and mobility is shaped not only by causal direction but also by how families prioritize and weight different needs. On one hand, mobility resources such as car ownership can structure the household budget: households with no or only one vehicle may spend far less on transportation, freeing up income for other essential or discretionary categories. On the other hand, underlying family structures and preferences can drive budget allocation choipces that, in turn, shape transportation behavior. Larger families may prioritize childcare or invest in higher-quality housing in areas with better schools, limiting what remains for transportation. Others may emphasize frugality across all categories or deliberately substitute toward lower-cost transit options. Understanding both the direction of influence and the weight assigned to different budget categories is critical for transportation planning and policy, as these dynamics reveal how families navigate competing priorities under varying demographic and mobility contexts.
 
 The purpose of this research is to explore how household budgets are structured around transportation decisions and how this impacts other spending categories. Using the Consumer Expenditure Survey (CEX), we will perform a Latent Class Analysis (LCA) to find groupings based on a household's transportation expenses. These groupings can help us find groups of spenders with similar patterns to help us predict transportation expenses based on the household's characteristics.
 
 ## Literature Review
 
-The literature relating to this study has be classified into four groups: (1) Family Choices and Activity Patterns, (2) Family Transportation Choices, (3) Family Spending and Budgets, and (4) Family Transportation Budgets. The following sections describe the relevant findings from literature in each of these groups.
+```{r}
+library(tidyverse)
+library(knitr)
+lit_rev_tbl <- read_csv("notebooks/lit_review_table.csv")
+```
 
-@tbl-lit-summary summarizes the literature we reviewed
+
+@tbl-lit-summary summarizes the literature that was reviewed for this study. As seen in the table, there were a total of `r nrow(lit_rev_tbl)` studies reviewed with `r nrow(lit_rev_tbl[grepl("CEX",lit_rev_tbl$Dataset),])` studies that use the consumer expenditure survey.
 
 {{< embed notebooks/lit_review_table.qmd#tbl-lit-summary >}}
+
+The literature relating to this study has been classified into four groups: (1) Family Choices and Activity Patterns, (2) Family Transportation Choices, (3) Family Spending and Budgets, and (4) Family Transportation Budgets. The following sections describe the relevant findings from literature in each of these groups.
 
 ### Family Choices and Activity Patterns
 
