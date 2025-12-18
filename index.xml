@@ -814,11 +814,37 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     expenditures gettting much of their data from the CEX.</p>
   </sec>
 </sec>
+<sec id="data">
+  <title>3 Data</title>
+  <p>Data for the following analysis were attained from the 2024
+  Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX
+  is deployed continuously by the Bureau of Labor Statistics (BLS). The
+  data are organized by quarter published each year. The CEX consists of
+  two surveys as described below.</p>
+  <list list-type="bullet">
+    <list-item>
+      <p><bold>The Interview Survey</bold> tracks a household’s major
+      and recurring expenditures by reviewing their expenses from the
+      past three months. Approximatedly 6000 usable interviews are
+      collected each quarter. After interviewing a household for 4
+      consecutive quarters, they are removed from the sample and
+      replaced by a new household.</p>
+    </list-item>
+    <list-item>
+      <p><bold>The Diary Survey</bold> tracks a household’s weekly
+      expenditures by having them fill out a detailed expenditure diary
+      across a two-week span. Approximately 3000 usable responses are
+      collected each quarter. After the two consecutive weeks of
+      reporting expenditures, the household is removed from the sample
+      and replaced by a new household.</p>
+    </list-item>
+  </list>
+</sec>
 </body>
 
 <back>
 <ref-list>
-  <title>3 References</title>
+  <title>4 References</title>
   <ref id="ref-bernardo_empirical_2015">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -2260,13 +2286,39 @@ dbl (11): Study Number, Year, Use Consumer Expenditure Survey Data?, Transpo...
     expenditures gettting much of their data from the CEX.</p>
   </sec>
 </sec>
+<sec id="data-nb-article">
+  <title>3 Data</title>
+  <p>Data for the following analysis were attained from the 2024
+  Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX
+  is deployed continuously by the Bureau of Labor Statistics (BLS). The
+  data are organized by quarter published each year. The CEX consists of
+  two surveys as described below.</p>
+  <list list-type="bullet">
+    <list-item>
+      <p><bold>The Interview Survey</bold> tracks a household’s major
+      and recurring expenditures by reviewing their expenses from the
+      past three months. Approximatedly 6000 usable interviews are
+      collected each quarter. After interviewing a household for 4
+      consecutive quarters, they are removed from the sample and
+      replaced by a new household.</p>
+    </list-item>
+    <list-item>
+      <p><bold>The Diary Survey</bold> tracks a household’s weekly
+      expenditures by having them fill out a detailed expenditure diary
+      across a two-week span. Approximately 3000 usable responses are
+      collected each quarter. After the two consecutive weeks of
+      reporting expenditures, the household is removed from the sample
+      and replaced by a new household.</p>
+    </list-item>
+  </list>
+</sec>
 </body>
 
 
 
 <back>
 <ref-list>
-  <title>3 References</title>
+  <title>4 References</title>
   <ref id="ref-bernardo_empirical_2015-nb-article">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">

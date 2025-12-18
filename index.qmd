@@ -103,6 +103,16 @@ In their study, @molloy_new_2024 look at CEX data through after proposing new fr
 
 @bureau_of_transportation_statistics_transportation_2024 - Chapter 2 has a whole section where they analyze household expenditures gettting much of their data from the CEX. 
 
+## Data 
+
+Data for the following analysis were attained from the 2024 Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is deployed continuously by the Bureau of Labor Statistics (BLS). The data are organized by quarter published each year. The CEX consists of two surveys as described below. 
+
+- **The Interview Survey** tracks a household's major and recurring expenditures by reviewing their expenses from the past three months. Approximatedly 6000 usable interviews are collected each quarter. After interviewing a household for 4 consecutive quarters, they are removed from the sample and replaced by a new household. 
+
+- **The Diary Survey** tracks a household's weekly expenditures by having them fill out a detailed expenditure diary across a two-week span. Approximately 3000 usable responses are collected each quarter. After the two consecutive weeks of reporting expenditures, the household is removed from the sample and replaced by a new household.
+
+
+
 ## References
 
 ::: {#refs}
