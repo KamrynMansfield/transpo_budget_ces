@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang="en"
+  xml:lang="en"
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="quarto-1.8.26" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    <meta name="author" content="Kamryn Mansfield" />
+    <meta name="author" content="Katie Asmussen" />
+    <meta name="dcterms.date" content="2025-12-31" />
+    <meta name="keywords" content="Consumer Expenditure Survey, Transportation Spending, Family Spending, Budget" />
+
+    <title>Unpacking Household Budgeting Strategies through a Transportation Lens</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      /* CSS for syntax highlighting */
+      html { -webkit-text-size-adjust: 100%; }
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+        }
+      pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+      div.sourceCode
+        {   }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      /* CSS for citations */
+      div.csl-bib-body { }
+      div.csl-entry {
+        clear: both;
+        margin-bottom: 0em;
+      }
+      .hanging-indent div.csl-entry {
+        margin-left:2em;
+        text-indent:-2em;
+      }
+      div.csl-left-margin {
+        min-width:2em;
+        float:left;
+      }
+      div.csl-right-inline {
+        margin-left:2em;
+        padding-left:1em;
+      }
+      div.csl-indent {
+        margin-left: 2em;
+      }    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    <!-- htmldependencies:E3FAD763 -->
+     <script async src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>  
+      </head>
+
+  <body>
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Article Notebook</h6>
+
+            <a
+        href="index.qmd"
+        class="btn btn-primary quarto-download-embed"
+        data-noresolveinput="true"
+        download="index.qmd"
+        >Download Source</a
+      >
+          </div>
+
+     <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <div id="quarto-toc-target"></div>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">      <header id="title-block-header" class="quarto-title-block default toc-left">
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
+      <h1 class="title">Unpacking Household Budgeting Strategies through a Transportation Lens</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author">
+          <div class="quarto-title-meta-heading">Authors</div>
+          <div class="quarto-title-meta-heading">Affiliations</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">Kamryn Mansfield <a href="mailto:kmansfi4@vols.utk.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0003-5466-0821" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of Tennessee
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Katie Asmussen <a href="https://orcid.org/0000-0002-5615-0708" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of Tenenessee
+                      </p>
+                  </div>
+                    </div>
+        
+        <div class="quarto-title-meta">
+
+                      
+                <div>
+            <div class="quarto-title-meta-heading">Published</div>
+            <div class="quarto-title-meta-contents">
+              <p class="date">December 31, 2025</p>
+            </div>
+          </div>
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+    <div>
+      <div class="abstract">
+        <div class="block-title">Abstract</div>
+        <p>This is where we will put our abstract.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="keywords">
+        <div class="block-title">Keywords</div>
+        <p>Consumer Expenditure Survey, Transportation Spending, Family Spending, Budget</p>
+      </div>
+    </div>
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header>
+
+     <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#literature-review" id="toc-literature-review"><span class="header-section-number">2</span> Literature Review</a>
+  <ul>
+  <li><a href="#household-activities-and-transportation-choices" id="toc-household-activities-and-transportation-choices"><span class="header-section-number">2.1</span> Household Activities and Transportation Choices</a></li>
+  <li><a href="#household-spending-and-budgets" id="toc-household-spending-and-budgets"><span class="header-section-number">2.2</span> Household Spending and Budgets</a></li>
+  <li><a href="#household-transportation-expenses-and-budgets" id="toc-household-transportation-expenses-and-budgets"><span class="header-section-number">2.3</span> Household Transportation Expenses and Budgets</a></li>
+  <li><a href="#the-current-study" id="toc-the-current-study"><span class="header-section-number">2.4</span> The Current Study</a></li>
+  </ul></li>
+  <li><a href="#data" id="toc-data"><span class="header-section-number">3</span> Data</a></li>
+  <li><a href="#references" id="toc-references"><span class="header-section-number">4</span> References</a></li>
+  </ul>
+</nav>  <div class="cell">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code></pre></div>
+</div>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1"><span class="header-section-number">1</span> Introduction</h2>
+<p>Statistics I can point out</p>
+<ul>
+<li><p>The amount of budget allocated to transportation is more than it used to be <span class="citation" data-cites="johnson_century_2001">(<a href="#ref-johnson_century_2001" role="doc-biblioref">Johnson, Rogers, and Tan 2001</a>)</span> (but in recent years it might be going down. I want to double check that)</p></li>
+<li><p>How much does the average household spend on transportaiton? I can probably get some good data from <span class="citation" data-cites="bureau_of_transportation_statistics_transportation_2024">Bureau of Transportation Statistics (<a href="#ref-bureau_of_transportation_statistics_transportation_2024" role="doc-biblioref">2024</a>)</span></p></li>
+<li><p>Do people with more kids spend more on transportation?</p></li>
+<li><p>Do people with more cars spend more on transportation?</p></li>
+<li><p>Lower income households spend m a bigger percent of their budget on transportation (transportaiton burdened) <span class="citation" data-cites="molloy_new_2024">(<a href="#ref-molloy_new_2024" role="doc-biblioref">Molloy, Garrick, and Atkinson-Palombo 2024</a>)</span></p></li>
+</ul>
+<p>Households juggle how to allocate their budgets: whether to invest in a reliable car, pay for quality childcare, secure housing in a good school district, or set money aside for leisure. These everyday choices shape how families live and move, reflecting the trade-offs they make to balance competing priorities. Transportation often sits at the center of these decisions, not only because it can be a significant expense, but also because choosing to buy and maintain a car versus relying on public transit represents a long-term commitment and a broader lifestyle choice. Its relative weight compared to housing, childcare, and other spending varies widely across families. The relationship between household budgeting and mobility is shaped not only by causal direction but also by how families prioritize and weight different needs. On one hand, mobility resources such as car ownership can structure the household budget: households with no or only one vehicle may spend far less on transportation, freeing up income for other essential or discretionary categories. On the other hand, underlying family structures and preferences can drive budget allocation choipces that, in turn, shape transportation behavior. Larger families may prioritize childcare or invest in higher-quality housing in areas with better schools, limiting what remains for transportation. Others may emphasize frugality across all categories or deliberately substitute toward lower-cost transit options. Understanding both the direction of influence and the weight assigned to different budget categories is critical for transportation planning and policy, as these dynamics reveal how families navigate competing priorities under varying demographic and mobility contexts.</p>
+<p>The purpose of this research is to explore how household budgets are structured around transportation decisions and how this impacts other spending categories. Using the Consumer Expenditure Survey (CEX), we will perform a Latent Class Analysis (LCA) to find groupings based on a household’s transportation expenses. These groupings can help us find groups of spenders with similar patterns to help us predict transportation expenses based on the household’s characteristics.</p>
+</section>
+<section id="literature-review" class="level2" data-number="2">
+<h2 data-number="2"><span class="header-section-number">2</span> Literature Review</h2>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lit_rev_tbl <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;notebooks/lit_review_table.csv&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 35 Columns: 21
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (10): Author, Title, bibtex name, Brief summary of what the study is abo...
+dbl (11): Study Number, Year, Use Consumer Expenditure Survey Data?, Transpo...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p><a href="#tbl-lit-summary" class="quarto-xref">Table 1</a> summarizes the literature that was reviewed for this study. As seen in the table, there were a total of 35 studies reviewed with 19 studies that use the consumer expenditure survey.</p>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/kamrynmansfield/College/UTK/Papers/transpo_budget_ces/notebooks/lit_review_table.qmd" data-notebook-title="Lit Review Table" data-notebook-cellId="cell-tbl-lit-summary">
+<div class="cell" data-tbl-alt="A table listing and describing the literature used in this review">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>kable(lit_tbl)</span></code></pre></div>
+<div id="tbl-lit-summary" class="cell quarto-float quarto-figure quarto-figure-center" data-tbl-alt="A table listing and describing the literature used in this review">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lit-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 1: Summary of the Literature
+</figcaption>
+<div aria-describedby="tbl-lit-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="do-not-create-environment cell caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 43%" />
+<col style="width: 11%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Citation</th>
+<th style="text-align: left;">Dataset</th>
+<th style="text-align: left;">Findings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A family expenditure perspective on transport planning: Australian evidence in context</td>
+<td style="text-align: left;"><span class="citation" data-cites="morris_family_1979">Morris and Wigan (<a href="#ref-morris_family_1979" role="doc-biblioref">1979</a>)</span></td>
+<td style="text-align: left;">Australian Expenditure Survey</td>
+<td style="text-align: left;">transport takes about o17 percent of expenditures, at least part of the consumption expenditure by low income families is financed from savings, loans or other sourCEX besides “income”.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Variable Lifespan and the Intertemporal Elasticity of Consumption</td>
+<td style="text-align: left;"><span class="citation" data-cites="skinner_variable_1985">Skinner (<a href="#ref-skinner_variable_1985" role="doc-biblioref">1985</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">Changes in inflation will prompt changes in consumer expenditures</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A sample selection model for prepared food expenditures</td>
+<td style="text-align: left;"><span class="citation" data-cites="nayga_sample_1998">Nayga (<a href="#ref-nayga_sample_1998" role="doc-biblioref">1998</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">Most of the variables analysed significantly affect prepared food expenditures. For example, results suggest that frozen meals expenditures are higher for households without children, for smaller households, and for households headed by a non-white individual</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transportation Costs and Economic Opportunity Among the Poor</td>
+<td style="text-align: left;"><span class="citation" data-cites="blumenberg_transportation_2003">Blumenberg (<a href="#ref-blumenberg_transportation_2003" role="doc-biblioref">2003</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">Cost comparisons fall short of finding if transportation costs are a barrier for economic opportunity among the poor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Analysis of Variations in Vehicle Ownership Expenditures</td>
+<td style="text-align: left;"><span class="citation" data-cites="thakuriah_analysis_2005">Thakuriah and Liao (<a href="#ref-thakuriah_analysis_2005" role="doc-biblioref">2005</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">For vehicle-owning households, of every additional dollar that households spend, 18 cents is spent on vehicles after controlling for socioeconomic, demographic, life cycle, and other factors relating to households.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Leisure Travel Expenditure Patterns by Family Life Cycle Stages</td>
+<td style="text-align: left;"><span class="citation" data-cites="hong_leisure_2005">Hong et al. (<a href="#ref-hong_leisure_2005" role="doc-biblioref">2005</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">Marrieds without children are more likely to spend on leisure travel than singles, whereas single parents and solitary survivors are less likely to spend on leisure travel than singles.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Transportation Expenditures and Ability to Pay: Evidence from Consumer Expenditure Survey</td>
+<td style="text-align: left;"><span class="citation" data-cites="thakuriah_vonu_transportation_2006">Thakuriah (Vonu) and Liao (<a href="#ref-thakuriah_vonu_transportation_2006" role="doc-biblioref">2006</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">Transportation expenditures made by households are better explained by permanent income levels of households than by annual incomes.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The Effects of Ethnic Identity on Household Budget Allocation to Status Conveying Goods</td>
+<td style="text-align: left;"><span class="citation" data-cites="fontes_effects_2006">Fontes and Fan (<a href="#ref-fontes_effects_2006" role="doc-biblioref">2006</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">Asian Americans allocate more of their budget to housing, African Americans allocate more of their budget to apparel, and Hispanics allocate more of their budget to both housing and apparel, but to a lesser extent than Asian Americans with respect to housing and African Americans with respect to apparel.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Do Transportation and Communications Tend to be Substitutes, Complements, or Neither?: U.S. Consumer Expenditures Perspective, 1984–2002</td>
+<td style="text-align: left;"><span class="citation" data-cites="choo_transportation_2007">Choo, Lee, and Mokhtarian (<a href="#ref-choo_transportation_2007" role="doc-biblioref">2007</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">New tech doesn’t substitue Personal Vehicle travel probably</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">An analysis of the determinants of children’s weekend physical activity participation</td>
+<td style="text-align: left;"><span class="citation" data-cites="copperman_analysis_2007">Rachel B. Copperman and Bhat (<a href="#ref-copperman_analysis_2007" role="doc-biblioref">2007a</a>)</span></td>
+<td style="text-align: left;">San Francisco Bay Area Travel Survey</td>
+<td style="text-align: left;">The “number of children” variable suggests an overall higher likelihood of participation in utilitarian active travel among households with many children relative to households with few children</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">An analysis of the social context of children’s weekend discretionary activity participation</td>
+<td style="text-align: left;"><span class="citation" data-cites="sener_analysis_2007">Sener and Bhat (<a href="#ref-sener_analysis_2007" role="doc-biblioref">2007</a>)</span></td>
+<td style="text-align: left;">Panel Study of Income Dynamics (PSID)</td>
+<td style="text-align: left;">male children more likely to participate with their fathers than female children, African-American children less likely to participate in health-enhancing active recreation pursuits</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">An Exploratory Analysis of Children’s Daily Time-Use and Activity Patterns Using the Child Development Supplement (CDS) to the US Panel Study of Income Dynamics (PSID)</td>
+<td style="text-align: left;"><span class="citation" data-cites="copperman_exploratory_2007">Rachel B. Copperman and Bhat (<a href="#ref-copperman_exploratory_2007" role="doc-biblioref">2007b</a>)</span></td>
+<td style="text-align: left;">Panel Study of Income Dynamics (PSID)</td>
+<td style="text-align: left;">The age of childrend has an effect on the types of activities they pursue</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Estimating Transportation Costs by Characteristics of Neighborhood and Household</td>
+<td style="text-align: left;"><span class="citation" data-cites="haas_estimating_2008">Haas et al. (<a href="#ref-haas_estimating_2008" role="doc-biblioref">2008</a>)</span></td>
+<td style="text-align: left;">CEX and others</td>
+<td style="text-align: left;">Their model can help in travel demand modeling</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">An analysis of children’s leisure activity engagement: Examining the day of week, location, physical activity level, and fixity dimensions</td>
+<td style="text-align: left;"><span class="citation" data-cites="sener_analysis_2008">Sener et al. (<a href="#ref-sener_analysis_2008" role="doc-biblioref">2008</a>)</span></td>
+<td style="text-align: left;">Panel Study of Income Dynamics (PSID)</td>
+<td style="text-align: left;">Children in households with parents who are employed, higher income, or higher education were found to participate in structured outdoor activities at higher rates.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A comprehensive analysis of household transportation expenditures relative to other goods and serviCEX: An application to United States consumer expenditure data</td>
+<td style="text-align: left;"><span class="citation" data-cites="ferdous_comprehensive_2010">Ferdous et al. (<a href="#ref-ferdous_comprehensive_2010" role="doc-biblioref">2010</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">Adjustments are made with increased fuel priCEX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Measuring the Structureal Determinants of Urban Travel Demand</td>
+<td style="text-align: left;"><span class="citation" data-cites="souche_measuring_2010">Souche (<a href="#ref-souche_measuring_2010" role="doc-biblioref">2010</a>)</span></td>
+<td style="text-align: left;">IUTP database</td>
+<td style="text-align: left;">urban density and cost of transport mode were statisticalliy significan in their model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">An empirical analysis of children’s after school out-of-home activity-location engagement patterns and time allocation</td>
+<td style="text-align: left;"><span class="citation" data-cites="paleti_empirical_2011">Paleti, Copperman, and Bhat (<a href="#ref-paleti_empirical_2011" role="doc-biblioref">2011</a>)</span></td>
+<td style="text-align: left;">Panel Study of Income Dynamics (PSID)</td>
+<td style="text-align: left;">The results show that a wide variety of demographic, attitudinal, environmental, and others’ activity-travel pattern characteristics impact children’s after school activity engagement patterns.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Is the Consumer Expenditure Survey Representative by Income?</td>
+<td style="text-align: left;"><span class="citation" data-cites="sabelhaus_is_2013">Sabelhaus et al. (<a href="#ref-sabelhaus_is_2013" role="doc-biblioref">2013</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">the highest income thresholds are underrepresented in the survey</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Relationship between Households’ Housing and Transportation Expenditures: Examination from Lifestyle Perspective</td>
+<td style="text-align: left;"><span class="citation" data-cites="deka_relationship_2015">Deka (<a href="#ref-deka_relationship_2015" role="doc-biblioref">2015</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">More housing costs = more transportation costs, people the take transit spend less on transportation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">An empirical investigation into the time-use and activity patterns of dual-earner couples with and without young children</td>
+<td style="text-align: left;"><span class="citation" data-cites="bernardo_empirical_2015">Bernardo et al. (<a href="#ref-bernardo_empirical_2015" role="doc-biblioref">2015</a>)</span></td>
+<td style="text-align: left;">ATUS</td>
+<td style="text-align: left;">the presence of a child in dual-earner households not only leads to a reduction in in-home non-work activity participation (excluding child care activities) but also a substantially larger decrease in out-of-home non-work activity participation (excluding child care and shopping activities),</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Expenditures on Children by Families, 2015</td>
+<td style="text-align: left;"><span class="citation" data-cites="lino_expenditures_2017">Lino et al. (<a href="#ref-lino_expenditures_2017" role="doc-biblioref">2017</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">Many observations on the expenditures of children</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Factors influencing travel mode choice among families with young children (aged 0–4): A review of the literature</td>
+<td style="text-align: left;"><span class="citation" data-cites="mccarthy_factors_2017">McCarthy et al. (<a href="#ref-mccarthy_factors_2017" role="doc-biblioref">2017</a>)</span></td>
+<td style="text-align: left;">Lit Review</td>
+<td style="text-align: left;">many factores influence decisions about mode choice when traveling with young children.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Relationships between Land Use, Transportation, Household Expenditures, and Municipal Spending in Small Urban Areas</td>
+<td style="text-align: left;"><span class="citation" data-cites="mattson_relationships_2019">Mattson and Peterson (<a href="#ref-mattson_relationships_2019" role="doc-biblioref">2019</a>)</span></td>
+<td style="text-align: left;">CEX, Ammerican Community Survey</td>
+<td style="text-align: left;">denser areas are more likely to use transit to commute. People in single-family homes tend to spend more money on transportation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">An environment-people interactions framework for analysing children’s extra-curricular activities and active transport</td>
+<td style="text-align: left;"><span class="citation" data-cites="leung_environment-people_2019">Leung et al. (<a href="#ref-leung_environment-people_2019" role="doc-biblioref">2019</a>)</span></td>
+<td style="text-align: left;">Survey in Hong Kong Schools</td>
+<td style="text-align: left;">childrens activities can differ a lot based on neighborhood enfironment and family sociodemographic background.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Relationships between density, transit, and household expenditures in small urban areas</td>
+<td style="text-align: left;"><span class="citation" data-cites="mattson_relationships_2020">Mattson (<a href="#ref-mattson_relationships_2020" role="doc-biblioref">2020</a>)</span></td>
+<td style="text-align: left;">CEX, Ammerican Community Survey</td>
+<td style="text-align: left;">single family homes spend more on transportation, higher income is correlated with higher tranportation costs.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">An Updated Estimation Model of the Cost of Raising Children in Texas</td>
+<td style="text-align: left;"><span class="citation" data-cites="osborne_updated_2021">Osborne, Wu, and Benson (<a href="#ref-osborne_updated_2021" role="doc-biblioref">2021</a>)</span></td>
+<td style="text-align: left;">NHTS, CEX</td>
+<td style="text-align: left;">Regardless of the method of calculation, we find that it is nearly impossible for two minimum wage earners to meet the basic costs of raising children in Texas, especially when child care is included</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Parental Investments of Money for White, Black, and Hispanic Children in the United States</td>
+<td style="text-align: left;"><span class="citation" data-cites="hastings_parental_2022">Hastings (<a href="#ref-hastings_parental_2022" role="doc-biblioref">2022</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">. Both sociodemographic and economic factors play a substantial role in these differenCEX, and the racial and ethnic gaps in parental investments of money are nearly eliminated when both are accounted for</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The role of household modality style in first and last mile travel mode choice</td>
+<td style="text-align: left;"><span class="citation" data-cites="lu_role_2022">Lu et al. (<a href="#ref-lu_role_2022" role="doc-biblioref">2022</a>)</span></td>
+<td style="text-align: left;">Southeast Queensland Travel Survey (SEQTS)</td>
+<td style="text-align: left;">joint travel contributes least to modal shift from car to active transport when there is improved infrastructure of trains and things</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A review of the socio-demographic characteristics affecting the demand for different car-sharing operational schemes</td>
+<td style="text-align: left;"><span class="citation" data-cites="amirnazmiafshar_review_2022">Amirnazmiafshar and Diana (<a href="#ref-amirnazmiafshar_review_2022" role="doc-biblioref">2022</a>)</span></td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">There are lots of factors that might affect people’s willingness to use car sharing</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estimating Expenditures on Children by Families in Canada, 2014 to 2017</td>
+<td style="text-align: left;"><span class="citation" data-cites="duncan_estimating_2023">Duncan, Frank, and Guèvremont (<a href="#ref-duncan_estimating_2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">Survey of Household Spending (SHS)</td>
+<td style="text-align: left;">The more income, the more spending on kids.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A New Approach to Understanding the Impact of Automobile Ownership on Transportation Equity</td>
+<td style="text-align: left;"><span class="citation" data-cites="molloy_new_2024">Molloy, Garrick, and Atkinson-Palombo (<a href="#ref-molloy_new_2024" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;">CEX</td>
+<td style="text-align: left;">“Captive Riders” have less spending allocated to transportation than captive drivers.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transportation Statistics Annual Report 2024</td>
+<td style="text-align: left;"><span class="citation" data-cites="bureau_of_transportation_statistics_transportation_2024">Bureau of Transportation Statistics (<a href="#ref-bureau_of_transportation_statistics_transportation_2024" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;">CEX and others</td>
+<td style="text-align: left;">Lots of summaries</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A STUDY OF SPENDING, SAVING AND INVESTMENT PATTERNS OF MARRIED COUPLES WITH CHILDREN(NON-DINK) IN MUMBAI</td>
+<td style="text-align: left;"><span class="citation" data-cites="hargunani_study_2024">Hargunani, Vernekar, and Vernekar (<a href="#ref-hargunani_study_2024" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;">Data from Mumbai</td>
+<td style="text-align: left;">The data analysis reveals distinct spending, saving, and investment patterns among married couples, with a clear prioritization towards ensuring the well-being and future security of their families.”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Subsidizing Car Ownership for Low-Income Individuals and Households</td>
+<td style="text-align: left;"><span class="citation" data-cites="klein_subsidizing_2024">Klein (<a href="#ref-klein_subsidizing_2024" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;">Personal Survey Created by Dr. Klein</td>
+<td style="text-align: left;">Having a car gave people more opportunities than before, and they usually had more time to spend with the family. At the beginning and end of the day.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Investigating the effects of ridesourcing on the dynamics of household car ownership</td>
+<td style="text-align: left;"><span class="citation" data-cites="bilgin_investigating_2025">Bilgin et al. (<a href="#ref-bilgin_investigating_2025" role="doc-biblioref">2025</a>)</span></td>
+<td style="text-align: left;">United Kingdom Household Longitudinal Study</td>
+<td style="text-align: left;">Suggests that households are less likely to qcquire a car in the presence of ridesourcing, but car disposal is mainly driven by household compositions and residential relocation factors.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>The literature relating to this study has been classified into four groups: (1) Family Choices and Activity Patterns, (2) Family Transportation Choices, (3) Family Spending and Budgets, and (4) Family Transportation Budgets. The following sections describe the relevant findings from literature in each of these groups.</p>
+<section id="household-activities-and-transportation-choices" class="level3" data-number="2.1">
+<h3 data-number="2.1"><span class="header-section-number">2.1</span> Household Activities and Transportation Choices</h3>
+<p>The literature shows that household dynamics affect the activity patterns of those in the household, and many studies focus on the role children play in these household activities. Some studies aim to find how the presence of children affect the activities of the household <span class="citation" data-cites="bernardo_empirical_2015">(<a href="#ref-bernardo_empirical_2015" role="doc-biblioref">Bernardo et al. 2015</a>)</span>, and many studies focus on how children’s activities are affected by household demographics <span class="citation" data-cites="sener_analysis_2007 copperman_exploratory_2007 sener_analysis_2008 paleti_empirical_2011 leung_environment-people_2019">(see <a href="#ref-sener_analysis_2007" role="doc-biblioref">Sener and Bhat 2007</a>; <a href="#ref-copperman_exploratory_2007" role="doc-biblioref">Rachel B. Copperman and Bhat 2007b</a>; <a href="#ref-sener_analysis_2008" role="doc-biblioref">Sener et al. 2008</a>; <a href="#ref-paleti_empirical_2011" role="doc-biblioref">Paleti, Copperman, and Bhat 2011</a>; <a href="#ref-leung_environment-people_2019" role="doc-biblioref">Leung et al. 2019</a>)</span>. A common finding in these studies is that child activity participation is associated with the environment the child lives in along with household income, parent activities, and other household demographics.</p>
+<p>Among the studies on household choices is a group of literature with a specific focus on a household’s transportation decisions. A common finding in this group of literature is that household composition plays a role in its transportation choices. Some studies in this group are concerned with the way households use cars or the effect of car ownership on transportation decisions <span class="citation" data-cites="lu_role_2022 amirnazmiafshar_review_2022 klein_subsidizing_2024 bilgin_investigating_2025">(<a href="#ref-lu_role_2022" role="doc-biblioref">Lu et al. 2022</a>; <a href="#ref-amirnazmiafshar_review_2022" role="doc-biblioref">Amirnazmiafshar and Diana 2022</a>; <a href="#ref-klein_subsidizing_2024" role="doc-biblioref">Klein 2024</a>; <a href="#ref-bilgin_investigating_2025" role="doc-biblioref">Bilgin et al. 2025</a>)</span>. These studies show there is a major connection between car ownership and transportation decisions. Other studies are focused on travel choices more generally <span class="citation" data-cites="copperman_analysis_2007 souche_measuring_2010">(<a href="#ref-copperman_analysis_2007" role="doc-biblioref">Rachel B. Copperman and Bhat 2007a</a>; <a href="#ref-souche_measuring_2010" role="doc-biblioref">Souche 2010</a>)</span>. For an extensive literature review on the transportation choices of households with young children, see the study done by <span class="citation" data-cites="mccarthy_factors_2017">McCarthy et al. (<a href="#ref-mccarthy_factors_2017" role="doc-biblioref">2017</a>)</span>.</p>
+</section>
+<section id="household-spending-and-budgets" class="level3" data-number="2.2">
+<h3 data-number="2.2"><span class="header-section-number">2.2</span> Household Spending and Budgets</h3>
+<p>Another set of studies focuses on household budgets and household spending patterns <span class="citation" data-cites="skinner_variable_1985 nayga_sample_1998 fontes_effects_2006 sabelhaus_is_2013">(<a href="#ref-skinner_variable_1985" role="doc-biblioref">Skinner 1985</a>; <a href="#ref-nayga_sample_1998" role="doc-biblioref">Nayga 1998</a>; <a href="#ref-fontes_effects_2006" role="doc-biblioref">Fontes and Fan 2006</a>; <a href="#ref-sabelhaus_is_2013" role="doc-biblioref">Sabelhaus et al. 2013</a>)</span>. Many of the studies reviewed had an emphasis on the budgets related to raising children. <span class="citation" data-cites="hargunani_study_2024">Hargunani, Vernekar, and Vernekar (<a href="#ref-hargunani_study_2024" role="doc-biblioref">2024</a>)</span> analyzed family spending patterns in Mumbai and concluded that many families focus their expenditures on the current and future wellbeing of their children. This is evidenced by money spent on basic necessities and setting aside money for the future.</p>
+<p>The United States Department of Agriculture (USDA) has produced reports that use the CEX to specifically analyze the costs of raising a child in the United States. The most recent report <span class="citation" data-cites="lino_expenditures_2017">(<a href="#ref-lino_expenditures_2017" role="doc-biblioref">Lino et al. 2017</a>)</span> found the top expenditure for married-couple families with two children to be housing. The rankings of other expenditures were different depending on the age of children, but food, child care/education, and transportation were always the next highest expenditures on children. Similar to the USDA report on the cost of raising children, <span class="citation" data-cites="osborne_updated_2021">Osborne, Wu, and Benson (<a href="#ref-osborne_updated_2021" role="doc-biblioref">2021</a>)</span> modeled the cost of raising children in Texas by following similar methodologies but using Texas-specific data for housing and childcare costs. They looked not only at married-couple families, but also at single-parent households and duel households where children spend time with both parents in different locations. They found differing expenditures on children among the different family make-ups and among different incomes.</p>
+<p><span class="citation" data-cites="duncan_estimating_2023">Duncan, Frank, and Guèvremont (<a href="#ref-duncan_estimating_2023" role="doc-biblioref">2023</a>)</span> performed a study in Canada using the country’s Survey of Household Spending (SHS) to analyze family expenditures. They found similar results as previously mentioned studies. Different income groups had different amounts allocated to children, but housing was always the highest expenditure with food, child care/education, and transportation being the next highest expenditures.</p>
+<p>Other studies with similar analyses have had similar findings. <span class="citation" data-cites="hastings_parental_2022">Hastings (<a href="#ref-hastings_parental_2022" role="doc-biblioref">2022</a>)</span> used the CEX to compare expenditures between different racial and ethnic groups. When controlling for both family characteristics and income, he found that there was not a significant difference in total expenditures on children among racial and ethnic groups. This suggests that income and family characteristics play a larger role in family budgeting than race and ethnicity.</p>
+</section>
+<section id="household-transportation-expenses-and-budgets" class="level3" data-number="2.3">
+<h3 data-number="2.3"><span class="header-section-number">2.3</span> Household Transportation Expenses and Budgets</h3>
+<p>There have been many studies on family budgets and transportation expenses <span class="citation" data-cites="morris_family_1979 blumenberg_transportation_2003 hong_leisure_2005 thakuriah_vonu_transportation_2006 choo_transportation_2007 haas_estimating_2008 ferdous_comprehensive_2010">(<a href="#ref-morris_family_1979" role="doc-biblioref">Morris and Wigan 1979</a>; <a href="#ref-blumenberg_transportation_2003" role="doc-biblioref">Blumenberg 2003</a>; <a href="#ref-hong_leisure_2005" role="doc-biblioref">Hong et al. 2005</a>; <a href="#ref-thakuriah_vonu_transportation_2006" role="doc-biblioref">Thakuriah (Vonu) and Liao 2006</a>; <a href="#ref-choo_transportation_2007" role="doc-biblioref">Choo, Lee, and Mokhtarian 2007</a>; <a href="#ref-haas_estimating_2008" role="doc-biblioref">Haas et al. 2008</a>; <a href="#ref-ferdous_comprehensive_2010" role="doc-biblioref">Ferdous et al. 2010</a>)</span>.</p>
+<p>One study focused on transportation budgets was done by <span class="citation" data-cites="thakuriah_analysis_2005">Thakuriah and Liao (<a href="#ref-thakuriah_analysis_2005" role="doc-biblioref">2005</a>)</span>. Using CEX data, they made multiple models to analyze the expenditures related to vehicle ownership of households in the United States. In each model, they used a variety of variables (income, household demographics, spatial factors, economic factors, and family condition factors) to predict the amount of money a household spends on vehicles. Their model results indicate 18 percent of additional household expenditures is a vehicle expense. They results also indicate many factors influence household vehicle expenses. The models showed that homeowners spend more on vehicle expenses. They also showed that vehicle expenses are connected with the sex of the head of household and the number of people in the household.</p>
+<p>In a study by <span class="citation" data-cites="deka_relationship_2015">Deka (<a href="#ref-deka_relationship_2015" role="doc-biblioref">2015</a>)</span>, they used two years of the CEX to see the connection between housing expenses and transportation expenses. They created three least squares models: one to describe expenditures in dollar amounts, one to describe expenditures as percentages of income, and one to describe expenditures as shares of total household expenditures. They found a positive association between transportation expenses and housing expenses. Similarly, share of income on transportation was positively affected by share of income on housing, but there was no significant evidence showing the share of income on housing being affected by share of income on transportation. Both housing and transportation expenditures were found to be higher for those living in single-family detached homes and lower for those living in older homes.</p>
+<p><span class="citation" data-cites="mattson_relationships_2019">Mattson and Peterson (<a href="#ref-mattson_relationships_2019" role="doc-biblioref">2019</a>)</span> looked at how density, land use, transportation, and household expenditures are related. They developed a regression model using CEX data where transportation expenditures were estimated using type of housing, population, family characteristics, and other factors. Similar to other studies, they found that income is positively associated with transportation expenditures. Their model showed single-family homes to have higher transportation expenditures than other types of dwellings. Using data from the U.S. Census Bureau’s Annual Survey of State and Local Government Finances, they also created models to explore how land use might affect municipal spending. In these models, increase in density was associated with a decrease in many per capita operational costs, including fire protection, streets and highways, parks and recreation, and others.</p>
+<p>A similar study was published by <span class="citation" data-cites="mattson_relationships_2020">Mattson (<a href="#ref-mattson_relationships_2020" role="doc-biblioref">2020</a>)</span> where he modeled transportation expenditures using CEX data. The results showed, like the previous publication, that single-family dwellings spend more on transportation compared to other types. He also found that larger household sizes and newer homes contribute to higher transportation spending.</p>
+<p>In their study, <span class="citation" data-cites="molloy_new_2024">Molloy, Garrick, and Atkinson-Palombo (<a href="#ref-molloy_new_2024" role="doc-biblioref">2024</a>)</span> look at CEX data after proposing a new framework to look at transit users and vehicle users. In past studies, three categories have been used to analyze transportation users: “drivers” are those who own a car, “captive riders” are those who use transit because they ca not afford a car, and “choice riders” are those who can afford a car but do not. Instead of having one grouping for those that own cars, <span class="citation" data-cites="molloy_new_2024">Molloy, Garrick, and Atkinson-Palombo (<a href="#ref-molloy_new_2024" role="doc-biblioref">2024</a>)</span> propose splitting that category into “captive drivers” and “choice drivers”. Captive drivers would be those in the population that are low income but have a car representing people with less transportation freedom. They analyzed the CEX with this new way of classifying transportation users and found that captive drivers carry the most transportation burden. The transportation expenditures of captive drivers average more than 16% of total household expenditures while the transportation expenditures of captive riders was only around 7% of total expenditures.</p>
+<p><span class="citation" data-cites="bureau_of_transportation_statistics_transportation_2024">Bureau of Transportation Statistics (<a href="#ref-bureau_of_transportation_statistics_transportation_2024" role="doc-biblioref">2024</a>)</span> - Chapter 2 has a whole section where they analyze household expenditures gettting much of their data from the CEX.</p>
+</section>
+<section id="the-current-study" class="level3" data-number="2.4">
+<h3 data-number="2.4"><span class="header-section-number">2.4</span> The Current Study</h3>
+<p>This study has never been done and will add to the current literature in the following ways.</p>
+<ul>
+<li><p>Data: Many studies on household transportation patterns focus on time diaries and other things. This study uses consumer expenditure data to understand patterns in household transportation budgets.</p></li>
+<li><p>Methodology: LCA to find groupings that organize households using different transportation expense patterns. What variables do we want to look at, and how is that different from other studies?</p></li>
+<li><p>Purpose: Have there been any studies that share a similar end goal as our study? If so, is ours unique?</p></li>
+</ul>
+</section>
+</section>
+<section id="data" class="level2" data-number="3">
+<h2 data-number="3"><span class="header-section-number">3</span> Data</h2>
+<p>Data for the following analysis were attained from the 2024 Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is deployed continuously by the Bureau of Labor Statistics (BLS). The data are organized by quarter and published each year. The CEX consists of two surveys as described below.</p>
+<ul>
+<li><p><strong>The Interview Survey</strong> tracks a household’s major and recurring expenditures by reviewing their expenses from the past three months. Approximatedly 6000 usable interviews are collected each quarter. After interviewing a household for 4 consecutive quarters, they are removed from the sample and replaced by a new household.</p></li>
+<li><p><strong>The Diary Survey</strong> tracks a household’s weekly expenditures by having them fill out a detailed expenditure diary across a two-week span. Approximately 3000 usable responses are collected each quarter. After the two consecutive weeks of reporting expenditures, the household is removed from the sample and replaced by a new household.</p></li>
+</ul>
+<p>This study uses data from the Diary Survey.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>diary_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/diary24_combined/expd.csv&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 416271 Columns: 13
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (7): NEWID, UCC, EXPN_QDY, EXPN_KDY, EXPNMO, EXPNMO_, EXPNYR_
+dbl (6): ALLOC, COST, PUB_FLAG, EXPNSQDY, EXPNWKDY, EXPNYR
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>expense_types <span class="ot">&lt;-</span> <span class="fu">unique</span>(diary_data<span class="sc">$</span>UCC)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>ucc_categories_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/data_prep_input/ucc_categories.xlsx&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(in_exp_file <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>categories <span class="ot">&lt;-</span> <span class="fu">unique</span>(ucc_categories_data<span class="sc">$</span>category)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>categories <span class="ot">&lt;-</span> categories[<span class="fu">order</span>(categories)]</span></code></pre></div>
+</div>
+<p>We grouped the 397 different types of expenditures found in the data into the following 24 categories:</p>
+<p>Air Travel, Alcohol, At -Home Entertainment, Bike or Scooter or other Single Rider Travel, Bus Travel, Car Fuel, Car Maintenance, Car Other, Car Payment, Car Purchase, Clothing Related, Education, Family Spending, Food Related, House Related, Hygiene, Medical, Motorcycle Travel, no category specified, Recreational Related, School Supplies, Ship Travel, Taxi or Limo Travel, Train Travel</p>
+</section>
+<section id="references" class="level2" data-number="4">
+<h2 data-number="4"><span class="header-section-number">4</span> References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-amirnazmiafshar_review_2022" class="csl-entry" role="listitem">
+Amirnazmiafshar, Ehsan, and Marco Diana. 2022. <span>“A Review of the Socio-Demographic Characteristics Affecting the Demand for Different Car-Sharing Operational Schemes.”</span> <em>Transportation Research Interdisciplinary Perspectives</em> 14 (June): 100616. <a href="https://doi.org/10.1016/j.trip.2022.100616">https://doi.org/10.1016/j.trip.2022.100616</a>.
+</div>
+<div id="ref-bernardo_empirical_2015" class="csl-entry" role="listitem">
+Bernardo, Christina, Rajesh Paleti, Megan Hoklas, and Chandra Bhat. 2015. <span>“An Empirical Investigation into the Time-Use and Activity Patterns of Dual-Earner Couples with and Without Young Children.”</span> <em>Transportation Research Part A: Policy and Practice</em> 76 (June): 71–91. <a href="https://doi.org/10.1016/j.tra.2014.12.006">https://doi.org/10.1016/j.tra.2014.12.006</a>.
+</div>
+<div id="ref-bilgin_investigating_2025" class="csl-entry" role="listitem">
+Bilgin, Pinar, Giulio Mattioli, Malcolm Morgan, and Zia Wadud. 2025. <span>“Investigating the Effects of Ridesourcing on the Dynamics of Household Car Ownership.”</span> <em>Transportation Research Part D: Transport and Environment</em> 146 (September): 104886. <a href="https://doi.org/10.1016/j.trd.2025.104886">https://doi.org/10.1016/j.trd.2025.104886</a>.
+</div>
+<div id="ref-blumenberg_transportation_2003" class="csl-entry" role="listitem">
+Blumenberg, Evelyn. 2003. <span>“Transportation <span>Costs</span> and <span>Economic</span> <span>Opportunity</span> <span>Among</span> the <span>Poor</span>,”</span> October.
+</div>
+<div id="ref-bureau_of_transportation_statistics_transportation_2024" class="csl-entry" role="listitem">
+Bureau of Transportation Statistics. 2024. <span>“Transportation <span>Statistics</span> <span>Annual</span> <span>Report</span> 2024.”</span> Bureau of Transportation Statistics. <a href="https://doi.org/10.21949/E0KQ-GF72">https://doi.org/10.21949/E0KQ-GF72</a>.
+</div>
+<div id="ref-choo_transportation_2007" class="csl-entry" role="listitem">
+Choo, Sangho, Taihyeong Lee, and Patricia L. Mokhtarian. 2007. <span>“Do <span>Transportation</span> and <span>Communications</span> <span>Tend</span> to Be <span>Substitutes</span>, <span>Complements</span>, or <span>Neither</span>?: <span>U</span>.<span>S</span>. <span>Consumer</span> <span>Expenditures</span> <span>Perspective</span>, 1984–2002.”</span> <em>Transportation Research Record</em> 2010 (1): 121–32. <a href="https://doi.org/10.3141/2010-14">https://doi.org/10.3141/2010-14</a>.
+</div>
+<div id="ref-copperman_analysis_2007" class="csl-entry" role="listitem">
+Copperman, Rachel B., and Chandra R. Bhat. 2007a. <span>“An Analysis of the Determinants of Children’s Weekend Physical Activity Participation.”</span> <em>Transportation</em> 34 (1): 67–87. <a href="https://doi.org/10.1007/s11116-006-0005-5">https://doi.org/10.1007/s11116-006-0005-5</a>.
+</div>
+<div id="ref-copperman_exploratory_2007" class="csl-entry" role="listitem">
+Copperman, Rachel B, and Chandra R Bhat. 2007b. <span>“An <span>Exploratory</span> <span>Analysis</span> of <span>Children</span>’s <span>Daily</span> <span>Time</span>-<span>Use</span> and <span>Activity</span> <span>Patterns</span> <span>Using</span> the <span>Child</span> <span>Development</span> <span>Supplement</span> (<span>CDS</span>) to the <span>US</span> <span>Panel</span> <span>Study</span> of <span>Income</span> <span>Dynamics</span> (<span>PSID</span>).”</span>
+</div>
+<div id="ref-deka_relationship_2015" class="csl-entry" role="listitem">
+Deka, Devajyoti. 2015. <span>“Relationship Between <span>Households</span>’ <span>Housing</span> and <span>Transportation</span> <span>Expenditures</span>: <span>Examination</span> from <span>Lifestyle</span> <span>Perspective</span>.”</span> <em>Transportation Research Record</em> 2531 (1): 26–35. <a href="https://doi.org/10.3141/2531-04">https://doi.org/10.3141/2531-04</a>.
+</div>
+<div id="ref-duncan_estimating_2023" class="csl-entry" role="listitem">
+Duncan, Karen A., Kristyn Frank, and Anne Guèvremont. 2023. <span>“Estimating <span>Expenditures</span> on <span>Children</span> by <span>Families</span> in <span>Canada</span>, 2014 to 2017,”</span> September. <a href="https://doi.org/10.25318/11F0019M2023007-ENG">https://doi.org/10.25318/11F0019M2023007-ENG</a>.
+</div>
+<div id="ref-ferdous_comprehensive_2010" class="csl-entry" role="listitem">
+Ferdous, Nazneen, Abdul Rawoof Pinjari, Chandra R. Bhat, and Ram M. Pendyala. 2010. <span>“A Comprehensive Analysis of Household Transportation Expenditures Relative to Other Goods and Services: An Application to <span>United</span> <span>States</span> Consumer Expenditure Data.”</span> <em>Transportation</em> 37 (3): 363–90. <a href="https://doi.org/10.1007/s11116-010-9264-2">https://doi.org/10.1007/s11116-010-9264-2</a>.
+</div>
+<div id="ref-fontes_effects_2006" class="csl-entry" role="listitem">
+Fontes, Angela, and Jessie Fan. 2006. <span>“The <span>Effects</span> of <span>Ethnic</span> <span>Identity</span> on <span>Household</span> <span>Budget</span> <span>Allocation</span> to <span>Status</span> <span>Conveying</span> <span>Goods</span>.”</span> <em>Journal of Family and Economic Issues</em> 27 (February): 643–63. <a href="https://doi.org/10.1007/s10834-006-9031-x">https://doi.org/10.1007/s10834-006-9031-x</a>.
+</div>
+<div id="ref-haas_estimating_2008" class="csl-entry" role="listitem">
+Haas, Peter M., Carrie Makarewicz, Albert Benedict, and Scott Bernstein. 2008. <span>“Estimating <span>Transportation</span> <span>Costs</span> by <span>Characteristics</span> of <span>Neighborhood</span> and <span>Household</span>.”</span> <em>Transportation Research Record</em> 2077 (1): 62–70. <a href="https://doi.org/10.3141/2077-09">https://doi.org/10.3141/2077-09</a>.
+</div>
+<div id="ref-hargunani_study_2024" class="csl-entry" role="listitem">
+Hargunani, Chahat, Sachin Vernekar, and Shradha Vernekar. 2024. <span>“A <span>STUDY</span> <span>OF</span> <span>SPENDING</span>, <span>SAVING</span> <span>AND</span> <span>INVESTMENT</span> <span>PATTERNS</span> <span>OF</span> <span>MARRIED</span> <span>COUPLES</span> <span>WITH</span> <span>CHILDREN</span>(<span>NON</span>-<span>DINK</span>) <span>IN</span> <span>MUMBAI</span>”</span> 20 (1).
+</div>
+<div id="ref-hastings_parental_2022" class="csl-entry" role="listitem">
+Hastings, Orestes P. 2022. <span>“Parental <span>Investments</span> of <span>Money</span> for <span>White</span>, <span>Black</span>, and <span>Hispanic</span> <span>Children</span> in the <span>United</span> <span>States</span>.”</span> <em>Socius: Sociological Research for a Dynamic World</em> 8 (January): 23780231221103054. <a href="https://doi.org/10.1177/23780231221103054">https://doi.org/10.1177/23780231221103054</a>.
+</div>
+<div id="ref-hong_leisure_2005" class="csl-entry" role="listitem">
+Hong, Gong-Soog, Jessie X. Fan, Lance Palmer, and Vibha Bhargava. 2005. <span>“Leisure <span>Travel</span> <span>Expenditure</span> <span>Patterns</span> by <span>Family</span> <span>Life</span> <span>Cycle</span> <span>Stages</span>.”</span> <em>Journal of Travel &amp; Tourism Marketing</em> 18 (2): 15–30. <a href="https://doi.org/10.1300/J073v18n02_02">https://doi.org/10.1300/J073v18n02_02</a>.
+</div>
+<div id="ref-johnson_century_2001" class="csl-entry" role="listitem">
+Johnson, David S., John M. Rogers, and Lucilla Tan. 2001. <span>“A <span>Century</span> of <span>Family</span> <span>Budgets</span> in the <span>United</span> <span>States</span>.”</span> <em>Monthly Labor Review</em> 124 (5): 28–45. <a href="https://heinonline.org/HOL/P?h=hein.journals/month124&amp;i=482">https://heinonline.org/HOL/P?h=hein.journals/month124&amp;i=482</a>.
+</div>
+<div id="ref-klein_subsidizing_2024" class="csl-entry" role="listitem">
+Klein, Nicholas J. 2024. <span>“Subsidizing <span>Car</span> <span>Ownership</span> for <span>Low</span>-<span>Income</span> <span>Individuals</span> and <span>Households</span>.”</span> <em>Journal of Planning Education and Research</em> 44 (1): 165–77. <a href="https://doi.org/10.1177/0739456X20950428">https://doi.org/10.1177/0739456X20950428</a>.
+</div>
+<div id="ref-leung_environment-people_2019" class="csl-entry" role="listitem">
+Leung, Kevin Y. K., Sebastian Astroza, Becky P. Y. Loo, and Chandra R. Bhat. 2019. <span>“An Environment-People Interactions Framework for Analysing Children’s Extra-Curricular Activities and Active Transport.”</span> <em>Journal of Transport Geography</em> 74 (January): 341–58. <a href="https://doi.org/10.1016/j.jtrangeo.2018.12.015">https://doi.org/10.1016/j.jtrangeo.2018.12.015</a>.
+</div>
+<div id="ref-lino_expenditures_2017" class="csl-entry" role="listitem">
+Lino, Mark, Kevin Kuczynski, Nestor Rodriguez, and TusaRebecca Schap. 2017. <span>“Expenditures on <span>Children</span> by <span>Families</span>, 2015.”</span> United States Department of Agriculture. <a href="https://doi.org/10.22004/ag.econ.327257">https://doi.org/10.22004/ag.econ.327257</a>.
+</div>
+<div id="ref-lu_role_2022" class="csl-entry" role="listitem">
+Lu, Ying, Carlo G. Prato, Neil Sipe, Anthony Kimpton, and Jonathan Corcoran. 2022. <span>“The Role of Household Modality Style in First and Last Mile Travel Mode Choice.”</span> <em>Transportation Research Part A: Policy and Practice</em> 158 (April): 95–109. <a href="https://doi.org/10.1016/j.tra.2022.02.003">https://doi.org/10.1016/j.tra.2022.02.003</a>.
+</div>
+<div id="ref-mattson_relationships_2020" class="csl-entry" role="listitem">
+Mattson, Jeremy. 2020. <span>“Relationships Between Density, Transit, and Household Expenditures in Small Urban Areas.”</span> <em>Transportation Research Interdisciplinary Perspectives</em> 8 (November): 100260. <a href="https://doi.org/10.1016/j.trip.2020.100260">https://doi.org/10.1016/j.trip.2020.100260</a>.
+</div>
+<div id="ref-mattson_relationships_2019" class="csl-entry" role="listitem">
+Mattson, Jeremy, and Del Peterson. 2019. <span>“Relationships Between <span>Land</span> <span>Use</span>, <span>Transportation</span>, <span>Household</span> <span>Expenditures</span>, and <span>Municipal</span> <span>Spending</span> in <span>Small</span> <span>Urban</span> <span>Areas</span>,”</span> December.
+</div>
+<div id="ref-mccarthy_factors_2017" class="csl-entry" role="listitem">
+McCarthy, Laura, Alexa Delbosc, Graham Currie, and Andrew Molloy. 2017. <span>“Factors Influencing Travel Mode Choice Among Families with Young Children (Aged 0–4): A Review of the Literature.”</span> <em>Transport Reviews</em> 37 (6): 767–81. <a href="https://doi.org/10.1080/01441647.2017.1354942">https://doi.org/10.1080/01441647.2017.1354942</a>.
+</div>
+<div id="ref-molloy_new_2024" class="csl-entry" role="listitem">
+Molloy, Quinn, Norman Garrick, and Carol Atkinson-Palombo. 2024. <span>“A <span>New</span> <span>Approach</span> to <span>Understanding</span> the <span>Impact</span> of <span>Automobile</span> <span>Ownership</span> on <span>Transportation</span> <span>Equity</span>.”</span> <em>Transportation Research Record</em> 2678 (2): 366–76. <a href="https://doi.org/10.1177/03611981231174444">https://doi.org/10.1177/03611981231174444</a>.
+</div>
+<div id="ref-morris_family_1979" class="csl-entry" role="listitem">
+Morris, J. M., and M. R. Wigan. 1979. <span>“A Family Expenditure Perspective on Transport Planning: <span>Australian</span> Evidence in Context.”</span> <em>Transportation Research Part A: General</em> 13 (4): 249–85. <a href="https://doi.org/10.1016/0191-2607(79)90051-7">https://doi.org/10.1016/0191-2607(79)90051-7</a>.
+</div>
+<div id="ref-nayga_sample_1998" class="csl-entry" role="listitem">
+Nayga, Rodolfo M. 1998. <span>“A Sample Selection Model for Prepared Food Expenditures.”</span> <em>Applied Economics</em> 30 (3): 345–52. <a href="https://doi.org/10.1080/000368498325868">https://doi.org/10.1080/000368498325868</a>.
+</div>
+<div id="ref-osborne_updated_2021" class="csl-entry" role="listitem">
+Osborne, Cynthia, Erin Wu, and Kaeley Benson. 2021. <span>“An <span>Updated</span> <span>Estimation</span> <span>Model</span> of the <span>Cost</span> of <span>Raising</span> <span>Children</span> in <span>Texas</span>.”</span>
+</div>
+<div id="ref-paleti_empirical_2011" class="csl-entry" role="listitem">
+Paleti, Rajesh, Rachel B. Copperman, and Chandra R. Bhat. 2011. <span>“An Empirical Analysis of Children’s After School Out-of-Home Activity-Location Engagement Patterns and Time Allocation.”</span> <em>Transportation</em> 38 (2): 273–303. <a href="https://doi.org/10.1007/s11116-010-9300-2">https://doi.org/10.1007/s11116-010-9300-2</a>.
+</div>
+<div id="ref-sabelhaus_is_2013" class="csl-entry" role="listitem">
+Sabelhaus, John, David Johnson, Stephen Ash, David Swanson, Thesia Garner, John Greenlees, and Steve Henderson. 2013. <span>“Is the <span>Consumer</span> <span>Expenditure</span> <span>Survey</span> <span>Representative</span> by <span>Income</span>?”</span> w19589. National Bureau of Economic Research. <a href="https://doi.org/10.3386/w19589">https://doi.org/10.3386/w19589</a>.
+</div>
+<div id="ref-sener_analysis_2007" class="csl-entry" role="listitem">
+Sener, Ipek N., and Chandra R. Bhat. 2007. <span>“An Analysis of the Social Context of Children’s Weekend Discretionary Activity Participation.”</span> <em>Transportation</em> 34 (6): 697–721. <a href="https://doi.org/10.1007/s11116-007-9125-9">https://doi.org/10.1007/s11116-007-9125-9</a>.
+</div>
+<div id="ref-sener_analysis_2008" class="csl-entry" role="listitem">
+Sener, Ipek N., Rachel B. Copperman, Ram M. Pendyala, and Chandra R. Bhat. 2008. <span>“An Analysis of Children’s Leisure Activity Engagement: Examining the Day of Week, Location, Physical Activity Level, and Fixity Dimensions.”</span> <em>Transportation</em> 35 (5): 673–96. <a href="https://doi.org/10.1007/s11116-008-9173-9">https://doi.org/10.1007/s11116-008-9173-9</a>.
+</div>
+<div id="ref-skinner_variable_1985" class="csl-entry" role="listitem">
+Skinner, Jonathan. 1985. <span>“Variable <span>Lifespan</span> and the <span>Intertemporal</span> <span>Elasticity</span> of <span>Consumption</span>.”</span> <em>The Review of Economics and Statistics</em> 67 (4): 616–23. <a href="https://doi.org/10.2307/1924806">https://doi.org/10.2307/1924806</a>.
+</div>
+<div id="ref-souche_measuring_2010" class="csl-entry" role="listitem">
+Souche, Stéphanie. 2010. <span>“Measuring the Structural Determinants of Urban Travel Demand.”</span> <em>Transport Policy</em> 17 (3): 127–34. <a href="https://doi.org/10.1016/j.tranpol.2009.12.003">https://doi.org/10.1016/j.tranpol.2009.12.003</a>.
+</div>
+<div id="ref-thakuriah_analysis_2005" class="csl-entry" role="listitem">
+Thakuriah, Piyushimita (Vonu), and Yihua Liao. 2005. <span>“Analysis of <span>Variations</span> in <span>Vehicle</span> <span>Ownership</span> <span>Expenditures</span>.”</span> <em>Transportation Research Record: Journal of the Transportation Research Board</em> 1926 (1): 1–9. <a href="https://doi.org/10.1177/0361198105192600101">https://doi.org/10.1177/0361198105192600101</a>.
+</div>
+<div id="ref-thakuriah_vonu_transportation_2006" class="csl-entry" role="listitem">
+Thakuriah (Vonu), Piyushimita, and Yihua Liao. 2006. <span>“Transportation <span>Expenditures</span> and <span>Ability</span> to <span>Pay</span>: <span>Evidence</span> from <span>Consumer</span> <span>Expenditure</span> <span>Survey</span>.”</span> <em>Transportation Research Record</em> 1985 (1): 257–65. <a href="https://doi.org/10.1177/0361198106198500128">https://doi.org/10.1177/0361198106198500128</a>.
+</div>
+</div>
+</section>
+     </main>
+<!-- /main column -->  <script id = "quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>  </div> <!-- /content --> 
+  </body>
+</html>

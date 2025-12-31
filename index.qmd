@@ -36,21 +36,48 @@ bibliography: references.bib
 number-sections: true
 ---
 
+```{r}
+# loading packages
+library(tidyverse)
+library(knitr)
+library(readxl)
+```
+
+
 ## Introduction
 
 Statistics I can point out
 
-- The amount of budget allocated to transportation is more than it used to be [@johnson_century_2001] (but in recent years it might be going down. I want to double check that)
+- The amount of budget allocated to transportation is more than it was a century ago [@johnson_century_2001] but, in the past few decades it hasn't changed much [@bureau_of_transportation_statistics_transportation_2024]
 
 - How much does the average household spend on transportaiton? I can probably get some good data from @bureau_of_transportation_statistics_transportation_2024
 
-- Do people with more kids spend more on transportation? 
+  - rural averages about 2.5 vehicles per household and urban averages about 1.7
+  
+  - transportation share has gone down since 2000, but has generally stayed somewhere between the 15 - 20 percent range. That doesn't mean people are spending less on transportation. It more likely means that people are spending more in other categories. 
+  
+  - The number of earners in a household is closely related to how much is spent on transportation. 
+  
+  - Since 1960, a larger percent of US households have at least one car. It was in the 80s when the percentage of 2-car households surpassed the percentage of 1-car households
 
-- Do people with more cars spend more on transportation?
+- [@mattson_relationships_2020] Car ownership, family size, income, housing type, and other location factors are connected with transportation expenditures. 
 
-- Lower income households spend m a bigger percent of their budget on transportation (transportaiton burdened) [@molloy_new_2024]
+  - People with bigger families tend to spend more on transportation 
+  
+  - People in single-family homes also generally spend more on transportation
+
+- Lower income households spend a bigger percent of their budget on transportation (transportaiton burdened) [@molloy_new_2024]
+
+**This is my start at trying to talk about the statistics**
+
+A major portion of a household's expenditures is allocated to transportation. The amount people spend on transportation has clearly increased in the last century, but has stayed roughly in the range of 15 - 20 percent over the last few decades. In 2023, the average household spent approximately 17 percent of their budget on transportation [@johnson_century_2001; @bureau_of_transportation_statistics_transportation_2024]. Looking at individual households, the transportation share of household expenditures varies widely. Lower income households seem to be more burdened by transportation expenses as it often takes up a larger portion of their overall expenses [@molloy_new_2024]. 
+
+Besides income, there are many other factors that play a role in the way households spend money on transportation, including car ownership, family size, housing type, and other location factors. For example, larger family sizes and living in single-family homes both tend to be correlated with increased transportation spending [@mattson_relationships_2020]. 
+
+Car ownership has been increasing, with less than 10 percent of carless households in 2023 compared to over 20 percent in 1960. Before 1980, there was a larger portion of one-car households compared to two-car households. Since then, the number of two-car households has surpassed the number of one-car households. 
 
 
+**This is what Katie Wrote**
 
 Households juggle how to allocate their budgets: whether to invest in a reliable car, pay for quality childcare, secure housing in a good school district, or set money aside for leisure. These everyday choices shape how families live and move, reflecting the trade-offs they make to balance competing priorities. Transportation often sits at the center of these decisions, not only because it can be a significant expense, but also because choosing to buy and maintain a car versus relying on public transit represents a long-term commitment and a broader lifestyle choice. Its relative weight compared to housing, childcare, and other spending varies widely across families. The relationship between household budgeting and mobility is shaped not only by causal direction but also by how families prioritize and weight different needs. On one hand, mobility resources such as car ownership can structure the household budget: households with no or only one vehicle may spend far less on transportation, freeing up income for other essential or discretionary categories. On the other hand, underlying family structures and preferences can drive budget allocation choipces that, in turn, shape transportation behavior. Larger families may prioritize childcare or invest in higher-quality housing in areas with better schools, limiting what remains for transportation. Others may emphasize frugality across all categories or deliberately substitute toward lower-cost transit options. Understanding both the direction of influence and the weight assigned to different budget categories is critical for transportation planning and policy, as these dynamics reveal how families navigate competing priorities under varying demographic and mobility contexts.
 
@@ -59,8 +86,6 @@ The purpose of this research is to explore how household budgets are structured 
 ## Literature Review
 
 ```{r}
-library(tidyverse)
-library(knitr)
 lit_rev_tbl <- read_csv("notebooks/lit_review_table.csv")
 ```
 
@@ -115,12 +140,28 @@ This study has never been done and will add to the current literature in the fol
 
 ## Data 
 
-Data for the following analysis were attained from the 2024 Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is deployed continuously by the Bureau of Labor Statistics (BLS). The data are organized by quarter published each year. The CEX consists of two surveys as described below. 
+Data for the following analysis were attained from the 2024 Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is deployed continuously by the Bureau of Labor Statistics (BLS). The data are organized by quarter and published each year. The CEX consists of two surveys as described below. 
 
 - **The Interview Survey** tracks a household's major and recurring expenditures by reviewing their expenses from the past three months. Approximatedly 6000 usable interviews are collected each quarter. After interviewing a household for 4 consecutive quarters, they are removed from the sample and replaced by a new household. 
 
 - **The Diary Survey** tracks a household's weekly expenditures by having them fill out a detailed expenditure diary across a two-week span. Approximately 3000 usable responses are collected each quarter. After the two consecutive weeks of reporting expenditures, the household is removed from the sample and replaced by a new household.
 
+This study uses data from the Diary Survey. 
+
+```{r}
+diary_data <- read_csv("data/diary24_combined/expd.csv")
+expense_types <- unique(diary_data$UCC)
+
+ucc_categories_data <- read_excel("data/data_prep_input/ucc_categories.xlsx") |>
+  filter(in_exp_file > 0)
+
+categories <- unique(ucc_categories_data$category)
+categories <- categories[order(categories)]
+
+```
+
+
+We grouped the `r length(expense_types)` different types of expenditures found in the data into the following `r length(categories)` categories: `r categories`
 
 
 ## References
