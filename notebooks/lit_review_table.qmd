@@ -11,8 +11,7 @@ library(knitr)
 Read in the csv of the lit review table:
 
 ```{r}
-lit_tbl <- read_csv("lit_review_table.csv") |>
-  select(Title, Citation = `bibtex name`, Dataset, Findings = `Main Findings`)
+lit_tbl <- read_csv("lit_review_table2.csv")
 ```
 
 Output the table:
