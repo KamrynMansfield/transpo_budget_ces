@@ -70,31 +70,35 @@ Statistics I can point out
 
 **This is my start at trying to talk about the statistics**
 
-A major portion of a household's expenditures is allocated to transportation. The amount people spend on transportation has clearly increased in the last century, but has stayed roughly in the range of 15 - 20 percent over the last few decades. In 2023, the average household spent approximately 17 percent of their budget on transportation [@johnson_century_2001; @bureau_of_transportation_statistics_transportation_2024]. Looking at individual households, the transportation share of household expenditures varies widely. Lower income households seem to be more burdened by transportation expenses as it often takes up a larger portion of their overall expenses [@molloy_new_2024]. 
+A major portion of a household's expenditures is allocated to transportation. The amount people spend on transportation has clearly increased in the last century, but has averaged around 15 - 20 percent over the last few decades. In 2023, the average household spent approximately 17 percent of their budget on transportation expenses [@johnson_century_2001; @bureau_of_transportation_statistics_transportation_2024].
 
-Besides income, there are many other factors that play a role in the way households spend money on transportation, including car ownership, family size, housing type, and other location factors. For example, larger family sizes and living in single-family homes both tend to be correlated with increased transportation spending [@mattson_relationships_2020]. 
+The percent of budget spent on transportation varies widely from household to household, and there are many factors that play a role in a household's transportation expenditures. Some possible factors include income, number of vehicles, number of workers, number of children, and location.
+
+Lower income households seem to be more burdened by transportation expenses as it often takes up a larger portion of their overall expenses [@molloy_new_2024]. 
+
+Larger family sizes and living in single-family homes both tend to be correlated with increased transportation spending [@mattson_relationships_2020]. 
 
 Car ownership has been increasing, with less than 10 percent of carless households in 2023 compared to over 20 percent in 1960. Before 1980, there was a larger portion of one-car households compared to two-car households. Since then, the number of two-car households has surpassed the number of one-car households. 
 
 
 **This is what Katie Wrote**
 
-Households juggle how to allocate their budgets: whether to invest in a reliable car, pay for quality childcare, secure housing in a good school district, or set money aside for leisure. These everyday choices shape how families live and move, reflecting the trade-offs they make to balance competing priorities. Transportation often sits at the center of these decisions, not only because it can be a significant expense, but also because choosing to buy and maintain a car versus relying on public transit represents a long-term commitment and a broader lifestyle choice. Its relative weight compared to housing, childcare, and other spending varies widely across families. The relationship between household budgeting and mobility is shaped not only by causal direction but also by how families prioritize and weight different needs. On one hand, mobility resources such as car ownership can structure the household budget: households with no or only one vehicle may spend far less on transportation, freeing up income for other essential or discretionary categories. On the other hand, underlying family structures and preferences can drive budget allocation choipces that, in turn, shape transportation behavior. Larger families may prioritize childcare or invest in higher-quality housing in areas with better schools, limiting what remains for transportation. Others may emphasize frugality across all categories or deliberately substitute toward lower-cost transit options. Understanding both the direction of influence and the weight assigned to different budget categories is critical for transportation planning and policy, as these dynamics reveal how families navigate competing priorities under varying demographic and mobility contexts.
+Households juggle how to allocate their budgets: whether to invest in a reliable car, pay for quality childcare, secure housing in a good school district, or set money aside for leisure. These everyday choices shape how families live and move, reflecting the trade-offs they make to balance competing priorities. Transportation often sits at the center of these decisions, not only because it can be a significant expense, but also because choosing to buy and maintain a car versus relying on public transit represents a long-term commitment and a broader lifestyle choice. Its relative weight compared to housing, childcare, and other spending varies widely across families. The relationship between household budgeting and mobility is shaped not only by causal direction but also by how families prioritize and weight different needs. On one hand, mobility resources such as car ownership can structure the household budget: households with no or only one vehicle may spend far less on transportation, freeing up income for other essential or discretionary categories. On the other hand, underlying family structures and preferences can drive budget allocation choices that, in turn, shape transportation behavior. Larger families may prioritize childcare or invest in higher-quality housing in areas with better schools, limiting what remains for transportation. Others may emphasize frugality across all categories or deliberately substitute toward lower-cost transit options. Understanding both the direction of influence and the weight assigned to different budget categories is critical for transportation planning and policy, as these dynamics reveal how families navigate competing priorities under varying demographic and mobility contexts.
 
 The purpose of this research is to explore how household budgets are structured around transportation decisions and how this impacts other spending categories. Using the Consumer Expenditure Survey (CEX), we will perform a Latent Class Analysis (LCA) to find groupings based on a household's transportation expenses. These groupings can help us find groups of spenders with similar patterns to help us predict transportation expenses based on the household's characteristics.
 
 ## Literature Review
 
 ```{r}
-lit_rev_tbl <- read_csv("notebooks/lit_review_table.csv")
+lit_rev_tbl <- read_csv("notebooks/lit_review_table2.csv")
 ```
 
 
-@tbl-lit-summary summarizes the literature that was reviewed for this study. As seen in the table, there were a total of `r nrow(lit_rev_tbl)` studies reviewed with `r nrow(lit_rev_tbl[grepl("CEX",lit_rev_tbl$Dataset),])` studies that use the consumer expenditure survey.
+@tbl-lit-summary summarizes the literature that was reviewed for this study. As seen in the table, there were a total of `r nrow(lit_rev_tbl)` studies reviewed with `r nrow(lit_rev_tbl[!is.na(lit_rev_tbl[["Use Consumer Expenditure Survey Data"]]),])` studies that use the consumer expenditure survey.
 
 {{< embed notebooks/lit_review_table.qmd#tbl-lit-summary >}}
 
-The literature relating to this study has been classified into four groups: (1) Family Choices and Activity Patterns, (2) Family Transportation Choices, (3) Family Spending and Budgets, and (4) Family Transportation Budgets. The following sections describe the relevant findings from literature in each of these groups.
+The literature relating to this study has been classified into four groups: (1) Household Choices and Activity Patterns, (2) Household Transportation Choices, (3) Household Spending and Budgets, and (4) Household Transportation Budgets. The following sections describe the relevant findings from literature in each of these groups.
 
 ### Household Activities and Transportation Choices 
 
@@ -126,21 +130,27 @@ A similar study was published by @mattson_relationships_2020 where he modeled tr
 
 In their study, @molloy_new_2024 look at CEX data after proposing a new framework to look at transit users and vehicle users. In past studies, three categories have been used to analyze transportation users: "drivers" are those who own a car, "captive riders" are those who use transit because they ca not afford a car, and "choice riders" are those who can afford a car but do not. Instead of having one grouping for those that own cars, @molloy_new_2024 propose splitting that category into "captive drivers" and "choice drivers". Captive drivers would be those in the population that are low income but have a car representing people with less transportation freedom. They analyzed the CEX with this new way of classifying transportation users and found that captive drivers carry the most transportation burden. The transportation expenditures of captive drivers average more than 16% of total household expenditures while the transportation expenditures of captive riders was only around 7% of total expenditures.
 
-@bureau_of_transportation_statistics_transportation_2024 - Chapter 2 has a whole section where they analyze household expenditures gettting much of their data from the CEX. 
-
 ### The Current Study
 
-This study has never been done and will add to the current literature in the following ways. 
+Like many of the existing studies described, the current study improves our understanding of household spending patterns and transportation choices. It adds to the literature in three main ways: Dataset, Methodology, and Research Question. 
 
-- Data: Many studies on household transportation patterns focus on time diaries and other things. This study uses consumer expenditure data to understand patterns in household transportation budgets. 
+#### Dataset
 
-- Methodology: LCA to find groupings that organize households using different transportation expense patterns. What variables do we want to look at, and how is that different from other studies?
+Many studies seek to understand household transportation choices with time use diaries or travel surveys. This study, on the other hand, seeks to answer similar questions using expenditure data. Instead of using day to day activities to understand where and how a household is getting around, we use households' weekly expenses to find underlying patterns that explain, and perhaps shape, their travel choices. 
 
-- Purpose: Have there been any studies that share a similar end goal as our study? If so, is ours unique? 
+Another important thing to note is that all of the reviewed transportation studies using the CEX were using data from before 2020. Since much has changed since the COVID19 pandemic, the 2024 data used in the current study will provide a more timely analysis.
+
+#### Methodology
+
+The latent class analysis for the current study looks at unique exogenous and outcome variables. To perform the analysis, we create 
+
+#### Research Question
+
+The purpose of the current study is to see how household budgets are structured around transportation decisions. We are going about it with the perspective that transportation expenditures help define a household. Looking at the data in this way will help us...
 
 ## Data 
 
-Data for the following analysis were attained from the 2024 Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is deployed continuously by the Bureau of Labor Statistics (BLS). The data are organized by quarter and published each year. The CEX consists of two surveys as described below. 
+Data for the following analysis were attained from the 2024 Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is administered continuously by the Bureau of Labor Statistics (BLS). The data are organized by quarter and published each year. The CEX consists of two surveys as described below. 
 
 - **The Interview Survey** tracks a household's major and recurring expenditures by reviewing their expenses from the past three months. Approximatedly 6000 usable interviews are collected each quarter. After interviewing a household for 4 consecutive quarters, they are removed from the sample and replaced by a new household. 
 
@@ -161,7 +171,7 @@ categories <- categories[order(categories)]
 ```
 
 
-We grouped the `r length(expense_types)` different types of expenditures found in the data into the following `r length(categories)` categories: `r categories`
+Of the `r length(expense_types)` different types of expenditures found in the data, we created `r length(categories)` categories: `r categories`.
 
 
 ## References
