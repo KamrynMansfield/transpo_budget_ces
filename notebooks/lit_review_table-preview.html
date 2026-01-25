@@ -239,11 +239,11 @@
 <div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lit_tbl <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"lit_review_table2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Rows: 35 Columns: 6
+<pre><code>Rows: 35 Columns: 3
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
-chr (1): Study
-dbl (5): Use Consumer Expenditure Survey Data, Household Choices, Transporta...
+chr (2): Study, Category
+lgl (1): Uses CEX Data
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
@@ -262,303 +262,192 @@ Summary of the Literature
 <div class="cell-output-display">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 35%">
-<col style="width: 22%">
-<col style="width: 11%">
-<col style="width: 9%">
-<col style="width: 4%">
-<col style="width: 16%">
+<col style="width: 58%">
+<col style="width: 14%">
+<col style="width: 27%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Study</th>
-<th style="text-align: right;">Use Consumer Expenditure Survey Data</th>
-<th style="text-align: right;">Household Choices</th>
-<th style="text-align: right;">Transportation</th>
-<th style="text-align: right;">Budgets</th>
-<th style="text-align: right;">Transportation and Budgets</th>
+<th style="text-align: left;">Uses CEX Data</th>
+<th style="text-align: left;">Category</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="morris_family_1979">@morris_family_1979</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="skinner_variable_1985">@skinner_variable_1985</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Budgets</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="nayga_sample_1998">@nayga_sample_1998</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="blumenberg_transportation_2003">@blumenberg_transportation_2003</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="thakuriah_analysis_2005">@thakuriah_analysis_2005</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="hong_leisure_2005">@hong_leisure_2005</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="thakuriah_vonu_transportation_2006">@thakuriah_vonu_transportation_2006</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="fontes_effects_2006">@fontes_effects_2006</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Budgets</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="choo_transportation_2007">@choo_transportation_2007</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="copperman_analysis_2007">@copperman_analysis_2007</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Transportation</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="sener_analysis_2007">@sener_analysis_2007</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Household Choices</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="copperman_exploratory_2007">@copperman_exploratory_2007</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Household Choices</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="haas_estimating_2008">@haas_estimating_2008</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="sener_analysis_2008">@sener_analysis_2008</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Household Choices</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="ferdous_comprehensive_2010">@ferdous_comprehensive_2010</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="souche_measuring_2010">@souche_measuring_2010</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Transportation</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="paleti_empirical_2011">@paleti_empirical_2011</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Household Choices</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="sabelhaus_is_2013">@sabelhaus_is_2013</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Budgets</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="deka_relationship_2015">@deka_relationship_2015</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="bernardo_empirical_2015">@bernardo_empirical_2015</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Household Choices</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="lino_expenditures_2017">@lino_expenditures_2017</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="mccarthy_factors_2017">@mccarthy_factors_2017</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Transportation</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="mattson_relationships_2019">@mattson_relationships_2019</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="leung_environment-people_2019">@leung_environment-people_2019</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Household Choices</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="mattson_relationships_2020">@mattson_relationships_2020</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="osborne_updated_2021">@osborne_updated_2021</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Budgets</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="hastings_parental_2022">@hastings_parental_2022</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="lu_role_2022">@lu_role_2022</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Transportation</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="amirnazmiafshar_review_2022">@amirnazmiafshar_review_2022</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Transportation</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="duncan_estimating_2023">@duncan_estimating_2023</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Budgets</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="molloy_new_2024">@molloy_new_2024</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="bureau_of_transportation_statistics_transportation_2024">@bureau_of_transportation_statistics_transportation_2024</span></td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">TRUE</td>
+<td style="text-align: left;">Transportation and Budgets</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="hargunani_study_2024">@hargunani_study_2024</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Budgets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="klein_subsidizing_2024">@klein_subsidizing_2024</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Transportation</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="bilgin_investigating_2025">@bilgin_investigating_2025</span></td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: left;">Transportation</td>
 </tr>
 </tbody>
 </table>

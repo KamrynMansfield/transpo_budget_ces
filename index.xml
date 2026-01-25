@@ -193,338 +193,227 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     <table-wrap>
       <table>
         <colgroup>
-          <col width="44%" />
-          <col width="13%" />
-          <col width="9%" />
-          <col width="13%" />
-          <col width="7%" />
-          <col width="13%" />
+          <col width="64%" />
+          <col width="12%" />
+          <col width="22%" />
         </colgroup>
         <thead>
           <tr>
             <th align="left">Study</th>
-            <th align="right">Use Consumer Expenditure Survey Data</th>
-            <th align="right">Household Choices</th>
-            <th align="right">Transportation</th>
-            <th align="right">Budgets</th>
-            <th align="right">Transportation and Budgets</th>
+            <th align="left">Uses CEX Data</th>
+            <th align="left">Category</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td align="left">Morris and Wigan
             (<xref alt="1979" rid="ref-morris_family_1979" ref-type="bibr">1979</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">FALSE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Skinner
             (<xref alt="1985" rid="ref-skinner_variable_1985" ref-type="bibr">1985</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
+            <td align="left">TRUE</td>
+            <td align="left">Budgets</td>
           </tr>
           <tr>
             <td align="left">Nayga
             (<xref alt="1998" rid="ref-nayga_sample_1998" ref-type="bibr">1998</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
+            <td align="left">TRUE</td>
+            <td align="left">Budgets</td>
           </tr>
           <tr>
             <td align="left">Blumenberg
             (<xref alt="2003" rid="ref-blumenberg_transportation_2003" ref-type="bibr">2003</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Thakuriah and Liao
             (<xref alt="2005" rid="ref-thakuriah_analysis_2005" ref-type="bibr">2005</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Hong et al.
             (<xref alt="2005" rid="ref-hong_leisure_2005" ref-type="bibr">2005</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Thakuriah (Vonu) and Liao
             (<xref alt="2006" rid="ref-thakuriah_vonu_transportation_2006" ref-type="bibr">2006</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Fontes and Fan
             (<xref alt="2006" rid="ref-fontes_effects_2006" ref-type="bibr">2006</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
+            <td align="left">TRUE</td>
+            <td align="left">Budgets</td>
           </tr>
           <tr>
             <td align="left">Choo et al.
             (<xref alt="2007" rid="ref-choo_transportation_2007" ref-type="bibr">2007</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Rachel B. Copperman and Bhat
             (<xref alt="2007a" rid="ref-copperman_analysis_2007" ref-type="bibr">2007a</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Transportation</td>
           </tr>
           <tr>
             <td align="left">Sener and Bhat
             (<xref alt="2007" rid="ref-sener_analysis_2007" ref-type="bibr">2007</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Household Choices</td>
           </tr>
           <tr>
             <td align="left">Rachel B. Copperman and Bhat
             (<xref alt="2007b" rid="ref-copperman_exploratory_2007" ref-type="bibr">2007b</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Household Choices</td>
           </tr>
           <tr>
             <td align="left">Haas et al.
             (<xref alt="2008" rid="ref-haas_estimating_2008" ref-type="bibr">2008</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Sener et al.
             (<xref alt="2008" rid="ref-sener_analysis_2008" ref-type="bibr">2008</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Household Choices</td>
           </tr>
           <tr>
             <td align="left">Ferdous et al.
             (<xref alt="2010" rid="ref-ferdous_comprehensive_2010" ref-type="bibr">2010</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Souche
             (<xref alt="2010" rid="ref-souche_measuring_2010" ref-type="bibr">2010</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Transportation</td>
           </tr>
           <tr>
             <td align="left">Paleti et al.
             (<xref alt="2011" rid="ref-paleti_empirical_2011" ref-type="bibr">2011</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Household Choices</td>
           </tr>
           <tr>
             <td align="left">Sabelhaus et al.
             (<xref alt="2013" rid="ref-sabelhaus_is_2013" ref-type="bibr">2013</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
+            <td align="left">TRUE</td>
+            <td align="left">Budgets</td>
           </tr>
           <tr>
             <td align="left">Deka
             (<xref alt="2015" rid="ref-deka_relationship_2015" ref-type="bibr">2015</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Bernardo et al.
             (<xref alt="2015" rid="ref-bernardo_empirical_2015" ref-type="bibr">2015</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Household Choices</td>
           </tr>
           <tr>
             <td align="left">Lino et al.
             (<xref alt="2017" rid="ref-lino_expenditures_2017" ref-type="bibr">2017</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
+            <td align="left">TRUE</td>
+            <td align="left">Budgets</td>
           </tr>
           <tr>
             <td align="left">McCarthy et al.
             (<xref alt="2017" rid="ref-mccarthy_factors_2017" ref-type="bibr">2017</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Transportation</td>
           </tr>
           <tr>
             <td align="left">Mattson and Peterson
             (<xref alt="2019" rid="ref-mattson_relationships_2019" ref-type="bibr">2019</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Leung et al.
             (<xref alt="2019" rid="ref-leung_environment-people_2019" ref-type="bibr">2019</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Household Choices</td>
           </tr>
           <tr>
             <td align="left">Mattson
             (<xref alt="2020" rid="ref-mattson_relationships_2020" ref-type="bibr">2020</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Osborne et al.
             (<xref alt="2021" rid="ref-osborne_updated_2021" ref-type="bibr">2021</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
+            <td align="left">TRUE</td>
+            <td align="left">Budgets</td>
           </tr>
           <tr>
             <td align="left">Hastings
             (<xref alt="2022" rid="ref-hastings_parental_2022" ref-type="bibr">2022</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
+            <td align="left">TRUE</td>
+            <td align="left">Budgets</td>
           </tr>
           <tr>
             <td align="left">Lu et al.
             (<xref alt="2022" rid="ref-lu_role_2022" ref-type="bibr">2022</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Transportation</td>
           </tr>
           <tr>
             <td align="left">Amirnazmiafshar and Diana
             (<xref alt="2022" rid="ref-amirnazmiafshar_review_2022" ref-type="bibr">2022</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Transportation</td>
           </tr>
           <tr>
             <td align="left">Duncan et al.
             (<xref alt="2023" rid="ref-duncan_estimating_2023" ref-type="bibr">2023</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Budgets</td>
           </tr>
           <tr>
             <td align="left">Molloy et al.
             (<xref alt="2024" rid="ref-molloy_new_2024" ref-type="bibr">2024</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Bureau of Transportation Statistics
             (<xref alt="2024" rid="ref-bureau_of_transportation_statistics_transportation_2024" ref-type="bibr">2024</xref>)</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
+            <td align="left">TRUE</td>
+            <td align="left">Transportation and Budgets</td>
           </tr>
           <tr>
             <td align="left">Hargunani et al.
             (<xref alt="2024" rid="ref-hargunani_study_2024" ref-type="bibr">2024</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Budgets</td>
           </tr>
           <tr>
             <td align="left">Klein
             (<xref alt="2024" rid="ref-klein_subsidizing_2024" ref-type="bibr">2024</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Transportation</td>
           </tr>
           <tr>
             <td align="left">Bilgin et al.
             (<xref alt="2025" rid="ref-bilgin_investigating_2025" ref-type="bibr">2025</xref>)</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
-            <td align="right">1</td>
-            <td align="right">NA</td>
-            <td align="right">NA</td>
+            <td align="left">FALSE</td>
+            <td align="left">Transportation</td>
           </tr>
         </tbody>
       </table>
@@ -1671,339 +1560,227 @@ lgl (1): Uses CEX Data
       <table-wrap>
         <table>
           <colgroup>
-            <col width="44%" />
-            <col width="13%" />
-            <col width="9%" />
-            <col width="13%" />
-            <col width="7%" />
-            <col width="13%" />
+            <col width="64%" />
+            <col width="12%" />
+            <col width="22%" />
           </colgroup>
           <thead>
             <tr>
               <th align="left">Study</th>
-              <th align="right">Use Consumer Expenditure Survey
-              Data</th>
-              <th align="right">Household Choices</th>
-              <th align="right">Transportation</th>
-              <th align="right">Budgets</th>
-              <th align="right">Transportation and Budgets</th>
+              <th align="left">Uses CEX Data</th>
+              <th align="left">Category</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td align="left">Morris and Wigan
               (<xref alt="1979" rid="ref-morris_family_1979-nb-article" ref-type="bibr">1979</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">FALSE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Skinner
               (<xref alt="1985" rid="ref-skinner_variable_1985-nb-article" ref-type="bibr">1985</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
+              <td align="left">TRUE</td>
+              <td align="left">Budgets</td>
             </tr>
             <tr>
               <td align="left">Nayga
               (<xref alt="1998" rid="ref-nayga_sample_1998-nb-article" ref-type="bibr">1998</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
+              <td align="left">TRUE</td>
+              <td align="left">Budgets</td>
             </tr>
             <tr>
               <td align="left">Blumenberg
               (<xref alt="2003" rid="ref-blumenberg_transportation_2003-nb-article" ref-type="bibr">2003</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Thakuriah and Liao
               (<xref alt="2005" rid="ref-thakuriah_analysis_2005-nb-article" ref-type="bibr">2005</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Hong et al.
               (<xref alt="2005" rid="ref-hong_leisure_2005-nb-article" ref-type="bibr">2005</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Thakuriah (Vonu) and Liao
               (<xref alt="2006" rid="ref-thakuriah_vonu_transportation_2006-nb-article" ref-type="bibr">2006</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Fontes and Fan
               (<xref alt="2006" rid="ref-fontes_effects_2006-nb-article" ref-type="bibr">2006</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
+              <td align="left">TRUE</td>
+              <td align="left">Budgets</td>
             </tr>
             <tr>
               <td align="left">Choo et al.
               (<xref alt="2007" rid="ref-choo_transportation_2007-nb-article" ref-type="bibr">2007</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Rachel B. Copperman and Bhat
               (<xref alt="2007a" rid="ref-copperman_analysis_2007-nb-article" ref-type="bibr">2007a</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Transportation</td>
             </tr>
             <tr>
               <td align="left">Sener and Bhat
               (<xref alt="2007" rid="ref-sener_analysis_2007-nb-article" ref-type="bibr">2007</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Household Choices</td>
             </tr>
             <tr>
               <td align="left">Rachel B. Copperman and Bhat
               (<xref alt="2007b" rid="ref-copperman_exploratory_2007-nb-article" ref-type="bibr">2007b</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Household Choices</td>
             </tr>
             <tr>
               <td align="left">Haas et al.
               (<xref alt="2008" rid="ref-haas_estimating_2008-nb-article" ref-type="bibr">2008</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Sener et al.
               (<xref alt="2008" rid="ref-sener_analysis_2008-nb-article" ref-type="bibr">2008</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Household Choices</td>
             </tr>
             <tr>
               <td align="left">Ferdous et al.
               (<xref alt="2010" rid="ref-ferdous_comprehensive_2010-nb-article" ref-type="bibr">2010</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Souche
               (<xref alt="2010" rid="ref-souche_measuring_2010-nb-article" ref-type="bibr">2010</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Transportation</td>
             </tr>
             <tr>
               <td align="left">Paleti et al.
               (<xref alt="2011" rid="ref-paleti_empirical_2011-nb-article" ref-type="bibr">2011</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Household Choices</td>
             </tr>
             <tr>
               <td align="left">Sabelhaus et al.
               (<xref alt="2013" rid="ref-sabelhaus_is_2013-nb-article" ref-type="bibr">2013</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
+              <td align="left">TRUE</td>
+              <td align="left">Budgets</td>
             </tr>
             <tr>
               <td align="left">Deka
               (<xref alt="2015" rid="ref-deka_relationship_2015-nb-article" ref-type="bibr">2015</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Bernardo et al.
               (<xref alt="2015" rid="ref-bernardo_empirical_2015-nb-article" ref-type="bibr">2015</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Household Choices</td>
             </tr>
             <tr>
               <td align="left">Lino et al.
               (<xref alt="2017" rid="ref-lino_expenditures_2017-nb-article" ref-type="bibr">2017</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
+              <td align="left">TRUE</td>
+              <td align="left">Budgets</td>
             </tr>
             <tr>
               <td align="left">McCarthy et al.
               (<xref alt="2017" rid="ref-mccarthy_factors_2017-nb-article" ref-type="bibr">2017</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Transportation</td>
             </tr>
             <tr>
               <td align="left">Mattson and Peterson
               (<xref alt="2019" rid="ref-mattson_relationships_2019-nb-article" ref-type="bibr">2019</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Leung et al.
               (<xref alt="2019" rid="ref-leung_environment-people_2019-nb-article" ref-type="bibr">2019</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Household Choices</td>
             </tr>
             <tr>
               <td align="left">Mattson
               (<xref alt="2020" rid="ref-mattson_relationships_2020-nb-article" ref-type="bibr">2020</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Osborne et al.
               (<xref alt="2021" rid="ref-osborne_updated_2021-nb-article" ref-type="bibr">2021</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
+              <td align="left">TRUE</td>
+              <td align="left">Budgets</td>
             </tr>
             <tr>
               <td align="left">Hastings
               (<xref alt="2022" rid="ref-hastings_parental_2022-nb-article" ref-type="bibr">2022</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
+              <td align="left">TRUE</td>
+              <td align="left">Budgets</td>
             </tr>
             <tr>
               <td align="left">Lu et al.
               (<xref alt="2022" rid="ref-lu_role_2022-nb-article" ref-type="bibr">2022</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Transportation</td>
             </tr>
             <tr>
               <td align="left">Amirnazmiafshar and Diana
               (<xref alt="2022" rid="ref-amirnazmiafshar_review_2022-nb-article" ref-type="bibr">2022</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Transportation</td>
             </tr>
             <tr>
               <td align="left">Duncan et al.
               (<xref alt="2023" rid="ref-duncan_estimating_2023-nb-article" ref-type="bibr">2023</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Budgets</td>
             </tr>
             <tr>
               <td align="left">Molloy et al.
               (<xref alt="2024" rid="ref-molloy_new_2024-nb-article" ref-type="bibr">2024</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Bureau of Transportation Statistics
               (<xref alt="2024" rid="ref-bureau_of_transportation_statistics_transportation_2024-nb-article" ref-type="bibr">2024</xref>)</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
+              <td align="left">TRUE</td>
+              <td align="left">Transportation and Budgets</td>
             </tr>
             <tr>
               <td align="left">Hargunani et al.
               (<xref alt="2024" rid="ref-hargunani_study_2024-nb-article" ref-type="bibr">2024</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Budgets</td>
             </tr>
             <tr>
               <td align="left">Klein
               (<xref alt="2024" rid="ref-klein_subsidizing_2024-nb-article" ref-type="bibr">2024</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Transportation</td>
             </tr>
             <tr>
               <td align="left">Bilgin et al.
               (<xref alt="2025" rid="ref-bilgin_investigating_2025-nb-article" ref-type="bibr">2025</xref>)</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
-              <td align="right">1</td>
-              <td align="right">NA</td>
-              <td align="right">NA</td>
+              <td align="left">FALSE</td>
+              <td align="left">Transportation</td>
             </tr>
           </tbody>
         </table>
@@ -3055,11 +2832,11 @@ categories &lt;- categories[order(categories)]</code>
 <code language="r script">lit_tbl &lt;- read_csv(&quot;lit_review_table2.csv&quot;)
 </code>
 <boxed-text>
-  <preformat>Rows: 35 Columns: 6
+  <preformat>Rows: 35 Columns: 3
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: &quot;,&quot;
-chr (1): Study
-dbl (5): Use Consumer Expenditure Survey Data, Household Choices, Transporta...
+chr (2): Study, Category
+lgl (1): Uses CEX Data
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
@@ -3075,303 +2852,192 @@ kable(lit_tbl)
   <table-wrap>
     <table>
       <colgroup>
-        <col width="35%" />
-        <col width="23%" />
-        <col width="11%" />
-        <col width="9%" />
-        <col width="5%" />
-        <col width="17%" />
+        <col width="58%" />
+        <col width="14%" />
+        <col width="28%" />
       </colgroup>
       <thead>
         <tr>
           <th align="left">Study</th>
-          <th align="right">Use Consumer Expenditure Survey Data</th>
-          <th align="right">Household Choices</th>
-          <th align="right">Transportation</th>
-          <th align="right">Budgets</th>
-          <th align="right">Transportation and Budgets</th>
+          <th align="left">Uses CEX Data</th>
+          <th align="left">Category</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td align="left">@morris_family_1979</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">FALSE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@skinner_variable_1985</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
+          <td align="left">TRUE</td>
+          <td align="left">Budgets</td>
         </tr>
         <tr>
           <td align="left">@nayga_sample_1998</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
+          <td align="left">TRUE</td>
+          <td align="left">Budgets</td>
         </tr>
         <tr>
           <td align="left">@blumenberg_transportation_2003</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@thakuriah_analysis_2005</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@hong_leisure_2005</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@thakuriah_vonu_transportation_2006</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@fontes_effects_2006</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
+          <td align="left">TRUE</td>
+          <td align="left">Budgets</td>
         </tr>
         <tr>
           <td align="left">@choo_transportation_2007</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@copperman_analysis_2007</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Transportation</td>
         </tr>
         <tr>
           <td align="left">@sener_analysis_2007</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Household Choices</td>
         </tr>
         <tr>
           <td align="left">@copperman_exploratory_2007</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Household Choices</td>
         </tr>
         <tr>
           <td align="left">@haas_estimating_2008</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@sener_analysis_2008</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Household Choices</td>
         </tr>
         <tr>
           <td align="left">@ferdous_comprehensive_2010</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@souche_measuring_2010</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Transportation</td>
         </tr>
         <tr>
           <td align="left">@paleti_empirical_2011</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Household Choices</td>
         </tr>
         <tr>
           <td align="left">@sabelhaus_is_2013</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
+          <td align="left">TRUE</td>
+          <td align="left">Budgets</td>
         </tr>
         <tr>
           <td align="left">@deka_relationship_2015</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@bernardo_empirical_2015</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Household Choices</td>
         </tr>
         <tr>
           <td align="left">@lino_expenditures_2017</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
+          <td align="left">TRUE</td>
+          <td align="left">Budgets</td>
         </tr>
         <tr>
           <td align="left">@mccarthy_factors_2017</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Transportation</td>
         </tr>
         <tr>
           <td align="left">@mattson_relationships_2019</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@leung_environment-people_2019</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Household Choices</td>
         </tr>
         <tr>
           <td align="left">@mattson_relationships_2020</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@osborne_updated_2021</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
+          <td align="left">TRUE</td>
+          <td align="left">Budgets</td>
         </tr>
         <tr>
           <td align="left">@hastings_parental_2022</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
+          <td align="left">TRUE</td>
+          <td align="left">Budgets</td>
         </tr>
         <tr>
           <td align="left">@lu_role_2022</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Transportation</td>
         </tr>
         <tr>
           <td align="left">@amirnazmiafshar_review_2022</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Transportation</td>
         </tr>
         <tr>
           <td align="left">@duncan_estimating_2023</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Budgets</td>
         </tr>
         <tr>
           <td align="left">@molloy_new_2024</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@bureau_of_transportation_statistics_transportation_2024</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
+          <td align="left">TRUE</td>
+          <td align="left">Transportation and Budgets</td>
         </tr>
         <tr>
           <td align="left">@hargunani_study_2024</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Budgets</td>
         </tr>
         <tr>
           <td align="left">@klein_subsidizing_2024</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Transportation</td>
         </tr>
         <tr>
           <td align="left">@bilgin_investigating_2025</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
-          <td align="right">1</td>
-          <td align="right">NA</td>
-          <td align="right">NA</td>
+          <td align="left">FALSE</td>
+          <td align="left">Transportation</td>
         </tr>
       </tbody>
     </table>
