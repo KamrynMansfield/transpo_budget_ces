@@ -1,36 +1,36 @@
-﻿Study,Use Consumer Expenditure Survey Data,Household Choices,Transportation,Budgets,Transportation and Budgets
-@morris_family_1979,,,,,1
-@skinner_variable_1985,1,,,1,
-@nayga_sample_1998,1,,,1,
-@blumenberg_transportation_2003,1,,,,1
-@thakuriah_analysis_2005,1,,,,1
-@hong_leisure_2005,1,,,,1
-@thakuriah_vonu_transportation_2006,1,,,,1
-@fontes_effects_2006,1,,,1,
-@choo_transportation_2007,1,,,,1
-@copperman_analysis_2007,,,1,,
-@sener_analysis_2007,,1,,,
-@copperman_exploratory_2007,,1,,,
-@haas_estimating_2008,1,,,,1
-@sener_analysis_2008,,1,,,
-@ferdous_comprehensive_2010,1,,,,1
-@souche_measuring_2010,,,1,,
-@paleti_empirical_2011,,1,,,
-@sabelhaus_is_2013,1,,,1,
-@deka_relationship_2015,1,,,,1
-@bernardo_empirical_2015,,1,,,
-@lino_expenditures_2017,1,,,1,
-@mccarthy_factors_2017,,,1,,
-@mattson_relationships_2019,1,,,,1
-@leung_environment-people_2019,,1,,,
-@mattson_relationships_2020,1,,,,1
-@osborne_updated_2021,1,,,1,
-@hastings_parental_2022,1,,,1,
-@lu_role_2022,,,1,,
-@amirnazmiafshar_review_2022,,,1,,
-@duncan_estimating_2023,,,,1,
-@molloy_new_2024,1,,,,1
-@bureau_of_transportation_statistics_transportation_2024,1,,,,1
-@hargunani_study_2024,,,,1,
-@klein_subsidizing_2024,,,1,,
-@bilgin_investigating_2025,,,1,,
+﻿Study,Uses CEX Data,Category
+@morris_family_1979,FALSE,Transportation and Budgets
+@skinner_variable_1985,TRUE,Budgets
+@nayga_sample_1998,TRUE,Budgets
+@blumenberg_transportation_2003,TRUE,Transportation and Budgets
+@thakuriah_analysis_2005,TRUE,Transportation and Budgets
+@hong_leisure_2005,TRUE,Transportation and Budgets
+@thakuriah_vonu_transportation_2006,TRUE,Transportation and Budgets
+@fontes_effects_2006,TRUE,Budgets
+@choo_transportation_2007,TRUE,Transportation and Budgets
+@copperman_analysis_2007,FALSE,Transportation
+@sener_analysis_2007,FALSE,Household Choices
+@copperman_exploratory_2007,FALSE,Household Choices
+@haas_estimating_2008,TRUE,Transportation and Budgets
+@sener_analysis_2008,FALSE,Household Choices
+@ferdous_comprehensive_2010,TRUE,Transportation and Budgets
+@souche_measuring_2010,FALSE,Transportation
+@paleti_empirical_2011,FALSE,Household Choices
+@sabelhaus_is_2013,TRUE,Budgets
+@deka_relationship_2015,TRUE,Transportation and Budgets
+@bernardo_empirical_2015,FALSE,Household Choices
+@lino_expenditures_2017,TRUE,Budgets
+@mccarthy_factors_2017,FALSE,Transportation
+@mattson_relationships_2019,TRUE,Transportation and Budgets
+@leung_environment-people_2019,FALSE,Household Choices
+@mattson_relationships_2020,TRUE,Transportation and Budgets
+@osborne_updated_2021,TRUE,Budgets
+@hastings_parental_2022,TRUE,Budgets
+@lu_role_2022,FALSE,Transportation
+@amirnazmiafshar_review_2022,FALSE,Transportation
+@duncan_estimating_2023,FALSE,Budgets
+@molloy_new_2024,TRUE,Transportation and Budgets
+@bureau_of_transportation_statistics_transportation_2024,TRUE,Transportation and Budgets
+@hargunani_study_2024,FALSE,Budgets
+@klein_subsidizing_2024,FALSE,Transportation
+@bilgin_investigating_2025,FALSE,Transportation
