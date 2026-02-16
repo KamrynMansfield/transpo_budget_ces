@@ -29,7 +29,7 @@ EMPL_YP2,NA,,,
 FAM_SIZE,Number of Members in CU,1,cu_size,1
 FAM__IZE,NA,,,
 FAM_TYPE,"Family Type is based on the relationship of members to reference person, whom physically occupy the address selected for the survey. ""Own"" children are sons and daughters children including step children and adopted",1,,1
-FAM__YPE,NA,1,fam_type_flag,1
+FAM__YPE,NA,,,
 FGVX,The sum of the amount of government retirement deduction,,,
 FGVX_,The sum of the amount of government retirement deduction (flag),,,
 FINCBEFX,Total amount of family income before taxes in the last 12 months (Collected data),1,inc_bfr_taxes_last_12_months,1
@@ -96,16 +96,16 @@ REF_RACE,Race of reference person,,,
 REF__ACE,NA,,,
 REGION,Region,1,,1
 SEX_REF,Sex of reference person,1,sex_ref,1
-SEX_REF_,Sex of reference person (flag),1,sex_ref_flag,1
+SEX_REF_,Sex of reference person (flag),,,
 SEX2,Sex of spouse person,1,sex_spouse,1
-SEX2_,Sex of spouse person (flag),1,sex_spouse_flag,1
+SEX2_,Sex of spouse person (flag),,,
 SMSASTAT,Does CU reside inside a Metropolitan Statistical Area (MSA)?,1,in_msa,1
 STRTMNTH,Start month of this diary week (month),1,start_month,1
 STRTYEAR,Start year of this diary week (year),1,start_year,1
 TYPOWND,Are these living quarters owned by regular ownership or as a condominium or cooperative?,1,type_owned,1
 TYPOWND_,Are these living quarters owned by regular ownership or as a condominium or cooperative? (flag),,,
 VEHQ,Total number of owned vehicles,1,owned_vehicles,1
-VEHQ_,Total number of owned vehicles (flag),1,owned_veh_flag,1
+VEHQ_,Total number of owned vehicles (flag),,,
 WEEKI,Week of the Diary,,,
 WEEKI_,Week of the Diary (flag),,,
 WEEKN,Number of Diary weeks surveyed,,,
@@ -294,7 +294,7 @@ WELFRB,Could you tell me which range best reflects the total amount of income fr
 WELFRB_,Could you tell me which range best reflects the total amount of income from cash assistance from state or local government welfare programs during the last 12 months? (flag),,,
 WELFRBX,Median of bracket range,,,
 WELFRBX_,Median of bracket range (flag),,,
-PSU,Primary Sampling Unit,,,
+PSU,Primary Sampling Unit,1,,
 HIGH_EDU,Highest level of education within the CU,1,highest_edu_in_cu,
 FSMPFRMX,Family level summation for new variable SEMPFRMX and SMPFRMBX,,,
 FSMP_RMX,NA,,,
