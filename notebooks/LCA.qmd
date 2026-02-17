@@ -1,11 +1,20 @@
-lcm_data <- read.csv("data/diary24_combined/created_data/exp_fmly_data.csv",header=TRUE)
+---
+title: "LCA"
+editor: visual
+---
 
-
-
-#install.packages('poLCA')
+```{r}
 library(poLCA)
 library(tidyverse)
 library(writexl)
+```
+
+```{r, echo=FALSE}
+lcm_data <- read.csv("../data/diary24_combined/created_data/exp_fmly_data.csv",header=TRUE)
+```
+
+```{r}
+
 
 lcm_data$FoodAlc = lcm_data$Food.Related + lcm_data$Alcohol
 lcm_data$Leisure = lcm_data$Recreational.Related + lcm_data$At..Home.Entertainment
@@ -240,6 +249,11 @@ lcm_data$married_kids_65 <- ifelse(lcm_data$married_kids + lcm_data$one_or_more_
 #                  var.col=lcm_data$fam_single_person,
 #                  show.col.prc=TRUE,
 #                  show.summary = F)
+
+```
+
+```{r}
+
 
 
 library(car)
@@ -544,4 +558,13 @@ create_nice_coeff_tbl <- function(model_df, new_exog_names, new_exog_names_list)
 
 table <- create_nice_coeff_tbl(model_df, new_exog_names, new_exog_names_list)
 
+# knitr::kable(table)
+```
+
+```{r}
+#| label: tbl-model-output
+#| tbl-cap: "Regression Results of the LCA"
+#| tbl-alt: "Table with coefficients and t-statistics for each exogenous variable in the Latent Class Model"
+
 knitr::kable(table)
+```

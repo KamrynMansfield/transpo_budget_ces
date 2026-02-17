@@ -162,6 +162,9 @@ categories <- categories[order(categories)]
 
 Of the `r length(expense_types)` different types of expenditures found in the data, we created `r length(categories)` categories: `r categories`.
 
+## Analysis
+{{< embed notebooks/LCA.qmd#tbl-model-output >}}
+
 ## References
 
 ::: {#refs}
