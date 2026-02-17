@@ -1,5 +1,6 @@
-setwd("/Users/kamrynmansfield/College/UTK/BLS_CE")
-lcm_data = read.csv("data/CE_data/2024/diary24_combined/created_data/exp_fmly_data.csv",header=TRUE)
+lcm_data <- read.csv("data/diary24_combined/created_data/exp_fmly_data.csv",header=TRUE)
+
+
 
 #install.packages('poLCA')
 library(poLCA)
@@ -449,18 +450,100 @@ create_regr_tbl <- function(model){
 
 }
 
-write_model_to_excel <- function(model, lcm_data, save_file){
-  probs_table <- create_probs_table(model, TRUE, lcm_data)
-  regr_table <- create_regr_tbl(model)
+# write_model_to_excel <- function(model, lcm_data, save_file){
+#   probs_table <- create_probs_table(model, TRUE, lcm_data)
+#   regr_table <- create_regr_tbl(model)
+# 
+#   listed_dfs <- list(probability = probs_table,
+#                      regression = regr_table)
+# 
+#   write_xlsx(listed_dfs, path = save_file)
+# 
+#   return(cat("model results saved to\n",save_file))
+# }
+#
+# write_model_to_excel(model_3, lcm_data, "LCA/model_results/0_lcm9.xlsx")
 
-  listed_dfs <- list(probability = probs_table,
-                     regression = regr_table)
+library(gt)
 
-  write_xlsx(listed_dfs, path = save_file)
+model_df <- create_regr_tbl(model_3)
 
-  return(cat("model results saved to\n",save_file))
+new_exog_names_list <- list("(Intercept)" = "Intercept",
+                       "City Type (Urban)" = list("Rural" = "city_type_rural"),
+                       "Income (more than $50,000)" = list("$50,000 or less" = "income_less_50k"),
+                       "Reference Age (55 or older)" = list("18 - 34" = "age_ref_18_to_34",
+                                                            "35 -44" = "age_ref_35_to_44",
+                                                            "45 - 54" = "age_ref_45_to_54"),
+                       "Region (Northeast)" = list("Midwest" = "region_midwest",
+                                                   "South" = "region_south",
+                                                   "West" = "region_wes"),
+                       "Education (No college degree" = list("Masters or above" = "edu_masters_doctorate",
+                                                             "Bachelors" = "edu_bachelors"),
+                       "Household Size (1)" = list("2" = "cu_size_2",
+                                                   "3-6" = "cu_size_3_to_6",
+                                                   "6+" ="cu_size_more_6"),
+                       "Maintenance Expenses (none)" = list("$0.01 - $200" = "as.factor(Man_cat1)2",
+                                                            "$200.01 - $500" = "as.factor(Man_cat1)3",
+                                                            "$500.01 - $1,000" = "as.factor(Man_cat1)4",
+                                                            "> $1,000" = "as.factor(Man_cat1)5"),
+                       "Housing Expenses (none)" = list("$0.01 - $200" = "as.factor(House_cat1)2",
+                                                        "$200.01 - $500" = "as.factor(House_cat1)3 ",
+                                                        "$500.01 - $1,000" = "as.factor(House_cat1)4",
+                                                        "> $1,000" = "as.factor(House_cat1)5"),
+                       "Food Expenses (<$100)" = list("$100.01 - $500" = "as.factor(Food_cat1)2",
+                                                      ">$500" = "as.factor(Food_cat1)3"),
+                       "Leisure Expenses (none)" = list("$0.01 - $100" = "as.factor(Lei_cat1)2",
+                                                      ">$100" = "as.factor(Lei_cat1)3"))
+
+new_exog_names <- list("(Intercept)" = "Intercept",
+                       "Rural" = "city_type_rural",
+                       "$50,000 or less" = "income_less_50k",
+                       "18 - 34" = "age_ref_18_to_34",
+                       "35 -44" = "age_ref_35_to_44",
+                       "45 - 54" = "age_ref_45_to_54",
+                       "Midwest" = "region_midwest",
+                       "South" = "region_south",
+                       "West" = "region_wes",
+                       "Masters or above" = "edu_masters_doctorate",
+                       "Bachelors" = "edu_bachelors",
+                       "2" = "cu_size_2",
+                       "3-6" = "cu_size_3_to_6",
+                       "6+" ="cu_size_more_6",
+                       "$0.01 - $200" = "as.factor(Man_cat1)2",
+                       "$200.01 - $500" = "as.factor(Man_cat1)3",
+                       "$500.01 - $1,000" = "as.factor(Man_cat1)4",
+                       "> $1,000" = "as.factor(Man_cat1)5",
+                       "$0.01 - $200" = "as.factor(House_cat1)2",
+                       "$200.01 - $500" = "as.factor(House_cat1)3 ",
+                       "$500.01 - $1,000" = "as.factor(House_cat1)4",
+                       "> $1,000" = "as.factor(House_cat1)5",
+                       "$100.01 - $500" = "as.factor(Food_cat1)2",
+                       ">$500" = "as.factor(Food_cat1)3",
+                       "$0.01 - $100" = "as.factor(Lei_cat1)2",
+                       ">$100" = "as.factor(Lei_cat1)3")
+
+create_nice_coeff_tbl <- function(model_df, new_exog_names, new_exog_names_list){
+  model_df$exogenous_var_name <- names(new_exog_names)
+  
+  model_gt <- model_df |>
+    select(exogenous_var_name, coeff_1, t_stat_1, coeff_2, t_stat_2) |>
+    gt(rowname_col = "exogenous_var_name") |>
+    tab_row_group(
+      label = "(Intercept)",
+      rows = exogenous_var_name == "(Intercept)"
+    )
+  
+  for (i in 2:length(new_exog_names_list)){
+    model_gt <- model_gt |>
+      tab_row_group(
+        label = names(new_exog_names_list)[[i]],
+        rows = exogenous_var_name %in% names(new_exog_names_list[[i]])
+      )
+  }
+  
+  return(model_gt)
 }
 
-write_model_to_excel(model_3, lcm_data, "LCA/model_results/0_lcm9.xlsx")
+create_nice_coeff_tbl(model_df, new_exog_names, new_exog_names_list)
 
 
