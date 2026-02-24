@@ -162,6 +162,62 @@ categories <- categories[order(categories)]
 
 Of the `r length(expense_types)` different types of expenditures found in the data, we created `r length(categories)` categories: `r categories`.
 
+## Results
+<!-- embed notebooks/LCA.qmd#tbl-model-coeff >}} -->
+<!-- {{< embed notebooks/LCA.qmd#tbl-model-classes >}} -->
+
+
+The analysis resulted in three latent classes which we named based on the household distribution of each class. The latent classes are described as follows. 
+
+### Class 1: Car Spenders (High)
+This class mostly contains households that spend higher amounts of money on car-related travel. As shown in @tbl-model-classes, the *Car Spenders (High)* class has a much larger percent of households that spent over $100 on both fuel and maintenance during the survey period. In those same categories, it had the smallest percent of households spending nothing in those categories. In terms of other modes of transportation, this class hardly had any households with expenses in the other transportation categories. 
+
+### Class 2: Multimodal Spenders
+Unlike the *Car Spenders (High)* category, the *Multimodal Spenders* class contains a higher percentage of households that had spending in the transportation categories not involved with cars. For example, while less than 2% of households in the *Car Spenders (High)* class spent any mony on train travel, more than 50% of households in this class spend money on train travel, with about 30% of households spending over $20 on train travel. 
+
+### Class 3: Car Spenders (Low)
+Similar to the *Car Spenders (High)* class, the *Car Spenders (Low)* class had very low percentages of households that spent money on modes besides cars.
+
+
+As seen in @tbl-model-coeff, most of the model coefficients are statistically significant. The following sections discuss the findings in more detail. 
+
+### Household Make-up
+Family types: dig into these a bit more
+
+### Location
+Region: talk about region
+Large Cities: talk about city size
+
+### Other Household Demographics
+Age
+Education
+Income
+
+### Household Expenditures 
+Mandatory Spending
+House Spending
+Leisure Spending
+
+
+Compared to the car heavy classes, it is more likely that the households in the diverse transportation class have a reference person below 44 years old as opposed to being 55+ years old.
+
+Compared to households in the car heavy classes, households in the diverse transportation spender class are more likely to be in the northeast.
+
+Compared to households in the car heavy classes, households in the diverse transportation spender class are more likely to have someone with a bachelors degree or higher.
+
+Compared to households in the car heavy classes, households in the diverse transportation spender class are more likely to be composed of single people with no kids and no people over 65.
+
+Likelihood of having some housing expenses compared to no housing expenses
+
+- Class 3: Higher Transportation Spenders: Car Heavy (most likely)
+
+- Class 2 
+
+- Class 1(least likely)
+
+
+
+
 ## References
 
 ::: {#refs}

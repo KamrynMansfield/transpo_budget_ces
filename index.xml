@@ -715,19 +715,98 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     </table-wrap>
   </fig>
   <p>Of the 397 different types of expenditures found in the data, we
-  created 24 categories: Air Travel, Alcohol, At -Home Entertainment,
+  created 22 categories: Air Travel, Alcohol, At -Home Entertainment,
   Bike or Scooter or other Single Rider Travel, Bus Travel, Car Fuel,
-  Car Maintenance, Car Other, Car Payment, Car Purchase, Clothing
-  Related, Education, Family Spending, Food Related, House Related,
-  Hygiene, Medical, Motorcycle Travel, no category specified,
-  Recreational Related, School Supplies, Ship Travel, Taxi or Limo
-  Travel, Train Travel.</p>
+  Car Maintenance, Car Payment, Car Purchase, Clothing Related,
+  Education, Family Spending, Food Related, House Related, Hygiene,
+  Medical, no category specified, Recreational Related, School Supplies,
+  Ship Travel, Taxi or Limo Travel, Train Travel.</p>
+</sec>
+<sec id="results">
+  <title>4 Results</title>
+  <p>The analysis resulted in three latent classes which we named based
+  on the household distribution of each class. The latent classes are
+  described as follows.</p>
+  <sec id="class-1-car-spenders-high">
+    <title>4.1 Class 1: Car Spenders (High)</title>
+    <p>This class mostly contains households that spend higher amounts
+    of money on car-related travel. As shown in
+    <bold>?@tbl-model-classes</bold>, the <italic>Car Spenders
+    (High)</italic> class has a much larger percent of households that
+    spent over $100 on both fuel and maintenance during the survey
+    period. In those same categories, it had the smallest percent of
+    households spending nothing in those categories. In terms of other
+    modes of transportation, this class hardly had any households with
+    expenses in the other transportation categories.</p>
+  </sec>
+  <sec id="class-2-multimodal-spenders">
+    <title>4.2 Class 2: Multimodal Spenders</title>
+    <p>Unlike the <italic>Car Spenders (High)</italic> category, the
+    <italic>Multimodal Spenders</italic> class contains a higher
+    percentage of households that had spending in the transportation
+    categories not involved with cars. For example, while less than 2%
+    of households in the <italic>Car Spenders (High)</italic> class
+    spent any mony on train travel, more than 50% of households in this
+    class spend money on train travel, with about 30% of households
+    spending over $20 on train travel.</p>
+  </sec>
+  <sec id="class-3-car-spenders-low">
+    <title>4.3 Class 3: Car Spenders (Low)</title>
+    <p>Similar to the <italic>Car Spenders (High)</italic> class, the
+    <italic>Car Spenders (Low)</italic> class had very low percentages
+    of households that spent money on modes besides cars.</p>
+    <p>As seen in <bold>?@tbl-model-coeff</bold>, most of the model
+    coefficients are statistically significant. The following sections
+    discuss the findings in more detail.</p>
+  </sec>
+  <sec id="household-make-up">
+    <title>4.4 Household Make-up</title>
+    <p>Family types: dig into these a bit more</p>
+  </sec>
+  <sec id="location">
+    <title>4.5 Location</title>
+    <p>Region: talk about region Large Cities: talk about city size</p>
+  </sec>
+  <sec id="other-household-demographics">
+    <title>4.6 Other Household Demographics</title>
+    <p>Age Education Income</p>
+  </sec>
+  <sec id="household-expenditures">
+    <title>4.7 Household Expenditures</title>
+    <p>Mandatory Spending House Spending Leisure Spending</p>
+    <p>Compared to the car heavy classes, it is more likely that the
+    households in the diverse transportation class have a reference
+    person below 44 years old as opposed to being 55+ years old.</p>
+    <p>Compared to households in the car heavy classes, households in
+    the diverse transportation spender class are more likely to be in
+    the northeast.</p>
+    <p>Compared to households in the car heavy classes, households in
+    the diverse transportation spender class are more likely to have
+    someone with a bachelors degree or higher.</p>
+    <p>Compared to households in the car heavy classes, households in
+    the diverse transportation spender class are more likely to be
+    composed of single people with no kids and no people over 65.</p>
+    <p>Likelihood of having some housing expenses compared to no housing
+    expenses</p>
+    <list list-type="bullet">
+      <list-item>
+        <p>Class 3: Higher Transportation Spenders: Car Heavy (most
+        likely)</p>
+      </list-item>
+      <list-item>
+        <p>Class 2</p>
+      </list-item>
+      <list-item>
+        <p>Class 1(least likely)</p>
+      </list-item>
+    </list>
+  </sec>
 </sec>
 </body>
 
 <back>
 <ref-list>
-  <title>4 References</title>
+  <title>5 References</title>
   <ref id="ref-bernardo_empirical_2015">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -1366,7 +1445,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 </ref-list>
 </back>
 
-<sub-article article-type="notebook" id="nb-8-nb-article">
+<sub-article article-type="notebook" id="nb-12-nb-article">
 <front-stub>
 <title-group>
 <article-title>Unpacking Household Budgeting Strategies through a
@@ -1439,19 +1518,37 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <code language="r script"># loading packages
 library(tidyverse)</code>
 <boxed-text>
+  <preformat>Warning: package 'ggplot2' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'tibble' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'tidyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'purrr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'dplyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
   <preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.2
-✔ ggplot2   4.0.0     ✔ tibble    3.3.0
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.1.0     
+✔ dplyr     1.2.0     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.6.0
+✔ ggplot2   4.0.2     ✔ tibble    3.3.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+✔ purrr     1.2.1     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
 </boxed-text>
-<code language="r script">library(knitr)
-library(readxl)</code>
+<code language="r script">library(knitr)</code>
+<boxed-text>
+  <preformat>Warning: package 'knitr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<code language="r script">library(readxl)</code>
 </sec>
 <sec id="introduction-nb-article">
   <title>1 Introduction</title>
@@ -2136,13 +2233,92 @@ categories &lt;- unique(ucc_categories_data$category)
 categories &lt;- categories[order(categories)]</code>
   </sec>
   <p>Of the 397 different types of expenditures found in the data, we
-  created 24 categories: Air Travel, Alcohol, At -Home Entertainment,
+  created 22 categories: Air Travel, Alcohol, At -Home Entertainment,
   Bike or Scooter or other Single Rider Travel, Bus Travel, Car Fuel,
-  Car Maintenance, Car Other, Car Payment, Car Purchase, Clothing
-  Related, Education, Family Spending, Food Related, House Related,
-  Hygiene, Medical, Motorcycle Travel, no category specified,
-  Recreational Related, School Supplies, Ship Travel, Taxi or Limo
-  Travel, Train Travel.</p>
+  Car Maintenance, Car Payment, Car Purchase, Clothing Related,
+  Education, Family Spending, Food Related, House Related, Hygiene,
+  Medical, no category specified, Recreational Related, School Supplies,
+  Ship Travel, Taxi or Limo Travel, Train Travel.</p>
+</sec>
+<sec id="results-nb-article">
+  <title>4 Results</title>
+  <p>The analysis resulted in three latent classes which we named based
+  on the household distribution of each class. The latent classes are
+  described as follows.</p>
+  <sec id="class-1-car-spenders-high-nb-article">
+    <title>4.1 Class 1: Car Spenders (High)</title>
+    <p>This class mostly contains households that spend higher amounts
+    of money on car-related travel. As shown in
+    <bold>?@tbl-model-classes</bold>, the <italic>Car Spenders
+    (High)</italic> class has a much larger percent of households that
+    spent over $100 on both fuel and maintenance during the survey
+    period. In those same categories, it had the smallest percent of
+    households spending nothing in those categories. In terms of other
+    modes of transportation, this class hardly had any households with
+    expenses in the other transportation categories.</p>
+  </sec>
+  <sec id="class-2-multimodal-spenders-nb-article">
+    <title>4.2 Class 2: Multimodal Spenders</title>
+    <p>Unlike the <italic>Car Spenders (High)</italic> category, the
+    <italic>Multimodal Spenders</italic> class contains a higher
+    percentage of households that had spending in the transportation
+    categories not involved with cars. For example, while less than 2%
+    of households in the <italic>Car Spenders (High)</italic> class
+    spent any mony on train travel, more than 50% of households in this
+    class spend money on train travel, with about 30% of households
+    spending over $20 on train travel.</p>
+  </sec>
+  <sec id="class-3-car-spenders-low-nb-article">
+    <title>4.3 Class 3: Car Spenders (Low)</title>
+    <p>Similar to the <italic>Car Spenders (High)</italic> class, the
+    <italic>Car Spenders (Low)</italic> class had very low percentages
+    of households that spent money on modes besides cars.</p>
+    <p>As seen in <bold>?@tbl-model-coeff</bold>, most of the model
+    coefficients are statistically significant. The following sections
+    discuss the findings in more detail.</p>
+  </sec>
+  <sec id="household-make-up-nb-article">
+    <title>4.4 Household Make-up</title>
+    <p>Family types: dig into these a bit more</p>
+  </sec>
+  <sec id="location-nb-article">
+    <title>4.5 Location</title>
+    <p>Region: talk about region Large Cities: talk about city size</p>
+  </sec>
+  <sec id="other-household-demographics-nb-article">
+    <title>4.6 Other Household Demographics</title>
+    <p>Age Education Income</p>
+  </sec>
+  <sec id="household-expenditures-nb-article">
+    <title>4.7 Household Expenditures</title>
+    <p>Mandatory Spending House Spending Leisure Spending</p>
+    <p>Compared to the car heavy classes, it is more likely that the
+    households in the diverse transportation class have a reference
+    person below 44 years old as opposed to being 55+ years old.</p>
+    <p>Compared to households in the car heavy classes, households in
+    the diverse transportation spender class are more likely to be in
+    the northeast.</p>
+    <p>Compared to households in the car heavy classes, households in
+    the diverse transportation spender class are more likely to have
+    someone with a bachelors degree or higher.</p>
+    <p>Compared to households in the car heavy classes, households in
+    the diverse transportation spender class are more likely to be
+    composed of single people with no kids and no people over 65.</p>
+    <p>Likelihood of having some housing expenses compared to no housing
+    expenses</p>
+    <list list-type="bullet">
+      <list-item>
+        <p>Class 3: Higher Transportation Spenders: Car Heavy (most
+        likely)</p>
+      </list-item>
+      <list-item>
+        <p>Class 2</p>
+      </list-item>
+      <list-item>
+        <p>Class 1(least likely)</p>
+      </list-item>
+    </list>
+  </sec>
 </sec>
 </body>
 
@@ -2150,7 +2326,7 @@ categories &lt;- categories[order(categories)]</code>
 
 <back>
 <ref-list>
-  <title>4 References</title>
+  <title>5 References</title>
   <ref id="ref-bernardo_empirical_2015-nb-article">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -3038,6 +3214,2781 @@ kable(lit_tbl)
           <td align="left">@bilgin_investigating_2025</td>
           <td align="left">FALSE</td>
           <td align="left">Transportation</td>
+        </tr>
+      </tbody>
+    </table>
+  </table-wrap>
+</fig>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-8-nb-2">
+<front-stub>
+<title-group>
+<article-title>LCA</article-title>
+</title-group>
+</front-stub>
+
+<body>
+<sec specific-use="notebook-content">
+<code language="r script">library(poLCA)
+</code>
+<boxed-text>
+  <preformat>Loading required package: scatterplot3d</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Loading required package: MASS</preformat>
+</boxed-text>
+<code language="r script">library(tidyverse)
+</code>
+<boxed-text>
+  <preformat>Warning: package 'ggplot2' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'tibble' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'tidyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'purrr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'dplyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.0     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.6.0
+✔ ggplot2   4.0.2     ✔ tibble    3.3.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+✔ purrr     1.2.1     </preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+✖ dplyr::select() masks MASS::select()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
+</boxed-text>
+<code language="r script">library(writexl)
+</code>
+</sec>
+<sec specific-use="notebook-content">
+<code language="r script">lcm_data &lt;- read.csv(&quot;../data/diary24_combined/created_data/exp_fmly_data.csv&quot;,header=TRUE)
+</code>
+</sec>
+<sec specific-use="notebook-content">
+<code language="r script">lcm_data$FoodAlc = lcm_data$Food.Related + lcm_data$Alcohol
+lcm_data$Leisure = lcm_data$Recreational.Related + lcm_data$At..Home.Entertainment
+lcm_data$School = lcm_data$School.Supplies + lcm_data$Education
+lcm_data$Mandatory = lcm_data$Family.Spending + lcm_data$Hygiene + lcm_data$Medical + lcm_data$Clothing.Related
+lcm_data$Housing = lcm_data$House.Related
+lcm_data$Bike.or.Scooter.Travel = lcm_data$Bike.or.Scooter.or.other.Single.Rider.Travel
+lcm_data$Transpo = (lcm_data$Car.Fuel + lcm_data$Car.Maintenance + lcm_data$Taxi.or.Limo.Travel
+                    + lcm_data$Bus.Travel + lcm_data$Train.Travel +lcm_data$Air.Travel + lcm_data$Bike.or.Scooter.Travel)
+
+# quantile(lcm_data$Leisure)
+# quantile(lcm_data$FoodAlc)
+# quantile(lcm_data$School)
+# quantile(lcm_data$Mandatory)
+# quantile(lcm_data$Housing)
+# 
+# quantile(lcm_data$Car.Fuel)
+# quantile(lcm_data$Car.Maintenance)
+
+
+#Yes Categories
+lcm_data$LeiY = as.integer(factor(ifelse(lcm_data$Leisure&gt;0,1,0)))
+lcm_data$FoodY = as.integer(factor(ifelse(lcm_data$FoodAlc&gt;0,1,0)))
+lcm_data$SchoolY = as.integer(factor(ifelse(lcm_data$School&gt;0,1,0)))
+lcm_data$ManY = as.integer(factor(ifelse(lcm_data$Mandatory&gt;0,1,0)))
+lcm_data$HouseY = as.integer(factor(ifelse(lcm_data$Housing&gt;0,1,0)))
+lcm_data$TranspoY = as.integer(factor(ifelse(lcm_data$Transpo&gt;0,1,0)))
+#lcm_data$carY = as.integer(factor(ifelse(lcm_data$Car.Travel&gt;0,1,0)))
+lcm_data$cargasY = as.integer(factor(ifelse(lcm_data$Car.Fuel&gt;0,1,0)))
+lcm_data$carmaintY = as.integer(factor(ifelse(lcm_data$Car.Maintenance&gt;0,1,0)))
+# lcm_data$carotherY = as.integer(factor(ifelse(lcm_data$Car.Other&gt;0,1,0)))
+lcm_data$taxiY = as.integer(factor(ifelse(lcm_data$Taxi.or.Limo.Travel&gt;0,1,0)))
+lcm_data$busY = as.integer(factor(ifelse(lcm_data$Bus.Travel&gt;0,1,0)))
+lcm_data$trainY = as.integer(factor(ifelse(lcm_data$Train.Travel&gt;0,1,0)))
+lcm_data$airY = as.integer(factor(ifelse(lcm_data$Air.Travel&gt;0,1,0)))
+lcm_data$microY = as.integer(factor(ifelse(lcm_data$Bike.or.Scooter.Travel&gt;0,1,0)))
+# sjmisc::frq(x=lcm_data[c(&quot;microY&quot;)], out=&quot;viewer&quot;)
+
+lcm_data$sum = lcm_data$LeiY +lcm_data$SchoolY + lcm_data$ManY + lcm_data$HouseY - 4
+# sjmisc::frq(x=lcm_data[c(&quot;sum&quot;)], out=&quot;viewer&quot;)
+
+##cuts for non transpo
+cutslei &lt;- c(-Inf, 0, 100, Inf)
+labslei &lt;- c(&quot;Zero&quot;, &quot;HundredB&quot;, &quot;HighHunB&quot;)
+lcm_data$Lei_cat &lt;- cut(lcm_data$Leisure,
+                         breaks = cutslei,
+                         labels = labslei,
+                         right = TRUE,
+                         ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;Lei_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$Lei_cat1 = as.integer(lcm_data$Lei_cat)
+
+cutsfood &lt;- c(-Inf, 100, 500, Inf)
+labsfood &lt;- c(&quot;OneHudB&quot;, &quot;FiveHundredB&quot;, &quot;HighFiveHunB&quot;)
+lcm_data$Food_cat &lt;- cut(lcm_data$FoodAlc,
+                        breaks = cutsfood,
+                        labels = labsfood,
+                        right = TRUE,
+                        ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;Food_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$Food_cat1 = as.integer(lcm_data$Food_cat)
+
+cutsman &lt;- c(-Inf, 0, 200, 500, 1000, Inf)
+labsman &lt;- c(&quot;Zero&quot;, &quot;two&quot;, &quot;five&quot;, &quot;onehund&quot;, &quot;over&quot;)
+lcm_data$Man_cat &lt;- cut(lcm_data$Mandatory,
+                        breaks = cutsman,
+                        labels = labsman,
+                        right = TRUE,
+                        ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;Man_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$Man_cat1 = as.integer(lcm_data$Man_cat)
+
+cutshous &lt;- c(-Inf, 0, 200, 500, 1000, Inf)
+labshous &lt;- c(&quot;Zero&quot;, &quot;two&quot;, &quot;five&quot;, &quot;onehund&quot;, &quot;over&quot;)
+lcm_data$House_cat &lt;- cut(lcm_data$Housing,
+                        breaks = cutshous,
+                        labels = labshous,
+                        right = TRUE,
+                        ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;House_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$House_cat1 = as.integer(lcm_data$House_cat)
+
+
+###chagne v3
+cutsC1 &lt;- c(-Inf, 0, 50, 100, Inf)
+labsC1 &lt;- c(&quot;Zero&quot;, &quot;FiftyB&quot;, &quot;HundredB&quot;, &quot;HighHunB&quot;)
+
+cutsC2 &lt;- c(-Inf, 0, 100, Inf)
+labsC2 &lt;- c(&quot;Zero&quot;, &quot;HundredB&quot;, &quot;HighHunB&quot;)
+
+cutsC3 &lt;- c(-Inf, 0, 100, Inf)
+labsC3 &lt;- c(&quot;Zero&quot;, &quot;HundredB&quot;, &quot;HighHunB&quot;)
+
+cutsT &lt;- c(-Inf, 0, 20, 50, Inf)
+labsT &lt;- c(&quot;Zero&quot;, &quot;TwentyB&quot;, &quot;FiftyB&quot;, &quot;HighFifB&quot;)
+
+cutsB &lt;- c(-Inf, 0, Inf)
+labsB &lt;- c(&quot;Zero&quot;, &quot;Any&quot;)
+
+cutsTR &lt;- c(-Inf, 0, 20, Inf)
+labsTR &lt;- c(&quot;Zero&quot;, &quot;TwentyB&quot;, &quot;HighTwB&quot;)
+
+cutsA &lt;- c(-Inf, 0, 500, Inf)
+labsA &lt;- c(&quot;Zero&quot;, &quot;FiveHB&quot;,&quot;HighFive&quot;)
+
+cutsM &lt;- c(-Inf, 0, Inf)
+labsM &lt;- c(&quot;Zero&quot;, &quot;Any&quot;)
+
+
+lcm_data$carFuelP_cat &lt;- cut(lcm_data$Car.Fuel,
+                         breaks = cutsC1,
+                         labels = labsC1,
+                         right = TRUE,
+                         ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;carFuelP_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$carMainP_cat &lt;- cut(lcm_data$Car.Maintenance,
+                         breaks = cutsC2,
+                         labels = labsC2,
+                         right = TRUE,
+                         ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;carMainP_cat&quot;)], out=&quot;viewer&quot;)
+# lcm_data$carOthP_cat &lt;- cut(lcm_data$Car.Other,
+#                          breaks = cutsC3,
+#                          labels = labsC3,
+#                          right = TRUE,
+#                          ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;carOthP_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$taxiP_cat &lt;- cut(lcm_data$Taxi.or.Limo.Travel,
+                          breaks = cutsT,
+                          labels = labsT,
+                          right = TRUE,
+                          ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;taxiP_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$busP_cat &lt;- cut(lcm_data$Bus.Travel,
+                         breaks = cutsB,
+                         labels = labsB,
+                         right = TRUE,
+                         ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;busP_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$trainP_cat &lt;- cut(lcm_data$Train.Travel,
+                           breaks = cutsTR,
+                           labels = labsTR,
+                           right = TRUE,
+                           ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;trainP_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$airP_cat &lt;- cut(lcm_data$Air.Travel,
+                         breaks = cutsA,
+                         labels = labsA,
+                         right = TRUE,
+                         ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;airP_cat&quot;)], out=&quot;viewer&quot;)
+lcm_data$microP_cat &lt;- cut(lcm_data$Bike.or.Scooter.Travel,
+                           breaks = cutsM,
+                           labels = labsM,
+                           right = TRUE,
+                           ordered_result = TRUE)
+# sjmisc::frq(x=lcm_data[c(&quot;microP_cat&quot;)], out=&quot;viewer&quot;)
+
+lcm_data$carFuelP_cat1 = as.numeric(lcm_data$carFuelP_cat)
+lcm_data$carMainP_cat1 = as.numeric(lcm_data$carMainP_cat)
+# lcm_data$carOthP_cat1 = as.integer(lcm_data$carOthP_cat)
+lcm_data$taxiP_cat1 = as.integer(lcm_data$taxiP_cat)
+lcm_data$busP_cat1 = as.integer(lcm_data$busP_cat)
+lcm_data$trainP_cat1 = as.integer(lcm_data$trainP_cat)
+lcm_data$airP_cat1 = as.integer(lcm_data$airP_cat)
+lcm_data$microP_cat1 = as.integer(lcm_data$microP_cat)
+
+# sjmisc::frq(x=lcm_data[c(&quot;carFuelP_cat1&quot;)], out=&quot;viewer&quot;)
+# sjmisc::frq(x=lcm_data[c(&quot;carMainP_cat1&quot;)], out=&quot;viewer&quot;)
+
+
+
+
+#demogrpahic changes
+lcm_data$veh3more = lcm_data$veh_3 + lcm_data$veh_more_3
+lcm_data$one_or_more_over_64 = lcm_data$one_pers_more_64_yd +
+  lcm_data$two_pers_more_64_yd +
+  lcm_data$more_two_pers_more_64_yd
+lcm_data$children_in_hh &lt;- lcm_data$children_1 + lcm_data$children_2 + lcm_data$children_3plus
+lcm_data$spouse_in_hh &lt;- lcm_data$married
+lcm_data$no_spouse_in_hh &lt;- lcm_data$widowed + lcm_data$divorced + lcm_data$separated +lcm_data$never_married
+lcm_data$married_inc_under_50k &lt;- ifelse(lcm_data$married + lcm_data$income_less_50k == 2, 1, 0)
+lcm_data$married_inc_over_50k &lt;- ifelse(lcm_data$married
+                                        + lcm_data$income_50k_to_75k
+                                        + lcm_data$income_75k_to_100k
+                                        + lcm_data$income_100k_to_200k
+                                        + lcm_data$income_more_200k == 2,
+                                        1, 0)
+lcm_data$children_and_under_50k &lt;- ifelse(lcm_data$children_in_hh + lcm_data$income_less_50k == 2, 1, 0)
+lcm_data$children_and_over_50k &lt;- ifelse(lcm_data$children_in_hh
+                                        + lcm_data$income_50k_to_75k
+                                        + lcm_data$income_75k_to_100k
+                                        + lcm_data$income_100k_to_200k
+                                        + lcm_data$income_more_200k == 2,
+                                        1, 0)
+lcm_data$college &lt;- lcm_data$edu_assoc_degree + lcm_data$edu_bachelors + lcm_data$edu_masters_doctorate
+lcm_data$no_college &lt;- lcm_data$edu_elem + lcm_data$edu_high_school + lcm_data$edu_none + lcm_data$edu_some_college + lcm_data$edu_some_high_school
+lcm_data$college_less_50k &lt;- ifelse(lcm_data$college + lcm_data$income_less_50k == 2, 1, 0)
+lcm_data$college_more_50k &lt;- ifelse(lcm_data$college
+                                    + lcm_data$income_50k_to_75k
+                                    + lcm_data$income_75k_to_100k
+                                    + lcm_data$income_100k_to_200k
+                                    + lcm_data$income_more_200k == 2,
+                                    1, 0)
+lcm_data$no_college_less_50k &lt;- ifelse(lcm_data$no_college + lcm_data$income_less_50k == 2, 1, 0)
+lcm_data$fam_single_parent &lt;- lcm_data$fam_single_dad + lcm_data$fam_single_mom
+lcm_data$married_college &lt;- lcm_data$married + lcm_data$college
+lcm_data$married_no_college &lt;- lcm_data$married + lcm_data$no_college
+lcm_data$single_college &lt;- lcm_data$no_spouse_in_hh + lcm_data$college
+lcm_data$single_no_college &lt;- lcm_data$no_spouse_in_hh + lcm_data$no_college
+
+lcm_data$single_no_kids &lt;- ifelse(lcm_data$no_spouse_in_hh + lcm_data$children_none == 2, 1, 0)
+lcm_data$single_kids &lt;- ifelse(lcm_data$no_spouse_in_hh + lcm_data$children_in_hh == 2, 1, 0)
+lcm_data$married_no_kids &lt;- ifelse(lcm_data$married + lcm_data$children_none == 2, 1, 0)
+lcm_data$married_kids &lt;- ifelse(lcm_data$married + lcm_data$children_in_hh == 2, 1, 0)
+
+lcm_data$single_no_kids_no_65 &lt;- ifelse(lcm_data$single_no_kids + lcm_data$no_pers_more_64_yd == 2, 1, 0)
+lcm_data$single_kids_no_65 &lt;- ifelse(lcm_data$single_kids + lcm_data$no_pers_more_64_yd == 2, 1, 0)
+lcm_data$married_no_kids_no_65 &lt;- ifelse(lcm_data$married_no_kids + lcm_data$no_pers_more_64_yd == 2, 1, 0)
+lcm_data$married_kids_no_65 &lt;- ifelse(lcm_data$married_kids + lcm_data$no_pers_more_64_yd == 2, 1, 0)
+lcm_data$single_no_kids_65 &lt;- ifelse(lcm_data$single_no_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
+lcm_data$single_kids_65 &lt;- ifelse(lcm_data$single_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
+lcm_data$married_no_kids_65 &lt;- ifelse(lcm_data$married_no_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
+lcm_data$married_kids_65 &lt;- ifelse(lcm_data$married_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
+
+# sjPlot::sjt.xtab(var.row=lcm_data$pop_more_5_mil,
+#                  var.col=lcm_data$city_type_rural,
+#                  show.col.prc=TRUE,
+#                  show.summary = F)
+# 
+# sjPlot::sjt.xtab(var.row=lcm_data$cu_size_1,
+#                  var.col=lcm_data$fam_single_person,
+#                  show.col.prc=TRUE,
+#                  show.summary = F)
+</code>
+</sec>
+<sec specific-use="notebook-content">
+<code language="r script">library(car)
+</code>
+<boxed-text>
+  <preformat>Loading required package: carData</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>
+Attaching package: 'car'</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>The following object is masked from 'package:dplyr':
+
+    recode</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>The following object is masked from 'package:purrr':
+
+    some</preformat>
+</boxed-text>
+<code language="r script">#vif(lm(MEDICALDEV ~ EMPLOYHH + MONEYPY + NHSLDMEM + NUMADULT2 + KOWNRENT +SOLAR +INTERNET + TELLWORK +ACEQUIPM_PUB,data=df_clean1))
+
+# Specify the LCA model formula
+# Include only outcome variables in the main formula
+# No covariates yet, just latent classes (indicator variables)
+
+
+lcm_formula &lt;- cbind( carFuelP_cat1, carMainP_cat1,
+                        taxiP_cat1, busP_cat1, trainP_cat1,
+                        airP_cat1, microP_cat1
+) ~ 1
+
+#adding covariates
+# final_formula &lt;- update(lcm_formula, . ~ .   #+  city_type_rural
+#                         + income_less_50k + income_50k_to_75k + income_75k_to_100k
+#                         + age_ref_18_to_34 + age_ref_35_to_44 + age_ref_45_to_54
+#                        # + region_midwest + region_south  + region_wes
+#                         + edu_masters_doctorate + edu_bachelors
+#                         + fam_single_mom  + fam_single_dad + fam_single_person
+#                         + fam_married_all_kids_less_6 + fam_married_oldest_kid_between_6_18   + fam_married_oldest_kid_more_17
+#                         + as.factor(Man_cat1) + as.factor(House_cat1) + as.factor(Food_cat1) + as.factor(Lei_cat1)
+#                         + SchoolY
+#
+# )
+##USE THIS ONEEEEE
+final_formula &lt;- update(lcm_formula, . ~ .   +  city_type_rural
+                        + income_less_50k
+                        + age_ref_18_to_34 + age_ref_35_to_44 + age_ref_45_to_54
+                        + region_midwest    + region_south  + region_wes
+                        + edu_masters_doctorate + edu_bachelors
+                        # + single_kids + married_no_kids + married_kids
+                        # + single_no_kids_no_65 + single_no_kids_65
+                        # + married_no_kids_no_65 + married_no_kids_65
+                        # + married_kids_no_65 + married_kids_65
+                        + cu_size_2 + cu_size_3_to_6 + cu_size_more_6
+                        + as.factor(Man_cat1) + as.factor(House_cat1) + as.factor(Food_cat1) + as.factor(Lei_cat1)
+
+
+)
+
+
+#sjmisc::frq(x=lcm_data[c(&quot;city_type_rural&quot;)], out=&quot;viewer&quot;)
+
+
+set.seed(123)  # Ensure reproducibility
+model_results &lt;- list()
+for (n in 2:3) {
+  model_results[[n]] &lt;- poLCA(final_formula, lcm_data, nclass = n, na.rm = TRUE, maxiter = 5000, verbose = FALSE)
+}
+
+
+
+# for (n in 2:3) {
+#   print(model_results[[n]]$Chisq)
+#   print(model_results[[n]]$Gsq)
+#   print(model_results[[n]]$aic)
+#   print(model_results[[n]]$bic)
+# }
+
+
+# print(model_results[[3]])
+
+# Extract posterior probabilities for the 4-class model
+posterior_probs &lt;- model_results[[3]]$posterior
+
+
+# Add posterior probabilities and latent class assignments to the data
+lcm_data_with_probs &lt;- cbind(lcm_data, posterior_probs)
+lcm_data_with_probs$assigned_class &lt;- apply(posterior_probs, 1, which.max)
+
+# Define a function for weighted mean and variance
+weighted_summary &lt;- function(data, weights) {
+  weighted_mean &lt;- sum(data * weights) / sum(weights)
+  weighted_var &lt;- sum(weights * (data - weighted_mean)^2) / sum(weights)
+  c(mean = weighted_mean, variance = weighted_var)
+}
+
+
+# Covariates to summarize
+covariates &lt;- c(&quot;city_type_rural&quot;,
+                &quot;income_less_50k&quot;,
+                &quot;income_50k_to_75k&quot;,
+                &quot;income_75k_to_100k&quot;,
+                &quot;age_ref_18_to_34&quot;,
+                &quot;age_ref_35_to_44&quot;,
+                &quot;age_ref_45_to_54&quot;,
+                &quot;region_midwest&quot;,
+                &quot;region_south&quot;,
+                &quot;region_wes&quot;,
+                &quot;edu_masters_doctorate&quot;, &quot;edu_bachelors&quot;,
+                &quot;fam_single_mom&quot;, &quot;fam_single_dad&quot;, &quot;fam_single_person&quot;,
+                &quot;fam_married_all_kids_less_6&quot;, &quot;fam_married_oldest_kid_between_6_18&quot;, &quot;fam_married_oldest_kid_more_17&quot;,
+                &quot;Man_cat1&quot;, &quot;House_cat1&quot;, &quot;Food_cat1&quot;, &quot;Lei_cat1&quot;,
+                &quot;SchoolY&quot;
+                )
+
+
+# Initialize a list to store results
+class_summaries &lt;- list()
+
+# Loop through each class
+for (class in 1:3) {
+  # Subset data for the current class
+  weights &lt;- posterior_probs[, class]
+
+  # Compute weighted summary for each covariate
+  summaries &lt;- sapply(covariates, function(cov) {
+    weighted_summary(as.numeric(lcm_data_with_probs[[cov]]), weights)
+  })
+
+  # Store results
+  class_summaries[[class]] &lt;- summaries
+}
+
+# Convert results to a more readable format
+class_summaries_df &lt;- lapply(class_summaries, function(x) {
+  t(as.data.frame(x))
+})
+names(class_summaries_df) &lt;- paste(&quot;Class&quot;, 1:3)
+
+# Print summaries for each class
+for (class in 1:3) {
+  cat(&quot;\nSummary Statistics for Class&quot;, class, &quot;:\n&quot;)
+  print(class_summaries_df[[class]])
+}
+</code>
+<boxed-text>
+  <preformat>
+Summary Statistics for Class 1 :
+                                           mean    variance
+city_type_rural                     0.173550484 0.143430714
+income_less_50k                     0.180545210 0.147948637
+income_50k_to_75k                   0.145407423 0.124264104
+income_75k_to_100k                  0.131594723 0.114277552
+age_ref_18_to_34                    0.171770897 0.142265656
+age_ref_35_to_44                    0.220272731 0.171752655
+age_ref_45_to_54                    0.216892829 0.169850330
+region_midwest                      0.182142534 0.148966632
+region_south                        0.247216361 0.186100432
+region_wes                          0.383880249 0.236516203
+edu_masters_doctorate               0.331749609 0.221691806
+edu_bachelors                       0.365652600 0.231950776
+fam_single_mom                      0.022159270 0.021668236
+fam_single_dad                      0.007787072 0.007726433
+fam_single_person                   0.132063223 0.114622528
+fam_married_all_kids_less_6         0.063403765 0.059383727
+fam_married_oldest_kid_between_6_18 0.165096766 0.137839824
+fam_married_oldest_kid_more_17      0.112888075 0.100144358
+Man_cat1                            3.196151420 1.119696722
+House_cat1                          3.557328009 1.517873829
+Food_cat1                           2.633454651 0.263854954
+Lei_cat1                            2.669171160 0.372657968
+SchoolY                             1.276278532 0.199948705
+
+Summary Statistics for Class 2 :
+                                           mean    variance
+city_type_rural                     0.113100703 0.100308934
+income_less_50k                     0.587589379 0.242328101
+income_50k_to_75k                   0.128933733 0.112309826
+income_75k_to_100k                  0.084756882 0.077573153
+age_ref_18_to_34                    0.180346884 0.147821885
+age_ref_35_to_44                    0.145590827 0.124394138
+age_ref_45_to_54                    0.133198174 0.115456421
+region_midwest                      0.147882897 0.126013546
+region_south                        0.321039628 0.217973185
+region_wes                          0.281677411 0.202335247
+edu_masters_doctorate               0.183526186 0.149844325
+edu_bachelors                       0.260043221 0.192420744
+fam_single_mom                      0.024463319 0.023864865
+fam_single_dad                      0.007751951 0.007691858
+fam_single_person                   0.485373464 0.249786064
+fam_married_all_kids_less_6         0.019883021 0.019487687
+fam_married_oldest_kid_between_6_18 0.066612698 0.062175447
+fam_married_oldest_kid_more_17      0.046242066 0.044103737
+Man_cat1                            1.788754832 0.551160249
+House_cat1                          1.916593274 0.934898078
+Food_cat1                           1.837840372 0.344258300
+Lei_cat1                            1.443738881 0.494102403
+SchoolY                             1.055207717 0.052159825
+
+Summary Statistics for Class 3 :
+                                           mean    variance
+city_type_rural                     0.227018069 0.175480866
+income_less_50k                     0.467114347 0.248918534
+income_50k_to_75k                   0.161957599 0.135727335
+income_75k_to_100k                  0.111900959 0.099379134
+age_ref_18_to_34                    0.140685019 0.120892745
+age_ref_35_to_44                    0.155803178 0.131528548
+age_ref_45_to_54                    0.129932633 0.113050144
+region_midwest                      0.219854186 0.171518323
+region_south                        0.457194440 0.248167684
+region_wes                          0.178422530 0.146587931
+edu_masters_doctorate               0.192337859 0.155344007
+edu_bachelors                       0.266193757 0.195334641
+fam_single_mom                      0.031076072 0.030110350
+fam_single_dad                      0.006736596 0.006691215
+fam_single_person                   0.307001026 0.212751396
+fam_married_all_kids_less_6         0.029849112 0.028958143
+fam_married_oldest_kid_between_6_18 0.079462345 0.073148080
+fam_married_oldest_kid_more_17      0.059500097 0.055959836
+Man_cat1                            2.172472314 0.682723752
+House_cat1                          2.762890220 1.609234394
+Food_cat1                           2.067639440 0.288774226
+Lei_cat1                            2.005826457 0.698709432
+SchoolY                             1.120137483 0.105704468</preformat>
+</boxed-text>
+<code language="r script">model_3 &lt;- model_results[[3]]
+
+# creating tables for excel
+create_probs_table &lt;- function(model, percent = FALSE, lcm_data){
+  mult &lt;- ifelse(percent, 100, 1)
+  rnd &lt;- ifelse(percent, 2, 4)
+
+  df_totals &lt;- matrix(model$P * mult) |&gt;
+    round(rnd) |&gt;
+    t() |&gt;
+    as.data.frame()
+
+  names(df_totals) &lt;- paste0(&quot;class_&quot;,c(1:ncol(df_totals)))
+  df_totals$variable &lt;- &quot;Class Probablilty&quot;
+
+  probs &lt;- model$probs
+  df_list &lt;- list()
+  for (var_name in names(probs)){
+    mtx &lt;- probs[[var_name]]
+
+    df &lt;- as.data.frame(round(t(mtx * mult),rnd))
+
+    names(df) &lt;- paste0(&quot;class_&quot;,c(1:ncol(df)))
+    row.names(df) &lt;- NULL
+
+    df$variable &lt;- var_name
+    df$level &lt;- 1:nrow(df)
+
+    df_list[[var_name]] &lt;- df
+  }
+
+  combined_df &lt;- bind_rows(df_list)
+  combined_df &lt;- bind_rows(df_totals, combined_df)
+
+  level_meaning &lt;- &quot;NA&quot;
+  for (row_num in 2:nrow(combined_df)){
+
+    col_str &lt;- gsub(&quot;1&quot;,&quot;&quot;,combined_df[[row_num,&quot;variable&quot;]])
+    new_df &lt;- lcm_data[lcm_data[[paste0(col_str,&quot;1&quot;)]] == combined_df[[row_num,&quot;level&quot;]],grep(col_str,names(lcm_data))]
+    meaning &lt;- new_df[[gsub(&quot;1&quot;,&quot;&quot;,names(new_df)[[1]])]][[1]] |&gt; as.character()
+
+    level_meaning &lt;- c(level_meaning, meaning)
+  }
+
+  combined_df$level_def &lt;- level_meaning
+
+  combined_df &lt;- combined_df |&gt;
+    dplyr::select(!level) |&gt;
+    dplyr::select(any_of(c(&quot;variable&quot;,&quot;level_def&quot;,names(combined_df))))
+
+  return(combined_df)
+}
+
+create_regr_tbl &lt;- function(model){
+
+  coeffs &lt;- model$coeff
+  se &lt;- model$coeff.se
+  tval &lt;- coeffs / se
+
+  df &lt;- data.frame(exogenous_var = row.names(coeffs))
+  df[[paste0(&quot;coeff_&quot;,1)]] &lt;- round(coeffs[,1], 3)
+  df[[paste0(&quot;t_stat_&quot;,1)]] &lt;- round(tval[,1], 3)
+
+  if (ncol(coeffs) &lt; 2){
+    return(df)
+  }
+
+  for (i in 2:ncol(coeffs)){
+    new_df &lt;- data.frame(exogenous_var = row.names(coeffs))
+    new_df[[paste0(&quot;coeff_&quot;,i)]] &lt;- round(coeffs[,i], 3)
+    new_df[[paste0(&quot;t_stat_&quot;,i)]] &lt;- round(tval[,i], 3)
+
+    df &lt;- left_join(df, new_df, by = &quot;exogenous_var&quot;)
+  }
+
+  return(df)
+
+}
+
+# write_model_to_excel &lt;- function(model, lcm_data, save_file){
+#   probs_table &lt;- create_probs_table(model, TRUE, lcm_data)
+#   regr_table &lt;- create_regr_tbl(model)
+# 
+#   listed_dfs &lt;- list(probability = probs_table,
+#                      regression = regr_table)
+# 
+#   write_xlsx(listed_dfs, path = save_file)
+# 
+#   return(cat(&quot;model results saved to\n&quot;,save_file))
+# }
+#
+# write_model_to_excel(model_3, lcm_data, &quot;LCA/model_results/0_lcm9.xlsx&quot;)
+
+library(gt)
+</code>
+<boxed-text>
+  <preformat>Warning: package 'gt' was built under R version 4.5.2</preformat>
+</boxed-text>
+<code language="r script">model_df &lt;- create_regr_tbl(model_3)
+
+new_exog_names_list &lt;- list(&quot;(Intercept)&quot; = &quot;Intercept&quot;,
+                       &quot;City Type (Urban)&quot; = list(&quot;Rural&quot; = &quot;city_type_rural&quot;),
+                       &quot;Income (more than $50,000)&quot; = list(&quot;$50,000 or less&quot; = &quot;income_less_50k&quot;),
+                       &quot;Reference Age (55 or older)&quot; = list(&quot;18 - 34&quot; = &quot;age_ref_18_to_34&quot;,
+                                                            &quot;35 -44&quot; = &quot;age_ref_35_to_44&quot;,
+                                                            &quot;45 - 54&quot; = &quot;age_ref_45_to_54&quot;),
+                       &quot;Region (Northeast)&quot; = list(&quot;Midwest&quot; = &quot;region_midwest&quot;,
+                                                   &quot;South&quot; = &quot;region_south&quot;,
+                                                   &quot;West&quot; = &quot;region_wes&quot;),
+                       &quot;Education (No college degree&quot; = list(&quot;Masters or above&quot; = &quot;edu_masters_doctorate&quot;,
+                                                             &quot;Bachelors&quot; = &quot;edu_bachelors&quot;),
+                       &quot;Household Size (1)&quot; = list(&quot;2&quot; = &quot;cu_size_2&quot;,
+                                                   &quot;3-6&quot; = &quot;cu_size_3_to_6&quot;,
+                                                   &quot;6+&quot; =&quot;cu_size_more_6&quot;),
+                       &quot;Maintenance Expenses (none)&quot; = list(&quot;$0.01 - $200&quot; = &quot;as.factor(Man_cat1)2&quot;,
+                                                            &quot;$200.01 - $500&quot; = &quot;as.factor(Man_cat1)3&quot;,
+                                                            &quot;$500.01 - $1,000&quot; = &quot;as.factor(Man_cat1)4&quot;,
+                                                            &quot;&gt; $1,000&quot; = &quot;as.factor(Man_cat1)5&quot;),
+                       &quot;Housing Expenses (none)&quot; = list(&quot;$0.01 - $200&quot; = &quot;as.factor(House_cat1)2&quot;,
+                                                        &quot;$200.01 - $500&quot; = &quot;as.factor(House_cat1)3 &quot;,
+                                                        &quot;$500.01 - $1,000&quot; = &quot;as.factor(House_cat1)4&quot;,
+                                                        &quot;&gt; $1,000&quot; = &quot;as.factor(House_cat1)5&quot;),
+                       &quot;Food Expenses (&lt;$100)&quot; = list(&quot;$100.01 - $500&quot; = &quot;as.factor(Food_cat1)2&quot;,
+                                                      &quot;&gt;$500&quot; = &quot;as.factor(Food_cat1)3&quot;),
+                       &quot;Leisure Expenses (none)&quot; = list(&quot;$0.01 - $100&quot; = &quot;as.factor(Lei_cat1)2&quot;,
+                                                      &quot;&gt;$100&quot; = &quot;as.factor(Lei_cat1)3&quot;))
+
+new_exog_names &lt;- list(&quot;(Intercept)&quot; = &quot;Intercept&quot;,
+                       &quot;Rural&quot; = &quot;city_type_rural&quot;,
+                       &quot;$50,000 or less&quot; = &quot;income_less_50k&quot;,
+                       &quot;18 - 34&quot; = &quot;age_ref_18_to_34&quot;,
+                       &quot;35 -44&quot; = &quot;age_ref_35_to_44&quot;,
+                       &quot;45 - 54&quot; = &quot;age_ref_45_to_54&quot;,
+                       &quot;Midwest&quot; = &quot;region_midwest&quot;,
+                       &quot;South&quot; = &quot;region_south&quot;,
+                       &quot;West&quot; = &quot;region_wes&quot;,
+                       &quot;Masters or above&quot; = &quot;edu_masters_doctorate&quot;,
+                       &quot;Bachelors&quot; = &quot;edu_bachelors&quot;,
+                       &quot;2&quot; = &quot;cu_size_2&quot;,
+                       &quot;3-6&quot; = &quot;cu_size_3_to_6&quot;,
+                       &quot;6+&quot; =&quot;cu_size_more_6&quot;,
+                       &quot;$0.01 - $200&quot; = &quot;as.factor(Man_cat1)2&quot;,
+                       &quot;$200.01 - $500&quot; = &quot;as.factor(Man_cat1)3&quot;,
+                       &quot;$500.01 - $1,000&quot; = &quot;as.factor(Man_cat1)4&quot;,
+                       &quot;&gt; $1,000&quot; = &quot;as.factor(Man_cat1)5&quot;,
+                       &quot;$0.01 - $200&quot; = &quot;as.factor(House_cat1)2&quot;,
+                       &quot;$200.01 - $500&quot; = &quot;as.factor(House_cat1)3 &quot;,
+                       &quot;$500.01 - $1,000&quot; = &quot;as.factor(House_cat1)4&quot;,
+                       &quot;&gt; $1,000&quot; = &quot;as.factor(House_cat1)5&quot;,
+                       &quot;$100.01 - $500&quot; = &quot;as.factor(Food_cat1)2&quot;,
+                       &quot;&gt;$500&quot; = &quot;as.factor(Food_cat1)3&quot;,
+                       &quot;$0.01 - $100&quot; = &quot;as.factor(Lei_cat1)2&quot;,
+                       &quot;&gt;$100&quot; = &quot;as.factor(Lei_cat1)3&quot;)
+
+create_nice_coeff_tbl &lt;- function(model_df, new_exog_names, new_exog_names_list){
+  model_df$exogenous_var_name &lt;- names(new_exog_names)
+  
+  model_gt &lt;- model_df |&gt;
+    select(exogenous_var_name, coeff_1, t_stat_1, coeff_2, t_stat_2) |&gt;
+    gt(rowname_col = &quot;exogenous_var_name&quot;) |&gt;
+    tab_row_group(
+      label = &quot;(Intercept)&quot;,
+      rows = exogenous_var_name == &quot;(Intercept)&quot;
+    )
+  
+  for (i in 2:length(new_exog_names_list)){
+    model_gt &lt;- model_gt |&gt;
+      tab_row_group(
+        label = names(new_exog_names_list)[[i]],
+        rows = exogenous_var_name %in% names(new_exog_names_list[[i]])
+      )
+  }
+  
+  return(model_gt)
+}
+
+table &lt;- create_nice_coeff_tbl(model_df, new_exog_names, new_exog_names_list)
+
+# knitr::kable(table)
+</code>
+</sec>
+<sec specific-use="notebook-content">
+<code language="r script">
+knitr::kable(table)
+</code>
+<fig id="tbl-model-output-nb-2">
+  <caption><p>Regression Results of the LCA</p></caption>
+  <table-wrap>
+    <table>
+      <thead>
+        <tr>
+          <th align="left">exogenous_var_name</th>
+          <th align="right">coeff_1</th>
+          <th align="right">t_stat_1</th>
+          <th align="right">coeff_2</th>
+          <th align="right">t_stat_2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left">(Intercept)</td>
+          <td align="right">9.480</td>
+          <td align="right">9.755</td>
+          <td align="right">6.480</td>
+          <td align="right">6.731</td>
+        </tr>
+        <tr>
+          <td align="left">Rural</td>
+          <td align="right">-0.833</td>
+          <td align="right">-2.633</td>
+          <td align="right">0.057</td>
+          <td align="right">0.207</td>
+        </tr>
+        <tr>
+          <td align="left">$50,000 or less</td>
+          <td align="right">0.977</td>
+          <td align="right">3.997</td>
+          <td align="right">0.663</td>
+          <td align="right">2.806</td>
+        </tr>
+        <tr>
+          <td align="left">18 - 34</td>
+          <td align="right">-0.750</td>
+          <td align="right">-2.523</td>
+          <td align="right">-0.916</td>
+          <td align="right">-3.247</td>
+        </tr>
+        <tr>
+          <td align="left">35 -44</td>
+          <td align="right">-0.373</td>
+          <td align="right">-1.239</td>
+          <td align="right">-0.400</td>
+          <td align="right">-1.384</td>
+        </tr>
+        <tr>
+          <td align="left">45 - 54</td>
+          <td align="right">-0.743</td>
+          <td align="right">-2.355</td>
+          <td align="right">-0.861</td>
+          <td align="right">-2.781</td>
+        </tr>
+        <tr>
+          <td align="left">Midwest</td>
+          <td align="right">-0.621</td>
+          <td align="right">-1.821</td>
+          <td align="right">0.586</td>
+          <td align="right">1.848</td>
+        </tr>
+        <tr>
+          <td align="left">South</td>
+          <td align="right">-0.601</td>
+          <td align="right">-1.927</td>
+          <td align="right">0.690</td>
+          <td align="right">2.348</td>
+        </tr>
+        <tr>
+          <td align="left">West</td>
+          <td align="right">-1.183</td>
+          <td align="right">-4.131</td>
+          <td align="right">-0.748</td>
+          <td align="right">-2.488</td>
+        </tr>
+        <tr>
+          <td align="left">Masters or above</td>
+          <td align="right">0.145</td>
+          <td align="right">0.529</td>
+          <td align="right">-0.227</td>
+          <td align="right">-0.892</td>
+        </tr>
+        <tr>
+          <td align="left">Bachelors</td>
+          <td align="right">-0.474</td>
+          <td align="right">-1.853</td>
+          <td align="right">-0.598</td>
+          <td align="right">-2.443</td>
+        </tr>
+        <tr>
+          <td align="left">2</td>
+          <td align="right">-1.098</td>
+          <td align="right">-4.042</td>
+          <td align="right">-0.287</td>
+          <td align="right">-1.112</td>
+        </tr>
+        <tr>
+          <td align="left">3-6</td>
+          <td align="right">-1.067</td>
+          <td align="right">-3.626</td>
+          <td align="right">-0.403</td>
+          <td align="right">-1.397</td>
+        </tr>
+        <tr>
+          <td align="left">6+</td>
+          <td align="right">0.288</td>
+          <td align="right">0.376</td>
+          <td align="right">-2.480</td>
+          <td align="right">-0.940</td>
+        </tr>
+        <tr>
+          <td align="left">$0.01 - $200</td>
+          <td align="right">-1.353</td>
+          <td align="right">-2.841</td>
+          <td align="right">-0.975</td>
+          <td align="right">-1.973</td>
+        </tr>
+        <tr>
+          <td align="left">$200.01 - $500</td>
+          <td align="right">-2.814</td>
+          <td align="right">-5.504</td>
+          <td align="right">-2.042</td>
+          <td align="right">-3.993</td>
+        </tr>
+        <tr>
+          <td align="left">$500.01 - $1,000</td>
+          <td align="right">-3.879</td>
+          <td align="right">-5.220</td>
+          <td align="right">-2.419</td>
+          <td align="right">-4.267</td>
+        </tr>
+        <tr>
+          <td align="left">&gt; $1,000</td>
+          <td align="right">-3.806</td>
+          <td align="right">-5.170</td>
+          <td align="right">-3.827</td>
+          <td align="right">-5.088</td>
+        </tr>
+        <tr>
+          <td align="left">$0.01 - $200</td>
+          <td align="right">-2.025</td>
+          <td align="right">-4.142</td>
+          <td align="right">-1.383</td>
+          <td align="right">-2.764</td>
+        </tr>
+        <tr>
+          <td align="left">$200.01 - $500</td>
+          <td align="right">-3.123</td>
+          <td align="right">-5.782</td>
+          <td align="right">-1.659</td>
+          <td align="right">-3.116</td>
+        </tr>
+        <tr>
+          <td align="left">$500.01 - $1,000</td>
+          <td align="right">-3.987</td>
+          <td align="right">-6.652</td>
+          <td align="right">-2.110</td>
+          <td align="right">-3.798</td>
+        </tr>
+        <tr>
+          <td align="left">&gt; $1,000</td>
+          <td align="right">-4.092</td>
+          <td align="right">-7.256</td>
+          <td align="right">-2.178</td>
+          <td align="right">-4.084</td>
+        </tr>
+        <tr>
+          <td align="left">$100.01 - $500</td>
+          <td align="right">-1.393</td>
+          <td align="right">-2.714</td>
+          <td align="right">-0.703</td>
+          <td align="right">-1.335</td>
+        </tr>
+        <tr>
+          <td align="left">&gt;$500</td>
+          <td align="right">-3.116</td>
+          <td align="right">-5.671</td>
+          <td align="right">-2.134</td>
+          <td align="right">-3.902</td>
+        </tr>
+        <tr>
+          <td align="left">$0.01 - $100</td>
+          <td align="right">-1.392</td>
+          <td align="right">-4.372</td>
+          <td align="right">-0.548</td>
+          <td align="right">-1.674</td>
+        </tr>
+        <tr>
+          <td align="left">&gt;$100</td>
+          <td align="right">-2.868</td>
+          <td align="right">-8.766</td>
+          <td align="right">-1.525</td>
+          <td align="right">-4.801</td>
+        </tr>
+      </tbody>
+    </table>
+  </table-wrap>
+  <table-wrap>
+    <table>
+      <colgroup>
+        <col width="17%" />
+        <col width="7%" />
+        <col width="17%" />
+        <col width="12%" />
+        <col width="14%" />
+        <col width="12%" />
+        <col width="12%" />
+        <col width="9%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th align="left">var</th>
+          <th align="left">type</th>
+          <th align="left">column_label</th>
+          <th align="left">column_units</th>
+          <th align="left">column_pattern</th>
+          <th align="left">column_align</th>
+          <th align="left">column_width</th>
+          <th align="left">hidden_px</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left">exogenous_var_name</td>
+          <td align="left">stub</td>
+          <td align="left">exogenous_var_name</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+          <td align="left">left</td>
+          <td align="left">NULL</td>
+          <td align="left">NULL</td>
+        </tr>
+        <tr>
+          <td align="left">coeff_1</td>
+          <td align="left">default</td>
+          <td align="left">coeff_1</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+          <td align="left">right</td>
+          <td align="left">NULL</td>
+          <td align="left">NULL</td>
+        </tr>
+        <tr>
+          <td align="left">t_stat_1</td>
+          <td align="left">default</td>
+          <td align="left">t_stat_1</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+          <td align="left">right</td>
+          <td align="left">NULL</td>
+          <td align="left">NULL</td>
+        </tr>
+        <tr>
+          <td align="left">coeff_2</td>
+          <td align="left">default</td>
+          <td align="left">coeff_2</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+          <td align="left">right</td>
+          <td align="left">NULL</td>
+          <td align="left">NULL</td>
+        </tr>
+        <tr>
+          <td align="left">t_stat_2</td>
+          <td align="left">default</td>
+          <td align="left">t_stat_2</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+          <td align="left">right</td>
+          <td align="left">NULL</td>
+          <td align="left">NULL</td>
+        </tr>
+      </tbody>
+    </table>
+  </table-wrap>
+  <table-wrap>
+    <table>
+      <colgroup>
+        <col width="8%" />
+        <col width="19%" />
+        <col width="25%" />
+        <col width="25%" />
+        <col width="6%" />
+        <col width="16%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th align="right">rownum_i</th>
+          <th align="left">row_id</th>
+          <th align="left">group_id</th>
+          <th align="left">group_label</th>
+          <th align="left">indent</th>
+          <th align="left">built_group_label</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="right">1</td>
+          <td align="left">(Intercept)</td>
+          <td align="left">(Intercept)</td>
+          <td align="left">(Intercept)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">2</td>
+          <td align="left">Rural</td>
+          <td align="left">City Type (Urban)</td>
+          <td align="left">City Type (Urban)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">3</td>
+          <td align="left">$50,000 or less</td>
+          <td align="left">Income (more than $50,000)</td>
+          <td align="left">Income (more than $50,000)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">4</td>
+          <td align="left">18 - 34</td>
+          <td align="left">Reference Age (55 or older)</td>
+          <td align="left">Reference Age (55 or older)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">5</td>
+          <td align="left">35 -44</td>
+          <td align="left">Reference Age (55 or older)</td>
+          <td align="left">Reference Age (55 or older)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">6</td>
+          <td align="left">45 - 54</td>
+          <td align="left">Reference Age (55 or older)</td>
+          <td align="left">Reference Age (55 or older)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">7</td>
+          <td align="left">Midwest</td>
+          <td align="left">Region (Northeast)</td>
+          <td align="left">Region (Northeast)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">8</td>
+          <td align="left">South</td>
+          <td align="left">Region (Northeast)</td>
+          <td align="left">Region (Northeast)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">9</td>
+          <td align="left">West</td>
+          <td align="left">Region (Northeast)</td>
+          <td align="left">Region (Northeast)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">10</td>
+          <td align="left">Masters or above</td>
+          <td align="left">Education (No college degree</td>
+          <td align="left">Education (No college degree</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">11</td>
+          <td align="left">Bachelors</td>
+          <td align="left">Education (No college degree</td>
+          <td align="left">Education (No college degree</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">12</td>
+          <td align="left">2</td>
+          <td align="left">Household Size (1)</td>
+          <td align="left">Household Size (1)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">13</td>
+          <td align="left">3-6</td>
+          <td align="left">Household Size (1)</td>
+          <td align="left">Household Size (1)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">14</td>
+          <td align="left">6+</td>
+          <td align="left">Household Size (1)</td>
+          <td align="left">Household Size (1)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">15</td>
+          <td align="left">$0.01 - $200</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">16</td>
+          <td align="left">$200.01 - $500</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">17</td>
+          <td align="left">$500.01 - $1,000</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">18</td>
+          <td align="left">&gt; $1,000</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">19</td>
+          <td align="left">$0.01 - $200__019</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">20</td>
+          <td align="left">$200.01 - $500__020</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">21</td>
+          <td align="left">$500.01 - $1,000__021</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">22</td>
+          <td align="left">&gt; $1,000__022</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">Housing Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">23</td>
+          <td align="left">$100.01 - $500</td>
+          <td align="left">Food Expenses (&lt;$100)</td>
+          <td align="left">Food Expenses (&lt;$100)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">24</td>
+          <td align="left">&gt;$500</td>
+          <td align="left">Food Expenses (&lt;$100)</td>
+          <td align="left">Food Expenses (&lt;$100)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">25</td>
+          <td align="left">$0.01 - $100</td>
+          <td align="left">Leisure Expenses (none)</td>
+          <td align="left">Leisure Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="right">26</td>
+          <td align="left">&gt;$100</td>
+          <td align="left">Leisure Expenses (none)</td>
+          <td align="left">Leisure Expenses (none)</td>
+          <td align="left">NA</td>
+          <td align="left">NA</td>
+        </tr>
+      </tbody>
+    </table>
+  </table-wrap>
+  <table-wrap>
+    <table>
+      <thead>
+        <tr>
+          <th align="left">x</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left">Leisure Expenses (none)</td>
+        </tr>
+        <tr>
+          <td align="left">Food Expenses (&lt;$100)</td>
+        </tr>
+        <tr>
+          <td align="left">Housing Expenses (none)</td>
+        </tr>
+        <tr>
+          <td align="left">Household Size (1)</td>
+        </tr>
+        <tr>
+          <td align="left">Education (No college degree</td>
+        </tr>
+        <tr>
+          <td align="left">Region (Northeast)</td>
+        </tr>
+        <tr>
+          <td align="left">Reference Age (55 or older)</td>
+        </tr>
+        <tr>
+          <td align="left">Income (more than $50,000)</td>
+        </tr>
+        <tr>
+          <td align="left">City Type (Urban)</td>
+        </tr>
+        <tr>
+          <td align="left">(Intercept)</td>
+        </tr>
+      </tbody>
+    </table>
+  </table-wrap>
+  <table-wrap>
+    <table>
+      <colgroup>
+        <col width="6%" />
+        <col width="16%" />
+        <col width="16%" />
+        <col width="18%" />
+        <col width="13%" />
+        <col width="16%" />
+        <col width="8%" />
+        <col width="7%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th align="left">vars</th>
+          <th align="left">spanner_label</th>
+          <th align="left">spanner_units</th>
+          <th align="left">spanner_pattern</th>
+          <th align="left">spanner_id</th>
+          <th align="right">spanner_level</th>
+          <th align="left">gather</th>
+          <th align="left">built</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </table-wrap>
+  <table-wrap>
+    <table>
+      <colgroup>
+        <col width="12%" />
+        <col width="12%" />
+        <col width="12%" />
+        <col width="11%" />
+        <col width="11%" />
+        <col width="11%" />
+        <col width="15%" />
+        <col width="15%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th align="left">locname</th>
+          <th align="left">grpname</th>
+          <th align="left">colname</th>
+          <th align="right">locnum</th>
+          <th align="right">rownum</th>
+          <th align="right">colnum</th>
+          <th align="left">footnotes</th>
+          <th align="left">placement</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </table-wrap>
+  <table-wrap>
+    <table>
+      <thead>
+        <tr>
+          <th align="left">locname</th>
+          <th align="left">grpname</th>
+          <th align="left">colname</th>
+          <th align="right">locnum</th>
+          <th align="right">rownum</th>
+          <th align="right">colnum</th>
+          <th align="left">styles</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </table-wrap>
+  <table-wrap>
+    <table>
+      <colgroup>
+        <col width="14%" />
+        <col width="2%" />
+        <col width="7%" />
+        <col width="3%" />
+        <col width="73%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th align="left">parameter</th>
+          <th align="left">scss</th>
+          <th align="left">category</th>
+          <th align="left">type</th>
+          <th align="left">value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left">table_id</td>
+          <td align="left">FALSE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">table_caption</td>
+          <td align="left">FALSE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">table_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">px</td>
+          <td align="left">auto</td>
+        </tr>
+        <tr>
+          <td align="left">table_layout</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">fixed</td>
+        </tr>
+        <tr>
+          <td align="left">table_margin_left</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">px</td>
+          <td align="left">auto</td>
+        </tr>
+        <tr>
+          <td align="left">table_margin_right</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">px</td>
+          <td align="left">auto</td>
+        </tr>
+        <tr>
+          <td align="left">table_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">#FFFFFF</td>
+        </tr>
+        <tr>
+          <td align="left">table_additional_css</td>
+          <td align="left">FALSE</td>
+          <td align="left">table</td>
+          <td align="left">values</td>
+          <td align="left"></td>
+        </tr>
+        <tr>
+          <td align="left">table_font_names</td>
+          <td align="left">FALSE</td>
+          <td align="left">table</td>
+          <td align="left">values</td>
+          <td align="left">system-ui , Segoe UI , Roboto , Helvetica ,
+          Arial , sans-serif , Apple Color Emoji, Segoe UI Emoji , Segoe
+          UI Symbol , Noto Color Emoji</td>
+        </tr>
+        <tr>
+          <td align="left">table_font_size</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">px</td>
+          <td align="left">16px</td>
+        </tr>
+        <tr>
+          <td align="left">table_font_weight</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">normal</td>
+        </tr>
+        <tr>
+          <td align="left">table_font_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">normal</td>
+        </tr>
+        <tr>
+          <td align="left">table_font_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">#333333</td>
+        </tr>
+        <tr>
+          <td align="left">table_font_color_light</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">#FFFFFF</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_top_include</td>
+          <td align="left">FALSE</td>
+          <td align="left">table</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_top_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_top_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_top_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">#A8A8A8</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_right_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_right_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_right_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_bottom_include</td>
+          <td align="left">FALSE</td>
+          <td align="left">table</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_bottom_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_bottom_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_bottom_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">#A8A8A8</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_left_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_left_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">table_border_left_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">heading_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">heading_align</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">value</td>
+          <td align="left">center</td>
+        </tr>
+        <tr>
+          <td align="left">heading_title_font_size</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">px</td>
+          <td align="left">125%</td>
+        </tr>
+        <tr>
+          <td align="left">heading_title_font_weight</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">value</td>
+          <td align="left">initial</td>
+        </tr>
+        <tr>
+          <td align="left">heading_subtitle_font_size</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">px</td>
+          <td align="left">85%</td>
+        </tr>
+        <tr>
+          <td align="left">heading_subtitle_font_weight</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">value</td>
+          <td align="left">initial</td>
+        </tr>
+        <tr>
+          <td align="left">heading_padding</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">px</td>
+          <td align="left">4px</td>
+        </tr>
+        <tr>
+          <td align="left">heading_padding_horizontal</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">heading_border_bottom_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">heading_border_bottom_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">heading_border_bottom_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">heading_border_lr_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">heading_border_lr_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">px</td>
+          <td align="left">1px</td>
+        </tr>
+        <tr>
+          <td align="left">heading_border_lr_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">heading</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_font_size</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">px</td>
+          <td align="left">100%</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_font_weight</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">normal</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_text_transform</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">inherit</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_padding</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_padding_horizontal</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_vlines_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_vlines_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">px</td>
+          <td align="left">1px</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_vlines_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_border_top_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_border_top_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_border_top_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_border_bottom_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_border_bottom_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_border_bottom_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_border_lr_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_border_lr_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">px</td>
+          <td align="left">1px</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_border_lr_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_hidden</td>
+          <td align="left">FALSE</td>
+          <td align="left">column_labels</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">column_labels_units_pattern</td>
+          <td align="left">FALSE</td>
+          <td align="left">column_labels</td>
+          <td align="left">value</td>
+          <td align="left">{1}, {2}</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_font_size</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">px</td>
+          <td align="left">100%</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_font_weight</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">initial</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_text_transform</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">inherit</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_padding</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">px</td>
+          <td align="left">8px</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_padding_horizontal</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_top_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_top_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_top_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_right_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_right_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">px</td>
+          <td align="left">1px</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_right_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_bottom_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_bottom_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_bottom_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_left_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_left_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">px</td>
+          <td align="left">1px</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_border_left_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_default_label</td>
+          <td align="left">FALSE</td>
+          <td align="left">row_group</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">row_group_as_column</td>
+          <td align="left">FALSE</td>
+          <td align="left">row_group</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_hlines_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_hlines_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">px</td>
+          <td align="left">1px</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_hlines_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_vlines_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_vlines_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">px</td>
+          <td align="left">1px</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_vlines_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_border_top_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_border_top_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_border_top_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_border_bottom_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_border_bottom_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">table_body_border_bottom_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">table_body</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">data_row_padding</td>
+          <td align="left">TRUE</td>
+          <td align="left">data_row</td>
+          <td align="left">px</td>
+          <td align="left">8px</td>
+        </tr>
+        <tr>
+          <td align="left">data_row_padding_horizontal</td>
+          <td align="left">TRUE</td>
+          <td align="left">data_row</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">stub_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">stub_font_size</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">px</td>
+          <td align="left">100%</td>
+        </tr>
+        <tr>
+          <td align="left">stub_font_weight</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">initial</td>
+        </tr>
+        <tr>
+          <td align="left">stub_text_transform</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">inherit</td>
+        </tr>
+        <tr>
+          <td align="left">stub_border_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">stub_border_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">stub_border_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">stub_indent_length</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">stub_row_group_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">stub_row_group_font_size</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">px</td>
+          <td align="left">100%</td>
+        </tr>
+        <tr>
+          <td align="left">stub_row_group_font_weight</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">initial</td>
+        </tr>
+        <tr>
+          <td align="left">stub_row_group_text_transform</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">inherit</td>
+        </tr>
+        <tr>
+          <td align="left">stub_row_group_border_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">stub_row_group_border_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">stub_row_group_border_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">stub</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">summary_row_padding</td>
+          <td align="left">TRUE</td>
+          <td align="left">summary_row</td>
+          <td align="left">px</td>
+          <td align="left">8px</td>
+        </tr>
+        <tr>
+          <td align="left">summary_row_padding_horizontal</td>
+          <td align="left">TRUE</td>
+          <td align="left">summary_row</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">summary_row_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">summary_row</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">summary_row_text_transform</td>
+          <td align="left">TRUE</td>
+          <td align="left">summary_row</td>
+          <td align="left">value</td>
+          <td align="left">inherit</td>
+        </tr>
+        <tr>
+          <td align="left">summary_row_border_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">summary_row</td>
+          <td align="left">value</td>
+          <td align="left">solid</td>
+        </tr>
+        <tr>
+          <td align="left">summary_row_border_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">summary_row</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">summary_row_border_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">summary_row</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">grand_summary_row_padding</td>
+          <td align="left">TRUE</td>
+          <td align="left">grand_summary_row</td>
+          <td align="left">px</td>
+          <td align="left">8px</td>
+        </tr>
+        <tr>
+          <td align="left">grand_summary_row_padding_horizontal</td>
+          <td align="left">TRUE</td>
+          <td align="left">grand_summary_row</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">grand_summary_row_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">grand_summary_row</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">grand_summary_row_text_transform</td>
+          <td align="left">TRUE</td>
+          <td align="left">grand_summary_row</td>
+          <td align="left">value</td>
+          <td align="left">inherit</td>
+        </tr>
+        <tr>
+          <td align="left">grand_summary_row_border_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">grand_summary_row</td>
+          <td align="left">value</td>
+          <td align="left">double</td>
+        </tr>
+        <tr>
+          <td align="left">grand_summary_row_border_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">grand_summary_row</td>
+          <td align="left">px</td>
+          <td align="left">6px</td>
+        </tr>
+        <tr>
+          <td align="left">grand_summary_row_border_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">grand_summary_row</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_font_size</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">px</td>
+          <td align="left">90%</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_padding</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">px</td>
+          <td align="left">4px</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_padding_horizontal</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_margin</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">px</td>
+          <td align="left">0px</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_border_bottom_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_border_bottom_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_border_bottom_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_border_lr_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_border_lr_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_border_lr_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">footnotes</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_marks</td>
+          <td align="left">FALSE</td>
+          <td align="left">footnotes</td>
+          <td align="left">values</td>
+          <td align="left">numbers</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_spec_ref</td>
+          <td align="left">FALSE</td>
+          <td align="left">footnotes</td>
+          <td align="left">values</td>
+          <td align="left">^i</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_spec_ftr</td>
+          <td align="left">FALSE</td>
+          <td align="left">footnotes</td>
+          <td align="left">values</td>
+          <td align="left">^i</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_multiline</td>
+          <td align="left">FALSE</td>
+          <td align="left">footnotes</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_sep</td>
+          <td align="left">FALSE</td>
+          <td align="left">footnotes</td>
+          <td align="left">value</td>
+          <td align="left"></td>
+        </tr>
+        <tr>
+          <td align="left">footnotes_order</td>
+          <td align="left">FALSE</td>
+          <td align="left">footnotes</td>
+          <td align="left">value</td>
+          <td align="left">marks_last</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_padding</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">px</td>
+          <td align="left">4px</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_padding_horizontal</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">px</td>
+          <td align="left">5px</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_font_size</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">px</td>
+          <td align="left">90%</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_border_bottom_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_border_bottom_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_border_bottom_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_border_lr_style</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">value</td>
+          <td align="left">none</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_border_lr_width</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">px</td>
+          <td align="left">2px</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_border_lr_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">source_notes</td>
+          <td align="left">value</td>
+          <td align="left">#D3D3D3</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_multiline</td>
+          <td align="left">FALSE</td>
+          <td align="left">source_notes</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">source_notes_sep</td>
+          <td align="left">FALSE</td>
+          <td align="left">source_notes</td>
+          <td align="left">value</td>
+          <td align="left"></td>
+        </tr>
+        <tr>
+          <td align="left">row_striping_background_color</td>
+          <td align="left">TRUE</td>
+          <td align="left">row</td>
+          <td align="left">value</td>
+          <td align="left">rgba(128,128,128,0.05)</td>
+        </tr>
+        <tr>
+          <td align="left">row_striping_include_stub</td>
+          <td align="left">FALSE</td>
+          <td align="left">row</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">row_striping_include_table_body</td>
+          <td align="left">FALSE</td>
+          <td align="left">row</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">container_width</td>
+          <td align="left">FALSE</td>
+          <td align="left">container</td>
+          <td align="left">px</td>
+          <td align="left">auto</td>
+        </tr>
+        <tr>
+          <td align="left">container_height</td>
+          <td align="left">FALSE</td>
+          <td align="left">container</td>
+          <td align="left">px</td>
+          <td align="left">auto</td>
+        </tr>
+        <tr>
+          <td align="left">container_padding_x</td>
+          <td align="left">FALSE</td>
+          <td align="left">container</td>
+          <td align="left">px</td>
+          <td align="left">0px</td>
+        </tr>
+        <tr>
+          <td align="left">container_padding_y</td>
+          <td align="left">FALSE</td>
+          <td align="left">container</td>
+          <td align="left">px</td>
+          <td align="left">10px</td>
+        </tr>
+        <tr>
+          <td align="left">container_overflow_x</td>
+          <td align="left">FALSE</td>
+          <td align="left">container</td>
+          <td align="left">overflow</td>
+          <td align="left">auto</td>
+        </tr>
+        <tr>
+          <td align="left">container_overflow_y</td>
+          <td align="left">FALSE</td>
+          <td align="left">container</td>
+          <td align="left">overflow</td>
+          <td align="left">auto</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_active</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_height</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">px</td>
+          <td align="left">auto</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_pagination</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_pagination_info</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_sorting</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_search</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_filters</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_resizers</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_highlight</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_compact_mode</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_text_wrapping</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_use_page_size_select</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_page_size_default</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">values</td>
+          <td align="left">10</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_page_size_values</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">values</td>
+          <td align="left">10, 25, 50, 100</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_pagination_type</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">value</td>
+          <td align="left">numbers</td>
+        </tr>
+        <tr>
+          <td align="left">ihtml_selection_mode</td>
+          <td align="left">FALSE</td>
+          <td align="left">interactive</td>
+          <td align="left">value</td>
+          <td align="left">NA</td>
+        </tr>
+        <tr>
+          <td align="left">page_orientation</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">value</td>
+          <td align="left">portrait</td>
+        </tr>
+        <tr>
+          <td align="left">page_numbering</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">page_header_use_tbl_headings</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">page_footer_use_tbl_notes</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">page_width</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">value</td>
+          <td align="left">8.5in</td>
+        </tr>
+        <tr>
+          <td align="left">page_height</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">value</td>
+          <td align="left">11.0in</td>
+        </tr>
+        <tr>
+          <td align="left">page_margin_left</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">value</td>
+          <td align="left">1.0in</td>
+        </tr>
+        <tr>
+          <td align="left">page_margin_right</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">value</td>
+          <td align="left">1.0in</td>
+        </tr>
+        <tr>
+          <td align="left">page_margin_top</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">value</td>
+          <td align="left">1.0in</td>
+        </tr>
+        <tr>
+          <td align="left">page_margin_bottom</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">value</td>
+          <td align="left">1.0in</td>
+        </tr>
+        <tr>
+          <td align="left">page_header_height</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">value</td>
+          <td align="left">0.5in</td>
+        </tr>
+        <tr>
+          <td align="left">page_footer_height</td>
+          <td align="left">FALSE</td>
+          <td align="left">page</td>
+          <td align="left">value</td>
+          <td align="left">0.5in</td>
+        </tr>
+        <tr>
+          <td align="left">quarto_disable_processing</td>
+          <td align="left">FALSE</td>
+          <td align="left">quarto</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">quarto_use_bootstrap</td>
+          <td align="left">FALSE</td>
+          <td align="left">quarto</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">latex_use_longtable</td>
+          <td align="left">FALSE</td>
+          <td align="left">latex</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">latex_header_repeat</td>
+          <td align="left">FALSE</td>
+          <td align="left">latex</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+        <tr>
+          <td align="left">stub_separate</td>
+          <td align="left">FALSE</td>
+          <td align="left">stub</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">latex_toprule</td>
+          <td align="left">FALSE</td>
+          <td align="left">latex</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">latex_bottomrule</td>
+          <td align="left">FALSE</td>
+          <td align="left">latex</td>
+          <td align="left">logical</td>
+          <td align="left">TRUE</td>
+        </tr>
+        <tr>
+          <td align="left">latex_tbl_pos</td>
+          <td align="left">FALSE</td>
+          <td align="left">latex</td>
+          <td align="left">value</td>
+          <td align="left">t</td>
+        </tr>
+        <tr>
+          <td align="left">latex_unicode_conversion</td>
+          <td align="left">FALSE</td>
+          <td align="left">latex</td>
+          <td align="left">logical</td>
+          <td align="left">FALSE</td>
+        </tr>
+      </tbody>
+    </table>
+  </table-wrap>
+  <table-wrap>
+    <table>
+      <thead>
+        <tr>
+          <th align="left">x</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left">FALSE</td>
         </tr>
       </tbody>
     </table>
