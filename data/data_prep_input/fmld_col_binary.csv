@@ -102,8 +102,12 @@ AGE2,54,45-54,age_spouse_45_to_54,<=,and,>,44
 AGE2,55,55 +,age_spouse_more_54,>=,,,
 FAM_SIZE,1,1 person in the consumer unit,cu_size_1,==,,,
 FAM_SIZE,2,2 people in the consumer unit,cu_size_2,==,,,
-FAM_SIZE,6,3 - 6 people in the consumer unit,cu_size_3_to_6,<=,and,>,2
-FAM_SIZE,7,more than six people in the consumer unit,cu_size_more_6,>=,,,
+FAM_SIZE,3,3 people in the consumer unit,cu_size_3,==,,,
+FAM_SIZE,4,4 people in the consumer unit,cu_size_4,==,,,
+FAM_SIZE,5,5 people in the consumer unit,cu_size_5,==,,,
+FAM_SIZE,6,6 people in the consumer unit,cu_size_6,==,,,
+FAM_SIZE,7,7 people in the consumer unit,cu_size_7,==,,,
+FAM_SIZE,8,more than 7 people in the consumer unit,cu_size_more_7,>=,,,
 FINCBEFX,50000,less 50,income_less_50k,<=,,,
 FINCBEFX,75000,50 - 75,income_50k_to_75k,<=,and,>,50000
 FINCBEFX,100000,75 - 100,income_75k_to_100k,<=,and,>,75000

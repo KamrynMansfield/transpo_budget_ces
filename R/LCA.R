@@ -1,12 +1,11 @@
-lcm_data <- read.csv("data/diary24_combined/created_data/exp_fmly_data.csv",header=TRUE)
-
-
-
-#install.packages('poLCA')
 library(poLCA)
 library(tidyverse)
 library(writexl)
+library(gt)
 
+lcm_data <- read.csv("data/diary24_combined/created_data/exp_fmly_data.csv",header=TRUE)
+
+#### Initial things ####
 lcm_data$FoodAlc = lcm_data$Food.Related + lcm_data$Alcohol
 lcm_data$Leisure = lcm_data$Recreational.Related + lcm_data$At..Home.Entertainment
 lcm_data$School = lcm_data$School.Supplies + lcm_data$Education
@@ -47,7 +46,7 @@ sjmisc::frq(x=lcm_data[c("microY")], out="viewer")
 lcm_data$sum = lcm_data$LeiY +lcm_data$SchoolY + lcm_data$ManY + lcm_data$HouseY - 4
 sjmisc::frq(x=lcm_data[c("sum")], out="viewer")
 
-##cuts for non transpo
+#### cuts for non transpo ####
 cutslei <- c(-Inf, 0, 100, Inf)
 labslei <- c("Zero", "HundredB", "HighHunB")
 lcm_data$Lei_cat <- cut(lcm_data$Leisure,
@@ -89,7 +88,7 @@ sjmisc::frq(x=lcm_data[c("House_cat")], out="viewer")
 lcm_data$House_cat1 = as.integer(lcm_data$House_cat)
 
 
-###chagne v3
+#### cuts for transpo ####
 cutsC1 <- c(-Inf, 0, 50, 100, Inf)
 labsC1 <- c("Zero", "FiftyB", "HundredB", "HighHunB")
 
@@ -179,7 +178,7 @@ sjmisc::frq(x=lcm_data[c("carMainP_cat1")], out="viewer")
 
 
 
-#demogrpahic changes
+#### Adding demographic columns ####
 lcm_data$veh3more = lcm_data$veh_3 + lcm_data$veh_more_3
 lcm_data$one_or_more_over_64 = lcm_data$one_pers_more_64_yd +
   lcm_data$two_pers_more_64_yd +
@@ -231,19 +230,37 @@ lcm_data$single_kids_65 <- ifelse(lcm_data$single_kids + lcm_data$one_or_more_ov
 lcm_data$married_no_kids_65 <- ifelse(lcm_data$married_no_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
 lcm_data$married_kids_65 <- ifelse(lcm_data$married_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
 
-names(lcm_data)
+lcm_data$urban <- 1 - lcm_data$in_rural
+
+lcm_data$urban_northeast <- ifelse(lcm_data$urban + lcm_data$region_northeast == 2, 1, 0)
+lcm_data$urban_midwest <- ifelse(lcm_data$urban + lcm_data$region_midwest == 2, 1, 0)
+lcm_data$urban_south <- ifelse(lcm_data$urban + lcm_data$region_south == 2, 1, 0)
+lcm_data$urban_wes <- ifelse(lcm_data$urban + lcm_data$region_wes == 2, 1, 0)
+
+lcm_data$rural_northeast <- ifelse(lcm_data$in_rural + lcm_data$region_northeast == 2, 1, 0)
+lcm_data$rural_midwest <- ifelse(lcm_data$in_rural + lcm_data$region_midwest == 2, 1, 0)
+lcm_data$rural_south <- ifelse(lcm_data$in_rural + lcm_data$region_south == 2, 1, 0)
+lcm_data$rural_wes <- ifelse(lcm_data$in_rural + lcm_data$region_wes == 2, 1, 0)
+
+lcm_data$pop_more_1_mil <- lcm_data$pop_1_mil_to_5_mil +lcm_data$pop_more_5_mil
+lcm_data$pop_100k_to_1_mil <- lcm_data$pop_100k_to_500k +lcm_data$pop_500k_to_1_mil
+
+lcm_data$pop_more_1_mil_northeast <- ifelse(lcm_data$pop_more_1_mil + lcm_data$region_northeast == 2, 1, 0)
+
+lcm_data$cu_size_more_2 <- lcm_data$cu_size_3_to_6 + lcm_data$cu_size_more_6
 
 sjPlot::sjt.xtab(var.row=lcm_data$pop_more_5_mil,
                  var.col=lcm_data$city_type_rural,
                  show.col.prc=TRUE,
                  show.summary = F)
 
-sjPlot::sjt.xtab(var.row=lcm_data$cu_size_1,
-                 var.col=lcm_data$fam_single_person,
+sjPlot::sjt.xtab(var.row=lcm_data$in_rural,
+                 var.col=lcm_data$city_type_rural,
                  show.col.prc=TRUE,
                  show.summary = F)
 
 
+#### Model Creation ####
 library(car)
 #vif(lm(MEDICALDEV ~ EMPLOYHH + MONEYPY + NHSLDMEM + NUMADULT2 + KOWNRENT +SOLAR +INTERNET + TELLWORK +ACEQUIPM_PUB,data=df_clean1))
 
@@ -270,21 +287,28 @@ lcm_formula <- cbind( carFuelP_cat1, carMainP_cat1,
 #
 # )
 ##USE THIS ONEEEEE
-final_formula <- update(lcm_formula, . ~ .   +  city_type_rural
+final_formula <- update(lcm_formula, . ~ .
                         + income_less_50k
-                        + age_ref_18_to_34 + age_ref_35_to_44 + age_ref_45_to_54
-                        + region_midwest	+ region_south	+ region_wes
+                        # + age_ref_18_to_34 + age_ref_35_to_44 + age_ref_45_to_54
+                        + age_ref_more_54
+                        + region_northeast
                         + edu_masters_doctorate + edu_bachelors
-                        # + single_kids + married_no_kids + married_kids
-                        # + single_no_kids_no_65 + single_no_kids_65
-                        # + married_no_kids_no_65 + married_no_kids_65
-                        # + married_kids_no_65 + married_kids_65
-                        + cu_size_2 + cu_size_3_to_6 + cu_size_more_6
+                        # + single_no_kids_65 + single_kids
+                        # + married_no_kids_no_65 + married_no_kids_65 + married_kids_no_65 + married_kids_65
+                        + single_kids
+                        + married_no_kids + married_kids
+                        # + pop_500k_to_1_mil + pop_1_mil_to_5_mil+ pop_more_5_mil
+                        + pop_more_1_mil
+                        # + cu_size_more_2
                         + as.factor(Man_cat1) + as.factor(House_cat1) + as.factor(Food_cat1) + as.factor(Lei_cat1)
 
 
 )
 
+lcm_data |>
+  select(urban_northeast, urban_midwest, urban_south, urban_wes,
+         rural_northeast, rural_midwest, rural_south, rural_wes) |>
+  colSums()
 
 #sjmisc::frq(x=lcm_data[c("city_type_rural")], out="viewer")
 
@@ -296,6 +320,8 @@ for (n in 2:3) {
 }
 
 
+
+#### reviewing results ####
 
 for (n in 2:3) {
   print(model_results[[n]]$Chisq)
@@ -373,7 +399,7 @@ for (class in 1:3) {
 
 model_3 <- model_results[[3]]
 
-# creating tables for excel
+#### functions to create tables ####
 create_probs_table <- function(model, percent = FALSE, lcm_data){
   mult <- ifelse(percent, 100, 1)
   rnd <- ifelse(percent, 2, 4)
@@ -450,21 +476,6 @@ create_regr_tbl <- function(model){
 
 }
 
-# write_model_to_excel <- function(model, lcm_data, save_file){
-#   probs_table <- create_probs_table(model, TRUE, lcm_data)
-#   regr_table <- create_regr_tbl(model)
-# 
-#   listed_dfs <- list(probability = probs_table,
-#                      regression = regr_table)
-# 
-#   write_xlsx(listed_dfs, path = save_file)
-# 
-#   return(cat("model results saved to\n",save_file))
-# }
-#
-# write_model_to_excel(model_3, lcm_data, "LCA/model_results/0_lcm9.xlsx")
-
-library(gt)
 
 model_df <- create_regr_tbl(model_3)
 
@@ -477,16 +488,16 @@ new_exog_names_list <- list("(Intercept)" = "Intercept",
                        "Region (Northeast)" = list("Midwest" = "region_midwest",
                                                    "South" = "region_south",
                                                    "West" = "region_wes"),
-                       "Education (No college degree" = list("Masters or above" = "edu_masters_doctorate",
+                       "Education (No college degree)" = list("Masters or above" = "edu_masters_doctorate",
                                                              "Bachelors" = "edu_bachelors"),
-                       "Household Size (1)" = list("2" = "cu_size_2",
+                       "Household Size" = list("2" = "cu_size_2",
                                                    "3-6" = "cu_size_3_to_6",
                                                    "6+" ="cu_size_more_6"),
-                       "Maintenance Expenses (none)" = list("$0.01 - $200" = "as.factor(Man_cat1)2",
+                       "Mandatory Expenses (none)" = list("$0.01 - $200" = "as.factor(Man_cat1)2",
                                                             "$200.01 - $500" = "as.factor(Man_cat1)3",
                                                             "$500.01 - $1,000" = "as.factor(Man_cat1)4",
                                                             "> $1,000" = "as.factor(Man_cat1)5"),
-                       "Housing Expenses (none)" = list("$0.01 - $200" = "as.factor(House_cat1)2",
+                       "House Expenses (none)" = list("$0.01 - $200" = "as.factor(House_cat1)2",
                                                         "$200.01 - $500" = "as.factor(House_cat1)3 ",
                                                         "$500.01 - $1,000" = "as.factor(House_cat1)4",
                                                         "> $1,000" = "as.factor(House_cat1)5"),
@@ -544,6 +555,89 @@ create_nice_coeff_tbl <- function(model_df, new_exog_names, new_exog_names_list)
   return(model_gt)
 }
 
-create_nice_coeff_tbl(model_df, new_exog_names, new_exog_names_list)
+# create_nice_coeff_tbl(model_df, new_exog_names, new_exog_names_list)
 
+
+#### Simple viewing and saving results to excel ####
+
+create_probs_table(model_3, lcm_data = lcm_data) |> 
+  mutate(class_1 = round(class_1 * 100,2),
+         class_2 = round(class_2 * 100,2),
+         class_3 = round(class_3 * 100,2)) |>
+  gt()
+
+create_regr_tbl(model_3) |> 
+  # mutate(coeff_1 = ifelse(t_stat_1 >= 1.4 | t_stat_1 <= -1.4,coeff_1, "-"),
+  #        t_stat_1 = ifelse(t_stat_1 >= 1.4 | t_stat_1 <= -1.4,t_stat_1, "-"),
+  #        coeff_2 = ifelse(t_stat_2 >= 1.4 | t_stat_2 <= -1.4,coeff_2, "-"),
+  #        t_stat_2 = ifelse(t_stat_2 >= 1.4 | t_stat_2 <= -1.4,t_stat_2, "-")) |>
+  gt() |>
+  tab_style(
+    style = list(
+      cell_fill(color = "yellow"), # Highlights the cell background
+      cell_text(weight = "bold")     # Makes the text bold
+    ),
+    locations = cells_body(
+      columns = t_stat_1,                   # Target the 'hp' column
+      rows = t_stat_1 >= 1.4 | t_stat_1 <= -1.4              # Condition: highlight cells where hp is > 150
+    )
+  ) |>
+  tab_style(
+    style = list(
+      cell_fill(color = "yellow"), # Highlights the cell background
+      cell_text(weight = "bold")     # Makes the text bold
+    ),
+    locations = cells_body(
+      columns = t_stat_2,                   # Target the 'hp' column
+      rows = t_stat_2 >= 1.4 | t_stat_2 <= -1.4              # Condition: highlight cells where hp is > 150
+    )
+  )
+
+write_model_to_excel <- function(model, lcm_data, save_file){
+  probs_table <- create_probs_table(model, TRUE, lcm_data)
+  regr_table <- create_regr_tbl(model)
+
+  listed_dfs <- list(probability = probs_table,
+                     regression = regr_table)
+
+  write_xlsx(listed_dfs, path = save_file)
+
+  return(cat("model results saved to\n",save_file))
+}
+
+# write_model_to_excel(model_3, lcm_data, "data/lcm_results/lcm1.xlsx")
+
+
+# calculating how many households make up the percentage in the percentage table. 
+probs_tbl <- create_probs_table(model_3, lcm_data = lcm_data)
+
+c1 <- (probs_tbl[1,3:5] * 6004)[["class_1"]]
+c2 <- (probs_tbl[1,3:5] * 6004)[["class_2"]]
+c3 <- (probs_tbl[1,3:5] * 6004)[["class_3"]]
+
+c1_row <- probs_tbl[2:nrow(probs_tbl),"class_1"]
+c2_row <- probs_tbl[2:nrow(probs_tbl),"class_2"]
+c3_row <- probs_tbl[2:nrow(probs_tbl),"class_3"]
+
+percentage_counts <- data.frame(class_1_cnt = c(c1,c1_row * c1),
+                     class_2_cnt = c(c2,c2_row * c2),
+                     class_3_cnt = c(c3,c3_row * c3))
+
+
+# # quickly viewing a big of hou
+# no_house_spending <- lcm_data |> 
+#   filter(House.Related == 0)
+# 
+# sums_no_housing <- no_house_spending |>
+#   select(married_no_kids, married_kids, single_no_kids, single_kids,
+#          income_less_50k, income_50k_to_75k, income_75k_to_100k, income_100k_to_200k, income_more_200k) |>
+#   colSums()
+# 
+# data.frame(Category = c(rep("Family Structure",4),rep("Income",5)),
+#            Label = names(sums_no_housing),
+#            Count = sums_no_housing) |>
+#   group_by(Category) |>
+#   mutate(Percent = round(100 * Count / sum(Count), 1)) |>
+#   ungroup() |>
+#   gt()
 
