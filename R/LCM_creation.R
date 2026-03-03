@@ -1,12 +1,11 @@
-lcm_data <- read.csv("data/diary24_combined/created_data/exp_fmly_data.csv",header=TRUE)
-
-
-
-#install.packages('poLCA')
 library(poLCA)
 library(tidyverse)
 library(writexl)
+library(gt)
 
+lcm_data <- read.csv("data/diary24_combined/created_data/exp_fmly_data.csv",header=TRUE)
+
+#### Initial things ####
 lcm_data$FoodAlc = lcm_data$Food.Related + lcm_data$Alcohol
 lcm_data$Leisure = lcm_data$Recreational.Related + lcm_data$At..Home.Entertainment
 lcm_data$School = lcm_data$School.Supplies + lcm_data$Education
@@ -16,14 +15,14 @@ lcm_data$Bike.or.Scooter.Travel = lcm_data$Bike.or.Scooter.or.other.Single.Rider
 lcm_data$Transpo = (lcm_data$Car.Fuel + lcm_data$Car.Maintenance + lcm_data$Taxi.or.Limo.Travel
                     + lcm_data$Bus.Travel + lcm_data$Train.Travel +lcm_data$Air.Travel + lcm_data$Bike.or.Scooter.Travel)
 
-# quantile(lcm_data$Leisure)
-# quantile(lcm_data$FoodAlc)
-# quantile(lcm_data$School)
-# quantile(lcm_data$Mandatory)
-# quantile(lcm_data$Housing)
-# 
-# quantile(lcm_data$Car.Fuel)
-# quantile(lcm_data$Car.Maintenance)
+quantile(lcm_data$Leisure)
+quantile(lcm_data$FoodAlc)
+quantile(lcm_data$School)
+quantile(lcm_data$Mandatory)
+quantile(lcm_data$Housing)
+
+quantile(lcm_data$Car.Fuel)
+quantile(lcm_data$Car.Maintenance)
 
 
 #Yes Categories
@@ -47,7 +46,7 @@ lcm_data$microY = as.integer(factor(ifelse(lcm_data$Bike.or.Scooter.Travel>0,1,0
 lcm_data$sum = lcm_data$LeiY +lcm_data$SchoolY + lcm_data$ManY + lcm_data$HouseY - 4
 # sjmisc::frq(x=lcm_data[c("sum")], out="viewer")
 
-##cuts for non transpo
+#### cuts for non transpo ####
 cutslei <- c(-Inf, 0, 100, Inf)
 labslei <- c("Zero", "HundredB", "HighHunB")
 lcm_data$Lei_cat <- cut(lcm_data$Leisure,
@@ -68,8 +67,8 @@ lcm_data$Food_cat <- cut(lcm_data$FoodAlc,
 # sjmisc::frq(x=lcm_data[c("Food_cat")], out="viewer")
 lcm_data$Food_cat1 = as.integer(lcm_data$Food_cat)
 
-cutsman <- c(-Inf, 0, 200, 500, 1000, Inf)
-labsman <- c("Zero", "two", "five", "onehund", "over")
+cutsman <- c(-Inf, 0, 200, 500, Inf)
+labsman <- c("Zero", "two", "five", "over")
 lcm_data$Man_cat <- cut(lcm_data$Mandatory,
                         breaks = cutsman,
                         labels = labsman,
@@ -78,8 +77,8 @@ lcm_data$Man_cat <- cut(lcm_data$Mandatory,
 # sjmisc::frq(x=lcm_data[c("Man_cat")], out="viewer")
 lcm_data$Man_cat1 = as.integer(lcm_data$Man_cat)
 
-cutshous <- c(-Inf, 0, 200, 500, 1000, Inf)
-labshous <- c("Zero", "two", "five", "onehund", "over")
+cutshous <- c(-Inf, 0, 200, 500, Inf)
+labshous <- c("Zero", "two", "five", "over")
 lcm_data$House_cat <- cut(lcm_data$Housing,
                         breaks = cutshous,
                         labels = labshous,
@@ -89,7 +88,7 @@ lcm_data$House_cat <- cut(lcm_data$Housing,
 lcm_data$House_cat1 = as.integer(lcm_data$House_cat)
 
 
-###chagne v3
+#### cuts for transpo ####
 cutsC1 <- c(-Inf, 0, 50, 100, Inf)
 labsC1 <- c("Zero", "FiftyB", "HundredB", "HighHunB")
 
@@ -100,7 +99,7 @@ cutsC3 <- c(-Inf, 0, 100, Inf)
 labsC3 <- c("Zero", "HundredB", "HighHunB")
 
 cutsT <- c(-Inf, 0, 20, 50, Inf)
-labsT <- c("Zero", "TwentyB", "FiftyB", "HighFifB")
+labsT <- c("Zero", "TwentyB", "TwentyFifty", "HighFifB")
 
 cutsB <- c(-Inf, 0, Inf)
 labsB <- c("Zero", "Any")
@@ -179,7 +178,7 @@ lcm_data$microP_cat1 = as.integer(lcm_data$microP_cat)
 
 
 
-#demogrpahic changes
+#### Adding demographic columns ####
 lcm_data$veh3more = lcm_data$veh_3 + lcm_data$veh_more_3
 lcm_data$one_or_more_over_64 = lcm_data$one_pers_more_64_yd +
   lcm_data$two_pers_more_64_yd +
@@ -231,17 +230,59 @@ lcm_data$single_kids_65 <- ifelse(lcm_data$single_kids + lcm_data$one_or_more_ov
 lcm_data$married_no_kids_65 <- ifelse(lcm_data$married_no_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
 lcm_data$married_kids_65 <- ifelse(lcm_data$married_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
 
+lcm_data$urban <- 1 - lcm_data$in_rural
+
+lcm_data$urban_northeast <- ifelse(lcm_data$urban + lcm_data$region_northeast == 2, 1, 0)
+lcm_data$urban_midwest <- ifelse(lcm_data$urban + lcm_data$region_midwest == 2, 1, 0)
+lcm_data$urban_south <- ifelse(lcm_data$urban + lcm_data$region_south == 2, 1, 0)
+lcm_data$urban_wes <- ifelse(lcm_data$urban + lcm_data$region_wes == 2, 1, 0)
+
+lcm_data$rural_northeast <- ifelse(lcm_data$in_rural + lcm_data$region_northeast == 2, 1, 0)
+lcm_data$rural_midwest <- ifelse(lcm_data$in_rural + lcm_data$region_midwest == 2, 1, 0)
+lcm_data$rural_south <- ifelse(lcm_data$in_rural + lcm_data$region_south == 2, 1, 0)
+lcm_data$rural_wes <- ifelse(lcm_data$in_rural + lcm_data$region_wes == 2, 1, 0)
+
+lcm_data$pop_more_1_mil <- lcm_data$pop_1_mil_to_5_mil +lcm_data$pop_more_5_mil
+lcm_data$pop_100k_to_1_mil <- lcm_data$pop_100k_to_500k +lcm_data$pop_500k_to_1_mil
+
+lcm_data$pop_more_1_mil_northeast <- ifelse(lcm_data$pop_more_1_mil + lcm_data$region_northeast == 2, 1, 0)
+
+lcm_data$cu_size_more_2 <- lcm_data$cu_size_3 + lcm_data$cu_size_4 + 
+  lcm_data$cu_size_5 + lcm_data$cu_size_6 + lcm_data$cu_size_7+ lcm_data$cu_size_more_7
+
+lcm_data$cu_size_more_3 <- lcm_data$cu_size_4 + 
+  lcm_data$cu_size_5 + lcm_data$cu_size_6 + lcm_data$cu_size_7+ lcm_data$cu_size_more_7
+
+lcm_data$cu_size_more_4 <- lcm_data$cu_size_5 + lcm_data$cu_size_6 + lcm_data$cu_size_7+ lcm_data$cu_size_more_7
+
+
+lcm_data$mandatory2 <- ifelse(lcm_data$Man_cat == "two", 1, 0)
+lcm_data$mandatory3 <- ifelse(lcm_data$Man_cat == "five", 1, 0)
+lcm_data$mandatory4 <- ifelse(lcm_data$Man_cat == "over", 1, 0)
+
+lcm_data$house2 <- ifelse(lcm_data$House_cat == "two", 1, 0)
+lcm_data$house3 <- ifelse(lcm_data$House_cat == "five", 1, 0)
+lcm_data$house4 <- ifelse(lcm_data$House_cat == "over", 1, 0)
+
+lcm_data$food2 <- ifelse(lcm_data$Food_cat == "FiveHundredB", 1, 0)
+lcm_data$food3 <- ifelse(lcm_data$Food_cat == "HighFiveHunB", 1, 0)
+
+lcm_data$leisure2 <- ifelse(lcm_data$Lei_cat == "HundredB", 1, 0)
+lcm_data$leisure3 <- ifelse(lcm_data$Lei_cat == "HighHunB", 1, 0)
+
+
 # sjPlot::sjt.xtab(var.row=lcm_data$pop_more_5_mil,
 #                  var.col=lcm_data$city_type_rural,
 #                  show.col.prc=TRUE,
 #                  show.summary = F)
 # 
-# sjPlot::sjt.xtab(var.row=lcm_data$cu_size_1,
-#                  var.col=lcm_data$fam_single_person,
+# sjPlot::sjt.xtab(var.row=lcm_data$in_rural,
+#                  var.col=lcm_data$city_type_rural,
 #                  show.col.prc=TRUE,
 #                  show.summary = F)
 
 
+#### Model Creation ####
 library(car)
 #vif(lm(MEDICALDEV ~ EMPLOYHH + MONEYPY + NHSLDMEM + NUMADULT2 + KOWNRENT +SOLAR +INTERNET + TELLWORK +ACEQUIPM_PUB,data=df_clean1))
 
@@ -268,21 +309,28 @@ lcm_formula <- cbind( carFuelP_cat1, carMainP_cat1,
 #
 # )
 ##USE THIS ONEEEEE
-final_formula <- update(lcm_formula, . ~ .   +  city_type_rural
+final_formula <- update(lcm_formula, . ~ .
                         + income_less_50k
-                        + age_ref_18_to_34 + age_ref_35_to_44 + age_ref_45_to_54
-                        + region_midwest	+ region_south	+ region_wes
+                        + age_ref_35_to_44 + age_ref_45_to_54  + age_ref_18_to_34
+                        + region_northeast
                         + edu_masters_doctorate + edu_bachelors
-                        # + single_kids + married_no_kids + married_kids
-                        # + single_no_kids_no_65 + single_no_kids_65
-                        # + married_no_kids_no_65 + married_no_kids_65
-                        # + married_kids_no_65 + married_kids_65
-                        + cu_size_2 + cu_size_3_to_6 + cu_size_more_6
-                        + as.factor(Man_cat1) + as.factor(House_cat1) + as.factor(Food_cat1) + as.factor(Lei_cat1)
+                        + single_kids
+                        + married_no_kids + married_kids
+                        + pop_more_1_mil
+                        + mandatory2 + mandatory3 + mandatory4
+                        + house2 + house3 + house4
+                        + food2 + food3
+                        + leisure2 + leisure3
+                        # + as.factor(Man_cat1) + as.factor(House_cat1) + as.factor(Food_cat1) + as.factor(Lei_cat1)
 
 
 )
 
+
+lcm_data |>
+  select(urban_northeast, urban_midwest, urban_south, urban_wes,
+         rural_northeast, rural_midwest, rural_south, rural_wes) |>
+  colSums()
 
 #sjmisc::frq(x=lcm_data[c("city_type_rural")], out="viewer")
 
@@ -290,20 +338,22 @@ final_formula <- update(lcm_formula, . ~ .   +  city_type_rural
 set.seed(123)  # Ensure reproducibility
 model_results <- list()
 for (n in 2:3) {
-  model_results[[n]] <- poLCA(final_formula, lcm_data, nclass = n, na.rm = TRUE, maxiter = 5000, verbose = FALSE)
+  model_results[[n]] <- poLCA(final_formula, lcm_data, nclass = n, na.rm = TRUE, maxiter = 5000)
 }
 
 
 
-# for (n in 2:3) {
-#   print(model_results[[n]]$Chisq)
-#   print(model_results[[n]]$Gsq)
-#   print(model_results[[n]]$aic)
-#   print(model_results[[n]]$bic)
-# }
+#### reviewing results ####
+
+for (n in 2:3) {
+  print(model_results[[n]]$Chisq)
+  print(model_results[[n]]$Gsq)
+  print(model_results[[n]]$aic)
+  print(model_results[[n]]$bic)
+}
 
 
-# print(model_results[[3]])
+print(model_results[[3]])
 
 # Extract posterior probabilities for the 4-class model
 posterior_probs <- model_results[[3]]$posterior
@@ -371,177 +421,5 @@ for (class in 1:3) {
 
 model_3 <- model_results[[3]]
 
-# creating tables for excel
-create_probs_table <- function(model, percent = FALSE, lcm_data){
-  mult <- ifelse(percent, 100, 1)
-  rnd <- ifelse(percent, 2, 4)
 
-  df_totals <- matrix(model$P * mult) |>
-    round(rnd) |>
-    t() |>
-    as.data.frame()
-
-  names(df_totals) <- paste0("class_",c(1:ncol(df_totals)))
-  df_totals$variable <- "Class Probablilty"
-
-  probs <- model$probs
-  df_list <- list()
-  for (var_name in names(probs)){
-    mtx <- probs[[var_name]]
-
-    df <- as.data.frame(round(t(mtx * mult),rnd))
-
-    names(df) <- paste0("class_",c(1:ncol(df)))
-    row.names(df) <- NULL
-
-    df$variable <- var_name
-    df$level <- 1:nrow(df)
-
-    df_list[[var_name]] <- df
-  }
-
-  combined_df <- bind_rows(df_list)
-  combined_df <- bind_rows(df_totals, combined_df)
-
-  level_meaning <- "NA"
-  for (row_num in 2:nrow(combined_df)){
-
-    col_str <- gsub("1","",combined_df[[row_num,"variable"]])
-    new_df <- lcm_data[lcm_data[[paste0(col_str,"1")]] == combined_df[[row_num,"level"]],grep(col_str,names(lcm_data))]
-    meaning <- new_df[[gsub("1","",names(new_df)[[1]])]][[1]] |> as.character()
-
-    level_meaning <- c(level_meaning, meaning)
-  }
-
-  combined_df$level_def <- level_meaning
-
-  combined_df <- combined_df |>
-    dplyr::select(!level) |>
-    dplyr::select(any_of(c("variable","level_def",names(combined_df))))
-
-  return(combined_df)
-}
-
-create_regr_tbl <- function(model){
-
-  coeffs <- model$coeff
-  se <- model$coeff.se
-  tval <- coeffs / se
-
-  df <- data.frame(exogenous_var = row.names(coeffs))
-  df[[paste0("coeff_",1)]] <- round(coeffs[,1], 3)
-  df[[paste0("t_stat_",1)]] <- round(tval[,1], 3)
-
-  if (ncol(coeffs) < 2){
-    return(df)
-  }
-
-  for (i in 2:ncol(coeffs)){
-    new_df <- data.frame(exogenous_var = row.names(coeffs))
-    new_df[[paste0("coeff_",i)]] <- round(coeffs[,i], 3)
-    new_df[[paste0("t_stat_",i)]] <- round(tval[,i], 3)
-
-    df <- left_join(df, new_df, by = "exogenous_var")
-  }
-
-  return(df)
-
-}
-
-# write_model_to_excel <- function(model, lcm_data, save_file){
-#   probs_table <- create_probs_table(model, TRUE, lcm_data)
-#   regr_table <- create_regr_tbl(model)
-# 
-#   listed_dfs <- list(probability = probs_table,
-#                      regression = regr_table)
-# 
-#   write_xlsx(listed_dfs, path = save_file)
-# 
-#   return(cat("model results saved to\n",save_file))
-# }
-#
-# write_model_to_excel(model_3, lcm_data, "LCA/model_results/0_lcm9.xlsx")
-
-library(gt)
-
-model_df <- create_regr_tbl(model_3)
-
-new_exog_names_list <- list("(Intercept)" = "Intercept",
-                       "City Type (Urban)" = list("Rural" = "city_type_rural"),
-                       "Income (more than $50,000)" = list("$50,000 or less" = "income_less_50k"),
-                       "Reference Age (55 or older)" = list("18 - 34" = "age_ref_18_to_34",
-                                                            "35 -44" = "age_ref_35_to_44",
-                                                            "45 - 54" = "age_ref_45_to_54"),
-                       "Region (Northeast)" = list("Midwest" = "region_midwest",
-                                                   "South" = "region_south",
-                                                   "West" = "region_wes"),
-                       "Education (No college degree" = list("Masters or above" = "edu_masters_doctorate",
-                                                             "Bachelors" = "edu_bachelors"),
-                       "Household Size (1)" = list("2" = "cu_size_2",
-                                                   "3-6" = "cu_size_3_to_6",
-                                                   "6+" ="cu_size_more_6"),
-                       "Maintenance Expenses (none)" = list("$0.01 - $200" = "as.factor(Man_cat1)2",
-                                                            "$200.01 - $500" = "as.factor(Man_cat1)3",
-                                                            "$500.01 - $1,000" = "as.factor(Man_cat1)4",
-                                                            "> $1,000" = "as.factor(Man_cat1)5"),
-                       "Housing Expenses (none)" = list("$0.01 - $200" = "as.factor(House_cat1)2",
-                                                        "$200.01 - $500" = "as.factor(House_cat1)3 ",
-                                                        "$500.01 - $1,000" = "as.factor(House_cat1)4",
-                                                        "> $1,000" = "as.factor(House_cat1)5"),
-                       "Food Expenses (<$100)" = list("$100.01 - $500" = "as.factor(Food_cat1)2",
-                                                      ">$500" = "as.factor(Food_cat1)3"),
-                       "Leisure Expenses (none)" = list("$0.01 - $100" = "as.factor(Lei_cat1)2",
-                                                      ">$100" = "as.factor(Lei_cat1)3"))
-
-new_exog_names <- list("(Intercept)" = "Intercept",
-                       "Rural" = "city_type_rural",
-                       "$50,000 or less" = "income_less_50k",
-                       "18 - 34" = "age_ref_18_to_34",
-                       "35 -44" = "age_ref_35_to_44",
-                       "45 - 54" = "age_ref_45_to_54",
-                       "Midwest" = "region_midwest",
-                       "South" = "region_south",
-                       "West" = "region_wes",
-                       "Masters or above" = "edu_masters_doctorate",
-                       "Bachelors" = "edu_bachelors",
-                       "2" = "cu_size_2",
-                       "3-6" = "cu_size_3_to_6",
-                       "6+" ="cu_size_more_6",
-                       "$0.01 - $200" = "as.factor(Man_cat1)2",
-                       "$200.01 - $500" = "as.factor(Man_cat1)3",
-                       "$500.01 - $1,000" = "as.factor(Man_cat1)4",
-                       "> $1,000" = "as.factor(Man_cat1)5",
-                       "$0.01 - $200" = "as.factor(House_cat1)2",
-                       "$200.01 - $500" = "as.factor(House_cat1)3 ",
-                       "$500.01 - $1,000" = "as.factor(House_cat1)4",
-                       "> $1,000" = "as.factor(House_cat1)5",
-                       "$100.01 - $500" = "as.factor(Food_cat1)2",
-                       ">$500" = "as.factor(Food_cat1)3",
-                       "$0.01 - $100" = "as.factor(Lei_cat1)2",
-                       ">$100" = "as.factor(Lei_cat1)3")
-
-create_nice_coeff_tbl <- function(model_df, new_exog_names, new_exog_names_list){
-  model_df$exogenous_var_name <- names(new_exog_names)
-  
-  model_gt <- model_df |>
-    select(exogenous_var_name, coeff_1, t_stat_1, coeff_2, t_stat_2) |>
-    gt(rowname_col = "exogenous_var_name") |>
-    tab_row_group(
-      label = "(Intercept)",
-      rows = exogenous_var_name == "(Intercept)"
-    )
-  
-  for (i in 2:length(new_exog_names_list)){
-    model_gt <- model_gt |>
-      tab_row_group(
-        label = names(new_exog_names_list)[[i]],
-        rows = exogenous_var_name %in% names(new_exog_names_list[[i]])
-      )
-  }
-  
-  return(model_gt)
-}
-
-table <- create_nice_coeff_tbl(model_df, new_exog_names, new_exog_names_list)
-
-knitr::kable(table)
+# saveRDS(model_3, "data/final_model.rds")

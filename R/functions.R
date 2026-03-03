@@ -123,3 +123,245 @@ create_IDs <- function(df_with_NEWID){
 
   return(added_ids)
 }
+
+create_probs_table <- function(model, percent = FALSE, lcm_data){
+  mult <- ifelse(percent, 100, 1)
+  rnd <- ifelse(percent, 2, 4)
+  
+  df_totals <- matrix(model$P * mult) |>
+    round(rnd) |>
+    t() |>
+    as.data.frame()
+  
+  names(df_totals) <- paste0("class_",c(1:ncol(df_totals)))
+  df_totals$variable <- "Class Probablilty"
+  
+  probs <- model$probs
+  df_list <- list()
+  for (var_name in names(probs)){
+    mtx <- probs[[var_name]]
+    
+    df <- as.data.frame(round(t(mtx * mult),rnd))
+    
+    names(df) <- paste0("class_",c(1:ncol(df)))
+    row.names(df) <- NULL
+    
+    df$variable <- var_name
+    df$level <- 1:nrow(df)
+    
+    df_list[[var_name]] <- df
+  }
+  
+  combined_df <- bind_rows(df_list)
+  combined_df <- bind_rows(df_totals, combined_df)
+  
+  level_meaning <- "NA"
+  for (row_num in 2:nrow(combined_df)){
+    
+    col_str <- gsub("1","",combined_df[[row_num,"variable"]])
+    new_df <- lcm_data[lcm_data[[paste0(col_str,"1")]] == combined_df[[row_num,"level"]],grep(col_str,names(lcm_data))]
+    meaning <- new_df[[gsub("1","",names(new_df)[[1]])]][[1]] |> as.character()
+    
+    level_meaning <- c(level_meaning, meaning)
+  }
+  
+  combined_df$level_def <- level_meaning
+  
+  combined_df <- combined_df |>
+    dplyr::select(!level) |>
+    dplyr::select(any_of(c("variable","level_def",names(combined_df))))
+  
+  return(combined_df)
+}
+
+create_regr_tbl <- function(model){
+  
+  coeffs <- model$coeff
+  se <- model$coeff.se
+  tval <- coeffs / se
+  
+  df <- data.frame(exogenous_var = row.names(coeffs))
+  df[[paste0("coeff_",1)]] <- round(coeffs[,1], 3)
+  df[[paste0("t_stat_",1)]] <- round(tval[,1], 3)
+  
+  if (ncol(coeffs) < 2){
+    return(df)
+  }
+  
+  for (i in 2:ncol(coeffs)){
+    new_df <- data.frame(exogenous_var = row.names(coeffs))
+    new_df[[paste0("coeff_",i)]] <- round(coeffs[,i], 3)
+    new_df[[paste0("t_stat_",i)]] <- round(tval[,i], 3)
+    
+    df <- left_join(df, new_df, by = "exogenous_var")
+  }
+  
+  return(df)
+  
+}
+
+# create a nice looking table of the model coefficients
+# model_df is created from create_regr_tbl() function
+# and exog_name_key is a df with the exogenous variable names and their categories
+create_nice_coeff_tbl <- function(model_df, 
+                                  exog_name_key,
+                                  highlighted = TRUE,
+                                  highlight_color = "#FF8200",
+                                  t_threshold = 1.4,
+                                  only_significant = FALSE,
+                                  two_vs_one_name = "Class 2 vs. Class 1",
+                                  three_vs_one_name = "Class 3 vs. Class 1"){
+  
+  model_df <- left_join(exog_name_key, model_df, by = "exogenous_var") |>
+    dplyr::mutate(coeff_1 = paste0(coeff_1, " (",t_stat_1,")"),
+                  coeff_2 = paste0(coeff_2, " (",t_stat_2,")"))
+  
+  
+  if (only_significant){
+    model_gt <- model_df |>
+      dplyr::mutate(coeff_1 = ifelse(t_stat_1 >= t_threshold | t_stat_1 <= -t_threshold,coeff_1, "-"),
+                    coeff_2 = ifelse(t_stat_2 >= t_threshold | t_stat_2 <= -t_threshold,coeff_2, "-")) |>
+      dplyr::select(category, exogenous_var_name, coeff_1, t_stat_1, coeff_2, t_stat_2) |>
+      gt::gt(rowname_col = "exogenous_var_name",
+         groupname_col = "category") |>
+      gt::tab_footnote(footnote = "Dashes indicate an insignificant result")
+    
+  } else{
+    model_gt <- model_df |>
+      dplyr::select(category, exogenous_var_name, coeff_1, t_stat_1, coeff_2, t_stat_2) |>
+      gt::gt(rowname_col = "exogenous_var_name",
+         groupname_col = "category")
+  }
+  
+  
+  
+  if (highlighted){
+    model_gt <- model_gt |>
+      gt::tab_style(
+        style = list(
+          gt::cell_fill(color = highlight_color), # Highlights the cell background
+          gt::cell_text(weight = "bold")     # Makes the text bold
+        ),
+        locations = gt::cells_body(
+          columns = coeff_1,                   # Target the 'hp' column
+          rows = t_stat_1 >= t_threshold | t_stat_1 <= -t_threshold              # Condition: highlight cells where hp is > 150
+        )
+      ) |>
+      gt::tab_style(
+        style = list(
+          gt::cell_fill(color = highlight_color), # Highlights the cell background
+          gt::cell_text(weight = "bold")     # Makes the text bold
+        ),
+        locations = gt::cells_body(
+          columns = coeff_2,                   # Target the 'hp' column
+          rows = t_stat_2 >= t_threshold | t_stat_2 <= -t_threshold            # Condition: highlight cells where hp is > 150
+        )
+      ) |>
+      gt::tab_footnote(footnote = "Statistically significant cells are highlighted")
+  }
+  
+  model_gt <- model_gt |>
+    gt::cols_hide(columns = c(t_stat_1, t_stat_2)) |>
+    gt::cols_align(
+      align = "center",
+      columns = c(coeff_1, coeff_2)) |>
+    gt::cols_label(
+      coeff_1 = two_vs_one_name,
+      coeff_2 = three_vs_one_name) |>
+    gt::opt_row_striping(row_striping = FALSE)
+  
+  return(model_gt)
+}
+
+# this taks in the model and two dfs
+# a df with the names of the expense variable categories and
+# a df with the names of the expense variable levels
+create_nice_probs_table <- function(model, 
+                                    expense_variable_names, 
+                                    expense_level_names, 
+                                    lcm_data,
+                                    c1_name = "Class 1",
+                                    c2_name = "Class 2",
+                                    c3_name = "Class 3"){
+  probs_df <- create_probs_table(model, lcm_data = lcm_data) |> 
+    dplyr::mutate(class_1 = round(class_1 * 100,2),
+           class_2 = round(class_2 * 100,2),
+           class_3 = round(class_3 * 100,2)) |>
+    dplyr::left_join(expense_variable_names, by = "variable") |>
+    dplyr::left_join(expense_level_names, by = "level_def") |>
+    dplyr::select(nice_var_name, nice_level_name, class_1, class_2, class_3)
+  
+  probs_df |>
+    gt::gt(rowname_col = "nice_level_name",
+       groupname_col = "nice_var_name") |>
+    gt::cols_label(
+      class_1 = c1_name,
+      class_2 = c2_name,
+      class_3 = c3_name)
+}
+
+# Define a function for weighted mean and variance
+weighted_summary <- function(data, weights) {
+  weighted_mean <- sum(data * weights) / sum(weights)
+  weighted_var <- sum(weights * (data - weighted_mean)^2) / sum(weights)
+  c(mean = weighted_mean, variance = weighted_var)
+}
+
+# takes the model results, the lcm_data, and a vector of the covariate variable names
+# and creates a list of data frames for each class
+get_covariate_pcts <- function(lcm_results, lcm_data, covariates){
+  posterior_probs <- lcm_results$posterior
+  lcm_data_with_probs <- cbind(lcm_data, posterior_probs)
+  lcm_data_with_probs$assigned_class <- apply(posterior_probs, 1, which.max)
+  
+  # Initialize a list to store results
+  class_summaries <- list()
+  
+  # Loop through each class
+  for (class in 1:3) {
+    # Subset data for the current class
+    weights <- posterior_probs[, class]
+    
+    # Compute weighted summary for each covariate
+    summaries <- sapply(covariates, function(cov) {
+      weighted_summary(as.numeric(lcm_data_with_probs[[cov]]), weights)
+    })
+    
+    # Store results
+    class_summaries[[class]] <- summaries
+  }
+  
+  # Convert results to a more readable format
+  class_summaries_df <- lapply(class_summaries, function(x) {
+    t(as.data.frame(x))
+  })
+  names(class_summaries_df) <- paste("Class", 1:3)
+  
+  return(class_summaries_df)
+  
+}
+
+# takes the same inputs as get_covariates_pcts and just makes a nice-looking table
+create_nice_covariate_tbl <- function(model, lcm_data, covariates){
+  
+  covariate_pcts <- get_covariate_pcts(model, lcm_data, covariates)
+  
+  combined_cov_pcts <- as.data.frame(covariate_pcts)
+  combined_cov_pcts$exogenous_var <- row.names(combined_cov_pcts)
+  
+  combined_cov_pcts <- combined_cov_pcts |> 
+    left_join(exog_name_key, by = "exogenous_var") |>
+    select(!exogenous_var)
+  
+  
+  gt_tbl <- combined_cov_pcts |>
+    mutate(Class.1.mean = round(Class.1.mean, 3),
+           Class.2.mean = round(Class.2.mean, 3),
+           Class.3.mean = round(Class.3.mean, 3)) |>
+    select(category,exogenous_var_name, Class.1.mean, Class.2.mean, Class.3.mean) |>
+    gt(rowname_col = "exogenous_var_name",
+       groupname_col = "category",
+       row_group_as_column = TRUE)
+  
+  return(gt_tbl)
+}

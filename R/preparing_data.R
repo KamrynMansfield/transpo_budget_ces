@@ -60,12 +60,12 @@ decode_cells <- function(df, code_dictionary_df){
 
 # here are all the files we are working with
 ## CHANGE THESE TO THE PROPER PATHS ##
-expd_csv_path <- "data/CE_data/2024/diary24_combined/expd.csv"
-fmld_csv_path <- "data/CE_data/2024/diary24_combined/fmld.csv"
-col_def_csv_path <- "data/CE_data/2024/data_prep_input/fmld_col_descr.csv"
-pumd_dictionary_xlsx_path <- "data/CE_data/2024/data_prep_input/ce-pumd-interview-diary-dictionary.xlsx"
-ucc_categories_xlsx_path <- "data/CE_data/2024/data_prep_input/ucc_categories.xlsx"
-binary_columns_xlsx_path <- "data/CE_data/2024/data_prep_input/fmld_col_binary.csv"
+expd_csv_path <- "data/diary24_combined/expd.csv"
+fmld_csv_path <- "data/diary24_combined/fmld.csv"
+col_def_csv_path <- "data/data_prep_input/fmld_col_descr.csv"
+pumd_dictionary_xlsx_path <- "data/data_prep_input/ce-pumd-interview-diary-dictionary.xlsx"
+ucc_categories_xlsx_path <- "data/data_prep_input/ucc_categories.xlsx"
+binary_columns_xlsx_path <- "data/data_prep_input/fmld_col_binary.csv"
 
 
 
@@ -191,7 +191,7 @@ for (row_num in 1:nrow(binary_reference_data)){
 }
 
 d_family_binary <- d_family_binary |>
-  dplyr::select(CUID,binary_reference_data$col_name)
+  dplyr::select(CUID,binary_reference_data$col_name, FAM_SIZE) # I kept the FAM_SIZE column too
 
 #### Prep Expenditure Data ###########################################################################
 
@@ -269,6 +269,6 @@ organized_data <- replace(organized_data, is.na(organized_data), 0)
 
 
 # save to a file
-save_to_path <- "data/CE_data/2024/diary24_combined/created_data/exp_fmly_data.csv"
+save_to_path <- "data/diary24_combined/created_data/exp_fmly_data_fam_size.csv"
 # write_csv(organized_data, save_to_path)
 
