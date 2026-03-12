@@ -138,6 +138,13 @@
  
 
 
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{anyfontsize}
+\usepackage{multirow}
 \usepackage{url} %this package should fix any errors with URLs in refs.
 \usepackage{lineno}
 \usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
@@ -601,68 +608,272 @@ were perhaps missed in other studies on transportation decisions.
 
 \section{Data}\label{data}
 
-Data for the following analysis were attained from the 2024 Consumer
+Data for the following analysis were obtained from the 2024 Consumer
 Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is
 administered continuously by the Bureau of Labor Statistics (BLS). The
 data are organized by quarter and published each year. The CEX consists
-of two surveys: the Interview Survey, and the Diary Survey. The
-Interview Survey tracks a household's major and recurring expenditures
-by reviewing their expenses from the past three months and was not used
-in the study.
+of two surveys: the Interview Survey, and the Diary Survey. Each survey
+has it's own unique sample, so the households in one will not appear in
+the other. The Interview Survey tracks a household's major and recurring
+expenditures by reviewing their expenses from the past three months, and
+the Diary Survey captures more routine household spending by recording
+in detail a households expenditure across a two-week span.
 
-The Diary Survey from the CEX was used in this study and tracks a
-household's weekly expenditures by having them fill out a detailed
-expenditure diary across a two-week span. Approximately 3000 usable
-responses are collected each quarter. After the two consecutive weeks of
-reporting expenditures, the household is removed from the sample and
-replaced by a new household. In addition to providing detailed household
-weekly expenditures, this survey also provides useful demographic data
-for each household. The combination of household demographics and
-detailed expenditures makes this dataset ideal for the current study.
+Because we were interested in the day-to-day expenditures of households,
+this study uses data from the Diary Survey of the CEX. To gather this
+data, BLS personnel contact a sample of US households, record household
+demographic data, and explain how to fill out the weekly expenditure
+diary. After two consecutive weeks of reporting expenditures, the
+household is removed from the sample and replaced by a new household.
+The combination of household demographics and detailed expenditures
+available in the Diary Survey makes this data set ideal for the current
+study.
 
-The table below shows a summary of the demographics in the data.
-\emph{put a table below and talk about it more}
+Table~\ref{tbl-ce-files} shows the files in the PUMD that pertain to the
+Diary Survey. For this study, we specifically looked at the FMLD and the
+EXPD files from 2024 to get household\footnote{Note that ``household''
+  in this paper is synonymous with what the CEX often denotes as
+  ``Consumer Unit'' (CU)} characteristics along with their detailed
+spending tables. In the 2024 data, there were a total of 6,334
+households surveyed. To capture the most expenditures and keep
+consistency, we only kept households that had participated in the study
+for two consecutive weeks during the study period. We also excluded any
+households who had no recorded expenditures during the two survey weeks.
+After filtering out the 161 households with only one week of data and
+the 169 households with no expenditures, we were left with 6,004
+households used in the analysis.
 
-{
+\begin{table}
 
-\begin{longtable}[]{@{}lr@{}}
+\caption{\label{tbl-ce-files}Diary Survey files available in the Public
+Use Microdata (PUMD)}
 
-\caption{\label{tbl-data-summary}Summary of CEX Demographic Data
-(placeholder)}
+\centering{
 
-\tabularnewline
-
-\toprule\noalign{}
-Description & Value \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Total households & 12507.000000 \\
-Households with no car & 1351.000000 \\
-Avg cars in household & 2.000627 \\
-Avg household income & 93154.868634 \\
-Avg household size & 2.304789 \\
-
-\end{longtable}
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}ll}
+\toprule
+File Name & Description \\ 
+\midrule\addlinespace[2.5pt]
+FMLD & Characteristics and summary expenditures for each household \\ 
+MEMD & Characteristics for members of each household \\ 
+EXPD & Detailed expenditure data \\ 
+DTBD & Detailed income \\ 
+DTID & Income imputation iterations \\ 
+\bottomrule
+\end{tabular*}
 
 }
 
-\textsubscript{Source:
-\href{https://KamrynMansfield.github.io/transpo_budget_ces/index.qmd.html}{Article
-Notebook}}
+\end{table}%
 
 \textsubscript{Source:
 \href{https://KamrynMansfield.github.io/transpo_budget_ces/index.qmd.html}{Article
 Notebook}}
 
-Of the 397 different types of expenditures found in the data, we created
-22 categories: Air Travel, Alcohol, At -Home Entertainment, Bike or
-Scooter or other Single Rider Travel, Bus Travel, Car Fuel, Car
-Maintenance, Car Payment, Car Purchase, Clothing Related, Education,
-Family Spending, Food Related, House Related, Hygiene, Medical, no
-category specified, Recreational Related, School Supplies, Ship Travel,
-Taxi or Limo Travel, Train Travel.
+\textsubscript{Source:
+\href{https://KamrynMansfield.github.io/transpo_budget_ces/index.qmd.html}{Article
+Notebook}}
+
+In the expenditures data, there were 410 unique types of expenditures
+recorded with each expenditure designated by a Universal Classification
+Code (UCC). We organized this into 7 categories as shown in
+Table~\ref{tbl-spending-categories} (for a more detailed breakdown of
+the expenditure categories, see \hyperref[sec-appendix-a]{Appendix A}).
+Since this study focuses on transportation expenditures, we further
+split the transportation category into smaller categories based on mode.
+The specific UCC codes for each item in the transportation categories
+are listed in Table~\ref{tbl-transpo-categories}.
+
+\begin{table}
+
+\caption{\label{tbl-spending-categories}Details of spending categories}
+
+\centering{
+
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}ll}
+\toprule
+Category & Types of Expenses \\ 
+\midrule\addlinespace[2.5pt]
+Food & Purchases related to food and alcohol.  \\ 
+House Related & Rent, utilities, maintanence, furniture, etc. \\ 
+Leisure & At-home entertainment, sports and recreation equipment, etc. \\ 
+Mandatory & Clothing, hygiene, medical, etc. \\ 
+Other & Gifts, retirement plans, legal fees, tobaccos products, etc. \\ 
+School & Tuition, school supplies, etc. \\ 
+Transportation & Purchases related to transportation \\ 
+\bottomrule
+\end{tabular*}
+
+}
+
+\end{table}%
+
+\textsubscript{Source:
+\href{https://KamrynMansfield.github.io/transpo_budget_ces/index.qmd.html}{Article
+Notebook}}
+
+\begin{table}
+
+\caption{\label{tbl-transpo-categories}Unique Expenditures in Each
+Transportaiton Category}
+
+\centering{
+
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l|rl}
+\toprule
+ & UCC Code & Code Description \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{8}{*}{Car Purchase} & 520516 & Auto/truck rental \\ 
+ & 530903 & Car/van pool \& non-motorized transportation \\ 
+ & 450110 & New cars \\ 
+ & 450210 & New trucks \\ 
+ & 460110 & Used cars \\ 
+ & 460901 & Used trucks \\ 
+ & 460902 & Used motorcycles \\ 
+ & 520902 & Motorcycle rental \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{10}{*}{Car Maintenance} & 480100 & Vehicle maintainance and repair, excluding tires \\ 
+ & 480110 & Tires - purchased, replaced, installed \\ 
+ & 490000 & Misc. auto repair, servicing \\ 
+ & 490315 & Brake adjustment (old) \\ 
+ & 620114 & Automobile service clubs and GPS services \\ 
+ & 490100 & Vehicle maintenance/repair excluding tire purchase (new UCC Q20232) \\ 
+ & 500110 & Vehicle insurance \\ 
+ & 510115 & Vehicle registration including property tax \\ 
+ & 520310 & Drivers' license \\ 
+ & 520410 & Vehicle inspection \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{6}{*}{Car Fuel} & 470111 & Gasoline \\ 
+ & 470112 & Diesel fuel \\ 
+ & 470114 & Gasohol \\ 
+ & 520531 & Parking fees in home city, excluding residence \\ 
+ & 520541 & Tolls or electronic toll passes \\ 
+ & 520550 & Towing charges \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{1}{*}{Car Payment} & 450350 & Car/truck lease payments \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{2}{*}{Bus Travel} & 530902 & School bus \\ 
+ & 530210 & Intercity bus fares \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{2}{*}{Train Travel} & 530311 & Intracity mass transit fares \\ 
+ & 530510 & Intercity train fares \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{1}{*}{Taxi or Limo Travel} & 530412 & Taxi fares and limousine services \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{3}{*}{Bike or Scooter or other Single Rider Travel} & 600310 & Bicycles \\ 
+ & 600315 & Scooters, and other single rider transportation (new UCC Q20191) \\ 
+ & 600311 & Bike and E-scooter sharing or rental (new UCC Q20192) \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{2}{*}{Air Travel} & 520901 & Docking and landing fees \\ 
+ & 530110 & Airline fares \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{1}{*}{Ship Travel} & 530901 & Ship fares \\ 
+\bottomrule
+\end{tabular*}
+
+}
+
+\end{table}%
+
+\textsubscript{Source:
+\href{https://KamrynMansfield.github.io/transpo_budget_ces/index.qmd.html}{Article
+Notebook}}
+
+The average spending in each of the major categories mentioned above is
+shown in Table~\ref{tbl-category-spending}. As seen in the table, there
+were four categories in which more than 75\% of the sample had
+expenditures: food, house, mandatory, and transportation. The portion of
+the sample with food-related expenditures was just under 100 percent,
+and those with house-related expenditures was over 80 percent. This
+shows that practically no household went two weeks without purchasing
+food, and only a small portion of the households went two weeks without
+having a house-related expense. When including all the households in the
+sample, the average spending on transportation is approximately \$260,
+and that average increases to approximately \$325 when looking at only
+the households who had transportation expenditures.
+
+The average spending in each of the specific transportation categories
+is found in Table~\ref{tbl-transpo-spending}. Car fuel and car
+maintenance were the the expense categories that included the most
+households. The categories with the highest averages were car purchases,
+car payments, and ship travel, but these had relatively low numbers of
+households spending any money in the categories.
+
+\begin{table}
+
+\caption{\label{tbl-category-spending}Average Spending per Household in
+Each Category}
+
+\centering{
+
+}
+
+\end{table}%
+
+\textsubscript{Source:
+\href{https://KamrynMansfield.github.io/transpo_budget_ces/notebooks/category_spending_table-preview.html\#cell-tbl-category-spending}{Category
+Spending Tables}}
+
+\begin{table}
+
+\caption{\label{tbl-transpo-spending}Average Transportation Spending per
+Household in Each Category}
+
+\centering{
+
+}
+
+\end{table}%
+
+\textsubscript{Source:
+\href{https://KamrynMansfield.github.io/transpo_budget_ces/notebooks/category_spending_table-preview.html\#cell-tbl-transpo-spending}{Category
+Spending Tables}}
+
+\textbf{The next big thing to do with the data section is to write about
+the demographics and compare them to census data.} find census data :
+https://www.census.gov/quickfacts/fact/table/US/PST045224
+https://data.census.gov/table
+
+\begin{table}
+
+\caption{\label{tbl-data-demographics}Demograhic distribution of the
+sample}
+
+\centering{
+
+}
+
+\end{table}%
+
+\textsubscript{Source:
+\href{https://KamrynMansfield.github.io/transpo_budget_ces/notebooks/demographic_tbl-preview.html\#cell-tbl-data-demographics}{Demographic
+Tables}}
+
+Then there might still be some tables Katie wanted me to make. I will
+review those.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Table with the buckets of transportation spending category splits.
+\item
+  Same averages, but split them up by different household structures
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Refer to R code on how to do this efficiently.
+\item
+  This is where we can start to tell the story that perhaps different
+  household structures are spending their money in different
+  transportation spending categories.
+\end{itemize}
 
 \section{Results}\label{results}
 
@@ -853,9 +1064,9 @@ often mean more trips are being made.
 
 \subsection{Some More Results}\label{some-more-results}
 
-I can maybe talk about this later. I think
-Table~\ref{tbl-model-covarpcts} is showing what percent of households
-fall into each category in each class
+I think Table~\ref{tbl-model-covarpcts} is showing what percent of
+households fall into each category in each class. But I just put this in
+here to look at it. It won't be in the final paper.
 
 \begin{table}
 
@@ -1093,6 +1304,447 @@ and {Ability} to {Pay}: {Evidence} from {Consumer} {Expenditure}
 257--265. \url{https://doi.org/10.1177/0361198106198500128}
 
 \end{CSLReferences}
+
+\section{Appendix A: Spending Category Breakdown}\label{sec-appendix-a}
+
+\begin{table}
+
+\caption{\label{tbl-detailed-categories}Unique expenditures and UCC
+codes for each expenditure category}
+
+\centering{
+
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l|rl}
+\toprule
+ & UCC Code & Code Description \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{36}{*}{Transportation} & 520901 & Docking and landing fees \\ 
+ & 530110 & Airline fares \\ 
+ & 600310 & Bicycles \\ 
+ & 600315 & Scooters, and other single rider transportation (new UCC Q20191) \\ 
+ & 600311 & Bike and E-scooter sharing or rental (new UCC Q20192) \\ 
+ & 530902 & School bus \\ 
+ & 530210 & Intercity bus fares \\ 
+ & 470111 & Gasoline \\ 
+ & 470112 & Diesel fuel \\ 
+ & 470114 & Gasohol \\ 
+ & 480100 & Vehicle maintainance and repair, excluding tires \\ 
+ & 480110 & Tires - purchased, replaced, installed \\ 
+ & 490000 & Misc. auto repair, servicing \\ 
+ & 490315 & Brake adjustment (old) \\ 
+ & 620114 & Automobile service clubs and GPS services \\ 
+ & 490100 & Vehicle maintenance/repair excluding tire purchase (new UCC Q20232) \\ 
+ & 500110 & Vehicle insurance \\ 
+ & 510115 & Vehicle registration including property tax \\ 
+ & 520310 & Drivers' license \\ 
+ & 520410 & Vehicle inspection \\ 
+ & 520516 & Auto/truck rental \\ 
+ & 520531 & Parking fees in home city, excluding residence \\ 
+ & 520541 & Tolls or electronic toll passes \\ 
+ & 520550 & Towing charges \\ 
+ & 530903 & Car/van pool \& non-motorized transportation \\ 
+ & 450350 & Car/truck lease payments \\ 
+ & 450110 & New cars \\ 
+ & 450210 & New trucks \\ 
+ & 460110 & Used cars \\ 
+ & 460901 & Used trucks \\ 
+ & 460902 & Used motorcycles \\ 
+ & 520902 & Motorcycle rental \\ 
+ & 530901 & Ship fares \\ 
+ & 530412 & Taxi fares and limousine services \\ 
+ & 530311 & Intracity mass transit fares \\ 
+ & 530510 & Intercity train fares \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{81}{*}{Food} & 200310 & Includes all wine and wine based low alcohol refreshers purchased for home use. \\ 
+ & 790420 & Alcoholic beverages at restaurants or taverns \\ 
+ & 200119 & Beer, ale, and other malt beverage (new UCC Q20231) \\ 
+ & 200219 & Distilled spirits (new UCC Q20231) \\ 
+ & 190400 & Food and nonalcoholic beverages at fast food \\ 
+ & 190500 & Food and nonalcoholic beverages at full service restaurants \\ 
+ & 190600 & Food and nonalcoholic beverages at vending machines and mobile vendors \\ 
+ & 190700 & Food and nonalcoholic beverages at employer \\ 
+ & 190902 & Catered Events, and Other Food Away From Home includes catered events, and any other food away from home not classified elsewhere. \\ 
+ & 010119 & Flour and flour mixes, includes all types and varieties of flour. Examples of flour include all purpose, self-rising, barley, bran, buckwheat, corn, graham, potato, rye, soybean, wheat, rice, and cake flour. \\ 
+ & 010210 & Ready-to-eat and cooked cereals \\ 
+ & 010310 & Rice \\ 
+ & 010320 & Pasta, cornmeal and other cereal products \\ 
+ & 020310 & Biscuits and rolls \\ 
+ & 020410 & Cakes and cupcakes \\ 
+ & 020510 & Cookies \\ 
+ & 020610 & Crackers \\ 
+ & 020620 & Bread and cracker products \\ 
+ & 020710 & Sweet rolls, coffee cakes, doughnuts \\ 
+ & 020810 & Frozen and refrigerated bakery products \\ 
+ & 020820 & Pies, tarts, turnovers \\ 
+ & 030110 & Ground beef \\ 
+ & 030219 & Includes all fresh or frozen roasts from the beef carcass. Includes kosher beef. \\ 
+ & 030519 & All fresh or frozen steaks from the beef carcass. Includes kosher beef. \\ 
+ & 030810 & Includes all fresh or frozen uncooked beef except ground beef, beef roasts, and beef steaks. Includes all fresh or frozen veal. \\ 
+ & 040119 & Bacon, breakfast sausage, and related meats, Canadian bacon and bacon substitutes such as turkey bacon, beef bacon, vegetarian bacon, etc. \\ 
+ & 040210 & Includes all cuts of pork chops whether fresh, frozen, or smoked.  Stuffed pork chops are also eligible. \\ 
+ & 040319 & Includes all ham, fresh, cured, or smoked, etc.  Ham comes from the hind leg of the pig.  Includes cooked and uncooked ham. \\ 
+ & 040410 & Includes all pork roasts, both fresh and cured, picnics, and other pork excluding canned. \\ 
+ & 050110 & Frankfurters \\ 
+ & 060119 & Includes all uncooked, fresh and frozen chicken. Uncooked chicken that has been seasoned or marinated is included. \\ 
+ & 060310 & Includes fresh and frozen turkeys, turkey parts, turkey roasts, Cornish game hens, duck, goose, and other poultry. \\ 
+ & 070119 & Processed fish and seafood, includes canned and frozen fish and seafood \\ 
+ & 070230 & Includes all fish and seafood items sold as fresh by the outlet. Typically, items may be labeled "fresh/frozen" or previously frozen and are generally sold in the fresh fish and seafood section. \\ 
+ & 080110 & Eggs \\ 
+ & 090110 & Fresh milk, all types \\ 
+ & 100119 & Butter and margarine, includes all refrigerated types of butter and margarine. \\ 
+ & 100210 & Cheese \\ 
+ & 100410 & Ice cream and related products \\ 
+ & 110110 & Apples \\ 
+ & 110210 & Bananas \\ 
+ & 110319 & All citrus fruit, includes all fresh oranges. Also includes "fresh cut" and "peeled" fresh citrus fruit. \\ 
+ & 110410 & Includes all fresh fruits except apples, bananas, and citrus fruits. (e.g., apricots, avocados, berries, cherries, coconut, grapes, kiwifruit, mangoes, melons, papaya, peaches, pears, pineapples, plums, and pomegranates) \\ 
+ & 120110 & Includes all fresh potatoes such as white, sweet, yams, and others. \\ 
+ & 120210 & Includes all fresh lettuce varieties including packaged, so called "fresh cut" 100\% lettuce salads and salad mixes, provided lettuce is the ONLY vegetable. (Salads that include vegetables other than lettuce belong in FL041). \\ 
+ & 120310 & All fresh tomatoes, any type or variety. \\ 
+ & 120410 & Other fresh vegetables \\ 
+ & 130119 & Frozen noncarbonated juices and drinks, includes all types and varieties of frozen noncarbonated juices and drinks. Examples are frozen juices, frozen ades such as lemonade, frozen drinks, and frozen fruit-flavored drinks. \\ 
+ & 130129 & Frozen fruits and vegetables. \\ 
+ & 150110 & Candy and chewing gum \\ 
+ & 150219 & Sugars and artificial sweeteners. \\ 
+ & 150310 & Includes jellies, jams, preserves, marmalades, fruit butters, molasses, honey, pancake syrup, fudge mixes, chocolate syrup, ice cream toppings, icings, cake decorations, marshmallows, and similar products. \\ 
+ & 160211 & Includes lard, shortening, salad or cooking oil, and cooking sprays. \\ 
+ & 160212 & All products labeled as dressings, salad dressings, vinaigrettes, mayonnaise, and sandwich spreads. If an item is a combination of a dressing/marinade, dressing/sauce, or dressing/dip, it is still eligible. \\ 
+ & 160320 & Includes all types of nut butters which contain peanuts, almonds, cashews, macadamia, and other nuts. Also included are nut butters combined with jelly, chocolate, honey, maple syrup, raisins, spices, and other such ingredients. \\ 
+ & 170110 & Cola \\ 
+ & 170210 & Other carbonated drinks \\ 
+ & 170520 & All forms and varieties of tea. Examples of these items are loose tea, tea bags, powders/crystals, and herbal tea. \\ 
+ & 170531 & Powders, crystals, tablets, and syrups used to make beverages other than coffee and tea. Also includes cocktail mixes and ice. \\ 
+ & 170539 & Nonfrozen, noncarbonated juices and drinks \\ 
+ & 180110 & Canned and packaged soups \\ 
+ & 180210 & Frozen meals \\ 
+ & 180220 & Frozen foods that are not complete meals. \\ 
+ & 180310 & All types of potato chips and snacks such as chips, popcorn kernels, popped corn, cheese flavored snacks, potato sticks, pork rinds, trail mix etc. \\ 
+ & 180320 & All varieties of nuts, whether in shell or out of shell. \\ 
+ & 180410 & Salt, pepper, seasonings/seasoning blends, spices, and dried herbs. Cooking bags with seasonings, grinders, and dry rubs are also eligible. \\ 
+ & 180420 & All types and varieties of olives, pickles, and relishes. \\ 
+ & 180510 & Includes catsup and other tomato sauces, prepared mustard, barbeque sauces, hot sauces, steak sauces, spaghetti sauces, all types of gravies and other sauces in bottles or cans. This also includes dry mixes. \\ 
+ & 180520 & Baking needs and miscellaneous products \\ 
+ & 180611 & Includes all ready-to-eat salads such as potato salad, coleslaw, and Jello salad. Items in this UCC are often sold at the deli counter or in a refrigerated section. This UCC also includes everything sold as part of a salad bar. \\ 
+ & 180612 & Includes any non-frozen prepared desserts not priced elsewhere in Food at Home. Items generally include refrigerated or shelf-stable packaged desserts. \\ 
+ & 180620 & Baby food \\ 
+ & 180710 & Miscellaneous prepared foods \\ 
+ & 190905 & School meals and board \\ 
+ & 020219 & Bread (new UCC Q20231) \\ 
+ & 050319 & Lunchmeats (new UCC Q20231) \\ 
+ & 050419 & Lamb, organ meat, and game (new UCC Q20231) \\ 
+ & 100519 & Other dairy and related products (new UCC Q20231) \\ 
+ & 140219 & Canned fruits and vegetables (new UCC Q20231) \\ 
+ & 140349 & Dried fruits and vegetables (new UCC Q20231) \\ 
+ & 170319 & Coffee (new UCC Q20231) \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{69}{*}{Leisure} & 270000 & Telephone service, including public pay phones \\ 
+ & 270310 & Cable and satellite television services \\ 
+ & 270311 & All prerecorded audio media (other than audio books) on satellite radio. \\ 
+ & 310140 & Televisions \\ 
+ & 310210 & VCR's and video disc players \\ 
+ & 310220 & Video cassettes, tapes, and discs \\ 
+ & 310230 & Video game hardware and software \\ 
+ & 310231 & Video game software \\ 
+ & 310232 & Video game hardware and accessories \\ 
+ & 310241 & STREAMING VIDEO FILES \\ 
+ & 310242 & DOWNLOADING VIDEO FILES \\ 
+ & 310314 & Audio media players, recorders, systems, and other equipment \\ 
+ & 310315 & Other video equipment \\ 
+ & 310316 & Stereos, radios, speakers, and sound components including those in vehicles \\ 
+ & 310331 & Miscellaneous sound equipment \\ 
+ & 310332 & Sound equipment accessories \\ 
+ & 310334 & Satellite dishes \\ 
+ & 310335 & Miscellaneous video equipment \\ 
+ & 310340 & All prerecorded audio media (other than audio books).¬¨‚Ä†Some audio formats, such as DVD-audio may have a relatively small portion of graphical content and still be eligible. \\ 
+ & 310351 & STREAMING AUDIO FILES \\ 
+ & 310352 & DOWNLOADING AUDIO FILES \\ 
+ & 310400 & All types of applications, games, and ringtones for handheld devices. This includes "Apps" purchased directly from cell phones or online "app" stores. \\ 
+ & 310900 & Accessories for electronic equipment \\ 
+ & 340610 & Repair of tv, radio, and sound equipment \\ 
+ & 340909 & Rental of TV or radio sound equipment \\ 
+ & 590110 & Newspapers \\ 
+ & 590210 & Magazines \\ 
+ & 590220 & Books thru book clubs \\ 
+ & 590230 & Books not thru book clubs \\ 
+ & 620930 & Online gaming services \\ 
+ & 680904 & Dating services \\ 
+ & 690111 & Computers and computer hardware for nonbusiness use \\ 
+ & 690114 & Computer information services \\ 
+ & 690116 & Internet services away from home \\ 
+ & 690117 & Portable memory \\ 
+ & 690118 & Digital book readers \\ 
+ & 690119 & Computer software \\ 
+ & 690120 & Computer accessories \\ 
+ & 600110 & Outboard motor \\ 
+ & 600120 & Unpowered boats, trailers \\ 
+ & 600130 & Powered sports vehicles \\ 
+ & 600210 & Athletic gear, game tables, and exercise equipment \\ 
+ & 600410 & Camping equipment \\ 
+ & 600420 & Hunting and fishing equipment \\ 
+ & 600430 & Winter sports equipment \\ 
+ & 600900 & Water sports and miscellaneous sports equipment \\ 
+ & 600903 & Global positioning system devices \\ 
+ & 610110 & Toys, games, arts and crafts, and tricycles \\ 
+ & 610120 & Playground equipment \\ 
+ & 610130 & Musical instruments and accessories \\ 
+ & 610901 & Fireworks \\ 
+ & 610902 & Souvenirs \\ 
+ & 610903 & Visual goods \\ 
+ & 620111 & Social, recreation, health club membership \\ 
+ & 620121 & Fees for participant sports \\ 
+ & 620213 & Play, theater, opera, concert \\ 
+ & 620214 & Movies, parks, museums \\ 
+ & 620221 & Admission to sporting events \\ 
+ & 620310 & Fees for recreational lessons \\ 
+ & 620320 & Photographer fees \\ 
+ & 620330 & Photo processing \\ 
+ & 620410 & Pet services \\ 
+ & 620420 & Vet services \\ 
+ & 620510 & Miscellaneous fees for admissions \\ 
+ & 620610 & Miscellaneous entertainment services \\ 
+ & 620710 & Camp fees \\ 
+ & 620810 & Rental and repair of sports, photographic and music equipment, passport fees \\ 
+ & 620915 & Miscellaneous rental, repair of sports and photography equipment \\ 
+ & 620925 & Miscellaneous fees \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{84}{*}{Mandatory} & 360110 & Men's suits \\ 
+ & 360120 & Men's sportcoats, tailored jackets \\ 
+ & 360210 & Men's coats and jackets \\ 
+ & 360330 & Men's accessories \\ 
+ & 360420 & Men's shirts, sweaters, and vests \\ 
+ & 360513 & Men's pants and shorts \\ 
+ & 360901 & Men's uniforms \\ 
+ & 360902 & Men's costumes \\ 
+ & 370110 & Boys' coats and jackets \\ 
+ & 370125 & Boy's shirts and sweaters \\ 
+ & 370220 & Boys' accessories \\ 
+ & 370902 & Boys' costumes \\ 
+ & 370903 & Boys' uniforms \\ 
+ & 380110 & Women's coats and jackets \\ 
+ & 380210 & Women's dresses \\ 
+ & 380430 & Women's hosiery \\ 
+ & 380510 & Women's suits \\ 
+ & 380901 & Women's accessories \\ 
+ & 390110 & Girls' coats and jackets \\ 
+ & 390120 & Girls' dresses and suits \\ 
+ & 390210 & Girls' shirts, blouses, sweaters \\ 
+ & 390223 & Girls' skirts, pants, and shorts \\ 
+ & 390322 & Girls' accessories \\ 
+ & 390901 & Girls' uniforms \\ 
+ & 390902 & Girls' costumes \\ 
+ & 400110 & Men's footwear \\ 
+ & 400210 & Boys' footwear \\ 
+ & 400220 & Girls' footwear \\ 
+ & 400310 & Women's footwear \\ 
+ & 410110 & Infant coat, jacket, snowsuit \\ 
+ & 410130 & Infant underwear \\ 
+ & 430110 & Watches \\ 
+ & 430120 & Jewelry \\ 
+ & 440110 & Shoe repair and other shoe service \\ 
+ & 440120 & Coin-operated apparel laundry and dry cleaning \\ 
+ & 440130 & Alteration, repair and tailoring of apparel and accessories \\ 
+ & 440140 & Clothing rental \\ 
+ & 440150 & Watch and jewelry repair \\ 
+ & 440210 & Apparel laundry and dry cleaning not coin-operated \\ 
+ & 440900 & Clothing storage \\ 
+ & 360319 & Men's underwear, hoisery, nightwear, and swimwear (new UCC Q20231) \\ 
+ & 370219 & Boy's underwear, hoisery, nightwear, and swimwear (new UCC Q20231) \\ 
+ & 370319 & Boy's suits, sportcoats, pants, and shorts (new UCC Q20231) \\ 
+ & 380319 & Women's tops (new UCC Q20231) \\ 
+ & 380339 & Women's skirts, pants, and shorts (new UCC Q20231) \\ 
+ & 380429 & Women's undergarments, nightwear, and swimwear (new UCC Q20231) \\ 
+ & 380909 & Women's costumes and uniforms (new UCC Q20231) \\ 
+ & 390319 & Girl's underwear, nightwear, hoisery, and swimwear (new UCC Q20231) \\ 
+ & 410119 & Infant's and toddler's outerwear, dresses, nightwear, and accessories (new UCC Q20231) \\ 
+ & 005000 & Alimony and child support \\ 
+ & 340906 & Care for elderly, invalids, handicapped, etc. \\ 
+ & 580000 & Hospital and health insurance not spec \\ 
+ & 580901 & Medicare payments \\ 
+ & 610310 & Pet food \\ 
+ & 610320 & Pet purchase, supplies, medicine \\ 
+ & 620112 & Credit card memberships \\ 
+ & 670320 & Babysitting, childcare, daycare, and preschool \\ 
+ & 640130 & Wigs and hairpieces \\ 
+ & 640310 & Cosmetics, perfume, bath preparations \\ 
+ & 640410 & Deodorants, feminine hygiene, miscellaneous personal care \\ 
+ & 640420 & Electric personal care appliances \\ 
+ & 640430 & Adult diapers \\ 
+ & 650110 & Personal care service for females (old) \\ 
+ & 650210 & Personal care service for males (old) \\ 
+ & 640119 & Products for the hair (new UCC Q20231) \\ 
+ & 640219 & Nonelectric dental and shaving products (new UCC Q20231) \\ 
+ & 540000 & Prescription drugs \\ 
+ & 550110 & Eyeglasses and contact lenses \\ 
+ & 550210 & Nonprescription drugs \\ 
+ & 550310 & Topicals and dressings \\ 
+ & 550320 & Medical equipment for general use \\ 
+ & 550330 & Supportive and convalescent medical equipment \\ 
+ & 550340 & Hearing aids \\ 
+ & 560110 & Physician's services \\ 
+ & 560210 & Dental services \\ 
+ & 560310 & Eyecare services \\ 
+ & 560330 & Lab tests, x-rays \\ 
+ & 560400 & Service by professionals other than physician \\ 
+ & 570000 & Hospital care not specified \\ 
+ & 570220 & Care in convalescent or nursing home \\ 
+ & 570230 & Other medical care service \\ 
+ & 570901 & Rental of medical equipment \\ 
+ & 570902 & Repair of medical equipment \\ 
+ & 550219 & Vitamins and supplements (new UCC Q20231) \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{7}{*}{School} & 670410 & Vocational and technical school tuition \\ 
+ & 670903 & Test preparation, tutoring services \\ 
+ & 660000 & School supplies, etc. - unspecified \\ 
+ & 660001 & Educational books, supplies, and other expenses \\ 
+ & 660900 & School books, supplies, equipment for day care, nursery, preschool, other \\ 
+ & 670110 & College tuition \\ 
+ & 670210 & Elementary and high school tuition \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{95}{*}{House Related} & 009000 & Mortgage payment including coop \\ 
+ & 009900 & Property assessment \\ 
+ & 210110 & Rent \\ 
+ & 220000 & Capital improvements, not specified \\ 
+ & 220110 & Fire/extended coverage insurance \\ 
+ & 220120 & Homeowners insurance \\ 
+ & 220210 & Property taxes \\ 
+ & 220610 & Capital improvements - services \\ 
+ & 230000 & Repair, maintenance, and improvements for built in dishwasher, garbage disposal, and range hood \\ 
+ & 230110 & Maintenance of property, including items such as ceiling repair, black top, brick, or masonry work, air conditioner repair, roof and awning repair, house painting, papering, chimney cleaning, electrical inspection, furnace inspection and repair, wiring, p \\ 
+ & 230140 & Repair dishwasher/range \\ 
+ & 230900 & Maintenance fees, such as service repair of property fees, management fees, homeowners association dues, condo fees, and community pool fees \\ 
+ & 240110 & All types and varieties of paint, wallpaper and other wall coverings, and painting chemicals. \\ 
+ & 240120 & Supplies including brushes, rollers, and roller pads, trays, and combinations of these items. \\ 
+ & 240210 & Lumber, paneling, tile, awning, glass, plywood, doors, windows, screens, siding, roofing and fencing materials \\ 
+ & 240220 & Blacktop and masonry materials \\ 
+ & 240310 & Plumbing supplies, fixtures and equipment \\ 
+ & 240320 & Electric heating and air conditioning supplies and equipment \\ 
+ & 240900 & Soft surface floor covering \\ 
+ & 250110 & Fuel oil \\ 
+ & 250220 & Coal \\ 
+ & 250900 & Miscellaneous fuels, such as wood, kerosene, charcoal, oil mix for gas, lawnmower oil, lamp oil, duraflame log, and sterno \\ 
+ & 260110 & Electricity \\ 
+ & 260210 & Utility - natural gas \\ 
+ & 270210 & Water and sewerage maintenance \\ 
+ & 270410 & Garbage, trash collection \\ 
+ & 270900 & Septic tank cleaning \\ 
+ & 280110 & Bathroom linens \\ 
+ & 280120 & Bedroom linens \\ 
+ & 280140 & Kitchen , dining room, other linens \\ 
+ & 280210 & Curtains and draperies \\ 
+ & 280220 & All types and varieties of slipcovers and decorative pillows. \\ 
+ & 290110 & Mattress and springs \\ 
+ & 290120 & Other bedroom furniture \\ 
+ & 290210 & Sofas \\ 
+ & 290310 & Living room chairs \\ 
+ & 290320 & Living room tables \\ 
+ & 290410 & Kitchen, dining room furniture \\ 
+ & 290420 & Infants' furniture \\ 
+ & 290430 & Outdoor furniture \\ 
+ & 290440 & Wall units, cabinets and other occasional furniture \\ 
+ & 300110 & Refrigerator, home freezer \\ 
+ & 300218 & WASHERS AND DRYERS \\ 
+ & 300310 & Stoves, ovens \\ 
+ & 300320 & Microwave ovens \\ 
+ & 300330 & Portable dishwashers \\ 
+ & 300410 & Window air conditioners \\ 
+ & 300900 & Miscellaneous household appliances \\ 
+ & 320110 & Room size rugs and other floor covering, nonpermanent \\ 
+ & 320120 & Window coverings \\ 
+ & 320130 & Infants' equipment \\ 
+ & 320140 & Laundry and cleaning equipment \\ 
+ & 320150 & All powered lawn and garden equipment including power mowers, riding mowers, garden tractors, hedge trimmers, grass shears, chainsaws, and the various attachments to these items. \\ 
+ & 320221 & Lamps, lighting fixtures, ceiling fans \\ 
+ & 320233 & Clocks and other household decorative items \\ 
+ & 320330 & Flatware \\ 
+ & 320345 & Dinnerware, glassware, serving pieces \\ 
+ & 320370 & Nonelectric cookware \\ 
+ & 320380 & Tableware, nonelectric kitchenware \\ 
+ & 320410 & All types of outdoor equipment such as snow throwers and blowers, outdoor vacuums, chainsaws, and the various attachments to these items. Also included are barbecue grills. \\ 
+ & 320420 & Power tools \\ 
+ & 320430 & Other hardware \\ 
+ & 320511 & Electric floor cleaning equipment \\ 
+ & 320512 & Sewing machines \\ 
+ & 320521 & Small electric kitchen appliances \\ 
+ & 320522 & Portable heating and cooling equipment \\ 
+ & 320610 & Miscellaneous supplies and equipment, such as caulking compound, duct tape, carpet tape, carpet knife, bolts, screws, drill bits, door knobs, tool box, keys, mailbox, gutter screens, clamps, shelf brackets, tool table, work bench, etc‚Äö√Ñ¬∂ \\ 
+ & 320627 & FLOORING INSTALL/REPAIR/REPLACE \\ 
+ & 320630 & Landscaping items, such as grass, grass seed, trees, shrubs, plants, sod, and fork lift \\ 
+ & 320901 & Office furniture for home use \\ 
+ & 320902 & Hand tools \\ 
+ & 320903 & Indoor plants, fresh flowers \\ 
+ & 320904 & Closet and storage items \\ 
+ & 320905 & Miscellaneous household equipment and parts \\ 
+ & 330310 & Cleansing and toilet tissue, paper towels and napkins \\ 
+ & 330410 & Stationery, stationery supplies, giftwrap \\ 
+ & 330510 & Miscellaneous household products \\ 
+ & 330610 & Lawn and garden supplies \\ 
+ & 340310 & Housekeeping services \\ 
+ & 340410 & Gardening, lawn care service \\ 
+ & 340510 & Moving, storage, freight \\ 
+ & 340520 & Household laundry and dry cleaning, sent out (nonclothing) not coin-operated \\ 
+ & 340530 & Coin-operated household laundry and dry cleaning (nonclothing) \\ 
+ & 340620 & Appliance repair, including service center \\ 
+ & 340630 & Reupholstering, furniture repair \\ 
+ & 340901 & Repairs/rentals of lawn and garden equipment, hand or power tools, other household equipment \\ 
+ & 340903 & Other home services \\ 
+ & 340904 & Rental of furniture \\ 
+ & 340907 & Appliance rental \\ 
+ & 340913 & Repair of miscellaneous household equipment and furnishings \\ 
+ & 340915 & Home security system service fee \\ 
+ & 350110 & Tenant's insurance \\ 
+ & 999000 & Home ownership expense not specified \\ 
+ & 330119 & Laundry and cleaning products (new UCC Q20231) \\ 
+ & 250210 & Gas, btld/tank \\ 
+\midrule\addlinespace[2.5pt]
+\multirow[t]{38}{*}{Other} & 520904 & Rental noncamper trailer \\ 
+ & 001000 & Purchase price of stocks, bonds or mutual funds including broker fees \\ 
+ & 001100 & Precious metals \\ 
+ & 001200 & Miscellaneous investments \\ 
+ & 001400 & Employment counseling \& fees \\ 
+ & 002000 & Savings account deposit \\ 
+ & 002100 & Insurance other than health, hospital, vehicle and property \\ 
+ & 002200 & Retirement plans \\ 
+ & 004000 & Contributions \\ 
+ & 004100 & Cash gifts \\ 
+ & 004190 & Gifts not specified \\ 
+ & 210210 & Lodging on out-of-town trips \\ 
+ & 320232 & Telephones and accessories \\ 
+ & 340110 & Postage \\ 
+ & 340120 & Delivery services \\ 
+ & 420115 & Material and supplies for sewing, needlework, quilting (includes household items) \\ 
+ & 430130 & Luggage \\ 
+ & 610140 & Stamp and coin collecting \\ 
+ & 610210 & Film \\ 
+ & 610220 & Other photographic supplies \\ 
+ & 610230 & Photographic equipment \\ 
+ & 620912 & Rental of video cassettes, tapes, films, and discs \\ 
+ & 620913 & Pinball, electronic video games \\ 
+ & 620918 & Rental of video software \\ 
+ & 620926 & Lotteries and pari-mutuel losses \\ 
+ & 630110 & Cigarettes \\ 
+ & 630210 & Other tobacco products \\ 
+ & 630220 & Smoking accessories \\ 
+ & 630900 & Marijuana \\ 
+ & 680110 & Legal fees \\ 
+ & 680140 & Funeral expenses \\ 
+ & 680210 & Safe deposit box rental \\ 
+ & 680220 & Checking accounts, other bank service charges \\ 
+ & 680901 & Cemetery lots, valuts, maintenace fees \\ 
+ & 680902 & Accounting fees \\ 
+ & 680903 & Miscellaneous personal services \\ 
+ & 690230 & Business equipment for home use \\ 
+ & 999900 & Taxes not specified \\ 
+\bottomrule
+\end{tabular*}
+
+}
+
+\end{table}%
+
+\textsubscript{Source:
+\href{https://KamrynMansfield.github.io/transpo_budget_ces/index.qmd.html}{Article
+Notebook}}
 
 
 

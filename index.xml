@@ -658,69 +658,123 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 </sec>
 <sec id="data">
   <title>3 Data</title>
-  <p>Data for the following analysis were attained from the 2024
+  <p>Data for the following analysis were obtained from the 2024
   Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX
   is administered continuously by the Bureau of Labor Statistics (BLS).
   The data are organized by quarter and published each year. The CEX
   consists of two surveys: the Interview Survey, and the Diary Survey.
-  The Interview Survey tracks a household’s major and recurring
-  expenditures by reviewing their expenses from the past three months
-  and was not used in the study.</p>
-  <p>The Diary Survey from the CEX was used in this study and tracks a
-  household’s weekly expenditures by having them fill out a detailed
-  expenditure diary across a two-week span. Approximately 3000 usable
-  responses are collected each quarter. After the two consecutive weeks
-  of reporting expenditures, the household is removed from the sample
-  and replaced by a new household. In addition to providing detailed
-  household weekly expenditures, this survey also provides useful
-  demographic data for each household. The combination of household
-  demographics and detailed expenditures makes this dataset ideal for
-  the current study.</p>
-  <p>The table below shows a summary of the demographics in the data.
-  <italic>put a table below and talk about it more</italic></p>
-  <fig id="tbl-data-summary">
-    <caption><p>Table 2: Summary of CEX Demographic Data
-    (placeholder)</p></caption>
-    <table-wrap>
-      <table>
-        <thead>
-          <tr>
-            <th align="left">Description</th>
-            <th align="right">Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td align="left">Total households</td>
-            <td align="right">12507.000000</td>
-          </tr>
-          <tr>
-            <td align="left">Households with no car</td>
-            <td align="right">1351.000000</td>
-          </tr>
-          <tr>
-            <td align="left">Avg cars in household</td>
-            <td align="right">2.000627</td>
-          </tr>
-          <tr>
-            <td align="left">Avg household income</td>
-            <td align="right">93154.868634</td>
-          </tr>
-          <tr>
-            <td align="left">Avg household size</td>
-            <td align="right">2.304789</td>
-          </tr>
-        </tbody>
-      </table>
-    </table-wrap>
+  Each survey has it’s own unique sample, so the households in one will
+  not appear in the other. The Interview Survey tracks a household’s
+  major and recurring expenditures by reviewing their expenses from the
+  past three months, and the Diary Survey captures more routine
+  household spending by recording in detail a households expenditure
+  across a two-week span.</p>
+  <p>Because we were interested in the day-to-day expenditures of
+  households, this study uses data from the Diary Survey of the CEX. To
+  gather this data, BLS personnel contact a sample of US households,
+  record household demographic data, and explain how to fill out the
+  weekly expenditure diary. After two consecutive weeks of reporting
+  expenditures, the household is removed from the sample and replaced by
+  a new household. The combination of household demographics and
+  detailed expenditures available in the Diary Survey makes this data
+  set ideal for the current study.</p>
+  <p><xref alt="Table 2" rid="tbl-ce-files">Table 2</xref> shows the
+  files in the PUMD that pertain to the Diary Survey. For this study, we
+  specifically looked at the FMLD and the EXPD files from 2024 to get
+  household<xref ref-type="fn" rid="fn1">1</xref> characteristics along
+  with their detailed spending tables. In the 2024 data, there were a
+  total of 6,334 households surveyed. To capture the most expenditures
+  and keep consistency, we only kept households that had participated in
+  the study for two consecutive weeks during the study period. We also
+  excluded any households who had no recorded expenditures during the
+  two survey weeks. After filtering out the 161 households with only one
+  week of data and the 169 households with no expenditures, we were left
+  with 6,004 households used in the analysis.</p>
+  <fig id="tbl-ce-files">
+    <caption><p>Table 2: Diary Survey files available in the Public Use
+    Microdata (PUMD)</p></caption>
   </fig>
-  <p>Of the 397 different types of expenditures found in the data, we
-  created 22 categories: Air Travel, Alcohol, At -Home Entertainment,
-  Bike or Scooter or other Single Rider Travel, Bus Travel, Car Fuel,
-  Car Maintenance, Car Payment, Car Purchase, Clothing Related,
-  Education, Family Spending, Food Related, House Related, Hygiene,
-  Medical, no category specified, Recreational Related, School Supplies,
-  Ship Travel, Taxi or Limo Travel, Train Travel.</p>
+  <p>In the expenditures data, there were 410 unique types of
+  expenditures recorded with each expenditure designated by a Universal
+  Classification Code (UCC). We organized this into 7 categories as
+  shown in
+  <xref alt="Table 3" rid="tbl-spending-categories">Table 3</xref> (for
+  a more detailed breakdown of the expenditure categories, see
+  <xref alt="Appendix A" rid="sec-appendix-a">Appendix A</xref>). Since
+  this study focuses on transportation expenditures, we further split
+  the transportation category into smaller categories based on mode. The
+  specific UCC codes for each item in the transportation categories are
+  listed in
+  <xref alt="Table 4" rid="tbl-transpo-categories">Table 4</xref>.</p>
+  <fig id="tbl-spending-categories">
+    <caption><p>Table 3: Details of spending categories</p></caption>
+  </fig>
+  <fig id="tbl-transpo-categories">
+    <caption><p>Table 4: Unique Expenditures in Each Transportaiton
+    Category</p></caption>
+  </fig>
+  <p>The average spending in each of the major categories mentioned
+  above is shown in
+  <xref alt="Table 5" rid="tbl-category-spending">Table 5</xref>. As
+  seen in the table, there were four categories in which more than 75%
+  of the sample had expenditures: food, house, mandatory, and
+  transportation. The portion of the sample with food-related
+  expenditures was just under 100 percent, and those with house-related
+  expenditures was over 80 percent. This shows that practically no
+  household went two weeks without purchasing food, and only a small
+  portion of the households went two weeks without having a
+  house-related expense. When including all the households in the
+  sample, the average spending on transportation is approximately $260,
+  and that average increases to approximately $325 when looking at only
+  the households who had transportation expenditures.</p>
+  <p>The average spending in each of the specific transportation
+  categories is found in
+  <xref alt="Table 6" rid="tbl-transpo-spending">Table 6</xref>. Car
+  fuel and car maintenance were the the expense categories that included
+  the most households. The categories with the highest averages were car
+  purchases, car payments, and ship travel, but these had relatively low
+  numbers of households spending any money in the categories.</p>
+  <fig id="tbl-category-spending">
+    <caption><p>Table 5: Average Spending per Household in Each
+    Category</p></caption>
+  </fig>
+  <fig id="tbl-transpo-spending">
+    <caption><p>Table 6: Average Transportation Spending per Household
+    in Each Category</p></caption>
+  </fig>
+  <p><bold>The next big thing to do with the data section is to write
+  about the demographics and compare them to census data.</bold> find
+  census data :
+  https://www.census.gov/quickfacts/fact/table/US/PST045224
+  https://data.census.gov/table</p>
+  <fig id="tbl-data-demographics">
+    <caption><p>Table 7: Demograhic distribution of the
+    sample</p></caption>
+  </fig>
+  <p>Then there might still be some tables Katie wanted me to make. I
+  will review those.</p>
+  <list list-type="order">
+    <list-item>
+      <label>3.</label>
+      <p>Table with the buckets of transportation spending category
+      splits.</p>
+    </list-item>
+    <list-item>
+      <label>4.</label>
+      <p>Same averages, but split them up by different household
+      structures</p>
+    </list-item>
+  </list>
+  <list list-type="bullet">
+    <list-item>
+      <p>Refer to R code on how to do this efficiently.</p>
+    </list-item>
+    <list-item>
+      <p>This is where we can start to tell the story that perhaps
+      different household structures are spending their money in
+      different transportation spending categories.</p>
+    </list-item>
+  </list>
 </sec>
 <sec id="results">
   <title>4 Results</title>
@@ -731,7 +785,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     <title>4.1 Class 1: Car Spenders High (CH)</title>
     <p>This class mostly contains households that spend higher amounts
     of money on car-related travel. As shown in
-    <xref alt="Table 3" rid="tbl-model-classes">Table 3</xref>, the
+    <xref alt="Table 8" rid="tbl-model-classes">Table 8</xref>, the
     <italic>CH</italic> class has a much larger percent of households
     that spent over $100 on both fuel and maintenance during the survey
     period. In those same categories, it had the smallest percent of
@@ -762,14 +816,14 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     cars. In fact, there were no households in this class that spent
     money on trains or buses.</p>
     <fig id="tbl-model-classes">
-      <caption><p>Table 3: Class Distribution of Model</p></caption>
+      <caption><p>Table 8: Class Distribution of Model</p></caption>
     </fig>
-    <p><xref alt="Table 4" rid="tbl-model-coeff">Table 4</xref> shows
+    <p><xref alt="Table 9" rid="tbl-model-coeff">Table 9</xref> shows
     the regression results of the latent class model. As seen in the
     table, most of the model coefficients are statistically significant.
     The following sections discuss the findings in more detail.</p>
     <fig id="tbl-model-coeff">
-      <caption><p>Table 4: Regression Results of Model</p></caption>
+      <caption><p>Table 9: Regression Results of Model</p></caption>
     </fig>
   </sec>
   <sec id="household-make-up">
@@ -891,21 +945,32 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
   </sec>
   <sec id="some-more-results">
     <title>4.8 Some More Results</title>
-    <p>I can maybe talk about this later. I think
-    <xref alt="Table 5" rid="tbl-model-covarpcts">Table 5</xref> is
+    <p>I think
+    <xref alt="Table 10" rid="tbl-model-covarpcts">Table 10</xref> is
     showing what percent of households fall into each category in each
-    class</p>
+    class. But I just put this in here to look at it. It won’t be in the
+    final paper.</p>
     <fig id="tbl-model-covarpcts">
-      <caption><p>Table 5: The table that Katie gave me the code to
+      <caption><p>Table 10: The table that Katie gave me the code to
       make.</p></caption>
     </fig>
   </sec>
+</sec>
+<sec id="references">
+  <title>5 References</title>
+</sec>
+<sec id="sec-appendix-a">
+  <title>6 Appendix A: Spending Category Breakdown</title>
+  <fig id="tbl-detailed-categories">
+    <caption><p>Table 11: Unique expenditures and UCC codes for each
+    expenditure category</p></caption>
+  </fig>
 </sec>
 </body>
 
 <back>
 <ref-list>
-  <title>5 References</title>
+  <title></title>
   <ref id="ref-bernardo_empirical_2015">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -1542,9 +1607,15 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     </element-citation>
   </ref>
 </ref-list>
+<fn-group>
+  <fn id="fn1">
+    <label>1</label><p>Note that “household” in this paper is synonymous
+    with what the CEX often denotes as “Consumer Unit” (CU)</p>
+  </fn>
+</fn-group>
 </back>
 
-<sub-article article-type="notebook" id="nb-12-nb-article">
+<sub-article article-type="notebook" id="nb-20-nb-article">
 <front-stub>
 <title-group>
 <article-title>Unpacking Household Budgeting Strategies through a
@@ -1617,9 +1688,6 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <code language="r script"># loading packages
 library(tidyverse)</code>
 <boxed-text>
-  <preformat>Warning: package 'ggplot2' was built under R version 4.5.2</preformat>
-</boxed-text>
-<boxed-text>
   <preformat>Warning: package 'tibble' was built under R version 4.5.2</preformat>
 </boxed-text>
 <boxed-text>
@@ -1635,7 +1703,7 @@ library(tidyverse)</code>
   <preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.2.0     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.6.0
-✔ ggplot2   4.0.2     ✔ tibble    3.3.1
+✔ ggplot2   3.5.2     ✔ tibble    3.3.1
 ✔ lubridate 1.9.4     ✔ tidyr     1.3.2
 ✔ purrr     1.2.1     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -1647,7 +1715,11 @@ library(tidyverse)</code>
 <boxed-text>
   <preformat>Warning: package 'knitr' was built under R version 4.5.2</preformat>
 </boxed-text>
-<code language="r script">library(readxl)</code>
+<code language="r script">library(readxl)
+library(gt)</code>
+<boxed-text>
+  <preformat>Warning: package 'gt' was built under R version 4.5.2</preformat>
+</boxed-text>
 </sec>
 <sec id="introduction-nb-article">
   <title>1 Introduction</title>
@@ -2223,121 +2295,206 @@ lgl (1): Uses CEX Data
 </sec>
 <sec id="data-nb-article">
   <title>3 Data</title>
-  <p>Data for the following analysis were attained from the 2024
+  <p>Data for the following analysis were obtained from the 2024
   Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX
   is administered continuously by the Bureau of Labor Statistics (BLS).
   The data are organized by quarter and published each year. The CEX
   consists of two surveys: the Interview Survey, and the Diary Survey.
-  The Interview Survey tracks a household’s major and recurring
-  expenditures by reviewing their expenses from the past three months
-  and was not used in the study.</p>
-  <p>The Diary Survey from the CEX was used in this study and tracks a
-  household’s weekly expenditures by having them fill out a detailed
-  expenditure diary across a two-week span. Approximately 3000 usable
-  responses are collected each quarter. After the two consecutive weeks
-  of reporting expenditures, the household is removed from the sample
-  and replaced by a new household. In addition to providing detailed
-  household weekly expenditures, this survey also provides useful
-  demographic data for each household. The combination of household
-  demographics and detailed expenditures makes this dataset ideal for
-  the current study.</p>
-  <p>The table below shows a summary of the demographics in the data.
-  <italic>put a table below and talk about it more</italic></p>
+  Each survey has it’s own unique sample, so the households in one will
+  not appear in the other. The Interview Survey tracks a household’s
+  major and recurring expenditures by reviewing their expenses from the
+  past three months, and the Diary Survey captures more routine
+  household spending by recording in detail a households expenditure
+  across a two-week span.</p>
+  <p>Because we were interested in the day-to-day expenditures of
+  households, this study uses data from the Diary Survey of the CEX. To
+  gather this data, BLS personnel contact a sample of US households,
+  record household demographic data, and explain how to fill out the
+  weekly expenditure diary. After two consecutive weeks of reporting
+  expenditures, the household is removed from the sample and replaced by
+  a new household. The combination of household demographics and
+  detailed expenditures available in the Diary Survey makes this data
+  set ideal for the current study.</p>
+  <p><xref alt="Table 2" rid="tbl-ce-files-nb-article">Table 2</xref> shows the
+  files in the PUMD that pertain to the Diary Survey. For this study, we
+  specifically looked at the FMLD and the EXPD files from 2024 to get
+  household<xref ref-type="fn" rid="fn1-nb-article">1</xref> characteristics along
+  with their detailed spending tables. In the 2024 data, there were a
+  total of 6,334 households surveyed. To capture the most expenditures
+  and keep consistency, we only kept households that had participated in
+  the study for two consecutive weeks during the study period. We also
+  excluded any households who had no recorded expenditures during the
+  two survey weeks. After filtering out the 161 households with only one
+  week of data and the 169 households with no expenditures, we were left
+  with 6,004 households used in the analysis.</p>
   <sec specific-use="notebook-content">
-  <code language="r script">fmly_data &lt;- read_csv(&quot;data/diary24_combined/fmld.csv&quot;)</code>
-  <boxed-text>
-    <preformat>Warning: One or more parsing issues, call `problems()` on your data frame for details,
-e.g.:
-  dat &lt;- vroom(...)
-  problems(dat)</preformat>
-  </boxed-text>
-  <boxed-text>
-    <preformat>Rows: 12507 Columns: 382
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: &quot;,&quot;
-chr (110): NEWID, AGE_REF_, AGE2_, CUTE_URE, DESCRIP, DESCRIP_, EARN_OMP, ED...
-dbl (267): INC_RNKM, INC_RNK5, INC_RNK4, INC_RNK3, INC_RNK2, INC_RNK1, INC_R...
-lgl   (5): MARI_AL1, LUMPB, LUMPBX, WELFRB, WELFRBX
+  <code language="r script">ce_files &lt;- read.csv(&quot;data/tables/ce_data_files.csv&quot;)
+names(ce_files) &lt;- c(&quot;File Name&quot;,&quot;Description&quot;)
 
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
-  </boxed-text>
-  <code language="r script">fmly_tbl &lt;- data.frame(Description = c(&quot;Total households&quot;,
-                            &quot;Households with no car&quot;,
-                            &quot;Avg cars in household&quot;,
-                            &quot;Avg household income&quot;,
-                            &quot;Avg household size&quot;),
-            Value = c(nrow(fmly_data),
-                      nrow(fmly_data[!fmly_data$VEHQ %in% c(1:1000),]),
-                      mean(fmly_data$VEHQ, na.rm = T),
-                      mean(fmly_data$FINCBEFX),
-                      mean(fmly_data$FAM_SIZE)))
-
-kable(fmly_tbl)</code>
-  <fig id="tbl-data-summary-nb-article">
-    <caption><p>Table 2: Summary of CEX Demographic Data
-    (placeholder)</p></caption>
-    <table-wrap>
-      <table>
-        <thead>
-          <tr>
-            <th align="left">Description</th>
-            <th align="right">Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td align="left">Total households</td>
-            <td align="right">12507.000000</td>
-          </tr>
-          <tr>
-            <td align="left">Households with no car</td>
-            <td align="right">1351.000000</td>
-          </tr>
-          <tr>
-            <td align="left">Avg cars in household</td>
-            <td align="right">2.000627</td>
-          </tr>
-          <tr>
-            <td align="left">Avg household income</td>
-            <td align="right">93154.868634</td>
-          </tr>
-          <tr>
-            <td align="left">Avg household size</td>
-            <td align="right">2.304789</td>
-          </tr>
-        </tbody>
-      </table>
-    </table-wrap>
+gt(ce_files)</code>
+  <fig id="tbl-ce-files-nb-article">
+    <caption><p>Table 2: Diary Survey files available in the Public Use
+    Microdata (PUMD)</p></caption>
   </fig>
   </sec>
   <sec specific-use="notebook-content">
-  <code language="r script">diary_data &lt;- read_csv(&quot;data/diary24_combined/expd.csv&quot;)</code>
-  <boxed-text>
-    <preformat>Rows: 416271 Columns: 13
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: &quot;,&quot;
-chr (7): NEWID, UCC, EXPN_QDY, EXPN_KDY, EXPNMO, EXPNMO_, EXPNYR_
-dbl (6): ALLOC, COST, PUB_FLAG, EXPNSQDY, EXPNWKDY, EXPNYR
+  <code language="r script">ucc_codes &lt;- read_excel(&quot;data/data_prep_input/ucc_categories.xlsx&quot;) |&gt;
+  filter(in_exp_file == 1)
 
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
-  </boxed-text>
-  <code language="r script">expense_types &lt;- unique(diary_data$UCC)
-
-ucc_categories_data &lt;- read_excel(&quot;data/data_prep_input/ucc_categories.xlsx&quot;) |&gt;
-  filter(in_exp_file &gt; 0)
-
-categories &lt;- unique(ucc_categories_data$category)
-categories &lt;- categories[order(categories)]</code>
+expense_types &lt;- unique(ucc_codes$ucc_code)
+categories &lt;- unique(ucc_codes$broad_category)</code>
   </sec>
-  <p>Of the 397 different types of expenditures found in the data, we
-  created 22 categories: Air Travel, Alcohol, At -Home Entertainment,
-  Bike or Scooter or other Single Rider Travel, Bus Travel, Car Fuel,
-  Car Maintenance, Car Payment, Car Purchase, Clothing Related,
-  Education, Family Spending, Food Related, House Related, Hygiene,
-  Medical, no category specified, Recreational Related, School Supplies,
-  Ship Travel, Taxi or Limo Travel, Train Travel.</p>
+  <p>In the expenditures data, there were 410 unique types of
+  expenditures recorded with each expenditure designated by a Universal
+  Classification Code (UCC). We organized this into 7 categories as
+  shown in
+  <xref alt="Table 3" rid="tbl-spending-categories-nb-article">Table 3</xref> (for
+  a more detailed breakdown of the expenditure categories, see
+  <xref alt="Appendix A" rid="sec-appendix-a-nb-article">Appendix A</xref>). Since
+  this study focuses on transportation expenditures, we further split
+  the transportation category into smaller categories based on mode. The
+  specific UCC codes for each item in the transportation categories are
+  listed in
+  <xref alt="Table 4" rid="tbl-transpo-categories-nb-article">Table 4</xref>.</p>
+  <sec specific-use="notebook-content">
+  <code language="r script">expense_categories &lt;- read.csv(&quot;data/tables/ce_expense_categories.csv&quot;)
+
+names(expense_categories) &lt;- c(&quot;Category&quot;, &quot;Types of Expenses&quot;)
+
+gt(expense_categories)</code>
+  <fig id="tbl-spending-categories-nb-article">
+    <caption><p>Table 3: Details of spending categories</p></caption>
+  </fig>
+  </sec>
+  <sec specific-use="notebook-content">
+  <code language="r script">transpo_cats &lt;- ucc_codes |&gt;
+  filter(broad_category == &quot;Transportation&quot;) |&gt;
+  select(ucc_code, `Code description`, category)
+
+names(transpo_cats) &lt;- c(&quot;UCC Code&quot;,&quot;Code Description&quot;,&quot;Transportation Category&quot;)
+
+transpo_cats |&gt; 
+  gt(
+    # rowname_col = &quot;UCC Code&quot;,
+     groupname_col = &quot;Transportation Category&quot;,
+     row_group_as_column = TRUE) |&gt;
+  row_group_order(c(&quot;Car Purchase&quot;,
+                    &quot;Car Maintenance&quot;,
+                    &quot;Car Fuel&quot;,
+                    &quot;Car Payment&quot;,
+                    &quot;Bus Travel&quot;,
+                    &quot;Train Travel&quot;,
+                    &quot;Taxi or Limo Travel&quot;,
+                    &quot;Bike or Scooter or other Single Rider Travel&quot;,
+                    &quot;Air Travel&quot;,
+                    &quot;Train Travel&quot;
+                    ))</code>
+  <fig id="tbl-transpo-categories-nb-article">
+    <caption><p>Table 4: Unique Expenditures in Each Transportaiton
+    Category</p></caption>
+  </fig>
+  </sec>
+  <p>The average spending in each of the major categories mentioned
+  above is shown in
+  <xref alt="Table 5" rid="tbl-category-spending-nb-article">Table 5</xref>. As
+  seen in the table, there were four categories in which more than 75%
+  of the sample had expenditures: food, house, mandatory, and
+  transportation. The portion of the sample with food-related
+  expenditures was just under 100 percent, and those with house-related
+  expenditures was over 80 percent. This shows that practically no
+  household went two weeks without purchasing food, and only a small
+  portion of the households went two weeks without having a
+  house-related expense. When including all the households in the
+  sample, the average spending on transportation is approximately $260,
+  and that average increases to approximately $325 when looking at only
+  the households who had transportation expenditures.</p>
+  <p>The average spending in each of the specific transportation
+  categories is found in
+  <xref alt="Table 6" rid="tbl-transpo-spending-nb-article">Table 6</xref>. Car
+  fuel and car maintenance were the the expense categories that included
+  the most households. The categories with the highest averages were car
+  purchases, car payments, and ship travel, but these had relatively low
+  numbers of households spending any money in the categories.</p>
+  <sec specific-use="notebook-content">
+  <code language="python">grouped_exp |&gt; 
+  mutate(pct_zeros = avg_exp_zeros * 100 / sum(avg_exp_zeros),
+         pct_no_zeros = avg_exp_no_zeros * 100 / sum(avg_exp_no_zeros)) |&gt;
+  arrange(desc(count)) |&gt;
+  mutate(avg_exp_zeros = paste0(&quot;$&quot;,round(avg_exp_zeros, 2), &quot; (&quot;,round(pct_zeros,2),&quot;%)&quot;),
+         avg_exp_no_zeros = paste0(&quot;$&quot;,round(avg_exp_no_zeros, 2), &quot; (&quot;,round(pct_no_zeros,2),&quot;%)&quot;),
+         count_pct = paste0(count, &quot; (&quot;,round(count * 100 / 6004,1),&quot;% of sample)&quot;)) |&gt;
+  
+  select(`Spending Category` = broad_category, 
+         `Average spending including all households` = avg_exp_zeros,
+         `Average spending for only households that spent some in this category` = avg_exp_no_zeros,
+         `Households with spending in this category` = count_pct) |&gt;
+  gt()</code>
+  <fig id="tbl-category-spending-nb-article">
+    <caption><p>Table 5: Average Spending per Household in Each
+    Category</p></caption>
+    <boxed-text>
+    </boxed-text>
+  </fig>
+  </sec>
+  <sec specific-use="notebook-content">
+  <code language="python">transpo_exp |&gt; 
+  mutate(pct_zeros = avg_exp_zeros * 100 / sum(avg_exp_zeros),
+         pct_no_zeros = avg_exp_no_zeros * 100 / sum(avg_exp_no_zeros)) |&gt;
+  arrange(desc(count)) |&gt;
+  mutate(avg_exp_zeros = paste0(&quot;$&quot;,round(avg_exp_zeros, 2), &quot; (&quot;,round(pct_zeros,2),&quot;%)&quot;),
+         avg_exp_no_zeros = paste0(&quot;$&quot;,round(avg_exp_no_zeros, 2), &quot; (&quot;,round(pct_no_zeros,2),&quot;%)&quot;),
+         count_pct = paste0(count, &quot; (&quot;,round(count * 100 / 6004,1),&quot;% of sample)&quot;)) |&gt;
+  
+  select(`Spending Category` = category, 
+         `Average spending including all households` = avg_exp_zeros,
+         `Average spending for only households that spent some in this category` = avg_exp_no_zeros,
+         `Households with spending in this category` = count_pct) |&gt;
+  gt()</code>
+  <fig id="tbl-transpo-spending-nb-article">
+    <caption><p>Table 6: Average Transportation Spending per Household
+    in Each Category</p></caption>
+    <boxed-text>
+    </boxed-text>
+  </fig>
+  </sec>
+  <p><bold>The next big thing to do with the data section is to write
+  about the demographics and compare them to census data.</bold> find
+  census data :
+  https://www.census.gov/quickfacts/fact/table/US/PST045224
+  https://data.census.gov/table</p>
+  <sec specific-use="notebook-content">
+  <code language="python">print_demographic_shares_tbl(exp_data_full, col_names_to_use)</code>
+  <fig id="tbl-data-demographics-nb-article">
+    <caption><p>Table 7: Demograhic distribution of the
+    sample</p></caption>
+    <boxed-text>
+    </boxed-text>
+  </fig>
+  </sec>
+  <p>Then there might still be some tables Katie wanted me to make. I
+  will review those.</p>
+  <list list-type="order">
+    <list-item>
+      <label>3.</label>
+      <p>Table with the buckets of transportation spending category
+      splits.</p>
+    </list-item>
+    <list-item>
+      <label>4.</label>
+      <p>Same averages, but split them up by different household
+      structures</p>
+    </list-item>
+  </list>
+  <list list-type="bullet">
+    <list-item>
+      <p>Refer to R code on how to do this efficiently.</p>
+    </list-item>
+    <list-item>
+      <p>This is where we can start to tell the story that perhaps
+      different household structures are spending their money in
+      different transportation spending categories.</p>
+    </list-item>
+  </list>
 </sec>
 <sec id="results-nb-article">
   <title>4 Results</title>
@@ -2348,7 +2505,7 @@ categories &lt;- categories[order(categories)]</code>
     <title>4.1 Class 1: Car Spenders High (CH)</title>
     <p>This class mostly contains households that spend higher amounts
     of money on car-related travel. As shown in
-    <xref alt="Table 3" rid="tbl-model-classes-nb-article">Table 3</xref>, the
+    <xref alt="Table 8" rid="tbl-model-classes-nb-article">Table 8</xref>, the
     <italic>CH</italic> class has a much larger percent of households
     that spent over $100 on both fuel and maintenance during the survey
     period. In those same categories, it had the smallest percent of
@@ -2387,12 +2544,12 @@ categories &lt;- categories[order(categories)]</code>
                         c2_name = &quot;Multimodal Spenders (MM)&quot;,
                         c3_name = &quot;Car Spenders Low (CL)&quot;)</code>
     <fig id="tbl-model-classes-nb-article">
-      <caption><p>Table 3: Class Distribution of Model</p></caption>
+      <caption><p>Table 8: Class Distribution of Model</p></caption>
       <boxed-text>
       </boxed-text>
     </fig>
     </sec>
-    <p><xref alt="Table 4" rid="tbl-model-coeff-nb-article">Table 4</xref> shows
+    <p><xref alt="Table 9" rid="tbl-model-coeff-nb-article">Table 9</xref> shows
     the regression results of the latent class model. As seen in the
     table, most of the model coefficients are statistically significant.
     The following sections discuss the findings in more detail.</p>
@@ -2406,7 +2563,7 @@ categories &lt;- categories[order(categories)]</code>
                       two_vs_one_name = &quot;MM vs. CH&quot;,
                       three_vs_one_name = &quot;CL vs. CH&quot;)</code>
     <fig id="tbl-model-coeff-nb-article">
-      <caption><p>Table 4: Regression Results of Model</p></caption>
+      <caption><p>Table 9: Regression Results of Model</p></caption>
       <boxed-text>
       </boxed-text>
     </fig>
@@ -2531,10 +2688,11 @@ categories &lt;- categories[order(categories)]</code>
   </sec>
   <sec id="some-more-results-nb-article">
     <title>4.8 Some More Results</title>
-    <p>I can maybe talk about this later. I think
-    <xref alt="Table 5" rid="tbl-model-covarpcts-nb-article">Table 5</xref> is
+    <p>I think
+    <xref alt="Table 10" rid="tbl-model-covarpcts-nb-article">Table 10</xref> is
     showing what percent of households fall into each category in each
-    class</p>
+    class. But I just put this in here to look at it. It won’t be in the
+    final paper.</p>
     <sec specific-use="notebook-content">
     <code language="python">covariates &lt;- c(&quot;income_less_50k&quot;,
                 &quot;age_ref_35_to_44&quot;, &quot;age_ref_45_to_54&quot;,&quot;age_ref_18_to_34&quot;,
@@ -2550,12 +2708,34 @@ categories &lt;- categories[order(categories)]</code>
 
 create_nice_covariate_tbl(final_model, lcm_data, covariates)</code>
     <fig id="tbl-model-covarpcts-nb-article">
-      <caption><p>Table 5: The table that Katie gave me the code to
+      <caption><p>Table 10: The table that Katie gave me the code to
       make.</p></caption>
       <boxed-text>
       </boxed-text>
     </fig>
     </sec>
+  </sec>
+</sec>
+<sec id="references-nb-article">
+  <title>5 References</title>
+</sec>
+<sec id="sec-appendix-a-nb-article">
+  <title>6 Appendix A: Spending Category Breakdown</title>
+  <sec specific-use="notebook-content">
+  <code language="r script">detailed_cats &lt;- ucc_codes |&gt;
+  select(ucc_code, `Code description`, broad_category)
+
+names(detailed_cats) &lt;- c(&quot;UCC Code&quot;,&quot;Code Description&quot;,&quot;Category&quot;)
+
+detailed_cats |&gt; 
+  gt(
+    # rowname_col = &quot;UCC Code&quot;,
+     groupname_col = &quot;Category&quot;,
+     row_group_as_column = TRUE)</code>
+  <fig id="tbl-detailed-categories-nb-article">
+    <caption><p>Table 11: Unique expenditures and UCC codes for each
+    expenditure category</p></caption>
+  </fig>
   </sec>
 </sec>
 </body>
@@ -2564,7 +2744,7 @@ create_nice_covariate_tbl(final_model, lcm_data, covariates)</code>
 
 <back>
 <ref-list>
-  <title>5 References</title>
+  <title></title>
   <ref id="ref-bernardo_empirical_2015-nb-article">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -3201,11 +3381,604 @@ create_nice_covariate_tbl(final_model, lcm_data, covariates)</code>
     </element-citation>
   </ref>
 </ref-list>
+<fn-group>
+  <fn id="fn1-nb-article">
+    <label>1</label><p>Note that “household” in this paper is synonymous
+    with what the CEX often denotes as “Consumer Unit” (CU)</p>
+  </fn>
+</fn-group>
 </back>
 
 
 </sub-article>
 <sub-article article-type="notebook" id="nb-4-nb-1">
+<front-stub>
+<title-group>
+<article-title>Category Spending Tables</article-title>
+</title-group>
+</front-stub>
+
+<body>
+<sec specific-use="notebook-content">
+<code language="r script">library(tidyverse)
+</code>
+<boxed-text>
+  <preformat>Warning: package 'tibble' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'tidyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'purrr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'dplyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.0     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.6.0
+✔ ggplot2   3.5.2     ✔ tibble    3.3.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+✔ purrr     1.2.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
+</boxed-text>
+<code language="r script">library(readxl)
+library(gt)
+</code>
+<boxed-text>
+  <preformat>Warning: package 'gt' was built under R version 4.5.2</preformat>
+</boxed-text>
+<code language="r script">ucc &lt;- read_excel(&quot;../data/data_prep_input/ucc_categories.xlsx&quot;) |&gt;
+  filter(in_exp_file == 1)
+names(ucc)[1] &lt;- &quot;UCC&quot;
+
+lcm &lt;- read.csv(&quot;../data/diary24_combined/created_data/exp_fmly_data.csv&quot;)
+
+exp &lt;- read_csv(&quot;../data/diary24_combined/expd.csv&quot;, guess_max = 10000)
+</code>
+<boxed-text>
+  <preformat>Rows: 416271 Columns: 13
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (7): NEWID, UCC, EXPN_QDY, EXPN_KDY, EXPNMO, EXPNMO_, EXPNYR_
+dbl (6): ALLOC, COST, PUB_FLAG, EXPNSQDY, EXPNWKDY, EXPNYR
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
+</boxed-text>
+<code language="r script">exp &lt;- exp |&gt;
+  # separate the NEWID to get CUID and WEEKI
+  mutate(CUID = substr(NEWID,2,7),
+         WEEKI = substr(NEWID,8,8)) |&gt;
+  
+  # sum expenses of each ucc code per household
+  group_by(CUID, UCC) |&gt;
+  summarize(tot_cost = sum(COST)) |&gt;
+  ungroup() |&gt;
+  
+  # get rid of expenses made by households only in the survey for one week
+  filter(CUID %in% lcm$CUID)
+</code>
+<boxed-text>
+  <preformat>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by CUID and UCC.
+ℹ Output is grouped by CUID.
+ℹ Use `summarise(.groups = &quot;drop_last&quot;)` to silence this message.
+ℹ Use `summarise(.by = c(CUID, UCC))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</preformat>
+</boxed-text>
+<code language="r script"># join to get the categories
+joined_exp &lt;- left_join(exp, ucc, by = &quot;UCC&quot;)
+
+# summarize to get average for each category
+grouped_exp &lt;- joined_exp |&gt;
+  group_by(broad_category) |&gt;
+  summarise(tot_spending = sum(tot_cost),
+            count = length(unique(CUID))) |&gt;
+  mutate(avg_exp_zeros = tot_spending / nrow(lcm),
+         avg_exp_no_zeros = tot_spending / count)
+
+# summarize to get average for each transportation category
+transpo_exp &lt;- joined_exp |&gt;
+  filter(broad_category == &quot;Transportation&quot;) |&gt;
+  group_by(category) |&gt;
+  summarise(tot_spending = sum(tot_cost),
+            count = length(unique(CUID))) |&gt;
+  mutate(avg_exp_zeros = tot_spending / nrow(lcm),
+         avg_exp_no_zeros = tot_spending / count)
+</code>
+</sec>
+<sec specific-use="notebook-content">
+<code language="r script">
+grouped_exp |&gt; 
+  mutate(pct_zeros = avg_exp_zeros * 100 / sum(avg_exp_zeros),
+         pct_no_zeros = avg_exp_no_zeros * 100 / sum(avg_exp_no_zeros)) |&gt;
+  arrange(desc(count)) |&gt;
+  mutate(avg_exp_zeros = paste0(&quot;$&quot;,round(avg_exp_zeros, 2), &quot; (&quot;,round(pct_zeros,2),&quot;%)&quot;),
+         avg_exp_no_zeros = paste0(&quot;$&quot;,round(avg_exp_no_zeros, 2), &quot; (&quot;,round(pct_no_zeros,2),&quot;%)&quot;),
+         count_pct = paste0(count, &quot; (&quot;,round(count * 100 / 6004,1),&quot;% of sample)&quot;)) |&gt;
+  
+  select(`Spending Category` = broad_category, 
+         `Average spending including all households` = avg_exp_zeros,
+         `Average spending for only households that spent some in this category` = avg_exp_no_zeros,
+         `Households with spending in this category` = count_pct) |&gt;
+  gt()
+</code>
+<fig id="tbl-category-spending-nb-1">
+  <caption><p>Average Spending per Household in Each
+  Category</p></caption>
+</fig>
+</sec>
+<sec specific-use="notebook-content">
+<code language="r script">
+transpo_exp |&gt; 
+  mutate(pct_zeros = avg_exp_zeros * 100 / sum(avg_exp_zeros),
+         pct_no_zeros = avg_exp_no_zeros * 100 / sum(avg_exp_no_zeros)) |&gt;
+  arrange(desc(count)) |&gt;
+  mutate(avg_exp_zeros = paste0(&quot;$&quot;,round(avg_exp_zeros, 2), &quot; (&quot;,round(pct_zeros,2),&quot;%)&quot;),
+         avg_exp_no_zeros = paste0(&quot;$&quot;,round(avg_exp_no_zeros, 2), &quot; (&quot;,round(pct_no_zeros,2),&quot;%)&quot;),
+         count_pct = paste0(count, &quot; (&quot;,round(count * 100 / 6004,1),&quot;% of sample)&quot;)) |&gt;
+  
+  select(`Spending Category` = category, 
+         `Average spending including all households` = avg_exp_zeros,
+         `Average spending for only households that spent some in this category` = avg_exp_no_zeros,
+         `Households with spending in this category` = count_pct) |&gt;
+  gt()
+</code>
+<fig id="tbl-transpo-spending-nb-1">
+  <caption><p>Average Transportation Spending per Household in Each
+  Category</p></caption>
+</fig>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-8-nb-2">
+<front-stub>
+<title-group>
+<article-title>Demographic Tables</article-title>
+</title-group>
+</front-stub>
+
+<body>
+<sec specific-use="notebook-content">
+<code language="r script">library(tidyverse)
+</code>
+<boxed-text>
+  <preformat>Warning: package 'tibble' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'tidyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'purrr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'dplyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.0     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.6.0
+✔ ggplot2   3.5.2     ✔ tibble    3.3.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+✔ purrr     1.2.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
+</boxed-text>
+<code language="r script">library(gt)
+</code>
+<boxed-text>
+  <preformat>Warning: package 'gt' was built under R version 4.5.2</preformat>
+</boxed-text>
+</sec>
+<sec specific-use="notebook-content">
+<code language="r script"># the combined data we put in the model
+exp_data_full &lt;- read.csv(&quot;../data/diary24_combined/created_data/exp_fmly_data.csv&quot;)
+
+
+
+nrow(exp_data_full)
+</code>
+<boxed-text>
+  <preformat>[1] 6004</preformat>
+</boxed-text>
+<code language="r script">update_data_for_model &lt;- function(lcm_data){
+
+  lcm_data$FoodAlc = lcm_data$Food.Related + lcm_data$Alcohol
+  lcm_data$Leisure = lcm_data$Recreational.Related + lcm_data$At..Home.Entertainment
+  lcm_data$School = lcm_data$School.Supplies + lcm_data$Education
+  lcm_data$Mandatory = lcm_data$Family.Spending + lcm_data$Hygiene + lcm_data$Medical + lcm_data$Clothing.Related
+  lcm_data$Housing = lcm_data$House.Related
+  lcm_data$Bike.or.Scooter.Travel = lcm_data$Bike.or.Scooter.or.other.Single.Rider.Travel
+  lcm_data$Transpo = (lcm_data$Car.Fuel + lcm_data$Car.Maintenance + lcm_data$Taxi.or.Limo.Travel
+                      + lcm_data$Bus.Travel + lcm_data$Train.Travel +lcm_data$Air.Travel + lcm_data$Bike.or.Scooter.Travel)
+
+  quantile(lcm_data$Leisure)
+  quantile(lcm_data$FoodAlc)
+  quantile(lcm_data$School)
+  quantile(lcm_data$Mandatory)
+  quantile(lcm_data$Housing)
+
+  quantile(lcm_data$Car.Fuel)
+  quantile(lcm_data$Car.Maintenance)
+
+
+  #Yes Categories
+  lcm_data$FoodAlc = lcm_data$Food.Related + lcm_data$Alcohol
+  lcm_data$Leisure = lcm_data$Recreational.Related + lcm_data$At..Home.Entertainment
+  lcm_data$School = lcm_data$School.Supplies + lcm_data$Education
+  lcm_data$Mandatory = lcm_data$Family.Spending + lcm_data$Hygiene + lcm_data$Medical + lcm_data$Clothing.Related
+  lcm_data$Housing = lcm_data$House.Related
+  lcm_data$Bike.or.Scooter.Travel = lcm_data$Bike.or.Scooter.or.other.Single.Rider.Travel
+  lcm_data$Transpo = (lcm_data$Car.Fuel + lcm_data$Car.Maintenance + lcm_data$Taxi.or.Limo.Travel
+                      + lcm_data$Bus.Travel + lcm_data$Train.Travel +lcm_data$Air.Travel + lcm_data$Bike.or.Scooter.Travel)
+  
+  quantile(lcm_data$Leisure)
+  quantile(lcm_data$FoodAlc)
+  quantile(lcm_data$School)
+  quantile(lcm_data$Mandatory)
+  quantile(lcm_data$Housing)
+  
+  quantile(lcm_data$Car.Fuel)
+  quantile(lcm_data$Car.Maintenance)
+  
+  
+  #Yes Categories
+  lcm_data$LeiY = as.integer(factor(ifelse(lcm_data$Leisure&gt;0,1,0)))
+  lcm_data$FoodY = as.integer(factor(ifelse(lcm_data$FoodAlc&gt;0,1,0)))
+  lcm_data$SchoolY = as.integer(factor(ifelse(lcm_data$School&gt;0,1,0)))
+  lcm_data$ManY = as.integer(factor(ifelse(lcm_data$Mandatory&gt;0,1,0)))
+  lcm_data$HouseY = as.integer(factor(ifelse(lcm_data$Housing&gt;0,1,0)))
+  lcm_data$TranspoY = as.integer(factor(ifelse(lcm_data$Transpo&gt;0,1,0)))
+  #lcm_data$carY = as.integer(factor(ifelse(lcm_data$Car.Travel&gt;0,1,0)))
+  lcm_data$cargasY = as.integer(factor(ifelse(lcm_data$Car.Fuel&gt;0,1,0)))
+  lcm_data$carmaintY = as.integer(factor(ifelse(lcm_data$Car.Maintenance&gt;0,1,0)))
+  # lcm_data$carotherY = as.integer(factor(ifelse(lcm_data$Car.Other&gt;0,1,0)))
+  lcm_data$taxiY = as.integer(factor(ifelse(lcm_data$Taxi.or.Limo.Travel&gt;0,1,0)))
+  lcm_data$busY = as.integer(factor(ifelse(lcm_data$Bus.Travel&gt;0,1,0)))
+  lcm_data$trainY = as.integer(factor(ifelse(lcm_data$Train.Travel&gt;0,1,0)))
+  lcm_data$airY = as.integer(factor(ifelse(lcm_data$Air.Travel&gt;0,1,0)))
+  lcm_data$microY = as.integer(factor(ifelse(lcm_data$Bike.or.Scooter.Travel&gt;0,1,0)))
+  # sjmisc::frq(x=lcm_data[c(&quot;microY&quot;)], out=&quot;viewer&quot;)
+  
+  lcm_data$sum = lcm_data$LeiY +lcm_data$SchoolY + lcm_data$ManY + lcm_data$HouseY - 4
+  # sjmisc::frq(x=lcm_data[c(&quot;sum&quot;)], out=&quot;viewer&quot;)
+  
+  #### cuts for non transpo ####
+  cutslei &lt;- c(-Inf, 0, 100, Inf)
+  labslei &lt;- c(&quot;Zero&quot;, &quot;HundredB&quot;, &quot;HighHunB&quot;)
+  lcm_data$Lei_cat &lt;- cut(lcm_data$Leisure,
+                          breaks = cutslei,
+                          labels = labslei,
+                          right = TRUE,
+                          ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;Lei_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$Lei_cat1 = as.integer(lcm_data$Lei_cat)
+  
+  cutsfood &lt;- c(-Inf, 100, 500, Inf)
+  labsfood &lt;- c(&quot;OneHudB&quot;, &quot;FiveHundredB&quot;, &quot;HighFiveHunB&quot;)
+  lcm_data$Food_cat &lt;- cut(lcm_data$FoodAlc,
+                           breaks = cutsfood,
+                           labels = labsfood,
+                           right = TRUE,
+                           ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;Food_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$Food_cat1 = as.integer(lcm_data$Food_cat)
+  
+  cutsman &lt;- c(-Inf, 0, 200, 500, Inf)
+  labsman &lt;- c(&quot;Zero&quot;, &quot;two&quot;, &quot;five&quot;, &quot;over&quot;)
+  lcm_data$Man_cat &lt;- cut(lcm_data$Mandatory,
+                          breaks = cutsman,
+                          labels = labsman,
+                          right = TRUE,
+                          ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;Man_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$Man_cat1 = as.integer(lcm_data$Man_cat)
+  
+  cutshous &lt;- c(-Inf, 0, 200, 500, Inf)
+  labshous &lt;- c(&quot;Zero&quot;, &quot;two&quot;, &quot;five&quot;, &quot;over&quot;)
+  lcm_data$House_cat &lt;- cut(lcm_data$Housing,
+                            breaks = cutshous,
+                            labels = labshous,
+                            right = TRUE,
+                            ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;House_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$House_cat1 = as.integer(lcm_data$House_cat)
+  
+  
+  #### cuts for transpo ####
+  cutsC1 &lt;- c(-Inf, 0, 50, 100, Inf)
+  labsC1 &lt;- c(&quot;Zero&quot;, &quot;FiftyB&quot;, &quot;HundredB&quot;, &quot;HighHunB&quot;)
+  
+  cutsC2 &lt;- c(-Inf, 0, 100, Inf)
+  labsC2 &lt;- c(&quot;Zero&quot;, &quot;HundredB&quot;, &quot;HighHunB&quot;)
+  
+  cutsC3 &lt;- c(-Inf, 0, 100, Inf)
+  labsC3 &lt;- c(&quot;Zero&quot;, &quot;HundredB&quot;, &quot;HighHunB&quot;)
+  
+  cutsT &lt;- c(-Inf, 0, 20, 50, Inf)
+  labsT &lt;- c(&quot;Zero&quot;, &quot;TwentyB&quot;, &quot;TwentyFifty&quot;, &quot;HighFifB&quot;)
+  
+  cutsB &lt;- c(-Inf, 0, Inf)
+  labsB &lt;- c(&quot;Zero&quot;, &quot;Any&quot;)
+  
+  cutsTR &lt;- c(-Inf, 0, 20, Inf)
+  labsTR &lt;- c(&quot;Zero&quot;, &quot;TwentyB&quot;, &quot;HighTwB&quot;)
+  
+  cutsA &lt;- c(-Inf, 0, 500, Inf)
+  labsA &lt;- c(&quot;Zero&quot;, &quot;FiveHB&quot;,&quot;HighFive&quot;)
+  
+  cutsM &lt;- c(-Inf, 0, Inf)
+  labsM &lt;- c(&quot;Zero&quot;, &quot;Any&quot;)
+  
+  
+  lcm_data$carFuelP_cat &lt;- cut(lcm_data$Car.Fuel,
+                               breaks = cutsC1,
+                               labels = labsC1,
+                               right = TRUE,
+                               ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;carFuelP_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$carMainP_cat &lt;- cut(lcm_data$Car.Maintenance,
+                               breaks = cutsC2,
+                               labels = labsC2,
+                               right = TRUE,
+                               ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;carMainP_cat&quot;)], out=&quot;viewer&quot;)
+  # lcm_data$carOthP_cat &lt;- cut(lcm_data$Car.Other,
+  #                          breaks = cutsC3,
+  #                          labels = labsC3,
+  #                          right = TRUE,
+  #                          ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;carOthP_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$taxiP_cat &lt;- cut(lcm_data$Taxi.or.Limo.Travel,
+                            breaks = cutsT,
+                            labels = labsT,
+                            right = TRUE,
+                            ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;taxiP_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$busP_cat &lt;- cut(lcm_data$Bus.Travel,
+                           breaks = cutsB,
+                           labels = labsB,
+                           right = TRUE,
+                           ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;busP_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$trainP_cat &lt;- cut(lcm_data$Train.Travel,
+                             breaks = cutsTR,
+                             labels = labsTR,
+                             right = TRUE,
+                             ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;trainP_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$airP_cat &lt;- cut(lcm_data$Air.Travel,
+                           breaks = cutsA,
+                           labels = labsA,
+                           right = TRUE,
+                           ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;airP_cat&quot;)], out=&quot;viewer&quot;)
+  lcm_data$microP_cat &lt;- cut(lcm_data$Bike.or.Scooter.Travel,
+                             breaks = cutsM,
+                             labels = labsM,
+                             right = TRUE,
+                             ordered_result = TRUE)
+  # sjmisc::frq(x=lcm_data[c(&quot;microP_cat&quot;)], out=&quot;viewer&quot;)
+  
+  lcm_data$carFuelP_cat1 = as.numeric(lcm_data$carFuelP_cat)
+  lcm_data$carMainP_cat1 = as.numeric(lcm_data$carMainP_cat)
+  # lcm_data$carOthP_cat1 = as.integer(lcm_data$carOthP_cat)
+  lcm_data$taxiP_cat1 = as.integer(lcm_data$taxiP_cat)
+  lcm_data$busP_cat1 = as.integer(lcm_data$busP_cat)
+  lcm_data$trainP_cat1 = as.integer(lcm_data$trainP_cat)
+  lcm_data$airP_cat1 = as.integer(lcm_data$airP_cat)
+  lcm_data$microP_cat1 = as.integer(lcm_data$microP_cat)
+  
+  # sjmisc::frq(x=lcm_data[c(&quot;carFuelP_cat1&quot;)], out=&quot;viewer&quot;)
+  # sjmisc::frq(x=lcm_data[c(&quot;carMainP_cat1&quot;)], out=&quot;viewer&quot;)
+  
+  
+
+
+  #demogrpahic changes
+  lcm_data$veh3more = lcm_data$veh_3 + lcm_data$veh_more_3
+  lcm_data$one_or_more_over_64 = lcm_data$one_pers_more_64_yd +
+    lcm_data$two_pers_more_64_yd +
+    lcm_data$more_two_pers_more_64_yd
+  lcm_data$children_in_hh &lt;- lcm_data$children_1 + lcm_data$children_2 + lcm_data$children_3plus
+  lcm_data$spouse_in_hh &lt;- lcm_data$married
+  lcm_data$no_spouse_in_hh &lt;- lcm_data$widowed + lcm_data$divorced + lcm_data$separated +lcm_data$never_married
+  lcm_data$married_inc_under_50k &lt;- ifelse(lcm_data$married + lcm_data$income_less_50k == 2, 1, 0)
+  lcm_data$married_inc_over_50k &lt;- ifelse(lcm_data$married
+                                          + lcm_data$income_50k_to_75k
+                                          + lcm_data$income_75k_to_100k
+                                          + lcm_data$income_100k_to_200k
+                                          + lcm_data$income_more_200k == 2,
+                                          1, 0)
+  lcm_data$children_and_under_50k &lt;- ifelse(lcm_data$children_in_hh + lcm_data$income_less_50k == 2, 1, 0)
+  lcm_data$children_and_over_50k &lt;- ifelse(lcm_data$children_in_hh
+                                           + lcm_data$income_50k_to_75k
+                                           + lcm_data$income_75k_to_100k
+                                           + lcm_data$income_100k_to_200k
+                                           + lcm_data$income_more_200k == 2,
+                                           1, 0)
+  lcm_data$college &lt;- lcm_data$edu_assoc_degree + lcm_data$edu_bachelors + lcm_data$edu_masters_doctorate
+  lcm_data$no_college &lt;- lcm_data$edu_elem + lcm_data$edu_high_school + lcm_data$edu_none + lcm_data$edu_some_college + lcm_data$edu_some_high_school
+  lcm_data$less_bachelors &lt;- lcm_data$edu_elem + lcm_data$edu_high_school + lcm_data$edu_none + lcm_data$edu_some_college + lcm_data$edu_some_high_school + lcm_data$edu_assoc_degree
+  lcm_data$college_less_50k &lt;- ifelse(lcm_data$college + lcm_data$income_less_50k == 2, 1, 0)
+  lcm_data$college_more_50k &lt;- ifelse(lcm_data$college
+                                      + lcm_data$income_50k_to_75k
+                                      + lcm_data$income_75k_to_100k
+                                      + lcm_data$income_100k_to_200k
+                                      + lcm_data$income_more_200k == 2,
+                                      1, 0)
+  lcm_data$no_college_less_50k &lt;- ifelse(lcm_data$no_college + lcm_data$income_less_50k == 2, 1, 0)
+  lcm_data$fam_single_parent &lt;- lcm_data$fam_single_dad + lcm_data$fam_single_mom
+  lcm_data$married_college &lt;- lcm_data$married + lcm_data$college
+  lcm_data$married_no_college &lt;- lcm_data$married + lcm_data$no_college
+  lcm_data$single_college &lt;- lcm_data$no_spouse_in_hh + lcm_data$college
+  lcm_data$single_no_college &lt;- lcm_data$no_spouse_in_hh + lcm_data$no_college
+  
+  lcm_data$single_no_kids &lt;- ifelse(lcm_data$no_spouse_in_hh + lcm_data$children_none == 2, 1, 0)
+  lcm_data$single_kids &lt;- ifelse(lcm_data$no_spouse_in_hh + lcm_data$children_in_hh == 2, 1, 0)
+  lcm_data$married_no_kids &lt;- ifelse(lcm_data$married + lcm_data$children_none == 2, 1, 0)
+  lcm_data$married_kids &lt;- ifelse(lcm_data$married + lcm_data$children_in_hh == 2, 1, 0)
+  
+  lcm_data$single_no_kids_no_65 &lt;- ifelse(lcm_data$single_no_kids + lcm_data$no_pers_more_64_yd == 2, 1, 0)
+  lcm_data$single_kids_no_65 &lt;- ifelse(lcm_data$single_kids + lcm_data$no_pers_more_64_yd == 2, 1, 0)
+  lcm_data$married_no_kids_no_65 &lt;- ifelse(lcm_data$married_no_kids + lcm_data$no_pers_more_64_yd == 2, 1, 0)
+  lcm_data$married_kids_no_65 &lt;- ifelse(lcm_data$married_kids + lcm_data$no_pers_more_64_yd == 2, 1, 0)
+  lcm_data$single_no_kids_65 &lt;- ifelse(lcm_data$single_no_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
+  lcm_data$single_kids_65 &lt;- ifelse(lcm_data$single_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
+  lcm_data$married_no_kids_65 &lt;- ifelse(lcm_data$married_no_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
+  lcm_data$married_kids_65 &lt;- ifelse(lcm_data$married_kids + lcm_data$one_or_more_over_64 == 2, 1, 0)
+  
+  lcm_data$urban &lt;- 1 - lcm_data$in_rural
+  
+  lcm_data$urban_northeast &lt;- ifelse(lcm_data$urban + lcm_data$region_northeast == 2, 1, 0)
+  lcm_data$urban_midwest &lt;- ifelse(lcm_data$urban + lcm_data$region_midwest == 2, 1, 0)
+  lcm_data$urban_south &lt;- ifelse(lcm_data$urban + lcm_data$region_south == 2, 1, 0)
+  lcm_data$urban_wes &lt;- ifelse(lcm_data$urban + lcm_data$region_wes == 2, 1, 0)
+  
+  lcm_data$rural_northeast &lt;- ifelse(lcm_data$in_rural + lcm_data$region_northeast == 2, 1, 0)
+  lcm_data$rural_midwest &lt;- ifelse(lcm_data$in_rural + lcm_data$region_midwest == 2, 1, 0)
+  lcm_data$rural_south &lt;- ifelse(lcm_data$in_rural + lcm_data$region_south == 2, 1, 0)
+  lcm_data$rural_wes &lt;- ifelse(lcm_data$in_rural + lcm_data$region_wes == 2, 1, 0)
+  
+  lcm_data$pop_more_1_mil &lt;- lcm_data$pop_1_mil_to_5_mil +lcm_data$pop_more_5_mil
+  lcm_data$pop_100k_to_1_mil &lt;- lcm_data$pop_100k_to_500k +lcm_data$pop_500k_to_1_mil
+  lcm_data$pop_less_1_mil &lt;- lcm_data$pop_less_100k + lcm_data$pop_100k_to_1_mil
+  
+  lcm_data$pop_more_1_mil_northeast &lt;- ifelse(lcm_data$pop_more_1_mil + lcm_data$region_northeast == 2, 1, 0)
+  
+  lcm_data$cu_size_more_2 &lt;- lcm_data$cu_size_3 + lcm_data$cu_size_4 + 
+    lcm_data$cu_size_5 + lcm_data$cu_size_6 + lcm_data$cu_size_7+ lcm_data$cu_size_more_7
+  
+  lcm_data$cu_size_more_3 &lt;- lcm_data$cu_size_4 + 
+    lcm_data$cu_size_5 + lcm_data$cu_size_6 + lcm_data$cu_size_7+ lcm_data$cu_size_more_7
+  
+  lcm_data$cu_size_more_4 &lt;- lcm_data$cu_size_5 + lcm_data$cu_size_6 + lcm_data$cu_size_7+ lcm_data$cu_size_more_7
+  
+  lcm_data$mandatory1 &lt;- ifelse(lcm_data$Man_cat == &quot;Zero&quot;, 1, 0)
+  lcm_data$mandatory2 &lt;- ifelse(lcm_data$Man_cat == &quot;two&quot;, 1, 0)
+  lcm_data$mandatory3 &lt;- ifelse(lcm_data$Man_cat == &quot;five&quot;, 1, 0)
+  lcm_data$mandatory4 &lt;- ifelse(lcm_data$Man_cat == &quot;over&quot;, 1, 0)
+  
+  lcm_data$house1 &lt;- ifelse(lcm_data$House_cat == &quot;Zero&quot;, 1, 0)
+  lcm_data$house2 &lt;- ifelse(lcm_data$House_cat == &quot;two&quot;, 1, 0)
+  lcm_data$house3 &lt;- ifelse(lcm_data$House_cat == &quot;five&quot;, 1, 0)
+  lcm_data$house4 &lt;- ifelse(lcm_data$House_cat == &quot;over&quot;, 1, 0)
+  
+  lcm_data$food1 &lt;- ifelse(lcm_data$Food_cat == &quot;OneHudB&quot;, 1, 0)
+  lcm_data$food2 &lt;- ifelse(lcm_data$Food_cat == &quot;FiveHundredB&quot;, 1, 0)
+  lcm_data$food3 &lt;- ifelse(lcm_data$Food_cat == &quot;HighFiveHunB&quot;, 1, 0)
+  
+  lcm_data$leisure1 &lt;- ifelse(lcm_data$Lei_cat == &quot;Zero&quot;, 1, 0)
+  lcm_data$leisure2 &lt;- ifelse(lcm_data$Lei_cat == &quot;HundredB&quot;, 1, 0)
+  lcm_data$leisure3 &lt;- ifelse(lcm_data$Lei_cat == &quot;HighHunB&quot;, 1, 0)
+  
+  return(lcm_data)
+}
+
+
+exp_data_full &lt;- update_data_for_model(exp_data_full)
+
+# the column names we want to use
+# the value is the col_name
+# the name is the new name you want to be on the summary table
+col_names_to_use &lt;- matrix(c(&quot;City Type&quot; ,&quot;Rural&quot; ,&quot;city_type_rural&quot;,
+                      &quot;City Type&quot;, &quot;Urban&quot; , &quot;city_type_urban&quot;,
+                      &quot;Income&quot;,&quot;Below $50K&quot; , &quot;income_less_50k&quot;,
+                      &quot;Income&quot;, &quot;Between $50K - $75K&quot; , &quot;income_50k_to_75k&quot;,
+                      &quot;Income&quot;, &quot;Between $75K - $100K&quot; , &quot;income_75k_to_100k&quot;,
+                      &quot;Income&quot;, &quot;Between $100K - $200K&quot; , &quot;income_100k_to_200k&quot;,
+                      &quot;Income&quot;, &quot;Above $200K&quot; , &quot;income_more_200k&quot;,
+                      &quot;Age&quot;, &quot;18 - 34&quot; , &quot;age_ref_18_to_34&quot;,
+                      &quot;Age&quot;, &quot;35 - 44&quot; , &quot;age_ref_35_to_44&quot;,
+                      &quot;Age&quot;, &quot;45 - 54&quot; , &quot;age_ref_45_to_54&quot;,
+                      &quot;Age&quot;, &quot;54+&quot; , &quot;age_ref_more_54&quot;,
+                      &quot;Region&quot;, &quot;Northeast&quot; , &quot;region_northeast&quot;,
+                      &quot;Region&quot;, &quot;Midwest&quot; , &quot;region_midwest&quot;,
+                      &quot;Region&quot;, &quot;South&quot; , &quot;region_south&quot;,
+                      &quot;Region&quot;, &quot;West&quot; , &quot;region_wes&quot;,
+                      &quot;Education&quot;, &quot;Masters Degree or higher&quot; , &quot;edu_masters_doctorate&quot;,
+                      &quot;Education&quot;, &quot;Bachelors Degree&quot; , &quot;edu_bachelors&quot;,
+                      &quot;Education&quot;, &quot;Less Than a Bachelors Degree&quot; , &quot;less_bachelors&quot;,
+                      &quot;Family Structure&quot;,&quot;Single Without Children&quot; , &quot;single_no_kids&quot;,
+                      &quot;Family Structure&quot;,&quot;Single With Children&quot; , &quot;single_kids&quot;,
+                      &quot;Family Structure&quot;,&quot;Married Without Children&quot; , &quot;married_no_kids&quot;,
+                      &quot;Family Structure&quot;,&quot;Married With Children&quot; , &quot;married_kids&quot;,
+                      &quot;City Population&quot;,&quot;Less Than 1 Million&quot; , &quot;pop_less_1_mil&quot;,
+                      &quot;City Population&quot;,&quot;1 Million or More&quot; , &quot;pop_more_1_mil&quot;,
+                      &quot;Mandatory Spending&quot;,&quot;Zero&quot; , &quot;mandatory1&quot;,
+                      &quot;Mandatory Spending&quot;,&quot;Between $0 - $100&quot; , &quot;mandatory2&quot;,
+                      &quot;Mandatory Spending&quot;,&quot;Between $200 - $500&quot; , &quot;mandatory3&quot;,
+                      &quot;Mandatory Spending&quot;,&quot;Above $500&quot; , &quot;mandatory4&quot;,
+                      &quot;House-Related Spending&quot;,&quot;Zero&quot; , &quot;house1&quot;,
+                      &quot;House-Related Spending&quot;,&quot;Between $0 - $100&quot; , &quot;house2&quot;,
+                      &quot;House-Related Spending&quot;,&quot;Between $200 - $500&quot; , &quot;house3&quot;,
+                      &quot;House-Related Spending&quot;,&quot;Above $500&quot; , &quot;house4&quot;,
+                      &quot;Food Spending&quot;,&quot;Below $100&quot; , &quot;food1&quot;,
+                      &quot;Food Spending&quot;,&quot;Between $100 - $500&quot; , &quot;food2&quot;,
+                      &quot;Food Spending&quot;,&quot;Above $500&quot; , &quot;food3&quot;,
+                      &quot;Leisure Spending&quot;,&quot;Zero&quot; , &quot;leisure1&quot;,
+                      &quot;Leisure Spending&quot;,&quot;Between $0 - $100&quot; , &quot;leisure2&quot;,
+                      &quot;Leisure Spending&quot;,&quot;Above $100&quot; , &quot;leisure3&quot;
+                      ), ncol = 3, byrow = T) |&gt;
+  as.data.frame()
+
+names(col_names_to_use) &lt;- c(&quot;group&quot;,&quot;nice_name&quot;,&quot;variable&quot;)
+
+print_demographic_shares_tbl &lt;- function(df, col_names_to_use){
+  samplesize &lt;- nrow(df)
+  
+  selected_col_sums &lt;- df |&gt;
+    select(any_of(col_names_to_use$variable)) |&gt;
+    colSums()
+  
+  nice_tbl &lt;- data.frame(variable = names(selected_col_sums),
+                        total = selected_col_sums) |&gt;
+    left_join(col_names_to_use, by = &quot;variable&quot;) |&gt;
+    mutate(Share = paste0(round(total * 100 / samplesize,1),&quot;%&quot;)) |&gt;
+    select(group, nice_name, Share) |&gt;
+    gt(groupname_col = &quot;group&quot;,
+       rowname_col = &quot;nice_name&quot;) |&gt;
+    tab_style(
+      style = cell_text(style = &quot;italic&quot;),
+      locations = cells_row_groups(groups = everything())
+    )
+  
+  return(nice_tbl)
+}
+</code>
+</sec>
+<sec specific-use="notebook-content">
+<code language="r script">
+print_demographic_shares_tbl(exp_data_full, col_names_to_use)
+</code>
+<fig id="tbl-data-demographics-nb-2">
+  <caption><p>Demograhic distribution of the sample</p></caption>
+</fig>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-12-nb-3">
 <front-stub>
 <title-group>
 <article-title>LCA Tables</article-title>
@@ -3291,7 +4064,7 @@ model_df &lt;- create_regr_tbl(final_model)
                       two_vs_one_name = &quot;MM vs. CH&quot;,
                       three_vs_one_name = &quot;CL vs. CH&quot;)
 </code>
-<fig id="tbl-model-coeff-nb-1">
+<fig id="tbl-model-coeff-nb-3">
   <caption><p>Regression Results of Model</p></caption>
 </fig>
 </sec>
@@ -3638,7 +4411,7 @@ names(expense_level_names) &lt;- c(&quot;level_def&quot;,&quot;nice_level_name&q
                         c2_name = &quot;Multimodal Spenders (MM)&quot;,
                         c3_name = &quot;Car Spenders Low (CL)&quot;)
 </code>
-<fig id="tbl-model-classes-nb-1">
+<fig id="tbl-model-classes-nb-3">
   <caption><p>Class Distribution of Model</p></caption>
 </fig>
 </sec>
@@ -3658,7 +4431,7 @@ covariates &lt;- c(&quot;income_less_50k&quot;,
 
 create_nice_covariate_tbl(final_model, lcm_data, covariates)
 </code>
-<fig id="tbl-model-covarpcts-nb-1">
+<fig id="tbl-model-covarpcts-nb-3">
   <caption><p>The table that Katie gave me the code to
   make.</p></caption>
 </fig>
@@ -3672,7 +4445,7 @@ create_nice_covariate_tbl(final_model, lcm_data, covariates)
 
 
 </sub-article>
-<sub-article article-type="notebook" id="nb-8-nb-2">
+<sub-article article-type="notebook" id="nb-16-nb-4">
 <front-stub>
 <title-group>
 <article-title>Lit Review Table</article-title>
@@ -3728,7 +4501,7 @@ lgl (1): Uses CEX Data
 <code language="r script">
 kable(lit_tbl)
 </code>
-<fig id="tbl-lit-summary-nb-2">
+<fig id="tbl-lit-summary-nb-4">
   <caption><p>Summary of the Literature</p></caption>
   <table-wrap>
     <table>

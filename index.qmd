@@ -42,6 +42,7 @@ html-table-processing: none
 library(tidyverse)
 library(knitr)
 library(readxl)
+library(gt)
 ```
 
 ## Introduction
@@ -118,50 +119,102 @@ The purpose of the current study is to see how household budgets are structured 
 
 ## Data
 
-Data for the following analysis were attained from the 2024 Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is administered continuously by the Bureau of Labor Statistics (BLS). The data are organized by quarter and published each year. The CEX consists of two surveys: the Interview Survey, and the Diary Survey. The Interview Survey tracks a household's major and recurring expenditures by reviewing their expenses from the past three months and was not used in the study. 
+Data for the following analysis were obtained from the 2024 Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is administered continuously by the Bureau of Labor Statistics (BLS). The data are organized by quarter and published each year. The CEX consists of two surveys: the Interview Survey, and the Diary Survey. Each survey has it's own unique sample, so the households in one will not appear in the other. The Interview Survey tracks a household's major and recurring expenditures by reviewing their expenses from the past three months, and the Diary Survey captures more routine household spending by recording in detail a households expenditure across a two-week span.
 
-The Diary Survey from the CEX was used in this study and tracks a household's weekly expenditures by having them fill out a detailed expenditure diary across a two-week span. Approximately 3000 usable responses are collected each quarter. After the two consecutive weeks of reporting expenditures, the household is removed from the sample and replaced by a new household. In addition to providing detailed household weekly expenditures, this survey also provides useful demographic data for each household. The combination of household demographics and detailed expenditures makes this dataset ideal for the current study.  
+Because we were interested in the day-to-day expenditures of households, this study uses data from the Diary Survey of the CEX. To gather this data, BLS personnel contact a sample of US households, record household demographic data, and explain how to fill out the weekly expenditure diary. After two consecutive weeks of reporting expenditures, the household is removed from the sample and replaced by a new household. The combination of household demographics and detailed expenditures available in the Diary Survey makes this data set ideal for the current study.
 
-The table below shows a summary of the demographics in the data. *put a table below and talk about it more*
+@tbl-ce-files shows the files in the PUMD that pertain to the Diary Survey. For this study, we specifically looked at the FMLD and the EXPD files from 2024 to get household^[Note that "household" in this paper is synonymous with what the CEX often denotes as "Consumer Unit" (CU)] characteristics along with their detailed spending tables. In the 2024 data, there were a total of 6,334 households surveyed. To capture the most expenditures and keep consistency, we only kept households that had participated in the study for two consecutive weeks during the study period. We also excluded any households who had no recorded expenditures during the two survey weeks. After filtering out the 161 households with only one week of data and the 169 households with no expenditures, we were left with 6,004 households used in the analysis. 
 
 ```{r}
-#| label: tbl-data-summary
-#| tbl-cap: "Summary of CEX Demographic Data (placeholder)"
-#| tbl-alt: "A summary table describing the demographic data from the CEX Diary Survey"
+#| label: tbl-ce-files
+#| tbl-cap: "Diary Survey files available in the Public Use Microdata (PUMD)"
+#| tbl-alt: "A table containing the names and desciptions of files that can be obtained in the public use microdata for the Diary Survey"
+ce_files <- read.csv("data/tables/ce_data_files.csv")
+names(ce_files) <- c("File Name","Description")
 
-fmly_data <- read_csv("data/diary24_combined/fmld.csv")
+gt(ce_files)
+```
 
-fmly_tbl <- data.frame(Description = c("Total households",
-                            "Households with no car",
-                            "Avg cars in household",
-                            "Avg household income",
-                            "Avg household size"),
-            Value = c(nrow(fmly_data),
-                      nrow(fmly_data[!fmly_data$VEHQ %in% c(1:1000),]),
-                      mean(fmly_data$VEHQ, na.rm = T),
-                      mean(fmly_data$FINCBEFX),
-                      mean(fmly_data$FAM_SIZE)))
+```{r}
+ucc_codes <- read_excel("data/data_prep_input/ucc_categories.xlsx") |>
+  filter(in_exp_file == 1)
 
-kable(fmly_tbl)
-
+expense_types <- unique(ucc_codes$ucc_code)
+categories <- unique(ucc_codes$broad_category)
 ```
 
 
-
+In the expenditures data, there were `r length(expense_types)` unique types of expenditures recorded with each expenditure designated by a Universal Classification Code (UCC). We organized this into `r length(categories)` categories as shown in @tbl-spending-categories (for a more detailed breakdown of the expenditure categories, see [Appendix A](#sec-appendix-a)). Since this study focuses on transportation expenditures, we further split the transportation category into smaller categories based on mode. The specific UCC codes for each item in the transportation categories are listed in @tbl-transpo-categories.
 
 ```{r}
-diary_data <- read_csv("data/diary24_combined/expd.csv")
-expense_types <- unique(diary_data$UCC)
+#| label: tbl-spending-categories
+#| tbl-cap: "Details of spending categories"
+#| tbl-alt: "Table describing what expenditures are in each category"
 
-ucc_categories_data <- read_excel("data/data_prep_input/ucc_categories.xlsx") |>
-  filter(in_exp_file > 0)
+expense_categories <- read.csv("data/tables/ce_expense_categories.csv")
 
-categories <- unique(ucc_categories_data$category)
-categories <- categories[order(categories)]
+names(expense_categories) <- c("Category", "Types of Expenses")
+
+gt(expense_categories)
 
 ```
 
-Of the `r length(expense_types)` different types of expenditures found in the data, we created `r length(categories)` categories: `r categories`.
+```{r}
+#| label: tbl-transpo-categories
+#| tbl-cap: "Unique Expenditures in Each Transportaiton Category"
+#| tbl-alt: "Detailed Breakdown of Unique Expenditures in Each Transportaiton Category"
+
+transpo_cats <- ucc_codes |>
+  filter(broad_category == "Transportation") |>
+  select(ucc_code, `Code description`, category)
+
+names(transpo_cats) <- c("UCC Code","Code Description","Transportation Category")
+
+transpo_cats |> 
+  gt(
+    # rowname_col = "UCC Code",
+     groupname_col = "Transportation Category",
+     row_group_as_column = TRUE) |>
+  row_group_order(c("Car Purchase",
+                    "Car Maintenance",
+                    "Car Fuel",
+                    "Car Payment",
+                    "Bus Travel",
+                    "Train Travel",
+                    "Taxi or Limo Travel",
+                    "Bike or Scooter or other Single Rider Travel",
+                    "Air Travel",
+                    "Train Travel"
+                    ))
+
+```
+
+The average spending in each of the major categories mentioned above is shown in @tbl-category-spending. As seen in the table, there were four categories in which more than 75% of the sample had expenditures: food, house, mandatory, and transportation. The portion of the sample with food-related expenditures was just under 100 percent, and those with house-related expenditures was over 80 percent. This shows that practically no household went two weeks without purchasing food, and only a small portion of the households went two weeks without having a house-related expense. When including all the households in the sample, the average spending on transportation is approximately \$260, and that average increases to approximately \$325 when looking at only the households who had transportation expenditures. 
+
+
+The average spending in each of the specific transportation categories is found in @tbl-transpo-spending. Car fuel and car maintenance were the the expense categories that included the most households. The categories with the highest averages were car purchases, car payments, and ship travel, but these had relatively low numbers of households spending any money in the categories. 
+
+{{< embed notebooks/category_spending_table.qmd#tbl-category-spending >}}
+{{< embed notebooks/category_spending_table.qmd#tbl-transpo-spending >}}
+
+
+**The next big thing to do with the data section is to write about the demographics and compare them to census data.** 
+find census data : 
+https://www.census.gov/quickfacts/fact/table/US/PST045224
+https://data.census.gov/table
+
+
+{{< embed notebooks/demographic_tbl.qmd#tbl-data-demographics >}}
+
+Then there might still be some tables Katie wanted me to make. I will review those. 
+
+
+3.	Table with the buckets of transportation spending category splits. 
+4.	Same averages, but split them up by different household structures
+- Refer to R code on how to do this efficiently. 
+- This is where we can start to tell the story that perhaps different household structures are spending their money in different transportation spending categories. 
+
+
 
 ## Results
 
@@ -213,8 +266,7 @@ Compared to those households who spend less than \$100 on leisure, households wh
 The coefficients related to household spending tend to increase in absolute value as the spending ranges increase. It is reasonable to see the probability of being in the high spending transportation class increase as other household expenses increase. More household expenses often mean more trips are being made. 
 
 ### Some More Results
-I can maybe talk about this later. 
-I think @tbl-model-covarpcts is showing what percent of households fall into each category in each class
+I think @tbl-model-covarpcts is showing what percent of households fall into each category in each class. But I just put this in here to look at it. It won't be in the final paper.
 
 {{< embed notebooks/LCA.qmd#tbl-model-covarpcts >}}
 
@@ -223,3 +275,23 @@ I think @tbl-model-covarpcts is showing what percent of households fall into eac
 
 ::: {#refs}
 :::
+
+## Appendix A: Spending Category Breakdown {#sec-appendix-a}
+
+```{r}
+#| label: tbl-detailed-categories
+#| tbl-cap: "Unique expenditures and UCC codes for each expenditure category"
+#| tbl-alt: "Detailed Breakdown of Unique Expenditures in Each Expenditure Category"
+
+detailed_cats <- ucc_codes |>
+  select(ucc_code, `Code description`, broad_category)
+
+names(detailed_cats) <- c("UCC Code","Code Description","Category")
+
+detailed_cats |> 
+  gt(
+    # rowname_col = "UCC Code",
+     groupname_col = "Category",
+     row_group_as_column = TRUE)
+
+```
