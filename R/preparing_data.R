@@ -60,7 +60,7 @@ decode_cells <- function(df, code_dictionary_df){
 
 # here are all the files we are working with
 ## CHANGE THESE TO THE PROPER PATHS ##
-expd_csv_path <- "data/diary24_combined/expd.csv"
+expd_csv_path <- "../data/diary24_combined/expd.csv"
 fmld_csv_path <- "data/diary24_combined/fmld.csv"
 col_def_csv_path <- "data/data_prep_input/fmld_col_descr.csv"
 pumd_dictionary_xlsx_path <- "data/data_prep_input/ce-pumd-interview-diary-dictionary.xlsx"
@@ -235,7 +235,7 @@ d_exp_categories <- d_exp |>
 d_exp_categories$CUID <- as.numeric(d_exp_categories$CUID)
 d_family_binary$CUID <- as.numeric(d_family_binary$CUID)
 # join the datasets by CUID
-organized_data <- left_join(d_exp_categories, d_family_binary, by = "CUID")
+organized_data <- left_join(d_family_binary, d_exp_categories, by = "CUID")
 
 # get rid of any rows with no transportation expenses
 # (we decided that we want to keep all the households, so I have commented this out)
@@ -269,6 +269,6 @@ organized_data <- replace(organized_data, is.na(organized_data), 0)
 
 
 # save to a file
-save_to_path <- "data/diary24_combined/created_data/exp_fmly_data_fam_size.csv"
+save_to_path <- "data/diary24_combined/created_data/exp_fmly_data.csv"
 # write_csv(organized_data, save_to_path)
 

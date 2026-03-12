@@ -1,21 +1,15 @@
+---
+title: "Demographic Tables"
+editor: visual
+html-table-processing: none
+---
+
+```{r}
 library(tidyverse)
-library(readxl)
+library(gt)
+```
 
-##### DIARY SURVEY #####
-############################
-
-## diary files ##
-# memd.csv = member level income and characteristics
-d_member <- read_csv("../data/diary24_combined/memd.csv", guess_max = 100000)
-# dtbd.csv = detailed income
-d_income <- read_csv("../data/diary24_combined/dtbd.csv", guess_max = 100000)
-# dtid.csv = Income imputation iterations
-d_income_itter <- read_csv("../data/diary24_combined/dtid.csv", guess_max = 100000)
-# expd.csv = Detailed expenditure and non-expenditure data
-d_exp <- read_csv("../data/diary24_combined/expd.csv", guess_max = 100000)
-# fmld.csv = Consumer Unit (CU) level:
-# summary expenditures - income, assets, liabilities - CU characteristics and weights
-d_family <- read_csv("../data/diary24_combined/fmld.csv", guess_max = 100000)
+```{r}
 
 # the combined data we put in the model
 exp_data_full <- read.csv("../data/diary24_combined/created_data/exp_fmly_data.csv")
@@ -367,47 +361,6 @@ col_names_to_use <- matrix(c("City Type" ,"Rural" ,"city_type_rural",
 
 names(col_names_to_use) <- c("group","nice_name","variable")
 
-# This is a list of the variables that are factored in the data.
-# Each list item is the name of the column
-# and within each list is the name of each factor
-as_factor_cols <- list(Man_cat1 = c("Mandatory: Zero",
-                                    "Mandatory: Between $0 - $100",
-                                    "Mandatory: Between $200 - $500",
-                                    "Mandatory: Between $500 - $1,000",
-                                    "Mandatory: Above $1,000"),
-                       House_cat1 = c("House: Zero",
-                                      "House: Between $0 - $100",
-                                      "House: Between $200 - $500",
-                                      "House: Between $500 - $1,000",
-                                      "House: Above $1,000"),
-                       Food_cat1 = c("Food: Below $100",
-                                     "Food: Between $100 - $500",
-                                     "Food: Above $500"),
-                       Lei_cat1 = c("Leisure: Zero",
-                                    "Leisure: Between $0 - $100",
-                                    "Leisure: Above $100"),
-                       carFuelP_cat1 = c("Car Fuel: Zero",
-                                         "Car Fuel: Between $0 - $50",
-                                         "Car Fuel: Between $50 - $100",
-                                         "Car Fuel: Above $100"),
-                       carMainP_cat1 = c("Car Maintenance: Zero",
-                                         "Car Maintenance: Between $0 - $100",
-                                         "Car Maintenance: Above $100"),
-                       taxiP_cat1 = c("Taxi: Zero",
-                                      "Taxi: Between $0 - $20",
-                                      "Taxi: Between $20 - $50",
-                                      "Taxi: Above $50"),
-                       busP_cat1 = c("Bus: Zero",
-                                     "Bus: Any"),
-                       trainP_cat1 = c("Train: Zero",
-                                       "Train: Between $0 - $20",
-                                       "Train: Above $20"),
-                       airP_cat1 = c("Air: Zero",
-                                     "Air: Between $0 - $500",
-                                     "Air: Above $500"),
-                       microP_cat1 = c("Micromobility: Zero",
-                                       "Micromobility: Any"))
-
 print_demographic_shares_tbl <- function(df, col_names_to_use){
   samplesize <- nrow(df)
   
@@ -423,7 +376,7 @@ print_demographic_shares_tbl <- function(df, col_names_to_use){
     gt(groupname_col = "group",
        rowname_col = "nice_name") |>
     tab_style(
-      style = cell_text(weight = "bold"),
+      style = cell_text(style = "italic"),
       locations = cells_row_groups(groups = everything())
     )
   
@@ -431,220 +384,14 @@ print_demographic_shares_tbl <- function(df, col_names_to_use){
 }
 
 
-# (DOESN'T WORK ANYMORE because I changed the col_names_to_use format)
-# function that gets the data frame put into the model,
-# the column names you want to use, and any columns that are factors,
-# and spits out a df with each variable and its percent of the whole sample
-get_demographic_shares <- function(df, col_names_to_use, as_factor_cols, file_to_save = NULL){
-
-  samplesize <- nrow(df)
-
-  variables <- c()
-  shares <- c()
-  
-
-  # getting the percents for col_names_to_use
-  for (i in 1:length(col_names_to_use)){
-    variable_val <- col_names_to_use[[i]]
-    variable_name <- names(col_names_to_use)[[i]]
-    variables <- c(variables, variable_name)
-    shares <- c(shares, round(100 * sum(df[variable_val]) / samplesize, 1))
-  }
-  
-  
+```
 
 
-  # getting the percents for as_factor_cols
-  for (fctr_item in 1:length(as_factor_cols)){
-    col_name <- names(as_factor_cols)[[fctr_item]]
-    num_fctrs <- as_factor_cols[[fctr_item]] |> length()
+```{r}
+#| label: tbl-data-demographics
+#| tbl-cap: "Demograhic distribution of the sample"
+#| tbl-alt: "A table with the shares of different demographic variables in the data"
 
-    for (fctr_num in 1:num_fctrs){
-      count <- length(df[df[[col_name]] == fctr_num,col_name])
-      new_col_name <- as_factor_cols[[fctr_item]][[fctr_num]]
-      variables <- c(variables, new_col_name)
-      shares <- c(shares, round(100 * count / samplesize, 1))
-    }
+print_demographic_shares_tbl(exp_data_full, col_names_to_use)
 
-  }
-
-  new_df <- data.frame(Variable = variables,
-                       Percent = shares)
-
-  if (is.null(file_to_save)){
-    return(new_df)
-  } else{
-    write_csv(new_df, file = file_to_save)
-    cat(paste0("File saved to \n",file_to_save))
-  }
-
-}
-
-
-
-perc_summ_full <- get_demographic_shares(exp_data_full,
-                         col_names_to_use,
-                         as_factor_cols,
-                         file_to_save = NULL)
-
-
-
-
-types <- c("single_no_kids_no_65",
-           "single_kids_no_65",
-           "married_no_kids_no_65",
-           "married_kids_no_65",
-           "single_no_kids_65",
-           "single_kids_65",
-           "married_no_kids_65",
-           "married_kids_65")
-
-get_demographic_shares_by_type <- function(df,
-                                           col_names_to_use,
-                                           as_factor_cols,
-                                           types,
-                                           csv_path_save = NULL){
-
-  # add a column to state the type / category
-  df$type <- apply(df[types], 1, function(x) names(x)[x == 1])
-
-  separate_dfs <- list()
-  for (type in types){
-    filtered_df <- df[df$type == type, ]
-
-    samplesize <- nrow(filtered_df)
-
-    variables <- c()
-    shares <- c()
-    counts <- c()
-
-    # getting the percents for col_names_to_use
-    for (i in 1:length(col_names_to_use)){
-      variable_val <- col_names_to_use[[i]]
-      variable_name <- names(col_names_to_use)[[i]]
-      variables <- c(variables, variable_name)
-      shares <- c(shares, round(100 * sum(filtered_df[variable_val]) / samplesize, 1))
-      counts <- c(counts, sum(filtered_df[variable_val]))
-    }
-
-
-    # getting the percents for as_factor_cols
-    for (fctr_item in 1:length(as_factor_cols)){
-      col_name <- names(as_factor_cols)[[fctr_item]]
-      num_fctrs <- as_factor_cols[[fctr_item]] |> length()
-
-      for (fctr_num in 1:num_fctrs){
-        count <- length(filtered_df[filtered_df[[col_name]] == fctr_num,col_name])
-        new_col_name <- as_factor_cols[[fctr_item]][[fctr_num]]
-        variables <- c(variables, new_col_name)
-        shares <- c(shares, round(100 * count / samplesize, 1))
-        counts <- c(counts, count)
-      }
-
-    }
-
-    new_df <- data.frame(Type = type,
-                         Variable = variables,
-                         Percent = shares,
-                         Count = counts)
-
-    separate_dfs[[type]] <- new_df
-
-  }
-
-  final_df <- bind_rows(separate_dfs)
-
-  if (is.null(csv_path_save)){
-    return(final_df)
-  } else{
-    write_csv(final_df, file = csv_path_save)
-    cat(paste0("File saved to \n",csv_path_save))
-  }
-
-}
-
-
-get_demographic_shares_by_type(exp_data_full,
-                               col_names_to_use,
-                               as_factor_cols,
-                               types,
-                               csv_path_save = NULL)
-
-
-
-exp_data_full |>
-  mutate(category = case_when(
-    single_no_kids_no_65 == 1 ~ "single_no_kids_no_65",
-    single_kids_no_65 == 1 ~ "single_kids_no_65",
-    married_no_kids_no_65 == 1 ~ "married_no_kids_no_65",
-    married_kids_no_65 == 1 ~ "married_kids_no_65",
-    single_no_kids_65 == 1 ~ "single_no_kids_65",
-    single_kids_65 == 1 ~ "single_kids_65",
-    married_no_kids_65 == 1 ~ "married_no_kids_65",
-    married_kids_65 == 1 ~ "married_kids_65",
-    TRUE ~ "other"
-  )) |>
-
-  group_by(category) |>
-  summarize(
-    n = n(),
-    `Car Fuel` = mean(Car.Fuel, na.rm = TRUE),
-    `Family` = mean(Family.Spending, na.rm = TRUE),
-    `Food` = mean(Food.Related, na.rm = TRUE),
-    `Alcohol` = mean(Alcohol, na.rm = TRUE),
-    `At..Home.Entertainment` = mean(At..Home.Entertainment, na.rm = TRUE),
-    `House.Related` = mean(House.Related, na.rm = TRUE),
-    `Hygiene` = mean(Hygiene, na.rm = TRUE),
-    `Medical` = mean(Medical, na.rm = TRUE),
-    `Recreational.Related` = mean(Recreational.Related, na.rm = TRUE),
-    `School.Supplies` = mean(School.Supplies, na.rm = TRUE),
-    `no.category.specified` = mean(no.category.specified, na.rm = TRUE),
-    `Car.Maintenance` = mean(Car.Maintenance, na.rm = TRUE),
-    `Clothing.Related` = mean(Clothing.Related, na.rm = TRUE),
-    `Education` = mean(Education, na.rm = TRUE),
-    `Train.Travel` = mean(Train.Travel, na.rm = TRUE),
-    `Air.Travel` = mean(Air.Travel, na.rm = TRUE),
-    `Taxi.or.Limo.Travel` = mean(Taxi.or.Limo.Travel, na.rm = TRUE),
-    `Bus.Travel` = mean(Bus.Travel, na.rm = TRUE),
-    `Car.Purchase` = mean(Car.Purchase, na.rm = TRUE),
-    `Bike.or.Scooter.or.other.Single.Rider.Travel` = mean(Bike.or.Scooter.or.other.Single.Rider.Travel, na.rm = TRUE),
-    `Ship.Travel` = mean(Ship.Travel, na.rm = TRUE),
-    `Car.Payment` = mean(Car.Payment, na.rm = TRUE))
-
-
-
-##### INTERVIEW SURVEY #####
-############################
-
-## interview files ##
-# fmli.csv = Consumer Unit (CU) level:
-# summary expenditures - income, assets, liabilities - CU characteristics and weights
-i_family <- read_csv("data/CE_data/2024/intrvw24_combined/fmli.csv")
-# itbi.csv = Detailed income
-i_income <- read_csv("data/CE_data/2024/intrvw24_combined/itbi.csv")
-# itii.csv = imputed income itterations
-i_income_itter <- read_csv("data/CE_data/2024/intrvw24_combined/itii.csv")
-# memi.csv = member level income and characteristics
-i_member <- read_csv("data/CE_data/2024/intrvw24_combined/memi.csv")
-# mtbi.csv = monthly expenditures
-i_month_exp <- read_csv("data/CE_data/2024/intrvw24_combined/mtbi.csv")
-# ntaxi.csv = estimated federal and state income taxes
-# i_income_tax <- read_csv("data/CE_data/2024/intrvw24_combined/ntaxi.csv")
-
-
-# count is how many times the household was surveyed in this round
-# number_of_hh is how many households are in the dataset with that count
-i_family |>
-  mutate(ID = substr(NEWID, 1,7)) |>
-  group_by(ID) |>
-  summarize(count = n()) |>
-  group_by(count) |>
-  summarize(number_of_hh = n())
-
-
-
-
-
-
-
-
+```

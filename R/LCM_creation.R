@@ -327,10 +327,6 @@ final_formula <- update(lcm_formula, . ~ .
 )
 
 
-lcm_data |>
-  select(urban_northeast, urban_midwest, urban_south, urban_wes,
-         rural_northeast, rural_midwest, rural_south, rural_wes) |>
-  colSums()
 
 #sjmisc::frq(x=lcm_data[c("city_type_rural")], out="viewer")
 
