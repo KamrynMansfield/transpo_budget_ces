@@ -8,6 +8,7 @@ html-table-processing: none
 library(tidyverse)
 library(readxl)
 library(gt)
+library(knitr)
 
 ucc <- read_excel("../data/data_prep_input/ucc_categories.xlsx") |>
   filter(in_exp_file == 1)
@@ -55,11 +56,11 @@ transpo_exp <- joined_exp |>
 ```
 
 ```{r}
-#| label: tbl-category-spending
-#| tbl-cap: "Average Spending per Household in Each Category"
-#| tbl-alt: "A table of Average Spending per Household in Each Category"
+#| label: tbl-transpo-spending
+#| tbl-cap: "Average Transportation Spending per Household in Each Category"
+#| tbl-alt: "A table of Transportation Average Spending per Household in Each Category"
 
-grouped_exp |> 
+transpo_exp |> 
   mutate(pct_zeros = avg_exp_zeros * 100 / sum(avg_exp_zeros),
          pct_no_zeros = avg_exp_no_zeros * 100 / sum(avg_exp_no_zeros)) |>
   arrange(desc(count)) |>
@@ -67,7 +68,7 @@ grouped_exp |>
          avg_exp_no_zeros = paste0("$",round(avg_exp_no_zeros, 2), " (",round(pct_no_zeros,2),"%)"),
          count_pct = paste0(count, " (",round(count * 100 / 6004,1),"% of sample)")) |>
   
-  select(`Spending Category` = broad_category, 
+  select(`Spending Category` = category, 
          `Average spending including all households` = avg_exp_zeros,
          `Average spending for only households that spent some in this category` = avg_exp_no_zeros,
          `Households with spending in this category` = count_pct) |>

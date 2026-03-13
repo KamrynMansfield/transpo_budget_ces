@@ -195,16 +195,39 @@ The average spending in each of the major categories mentioned above is shown in
 The average spending in each of the specific transportation categories is found in @tbl-transpo-spending. Car fuel and car maintenance were the the expense categories that included the most households. The categories with the highest averages were car purchases, car payments, and ship travel, but these had relatively low numbers of households spending any money in the categories. 
 
 {{< embed notebooks/category_spending_table.qmd#tbl-category-spending >}}
-{{< embed notebooks/category_spending_table.qmd#tbl-transpo-spending >}}
+
+{{< embed notebooks/transpo_spending_table.qmd#tbl-transpo-spending >}}
 
 
-**The next big thing to do with the data section is to write about the demographics and compare them to census data.** 
-find census data : 
-https://www.census.gov/quickfacts/fact/table/US/PST045224
-https://data.census.gov/table
+Most of the census data was found using the [Census Bereau Tables](https://data.census.gov/table). For city population, I used the census [city and town population totals](https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html) data. 
+
+Highlights of @tbl-data-demographics
+
+- CES had more people in the <\$50K and less people in the >\$200k. This is most likely because it is harder to get people in the higher income bracket to participate in the survey. 
+
+- CES had less people in the younger age group and more in the older age group. This is most likely because we are comparing reference person age to just age in general. It makes sense that there are more 54+ people as reference person since the odds of older people owning a house is larger. 
+
+- CES had more people. with bachelors degree or higher. I don't know why, but could be connected to the city population. Maybe people with degrees are more likely to live in large cities over a million people.  
+
+- The unmarried group is slightly lower in the CES survey. I'm not sure why, but I'm not sure it even needs to be talked about. 
+
+- The biggest discrepancy is the city population. I think it says somewhere that the ces surveys are over-representative of large cities??
 
 
-{{< embed notebooks/demographic_tbl.qmd#tbl-data-demographics >}}
+
+```{r}
+#| label: tbl-data-demographics
+#| tbl-cap: "Demograhic distribution of the sample compared to census data"
+#| tbl-alt: "A table with the shares of different demographic variables in the data alongside those shares according to census data"
+
+demog_tbl <- read.csv("data/tables/ce_demog_vs_census.csv") |>
+  select(Variable, CES, Census, Group) |>
+  gt(groupname_col = "Group",
+     rowname_col = "Variable")
+
+```
+
+
 
 Then there might still be some tables Katie wanted me to make. I will review those. 
 
