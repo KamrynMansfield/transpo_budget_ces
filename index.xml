@@ -742,14 +742,46 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
     <caption><p>Table 6: Average Transportation Spending per Household
     in Each Category</p></caption>
   </fig>
-  <p><bold>The next big thing to do with the data section is to write
-  about the demographics and compare them to census data.</bold> find
-  census data :
-  https://www.census.gov/quickfacts/fact/table/US/PST045224
-  https://data.census.gov/table</p>
+  <p>Most of the census data was found using the
+  <ext-link ext-link-type="uri" xlink:href="https://data.census.gov/table">Census
+  Bereau Tables</ext-link>. For city population, I used the census
+  <ext-link ext-link-type="uri" xlink:href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html">city
+  and town population totals</ext-link> data.</p>
+  <p>Highlights of
+  <xref alt="Table 7" rid="tbl-data-demographics">Table 7</xref></p>
+  <list list-type="bullet">
+    <list-item>
+      <p>CES had more people in the &lt;$50K and less people in the
+      &gt;$200k. This is most likely because it is harder to get people
+      in the higher income bracket to participate in the survey.</p>
+    </list-item>
+    <list-item>
+      <p>CES had less people in the younger age group and more in the
+      older age group. This is most likely because we are comparing
+      reference person age to just age in general. It makes sense that
+      there are more 54+ people as reference person since the odds of
+      older people owning a house is larger.</p>
+    </list-item>
+    <list-item>
+      <p>CES had more people. with bachelors degree or higher. I don’t
+      know why, but could be connected to the city population. Maybe
+      people with degrees are more likely to live in large cities over a
+      million people.</p>
+    </list-item>
+    <list-item>
+      <p>The unmarried group is slightly lower in the CES survey. I’m
+      not sure why, but I’m not sure it even needs to be talked
+      about.</p>
+    </list-item>
+    <list-item>
+      <p>The biggest discrepancy is the city population. I think it says
+      somewhere that the ces surveys are over-representative of large
+      cities??</p>
+    </list-item>
+  </list>
   <fig id="tbl-data-demographics">
-    <caption><p>Table 7: Demograhic distribution of the
-    sample</p></caption>
+    <caption><p>Table 7: Demograhic distribution of the sample compared
+    to census data</p></caption>
   </fig>
   <p>Then there might still be some tables Katie wanted me to make. I
   will review those.</p>
@@ -1615,7 +1647,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 </fn-group>
 </back>
 
-<sub-article article-type="notebook" id="nb-20-nb-article">
+<sub-article article-type="notebook" id="nb-24-nb-article">
 <front-stub>
 <title-group>
 <article-title>Unpacking Household Budgeting Strategies through a
@@ -2457,20 +2489,51 @@ transpo_cats |&gt;
     </boxed-text>
   </fig>
   </sec>
-  <p><bold>The next big thing to do with the data section is to write
-  about the demographics and compare them to census data.</bold> find
-  census data :
-  https://www.census.gov/quickfacts/fact/table/US/PST045224
-  https://data.census.gov/table</p>
-  <sec specific-use="notebook-content">
-  <code language="python">print_demographic_shares_tbl(exp_data_full, col_names_to_use)</code>
+  <p>Most of the census data was found using the
+  <ext-link ext-link-type="uri" xlink:href="https://data.census.gov/table">Census
+  Bereau Tables</ext-link>. For city population, I used the census
+  <ext-link ext-link-type="uri" xlink:href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html">city
+  and town population totals</ext-link> data.</p>
+  <p>Highlights of
+  <xref alt="Table 7" rid="tbl-data-demographics-nb-article">Table 7</xref></p>
+  <list list-type="bullet">
+    <list-item>
+      <p>CES had more people in the &lt;$50K and less people in the
+      &gt;$200k. This is most likely because it is harder to get people
+      in the higher income bracket to participate in the survey.</p>
+    </list-item>
+    <list-item>
+      <p>CES had less people in the younger age group and more in the
+      older age group. This is most likely because we are comparing
+      reference person age to just age in general. It makes sense that
+      there are more 54+ people as reference person since the odds of
+      older people owning a house is larger.</p>
+    </list-item>
+    <list-item>
+      <p>CES had more people. with bachelors degree or higher. I don’t
+      know why, but could be connected to the city population. Maybe
+      people with degrees are more likely to live in large cities over a
+      million people.</p>
+    </list-item>
+    <list-item>
+      <p>The unmarried group is slightly lower in the CES survey. I’m
+      not sure why, but I’m not sure it even needs to be talked
+      about.</p>
+    </list-item>
+    <list-item>
+      <p>The biggest discrepancy is the city population. I think it says
+      somewhere that the ces surveys are over-representative of large
+      cities??</p>
+    </list-item>
+  </list>
   <fig id="tbl-data-demographics-nb-article">
-    <caption><p>Table 7: Demograhic distribution of the
-    sample</p></caption>
-    <boxed-text>
-    </boxed-text>
+    <caption><p>Table 7: Demograhic distribution of the sample compared
+    to census data</p></caption>
+    <code language="r script">demog_tbl &lt;- read.csv(&quot;data/tables/ce_demog_vs_census.csv&quot;) |&gt;
+  select(Variable, CES, Census, Group) |&gt;
+  gt(groupname_col = &quot;Group&quot;,
+     rowname_col = &quot;Variable&quot;)</code>
   </fig>
-  </sec>
   <p>Then there might still be some tables Katie wanted me to make. I
   will review those.</p>
   <list list-type="order">
@@ -3432,6 +3495,142 @@ library(gt)
 <boxed-text>
   <preformat>Warning: package 'gt' was built under R version 4.5.2</preformat>
 </boxed-text>
+<code language="r script">library(knitr)
+</code>
+<boxed-text>
+  <preformat>Warning: package 'knitr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<code language="r script">ucc &lt;- read_excel(&quot;../data/data_prep_input/ucc_categories.xlsx&quot;) |&gt;
+  filter(in_exp_file == 1)
+names(ucc)[1] &lt;- &quot;UCC&quot;
+
+lcm &lt;- read.csv(&quot;../data/diary24_combined/created_data/exp_fmly_data.csv&quot;)
+
+exp &lt;- read_csv(&quot;../data/diary24_combined/expd.csv&quot;, guess_max = 10000)
+</code>
+<boxed-text>
+  <preformat>Rows: 416271 Columns: 13
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (7): NEWID, UCC, EXPN_QDY, EXPN_KDY, EXPNMO, EXPNMO_, EXPNYR_
+dbl (6): ALLOC, COST, PUB_FLAG, EXPNSQDY, EXPNWKDY, EXPNYR
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
+</boxed-text>
+<code language="r script">exp &lt;- exp |&gt;
+  # separate the NEWID to get CUID and WEEKI
+  mutate(CUID = substr(NEWID,2,7),
+         WEEKI = substr(NEWID,8,8)) |&gt;
+  
+  # sum expenses of each ucc code per household
+  group_by(CUID, UCC) |&gt;
+  summarize(tot_cost = sum(COST)) |&gt;
+  ungroup() |&gt;
+  
+  # get rid of expenses made by households only in the survey for one week
+  filter(CUID %in% lcm$CUID)
+</code>
+<boxed-text>
+  <preformat>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by CUID and UCC.
+ℹ Output is grouped by CUID.
+ℹ Use `summarise(.groups = &quot;drop_last&quot;)` to silence this message.
+ℹ Use `summarise(.by = c(CUID, UCC))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</preformat>
+</boxed-text>
+<code language="r script"># join to get the categories
+joined_exp &lt;- left_join(exp, ucc, by = &quot;UCC&quot;)
+
+# summarize to get average for each category
+grouped_exp &lt;- joined_exp |&gt;
+  group_by(broad_category) |&gt;
+  summarise(tot_spending = sum(tot_cost),
+            count = length(unique(CUID))) |&gt;
+  mutate(avg_exp_zeros = tot_spending / nrow(lcm),
+         avg_exp_no_zeros = tot_spending / count)
+
+# summarize to get average for each transportation category
+transpo_exp &lt;- joined_exp |&gt;
+  filter(broad_category == &quot;Transportation&quot;) |&gt;
+  group_by(category) |&gt;
+  summarise(tot_spending = sum(tot_cost),
+            count = length(unique(CUID))) |&gt;
+  mutate(avg_exp_zeros = tot_spending / nrow(lcm),
+         avg_exp_no_zeros = tot_spending / count)
+</code>
+</sec>
+<sec specific-use="notebook-content">
+<code language="r script">
+transpo_exp |&gt; 
+  mutate(pct_zeros = avg_exp_zeros * 100 / sum(avg_exp_zeros),
+         pct_no_zeros = avg_exp_no_zeros * 100 / sum(avg_exp_no_zeros)) |&gt;
+  arrange(desc(count)) |&gt;
+  mutate(avg_exp_zeros = paste0(&quot;$&quot;,round(avg_exp_zeros, 2), &quot; (&quot;,round(pct_zeros,2),&quot;%)&quot;),
+         avg_exp_no_zeros = paste0(&quot;$&quot;,round(avg_exp_no_zeros, 2), &quot; (&quot;,round(pct_no_zeros,2),&quot;%)&quot;),
+         count_pct = paste0(count, &quot; (&quot;,round(count * 100 / 6004,1),&quot;% of sample)&quot;)) |&gt;
+  
+  select(`Spending Category` = category, 
+         `Average spending including all households` = avg_exp_zeros,
+         `Average spending for only households that spent some in this category` = avg_exp_no_zeros,
+         `Households with spending in this category` = count_pct) |&gt;
+  gt()
+</code>
+<fig id="tbl-transpo-spending-nb-1">
+  <caption><p>Average Transportation Spending per Household in Each
+  Category</p></caption>
+</fig>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-8-nb-2">
+<front-stub>
+<title-group>
+<article-title>Category Spending Tables</article-title>
+</title-group>
+</front-stub>
+
+<body>
+<sec specific-use="notebook-content">
+<code language="r script">library(tidyverse)
+</code>
+<boxed-text>
+  <preformat>Warning: package 'tibble' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'tidyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'purrr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>Warning: package 'dplyr' was built under R version 4.5.2</preformat>
+</boxed-text>
+<boxed-text>
+  <preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.0     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.6.0
+✔ ggplot2   3.5.2     ✔ tibble    3.3.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+✔ purrr     1.2.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
+</boxed-text>
+<code language="r script">library(readxl)
+library(gt)
+</code>
+<boxed-text>
+  <preformat>Warning: package 'gt' was built under R version 4.5.2</preformat>
+</boxed-text>
 <code language="r script">ucc &lt;- read_excel(&quot;../data/data_prep_input/ucc_categories.xlsx&quot;) |&gt;
   filter(in_exp_file == 1)
 names(ucc)[1] &lt;- &quot;UCC&quot;
@@ -3508,29 +3707,8 @@ grouped_exp |&gt;
          `Households with spending in this category` = count_pct) |&gt;
   gt()
 </code>
-<fig id="tbl-category-spending-nb-1">
+<fig id="tbl-category-spending-nb-2">
   <caption><p>Average Spending per Household in Each
-  Category</p></caption>
-</fig>
-</sec>
-<sec specific-use="notebook-content">
-<code language="r script">
-transpo_exp |&gt; 
-  mutate(pct_zeros = avg_exp_zeros * 100 / sum(avg_exp_zeros),
-         pct_no_zeros = avg_exp_no_zeros * 100 / sum(avg_exp_no_zeros)) |&gt;
-  arrange(desc(count)) |&gt;
-  mutate(avg_exp_zeros = paste0(&quot;$&quot;,round(avg_exp_zeros, 2), &quot; (&quot;,round(pct_zeros,2),&quot;%)&quot;),
-         avg_exp_no_zeros = paste0(&quot;$&quot;,round(avg_exp_no_zeros, 2), &quot; (&quot;,round(pct_no_zeros,2),&quot;%)&quot;),
-         count_pct = paste0(count, &quot; (&quot;,round(count * 100 / 6004,1),&quot;% of sample)&quot;)) |&gt;
-  
-  select(`Spending Category` = category, 
-         `Average spending including all households` = avg_exp_zeros,
-         `Average spending for only households that spent some in this category` = avg_exp_no_zeros,
-         `Households with spending in this category` = count_pct) |&gt;
-  gt()
-</code>
-<fig id="tbl-transpo-spending-nb-1">
-  <caption><p>Average Transportation Spending per Household in Each
   Category</p></caption>
 </fig>
 </sec>
@@ -3543,7 +3721,7 @@ transpo_exp |&gt;
 
 
 </sub-article>
-<sub-article article-type="notebook" id="nb-8-nb-2">
+<sub-article article-type="notebook" id="nb-12-nb-3">
 <front-stub>
 <title-group>
 <article-title>Demographic Tables</article-title>
@@ -3961,11 +4139,12 @@ print_demographic_shares_tbl &lt;- function(df, col_names_to_use){
 }
 </code>
 </sec>
+<p>I ended up taking this data, formatting it in excel</p>
 <sec specific-use="notebook-content">
 <code language="r script">
 print_demographic_shares_tbl(exp_data_full, col_names_to_use)
 </code>
-<fig id="tbl-data-demographics-nb-2">
+<fig id="tbl-data-demographics_old-nb-3">
   <caption><p>Demograhic distribution of the sample</p></caption>
 </fig>
 </sec>
@@ -3978,7 +4157,7 @@ print_demographic_shares_tbl(exp_data_full, col_names_to_use)
 
 
 </sub-article>
-<sub-article article-type="notebook" id="nb-12-nb-3">
+<sub-article article-type="notebook" id="nb-16-nb-4">
 <front-stub>
 <title-group>
 <article-title>LCA Tables</article-title>
@@ -4064,7 +4243,7 @@ model_df &lt;- create_regr_tbl(final_model)
                       two_vs_one_name = &quot;MM vs. CH&quot;,
                       three_vs_one_name = &quot;CL vs. CH&quot;)
 </code>
-<fig id="tbl-model-coeff-nb-3">
+<fig id="tbl-model-coeff-nb-4">
   <caption><p>Regression Results of Model</p></caption>
 </fig>
 </sec>
@@ -4411,7 +4590,7 @@ names(expense_level_names) &lt;- c(&quot;level_def&quot;,&quot;nice_level_name&q
                         c2_name = &quot;Multimodal Spenders (MM)&quot;,
                         c3_name = &quot;Car Spenders Low (CL)&quot;)
 </code>
-<fig id="tbl-model-classes-nb-3">
+<fig id="tbl-model-classes-nb-4">
   <caption><p>Class Distribution of Model</p></caption>
 </fig>
 </sec>
@@ -4431,7 +4610,7 @@ covariates &lt;- c(&quot;income_less_50k&quot;,
 
 create_nice_covariate_tbl(final_model, lcm_data, covariates)
 </code>
-<fig id="tbl-model-covarpcts-nb-3">
+<fig id="tbl-model-covarpcts-nb-4">
   <caption><p>The table that Katie gave me the code to
   make.</p></caption>
 </fig>
@@ -4445,7 +4624,7 @@ create_nice_covariate_tbl(final_model, lcm_data, covariates)
 
 
 </sub-article>
-<sub-article article-type="notebook" id="nb-16-nb-4">
+<sub-article article-type="notebook" id="nb-20-nb-5">
 <front-stub>
 <title-group>
 <article-title>Lit Review Table</article-title>
@@ -4501,7 +4680,7 @@ lgl (1): Uses CEX Data
 <code language="r script">
 kable(lit_tbl)
 </code>
-<fig id="tbl-lit-summary-nb-4">
+<fig id="tbl-lit-summary-nb-5">
   <caption><p>Summary of the Literature</p></caption>
   <table-wrap>
     <table>

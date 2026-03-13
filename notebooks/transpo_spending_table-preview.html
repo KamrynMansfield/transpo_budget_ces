@@ -175,7 +175,7 @@
       <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
       <h6><i class="bi bi-journal-code"></i> Category Spending Tables</h6>
 
-            <a href="../notebooks/category_spending_table.qmd" class="btn btn-primary quarto-download-embed" download="category_spending_table.qmd">Download Source</a>
+            <a href="../notebooks/transpo_spending_table.qmd" class="btn btn-primary quarto-download-embed" download="transpo_spending_table.qmd">Download Source</a>
           </div>
 
      <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
@@ -242,13 +242,17 @@
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'gt' was built under R version 4.5.2</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ucc <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"../data/data_prep_input/ucc_categories.xlsx"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(in_exp_file <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ucc)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"UCC"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>lcm <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/diary24_combined/created_data/exp_fmly_data.csv"</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/diary24_combined/expd.csv"</span>, <span class="at">guess_max =</span> <span class="dv">10000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'knitr' was built under R version 4.5.2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ucc <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"../data/data_prep_input/ucc_categories.xlsx"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(in_exp_file <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ucc)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"UCC"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>lcm <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/diary24_combined/created_data/exp_fmly_data.csv"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/diary24_combined/expd.csv"</span>, <span class="at">guess_max =</span> <span class="dv">10000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 416271 Columns: 13
 ── Column specification ────────────────────────────────────────────────────────
@@ -259,18 +263,18 @@ dbl (6): ALLOC, COST, PUB_FLAG, EXPNSQDY, EXPNWKDY, EXPNYR
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> exp <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate the NEWID to get CUID and WEEKI</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">CUID =</span> <span class="fu">substr</span>(NEWID,<span class="dv">2</span>,<span class="dv">7</span>),</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">WEEKI =</span> <span class="fu">substr</span>(NEWID,<span class="dv">8</span>,<span class="dv">8</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sum expenses of each ucc code per household</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(CUID, UCC) <span class="sc">|&gt;</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">tot_cost =</span> <span class="fu">sum</span>(COST)) <span class="sc">|&gt;</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get rid of expenses made by households only in the survey for one week</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(CUID <span class="sc">%in%</span> lcm<span class="sc">$</span>CUID)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> exp <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate the NEWID to get CUID and WEEKI</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">CUID =</span> <span class="fu">substr</span>(NEWID,<span class="dv">2</span>,<span class="dv">7</span>),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">WEEKI =</span> <span class="fu">substr</span>(NEWID,<span class="dv">8</span>,<span class="dv">8</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sum expenses of each ucc code per household</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(CUID, UCC) <span class="sc">|&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">tot_cost =</span> <span class="fu">sum</span>(COST)) <span class="sc">|&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get rid of expenses made by households only in the survey for one week</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(CUID <span class="sc">%in%</span> lcm<span class="sc">$</span>CUID)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has regrouped the output.
 ℹ Summaries were computed grouped by CUID and UCC.
@@ -279,65 +283,65 @@ dbl (6): ALLOC, COST, PUB_FLAG, EXPNSQDY, EXPNWKDY, EXPNYR
 ℹ Use `summarise(.by = c(CUID, UCC))` for per-operation grouping
   (`?dplyr::dplyr_by`) instead.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># join to get the categories</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>joined_exp <span class="ot">&lt;-</span> <span class="fu">left_join</span>(exp, ucc, <span class="at">by =</span> <span class="st">"UCC"</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize to get average for each category</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>grouped_exp <span class="ot">&lt;-</span> joined_exp <span class="sc">|&gt;</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(broad_category) <span class="sc">|&gt;</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">tot_spending =</span> <span class="fu">sum</span>(tot_cost),</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">count =</span> <span class="fu">length</span>(<span class="fu">unique</span>(CUID))) <span class="sc">|&gt;</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg_exp_zeros =</span> tot_spending <span class="sc">/</span> <span class="fu">nrow</span>(lcm),</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">avg_exp_no_zeros =</span> tot_spending <span class="sc">/</span> count)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize to get average for each transportation category</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>transpo_exp <span class="ot">&lt;-</span> joined_exp <span class="sc">|&gt;</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(broad_category <span class="sc">==</span> <span class="st">"Transportation"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(category) <span class="sc">|&gt;</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">tot_spending =</span> <span class="fu">sum</span>(tot_cost),</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">count =</span> <span class="fu">length</span>(<span class="fu">unique</span>(CUID))) <span class="sc">|&gt;</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg_exp_zeros =</span> tot_spending <span class="sc">/</span> <span class="fu">nrow</span>(lcm),</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">avg_exp_no_zeros =</span> tot_spending <span class="sc">/</span> count)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># join to get the categories</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>joined_exp <span class="ot">&lt;-</span> <span class="fu">left_join</span>(exp, ucc, <span class="at">by =</span> <span class="st">"UCC"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize to get average for each category</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>grouped_exp <span class="ot">&lt;-</span> joined_exp <span class="sc">|&gt;</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(broad_category) <span class="sc">|&gt;</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">tot_spending =</span> <span class="fu">sum</span>(tot_cost),</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">count =</span> <span class="fu">length</span>(<span class="fu">unique</span>(CUID))) <span class="sc">|&gt;</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg_exp_zeros =</span> tot_spending <span class="sc">/</span> <span class="fu">nrow</span>(lcm),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">avg_exp_no_zeros =</span> tot_spending <span class="sc">/</span> count)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize to get average for each transportation category</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>transpo_exp <span class="ot">&lt;-</span> joined_exp <span class="sc">|&gt;</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(broad_category <span class="sc">==</span> <span class="st">"Transportation"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(category) <span class="sc">|&gt;</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">tot_spending =</span> <span class="fu">sum</span>(tot_cost),</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">count =</span> <span class="fu">length</span>(<span class="fu">unique</span>(CUID))) <span class="sc">|&gt;</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg_exp_zeros =</span> tot_spending <span class="sc">/</span> <span class="fu">nrow</span>(lcm),</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">avg_exp_no_zeros =</span> tot_spending <span class="sc">/</span> count)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div class="cell" data-tbl-alt="A table of Average Spending per Household in Each Category">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>grouped_exp <span class="sc">|&gt;</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct_zeros =</span> avg_exp_zeros <span class="sc">*</span> <span class="dv">100</span> <span class="sc">/</span> <span class="fu">sum</span>(avg_exp_zeros),</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">pct_no_zeros =</span> avg_exp_no_zeros <span class="sc">*</span> <span class="dv">100</span> <span class="sc">/</span> <span class="fu">sum</span>(avg_exp_no_zeros)) <span class="sc">|&gt;</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count)) <span class="sc">|&gt;</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg_exp_zeros =</span> <span class="fu">paste0</span>(<span class="st">"$"</span>,<span class="fu">round</span>(avg_exp_zeros, <span class="dv">2</span>), <span class="st">" ("</span>,<span class="fu">round</span>(pct_zeros,<span class="dv">2</span>),<span class="st">"%)"</span>),</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">avg_exp_no_zeros =</span> <span class="fu">paste0</span>(<span class="st">"$"</span>,<span class="fu">round</span>(avg_exp_no_zeros, <span class="dv">2</span>), <span class="st">" ("</span>,<span class="fu">round</span>(pct_no_zeros,<span class="dv">2</span>),<span class="st">"%)"</span>),</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">count_pct =</span> <span class="fu">paste0</span>(count, <span class="st">" ("</span>,<span class="fu">round</span>(count <span class="sc">*</span> <span class="dv">100</span> <span class="sc">/</span> <span class="dv">6004</span>,<span class="dv">1</span>),<span class="st">"% of sample)"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">Spending Category</span><span class="st">`</span> <span class="ot">=</span> broad_category, </span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Average spending including all households</span><span class="st">`</span> <span class="ot">=</span> avg_exp_zeros,</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Average spending for only households that spent some in this category</span><span class="st">`</span> <span class="ot">=</span> avg_exp_no_zeros,</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Households with spending in this category</span><span class="st">`</span> <span class="ot">=</span> count_pct) <span class="sc">|&gt;</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="tbl-category-spending" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-alt="A table of Average Spending per Household in Each Category">
+<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div class="cell" data-tbl-alt="A table of Transportation Average Spending per Household in Each Category">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>transpo_exp <span class="sc">|&gt;</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct_zeros =</span> avg_exp_zeros <span class="sc">*</span> <span class="dv">100</span> <span class="sc">/</span> <span class="fu">sum</span>(avg_exp_zeros),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">pct_no_zeros =</span> avg_exp_no_zeros <span class="sc">*</span> <span class="dv">100</span> <span class="sc">/</span> <span class="fu">sum</span>(avg_exp_no_zeros)) <span class="sc">|&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count)) <span class="sc">|&gt;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg_exp_zeros =</span> <span class="fu">paste0</span>(<span class="st">"$"</span>,<span class="fu">round</span>(avg_exp_zeros, <span class="dv">2</span>), <span class="st">" ("</span>,<span class="fu">round</span>(pct_zeros,<span class="dv">2</span>),<span class="st">"%)"</span>),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">avg_exp_no_zeros =</span> <span class="fu">paste0</span>(<span class="st">"$"</span>,<span class="fu">round</span>(avg_exp_no_zeros, <span class="dv">2</span>), <span class="st">" ("</span>,<span class="fu">round</span>(pct_no_zeros,<span class="dv">2</span>),<span class="st">"%)"</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">count_pct =</span> <span class="fu">paste0</span>(count, <span class="st">" ("</span>,<span class="fu">round</span>(count <span class="sc">*</span> <span class="dv">100</span> <span class="sc">/</span> <span class="dv">6004</span>,<span class="dv">1</span>),<span class="st">"% of sample)"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">Spending Category</span><span class="st">`</span> <span class="ot">=</span> category, </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Average spending including all households</span><span class="st">`</span> <span class="ot">=</span> avg_exp_zeros,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Average spending for only households that spent some in this category</span><span class="st">`</span> <span class="ot">=</span> avg_exp_no_zeros,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Households with spending in this category</span><span class="st">`</span> <span class="ot">=</span> count_pct) <span class="sc">|&gt;</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="tbl-transpo-spending" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-alt="A table of Transportation Average Spending per Household in Each Category">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-category-spending-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Average Spending per Household in Each Category
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-transpo-spending-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Average Transportation Spending per Household in Each Category
 </figcaption>
-<div aria-describedby="tbl-category-spending-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-transpo-spending-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="hkoyfgmifp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hkoyfgmifp table {
+<div id="bqdrrltevq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bqdrrltevq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hkoyfgmifp thead, #hkoyfgmifp tbody, #hkoyfgmifp tfoot, #hkoyfgmifp tr, #hkoyfgmifp td, #hkoyfgmifp th {
+#bqdrrltevq thead, #bqdrrltevq tbody, #bqdrrltevq tfoot, #bqdrrltevq tr, #bqdrrltevq td, #bqdrrltevq th {
   border-style: none;
 }
 
-#hkoyfgmifp p {
+#bqdrrltevq p {
   margin: 0;
   padding: 0;
 }
 
-#hkoyfgmifp .gt_table {
+#bqdrrltevq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -363,12 +367,12 @@ Average Spending per Household in Each Category
   border-left-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_caption {
+#bqdrrltevq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hkoyfgmifp .gt_title {
+#bqdrrltevq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -380,7 +384,7 @@ Average Spending per Household in Each Category
   border-bottom-width: 0;
 }
 
-#hkoyfgmifp .gt_subtitle {
+#bqdrrltevq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -392,7 +396,7 @@ Average Spending per Household in Each Category
   border-top-width: 0;
 }
 
-#hkoyfgmifp .gt_heading {
+#bqdrrltevq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -404,13 +408,13 @@ Average Spending per Household in Each Category
   border-right-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_bottom_border {
+#bqdrrltevq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_col_headings {
+#bqdrrltevq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -425,7 +429,7 @@ Average Spending per Household in Each Category
   border-right-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_col_heading {
+#bqdrrltevq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -445,7 +449,7 @@ Average Spending per Household in Each Category
   overflow-x: hidden;
 }
 
-#hkoyfgmifp .gt_column_spanner_outer {
+#bqdrrltevq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -457,15 +461,15 @@ Average Spending per Household in Each Category
   padding-right: 4px;
 }
 
-#hkoyfgmifp .gt_column_spanner_outer:first-child {
+#bqdrrltevq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hkoyfgmifp .gt_column_spanner_outer:last-child {
+#bqdrrltevq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hkoyfgmifp .gt_column_spanner {
+#bqdrrltevq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -477,11 +481,11 @@ Average Spending per Household in Each Category
   width: 100%;
 }
 
-#hkoyfgmifp .gt_spanner_row {
+#bqdrrltevq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hkoyfgmifp .gt_group_heading {
+#bqdrrltevq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -507,7 +511,7 @@ Average Spending per Household in Each Category
   text-align: left;
 }
 
-#hkoyfgmifp .gt_empty_group_heading {
+#bqdrrltevq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -522,15 +526,15 @@ Average Spending per Household in Each Category
   vertical-align: middle;
 }
 
-#hkoyfgmifp .gt_from_md > :first-child {
+#bqdrrltevq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hkoyfgmifp .gt_from_md > :last-child {
+#bqdrrltevq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hkoyfgmifp .gt_row {
+#bqdrrltevq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -549,7 +553,7 @@ Average Spending per Household in Each Category
   overflow-x: hidden;
 }
 
-#hkoyfgmifp .gt_stub {
+#bqdrrltevq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -562,7 +566,7 @@ Average Spending per Household in Each Category
   padding-right: 5px;
 }
 
-#hkoyfgmifp .gt_stub_row_group {
+#bqdrrltevq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -576,15 +580,15 @@ Average Spending per Household in Each Category
   vertical-align: top;
 }
 
-#hkoyfgmifp .gt_row_group_first td {
+#bqdrrltevq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hkoyfgmifp .gt_row_group_first th {
+#bqdrrltevq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hkoyfgmifp .gt_summary_row {
+#bqdrrltevq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -594,16 +598,16 @@ Average Spending per Household in Each Category
   padding-right: 5px;
 }
 
-#hkoyfgmifp .gt_first_summary_row {
+#bqdrrltevq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_first_summary_row.thick {
+#bqdrrltevq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hkoyfgmifp .gt_last_summary_row {
+#bqdrrltevq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -613,7 +617,7 @@ Average Spending per Household in Each Category
   border-bottom-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_grand_summary_row {
+#bqdrrltevq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -623,7 +627,7 @@ Average Spending per Household in Each Category
   padding-right: 5px;
 }
 
-#hkoyfgmifp .gt_first_grand_summary_row {
+#bqdrrltevq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -633,7 +637,7 @@ Average Spending per Household in Each Category
   border-top-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_last_grand_summary_row_top {
+#bqdrrltevq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -643,11 +647,11 @@ Average Spending per Household in Each Category
   border-bottom-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_striped {
+#bqdrrltevq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hkoyfgmifp .gt_table_body {
+#bqdrrltevq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -656,7 +660,7 @@ Average Spending per Household in Each Category
   border-bottom-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_footnotes {
+#bqdrrltevq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -670,7 +674,7 @@ Average Spending per Household in Each Category
   border-right-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_footnote {
+#bqdrrltevq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -679,7 +683,7 @@ Average Spending per Household in Each Category
   padding-right: 5px;
 }
 
-#hkoyfgmifp .gt_sourcenotes {
+#bqdrrltevq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -693,7 +697,7 @@ Average Spending per Household in Each Category
   border-right-color: #D3D3D3;
 }
 
-#hkoyfgmifp .gt_sourcenote {
+#bqdrrltevq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -701,72 +705,72 @@ Average Spending per Household in Each Category
   padding-right: 5px;
 }
 
-#hkoyfgmifp .gt_left {
+#bqdrrltevq .gt_left {
   text-align: left;
 }
 
-#hkoyfgmifp .gt_center {
+#bqdrrltevq .gt_center {
   text-align: center;
 }
 
-#hkoyfgmifp .gt_right {
+#bqdrrltevq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hkoyfgmifp .gt_font_normal {
+#bqdrrltevq .gt_font_normal {
   font-weight: normal;
 }
 
-#hkoyfgmifp .gt_font_bold {
+#bqdrrltevq .gt_font_bold {
   font-weight: bold;
 }
 
-#hkoyfgmifp .gt_font_italic {
+#bqdrrltevq .gt_font_italic {
   font-style: italic;
 }
 
-#hkoyfgmifp .gt_super {
+#bqdrrltevq .gt_super {
   font-size: 65%;
 }
 
-#hkoyfgmifp .gt_footnote_marks {
+#bqdrrltevq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hkoyfgmifp .gt_asterisk {
+#bqdrrltevq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hkoyfgmifp .gt_indent_1 {
+#bqdrrltevq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hkoyfgmifp .gt_indent_2 {
+#bqdrrltevq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hkoyfgmifp .gt_indent_3 {
+#bqdrrltevq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hkoyfgmifp .gt_indent_4 {
+#bqdrrltevq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hkoyfgmifp .gt_indent_5 {
+#bqdrrltevq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hkoyfgmifp .katex-display {
+#bqdrrltevq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hkoyfgmifp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bqdrrltevq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -780,34 +784,46 @@ Average Spending per Household in Each Category
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td headers="Spending Category" class="gt_row gt_left">Food</td>
-<td headers="Average spending including all households" class="gt_row gt_right">$413.11 (21.24%)</td>
-<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$414.35 (15.64%)</td>
-<td headers="Households with spending in this category" class="gt_row gt_left">5986 (99.7% of sample)</td></tr>
-    <tr><td headers="Spending Category" class="gt_row gt_left">House Related</td>
-<td headers="Average spending including all households" class="gt_row gt_right">$635.82 (32.69%)</td>
-<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$755.03 (28.5%)</td>
-<td headers="Households with spending in this category" class="gt_row gt_left">5056 (84.2% of sample)</td></tr>
-    <tr><td headers="Spending Category" class="gt_row gt_left">Mandatory</td>
-<td headers="Average spending including all households" class="gt_row gt_right">$260.83 (13.41%)</td>
-<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$320.25 (12.09%)</td>
-<td headers="Households with spending in this category" class="gt_row gt_left">4890 (81.4% of sample)</td></tr>
-    <tr><td headers="Spending Category" class="gt_row gt_left">Transportation</td>
-<td headers="Average spending including all households" class="gt_row gt_right">$260.08 (13.37%)</td>
-<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$326.75 (12.33%)</td>
-<td headers="Households with spending in this category" class="gt_row gt_left">4779 (79.6% of sample)</td></tr>
-    <tr><td headers="Spending Category" class="gt_row gt_left">Leisure</td>
-<td headers="Average spending including all households" class="gt_row gt_right">$170.28 (8.76%)</td>
-<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$270.68 (10.22%)</td>
-<td headers="Households with spending in this category" class="gt_row gt_left">3777 (62.9% of sample)</td></tr>
-    <tr><td headers="Spending Category" class="gt_row gt_left">Other</td>
-<td headers="Average spending including all households" class="gt_row gt_right">$187.12 (9.62%)</td>
-<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$439.19 (16.58%)</td>
-<td headers="Households with spending in this category" class="gt_row gt_left">2558 (42.6% of sample)</td></tr>
-    <tr><td headers="Spending Category" class="gt_row gt_left">School</td>
-<td headers="Average spending including all households" class="gt_row gt_right">$17.69 (0.91%)</td>
-<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$122.92 (4.64%)</td>
-<td headers="Households with spending in this category" class="gt_row gt_left">864 (14.4% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Car Fuel</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$78.86 (30.32%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$108 (1.13%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">4384 (73% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Car Maintenance</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$89.13 (34.27%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$283.01 (2.96%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">1891 (31.5% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Taxi or Limo Travel</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$2.54 (0.98%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$65.4 (0.68%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">233 (3.9% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Train Travel</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$1.56 (0.6%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$46.96 (0.49%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">200 (3.3% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Air Travel</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$16.76 (6.44%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$805.04 (8.43%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">125 (2.1% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Car Purchase</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$64.79 (24.91%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$3442.59 (36.03%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">113 (1.9% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Bike or Scooter or other Single Rider Travel</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$1.31 (0.5%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$137.59 (1.44%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">57 (0.9% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Bus Travel</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$0.17 (0.07%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$23.92 (0.25%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">43 (0.7% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Car Payment</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$4.37 (1.68%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$1141.45 (11.95%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">23 (0.4% of sample)</td></tr>
+    <tr><td headers="Spending Category" class="gt_row gt_left">Ship Travel</td>
+<td headers="Average spending including all households" class="gt_row gt_right">$0.58 (0.22%)</td>
+<td headers="Average spending for only households that spent some in this category" class="gt_row gt_right">$3500 (36.63%)</td>
+<td headers="Households with spending in this category" class="gt_row gt_left">1 (0% of sample)</td></tr>
   </tbody>
   
 </table>
