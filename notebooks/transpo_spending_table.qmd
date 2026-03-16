@@ -67,11 +67,23 @@ transpo_exp |>
   mutate(avg_exp_zeros = paste0("$",round(avg_exp_zeros, 2), " (",round(pct_zeros,2),"%)"),
          avg_exp_no_zeros = paste0("$",round(avg_exp_no_zeros, 2), " (",round(pct_no_zeros,2),"%)"),
          count_pct = paste0(count, " (",round(count * 100 / 6004,1),"% of sample)")) |>
+  mutate(category = factor(category, levels = c("Car Fuel",
+                    "Car Maintenance",
+                    "Ridesharing",
+                    "Public Transit (Bus)",
+                    "Public Transit (Rail)",
+                    "Microtransit",
+                    "Air Travel",
+                    "Car Purchase",
+                    "Car Payment",
+                    "Ship Travel"
+                    ))) |>
+  arrange(category) |>
   
   select(`Spending Category` = category, 
          `Average spending including all households` = avg_exp_zeros,
          `Average spending for only households that spent some in this category` = avg_exp_no_zeros,
          `Households with spending in this category` = count_pct) |>
-  gt()
+  gt(rowname_col = "Spending Category")
 
 ```

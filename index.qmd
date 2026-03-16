@@ -63,7 +63,7 @@ The purpose of this research is to explore how household budgets are structured 
 lit_rev_tbl <- read_csv("notebooks/lit_review_table2.csv")
 ```
 
-@tbl-lit-summary summarizes the literature that was reviewed for this study. As seen in the table, there were a total of `r nrow(lit_rev_tbl)` studies reviewed with `r nrow(lit_rev_tbl[lit_rev_tbl[["Uses CEX Data"]],])` studies that use the consumer expenditure survey. The literature relating to this study has been classified into four categories: (1) Household Choices and Activity Patterns, (2) Household Transportation Choices, (3) Household Spending and Budgets, and (4) Household Transportation Budgets. The following sections describe the relevant findings from literature in each of these groups.
+@tbl-lit-summary summarizes the literature that was reviewed for this study. As seen in the table, there were a total of `r nrow(lit_rev_tbl)` studies reviewed with `r nrow(lit_rev_tbl[lit_rev_tbl[["Uses CEX Data"]],])` studies that use the consumer expenditure survey. The literature relating to this study has been classified into four categories: (1) Household Choices and Activity Patterns, (2) Household Transportation Choices, (3) Household Spending and Budgets, and (4) Household Transportation Budgets. The following sections describe the relevant findings from the literature in each of these groups.
 
 {{< embed notebooks/lit_review_table.qmd#tbl-lit-summary >}}
 
@@ -119,11 +119,13 @@ The purpose of the current study is to see how household budgets are structured 
 
 ## Data
 
+### Data Source and Preparation
+
 Data for the following analysis were obtained from the 2024 Consumer Expenditure Survey (CEX) Public Use Microdata (PUMD). The CEX is administered continuously by the Bureau of Labor Statistics (BLS). The data are organized by quarter and published each year. The CEX consists of two surveys: the Interview Survey, and the Diary Survey. Each survey has it's own unique sample, so the households in one will not appear in the other. The Interview Survey tracks a household's major and recurring expenditures by reviewing their expenses from the past three months, and the Diary Survey captures more routine household spending by recording in detail a households expenditure across a two-week span.
 
 Because we were interested in the day-to-day expenditures of households, this study uses data from the Diary Survey of the CEX. To gather this data, BLS personnel contact a sample of US households, record household demographic data, and explain how to fill out the weekly expenditure diary. After two consecutive weeks of reporting expenditures, the household is removed from the sample and replaced by a new household. The combination of household demographics and detailed expenditures available in the Diary Survey makes this data set ideal for the current study.
 
-@tbl-ce-files shows the files in the PUMD that pertain to the Diary Survey. For this study, we specifically looked at the FMLD and the EXPD files from 2024 to get household^[Note that "household" in this paper is synonymous with what the CEX often denotes as "Consumer Unit" (CU)] characteristics along with their detailed spending tables. In the 2024 data, there were a total of 6,334 households surveyed. To capture the most expenditures and keep consistency, we only kept households that had participated in the study for two consecutive weeks during the study period. We also excluded any households who had no recorded expenditures during the two survey weeks. After filtering out the 161 households with only one week of data and the 169 households with no expenditures, we were left with 6,004 households used in the analysis. 
+@tbl-ce-files shows the files in the PUMD that pertain to the Diary Survey. For this study, we specifically looked at the FMLD and the EXPD files from 2024 to get household^[Note that "household" in this paper is synonymous with what the CEX often denotes as "Consumer Unit" (CU)] characteristics along with their detailed spending tables. In the 2024 data, there were a total of 6,334 households surveyed. To capture the most expenditures and keep consistency, we only kept households that had participated in the study for two consecutive weeks during the study period. We also excluded any households who had no recorded expenditures during the two survey weeks. After filtering out the 161 households with only one week of data and the 169 households with no expenditures, we were left with 6,004 households to use in the analysis. 
 
 ```{r}
 #| label: tbl-ce-files
@@ -144,7 +146,28 @@ categories <- unique(ucc_codes$broad_category)
 ```
 
 
-In the expenditures data, there were `r length(expense_types)` unique types of expenditures recorded with each expenditure designated by a Universal Classification Code (UCC). We organized this into `r length(categories)` categories as shown in @tbl-spending-categories (for a more detailed breakdown of the expenditure categories, see [Appendix A](#sec-appendix-a)). Since this study focuses on transportation expenditures, we further split the transportation category into smaller categories based on mode. The specific UCC codes for each item in the transportation categories are listed in @tbl-transpo-categories.
+In the expenditures data, there were `r length(expense_types)` unique types of expenditures recorded with each expenditure designated by a Universal Classification Code (UCC). We organized this into `r length(categories)` categories as shown in @tbl-spending-categories (for a more detailed breakdown of the expenditure categories, see [Appendix A](#sec-appendix-a)). 
+Since this study focuses on transportation expenditures, we further split the transportation category into smaller categories: 
+
+- Car Fuel
+
+- Car Maintenance
+
+- Ridesharing
+
+- Public Trnasit (Bus)
+
+- Public Transit (Rail)
+
+- Microtransit
+
+- Air Travel
+
+- Car Purchase
+
+- Car Payment
+
+- Ship Travel
 
 ```{r}
 #| label: tbl-spending-categories
@@ -155,64 +178,39 @@ expense_categories <- read.csv("data/tables/ce_expense_categories.csv")
 
 names(expense_categories) <- c("Category", "Types of Expenses")
 
-gt(expense_categories)
+expense_categories |>
+  mutate(Category = factor(Category, levels = c("Transportation",
+                    "Mandatory",
+                    "House Related",
+                    "Food",
+                    "Leisure",
+                    "School",
+                    "Other"
+                    ))) |>
+  arrange(Category) |>
+    gt()
 
 ```
 
-```{r}
-#| label: tbl-transpo-categories
-#| tbl-cap: "Unique Expenditures in Each Transportaiton Category"
-#| tbl-alt: "Detailed Breakdown of Unique Expenditures in Each Transportaiton Category"
-
-transpo_cats <- ucc_codes |>
-  filter(broad_category == "Transportation") |>
-  select(ucc_code, `Code description`, category)
-
-names(transpo_cats) <- c("UCC Code","Code Description","Transportation Category")
-
-transpo_cats |> 
-  gt(
-    # rowname_col = "UCC Code",
-     groupname_col = "Transportation Category",
-     row_group_as_column = TRUE) |>
-  row_group_order(c("Car Purchase",
-                    "Car Maintenance",
-                    "Car Fuel",
-                    "Car Payment",
-                    "Bus Travel",
-                    "Train Travel",
-                    "Taxi or Limo Travel",
-                    "Bike or Scooter or other Single Rider Travel",
-                    "Air Travel",
-                    "Train Travel"
-                    ))
-
-```
+### Expenditure Summaries
 
 The average spending in each of the major categories mentioned above is shown in @tbl-category-spending. As seen in the table, there were four categories in which more than 75% of the sample had expenditures: food, house, mandatory, and transportation. The portion of the sample with food-related expenditures was just under 100 percent, and those with house-related expenditures was over 80 percent. This shows that practically no household went two weeks without purchasing food, and only a small portion of the households went two weeks without having a house-related expense. When including all the households in the sample, the average spending on transportation is approximately \$260, and that average increases to approximately \$325 when looking at only the households who had transportation expenditures. 
-
-
-The average spending in each of the specific transportation categories is found in @tbl-transpo-spending. Car fuel and car maintenance were the the expense categories that included the most households. The categories with the highest averages were car purchases, car payments, and ship travel, but these had relatively low numbers of households spending any money in the categories. 
+Because less than half of the households had spending in these categories, we did not use the School or Other categories as covariates in the model. 
 
 {{< embed notebooks/category_spending_table.qmd#tbl-category-spending >}}
+
+The average spending in each of the specific transportation categories is found in @tbl-transpo-spending. Car fuel and car maintenance were the the expense categories that included the most households. The categories with the highest averages were car purchases, car payments, and ship travel, but these had relatively low numbers of households spending any money in the categories. Because of the few observations in both the Car Payment and the Ship Travel categories, we did not included them as indicators in the model. We also decided to exclude Car Purchases from the model since it is less representative of day to day expenses. 
 
 {{< embed notebooks/transpo_spending_table.qmd#tbl-transpo-spending >}}
 
 
-Most of the census data was found using the [Census Bereau Tables](https://data.census.gov/table). For city population, I used the census [city and town population totals](https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html) data. 
+### Characteristics of the Sample
 
-Highlights of @tbl-data-demographics
+The demographic characteristics of interest in the sample are shown in @tbl-data-demographics, and they are compared to census data. In general, the CEX data follows a similar distribution as census data which is a good indication that the CEX survey is representative of the United States. However, the distribution did not match the census completely, and there were some noticeable differences between the two.
 
-- CES had more people in the <\$50K and less people in the >\$200k. This is most likely because it is harder to get people in the higher income bracket to participate in the survey. 
+When looking at household income, the CEX had a larger percentage of households making less than \$50,000 a year and a smaller percentage making greater than \$100,000 a year. This aligns with the results of @sabelhaus_is_2013 who found that higher income thresholds were under-represented in the CEX. This could be because it is harder to get people in the higher income brackets to participate in the survey. There were also slight differences in the age of the reference person compared to the age of people in the United States. The CEX had less people in the younger age group and more in the older age group. This is most likely because we are comparing the age of the reference person to age in general. It seems logical that there are more people 55 and older as the reference person due to their availability to take the survey and their likelihood of owning a house.
 
-- CES had less people in the younger age group and more in the older age group. This is most likely because we are comparing reference person age to just age in general. It makes sense that there are more 54+ people as reference person since the odds of older people owning a house is larger. 
-
-- CES had more people. with bachelors degree or higher. I don't know why, but could be connected to the city population. Maybe people with degrees are more likely to live in large cities over a million people.  
-
-- The unmarried group is slightly lower in the CES survey. I'm not sure why, but I'm not sure it even needs to be talked about. 
-
-- The biggest discrepancy is the city population. I think it says somewhere that the ces surveys are over-representative of large cities??
-
+The biggest discrepancy is related to the city population. Approximately eight percent of the people in the United States live in a city with a population larger than one million, but more than half of the households in the CEX are in a city with a population of more than one million. This may connected to the reason why there are more people in the CEX with degrees of higher education than is reported in the census. It could be that people with college degrees are more likely to live in larger cities. 
 
 
 ```{r}
@@ -220,23 +218,55 @@ Highlights of @tbl-data-demographics
 #| tbl-cap: "Demograhic distribution of the sample compared to census data"
 #| tbl-alt: "A table with the shares of different demographic variables in the data alongside those shares according to census data"
 
-demog_tbl <- read.csv("data/tables/ce_demog_vs_census.csv") |>
+demog_tbl <- read_excel("data/tables/ce_demog_vs_census.xlsx") |>
   select(Variable, CES, Census, Group) |>
+  mutate(CES = paste0(round(CES * 100,1),"%"),
+         Census = paste0(round(Census * 100,1),"%")) |>
   gt(groupname_col = "Group",
      rowname_col = "Variable")
+
+demog_tbl
 
 ```
 
 
+@tbl-descriptives-by-hhtype shows the demographic and expenditure characteristics split between different household structures. 
 
-Then there might still be some tables Katie wanted me to make. I will review those. 
+- married without children have the most households with older ages
+- Married with children have more respondents with college degrees 
+- Married with children have more households making higher income and the least households making less than 50K
+- Region was split pretty evenly 
+- City population is pretty similar
+- married with kids have a higher percentage of households spending over $500 on mandatory spending. Makes sense. Not married without kids has the highest percent of households spending nothing on mandatory expenses for the two weeks. 
+- Fairly similar, except a little more noticeable that 20.5% of non-married no kid households who spend nothing on house
+- Married with children spend more on food
+- Food: non-married has more poeple spendin gnothign on food than married
+- Married households have highest percentages spending over $100 on leisure. 
+- Married spend most on gas and maintenance. But non-married with kids is quite different from non-married without kids. 
+- The rest is pretty hard to compare because they are all so close. 
 
 
-3.	Table with the buckets of transportation spending category splits. 
-4.	Same averages, but split them up by different household structures
-- Refer to R code on how to do this efficiently. 
-- This is where we can start to tell the story that perhaps different household structures are spending their money in different transportation spending categories. 
+Married vs. not married
 
+Married with kids vs. others
+
+Married without kdis vs. others
+
+Not married with kids vs. others
+
+Not married without kids vs. others
+
+
+{{< embed notebooks/descriptives_by_household_makeup.qmd#tbl-descriptives-by-hhtype >}}
+
+
+## Methodology
+
+Hopefully Katie can draft this? 
+
+Here is a draft of the figure to depict the model. (@fig-model-graphic)
+
+![A graphic depicting the Latent Class Model framework](.//images/model_graphic.png){#fig-model-graphic}
 
 
 ## Results
@@ -287,11 +317,8 @@ Compared with households who have no house-related expenses, households with hou
 Compared to those households who spend less than \$100 on leisure, households who spend more than \$100 are more likely to be in the CH class. It makes sense that spending on Leisure activities would be positively correlated with transportation spending since the more spend on leisure could very likely indicate more trips made. 
 
 The coefficients related to household spending tend to increase in absolute value as the spending ranges increase. It is reasonable to see the probability of being in the high spending transportation class increase as other household expenses increase. More household expenses often mean more trips are being made. 
+## Study Implications and Conclusions
 
-### Some More Results
-I think @tbl-model-covarpcts is showing what percent of households fall into each category in each class. But I just put this in here to look at it. It won't be in the final paper.
-
-{{< embed notebooks/LCA.qmd#tbl-model-covarpcts >}}
 
 
 ## References
@@ -299,7 +326,37 @@ I think @tbl-model-covarpcts is showing what percent of households fall into eac
 ::: {#refs}
 :::
 
-## Appendix A: Spending Category Breakdown {#sec-appendix-a}
+## Appendix A: Spending Category Breakdown {.unnumbered #sec-appendix-a}
+
+```{r}
+#| label: tbl-transpo-categories
+#| tbl-cap: "Unique Expenditures in Each Transportaiton Category"
+#| tbl-alt: "Detailed Breakdown of Unique Expenditures in Each Transportaiton Category"
+
+transpo_cats <- ucc_codes |>
+  filter(broad_category == "Transportation") |>
+  select(ucc_code, `Code description`, category)
+
+names(transpo_cats) <- c("UCC Code","Code Description","Transportation Category")
+
+transpo_cats |> 
+  gt(
+    # rowname_col = "UCC Code",
+     groupname_col = "Transportation Category",
+     row_group_as_column = TRUE) |>
+  row_group_order(c("Car Fuel",
+                    "Car Maintenance",
+                    "Ridesharing",
+                    "Public Transit (Bus)",
+                    "Public Transit (Rail)",
+                    "Microtransit",
+                    "Air Travel",
+                    "Car Purchase",
+                    "Car Payment",
+                    "Ship Travel"
+                    ))
+
+```
 
 ```{r}
 #| label: tbl-detailed-categories
@@ -318,3 +375,9 @@ detailed_cats |>
      row_group_as_column = TRUE)
 
 ```
+
+## Appendix B: Census Resources {.unnumbered #sec-appendix-b}
+
+Most of the census data was found using the [Census Bereau Tables](https://data.census.gov/table). For city population, I used the census [city and town population totals](https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html) data. 
+
+I'm just putting this info here at the bottom to remind myself. I will remove it and cite the census in the references before the final draft. 

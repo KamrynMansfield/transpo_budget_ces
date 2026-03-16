@@ -21,7 +21,11 @@ Output the table:
 #| tbl-cap: "Summary of the Literature"
 #| tbl-alt: "A table listing and describing the literature used in this review"
 
-kable(lit_tbl)
+
+lit_tbl |>
+  group_by(Category, `Uses CEX Data`) |>
+  summarize(Studies = paste(Study, collapse = ", ")) |>
+  kable()
 
 ```
 

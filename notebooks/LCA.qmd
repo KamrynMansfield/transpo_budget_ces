@@ -3,6 +3,7 @@ title: "LCA Tables"
 editor: visual
 html-table-processing: none
 ---
+
 ```{r}
 library(tidyverse)
 library(gt)
@@ -51,7 +52,18 @@ create_nice_coeff_tbl(model_df,
                       t_threshold = 1.4,
                       only_significant = FALSE,
                       two_vs_one_name = "MM vs. CH",
-                      three_vs_one_name = "CL vs. CH")
+                      three_vs_one_name = "CL vs. CH",
+                      row_group_order = c("Intercept",
+                                          "Reference Age (55 or older)",
+                                          "Education (No college degree)",
+                                          "Income (more than $50,000)",
+                                          "Household Structure (Single without children)",
+                                          "Region (not Northeast)"  ,
+                                          "Population Size (Below 1 million)" ,
+                                          "Mandatory Expenses (none)" ,
+                                          "House Expenses (none)"   ,
+                                          "Food Expenses (<$100)",
+                                          "Leisure Expenses (none)"))
 ```
 
 ```{r}
@@ -143,7 +155,7 @@ lcm_data$House_cat1 = as.integer(lcm_data$House_cat)
 
 #### cuts for transpo ####
 cutsC1 <- c(-Inf, 0, 50, 100, Inf)
-labsC1 <- c("Zero", "FiftyB", "HundredB", "HighHunB")
+labsC1 <- c("Zero", "FiftyB", "FiftyHundred", "HighHunB")
 
 cutsC2 <- c(-Inf, 0, 100, Inf)
 labsC2 <- c("Zero", "HundredB", "HighHunB")
@@ -326,14 +338,14 @@ lcm_data$leisure3 <- ifelse(lcm_data$Lei_cat == "HighHunB", 1, 0)
 
 
 
-expense_variable_names <- matrix(c("Class Probablilty", "Class Probablilty",
+expense_variable_names <- matrix(c("Class Probability", "Class Probability",
          "carFuelP_cat1"  , "Car Fuel Expense",
          "carMainP_cat1"  , "Car Maintenance Expense",
-         "taxiP_cat1"       , "Taxi Travel Expense",
-         "busP_cat1"     , "Bus Travel Expense",
-         "trainP_cat1"   , "Train Travel Expense" ,
+         "taxiP_cat1"       , "Ridesharing Expense",
+         "busP_cat1"     , "Transit (Bus) Expense",
+         "trainP_cat1"   , "Transit (Rail) Expense" ,
          "airP_cat1"        , "Air Travel Expense",
-         "microP_cat1"      , "Microtransit Travel Expense"),
+         "microP_cat1"      , "Microtransit Expense"),
  byrow = T, ncol = 2) |>
   as.data.frame()
 
@@ -341,16 +353,17 @@ names(expense_variable_names) <- c("variable","nice_var_name")
 
 expense_level_names <- matrix(c("NA"  ,"",  
                                 "Zero", "None",  
-                                "FiftyB" ,"$0.00 - $50.00",
-                                "HundredB", "$50.00 - $100.00",
+                                "FiftyB" ,"$0.01 - $50.00",
+                                "HundredB", "$0.01 - $100.00",
                                 "HighHunB" , "$100.00 +",
-                                "TwentyB" , "$0.00 - $20.00",
-                                "TwentyFifty" , "$20.00 - $50.00",
-                                "HighFifB", "$50.00 +",
+                                "TwentyB" , "$0.01 - $20.00",
+                                "TwentyFifty" , "$20.01 - $50.00",
+                                "HighFifB", "$50.01 +",
                                 "Any", "Any",
-                                "HighTwB", "$20.00 +",
-                                "FiveHB" , "$0.00 - $500.00",
-                                "HighFive", "$500.00 +"),
+                                "HighTwB", "$20.01 +",
+                                "FiveHB" , "$0.01 - $500.00",
+                                "HighFive", "$500.01 +",
+                                "FiftyHundred","50.01 - $100.00"),
                               byrow = T, ncol = 2) |>
   as.data.frame()
  
@@ -367,7 +380,15 @@ create_nice_probs_table(final_model,
                         lcm_data,
                         c1_name = "Car Spenders High (CH)",
                         c2_name = "Multimodal Spenders (MM)",
-                        c3_name = "Car Spenders Low (CL)")
+                        c3_name = "Car Spenders Low (CL)",
+                        row_group_order = c("Class Probability",
+                                            "Car Fuel Expense",
+                                            "Car Maintenance Expense",
+                                            "Ridesharing Expense",
+                                            "Transit (Bus) Expense",
+                                            "Transit (Rail) Expense",
+                                            "Microtransit Expense",
+                                            "Air Travel Expense"))
 ```
 
 ```{r}
@@ -388,7 +409,6 @@ covariates <- c("income_less_50k",
                 "leisure2" , "leisure3")
 
 create_nice_covariate_tbl(final_model, lcm_data, covariates)
+
+
 ```
-
-
-

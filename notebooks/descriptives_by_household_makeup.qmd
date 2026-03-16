@@ -147,6 +147,14 @@ update_data_for_model <- function(lcm_data){
   cutsM <- c(-Inf, 0, Inf)
   labsM <- c("Zero", "Any")
   
+  lcm_data$carFuelP_cat
+  lcm_data$carMainP_cat
+  lcm_data$taxiP_cat
+  lcm_data$busP_cat
+  lcm_data$trainP_cat
+  lcm_data$airP_cat
+  lcm_data$microP_cat
+  
   
   lcm_data$carFuelP_cat <- cut(lcm_data$Car.Fuel,
                                breaks = cutsC1,
@@ -309,10 +317,36 @@ update_data_for_model <- function(lcm_data){
   lcm_data$leisure2 <- ifelse(lcm_data$Lei_cat == "HundredB", 1, 0)
   lcm_data$leisure3 <- ifelse(lcm_data$Lei_cat == "HighHunB", 1, 0)
   
-  lcm_data$leisure1 <- ifelse(lcm_data$Lei_cat == "Zero", 1, 0)
-  lcm_data$leisure2 <- ifelse(lcm_data$Lei_cat == "HundredB", 1, 0)
-  lcm_data$leisure3 <- ifelse(lcm_data$Lei_cat == "HighHunB", 1, 0)
+  lcm_data$carFuel1 <- ifelse(lcm_data$carFuelP_cat == "Zero", 1, 0)
+  lcm_data$carFuel2 <- ifelse(lcm_data$carFuelP_cat == "FiftyB", 1, 0)
+  lcm_data$carFuel3 <- ifelse(lcm_data$carFuelP_cat == "HundredB", 1, 0)
+  lcm_data$carFuel4 <- ifelse(lcm_data$carFuelP_cat == "HighHunB", 1, 0)
   
+  lcm_data$carMain1 <- ifelse(lcm_data$carMainP_cat == "Zero", 1, 0)
+  lcm_data$carMain2 <- ifelse(lcm_data$carMainP_cat == "HundredB", 1, 0)
+  lcm_data$carMain3 <- ifelse(lcm_data$carMainP_cat == "HighHunB", 1, 0)
+  
+  lcm_data$taxi1 <- ifelse(lcm_data$taxiP_cat == "Zero", 1, 0)
+  lcm_data$taxi2 <- ifelse(lcm_data$taxiP_cat == "TwentyB", 1, 0)
+  lcm_data$taxi3 <- ifelse(lcm_data$taxiP_cat == "TwentyFifty", 1, 0)
+  lcm_data$taxi4 <- ifelse(lcm_data$taxiP_cat == "HighFifB", 1, 0)
+  
+  lcm_data$bus1 <- ifelse(lcm_data$busP_cat == "Zero", 1, 0)
+  lcm_data$bus2 <- ifelse(lcm_data$busP_cat == "Any", 1, 0)
+  
+  lcm_data$train1 <- ifelse(lcm_data$trainP_cat == "Zero", 1, 0)
+  lcm_data$train2 <- ifelse(lcm_data$trainP_cat == "TwentyB", 1, 0)
+  lcm_data$train3 <- ifelse(lcm_data$trainP_cat == "HighTwB", 1, 0)
+  
+  lcm_data$air1 <- ifelse(lcm_data$airP_cat == "Zero", 1, 0)
+  lcm_data$air2 <- ifelse(lcm_data$airP_cat == "FiveHB", 1, 0)
+  lcm_data$air3 <- ifelse(lcm_data$airP_cat == "HighFive", 1, 0)
+  
+  lcm_data$micro1 <- ifelse(lcm_data$microP_cat == "Zero", 1, 0)
+  lcm_data$micro2 <- ifelse(lcm_data$microP_cat == "Any", 1, 0)
+  
+  
+
   
   return(lcm_data)
 }
@@ -323,17 +357,18 @@ exp_data_full <- update_data_for_model(exp_data_full)
 # the column names we want to use
 # the value is the col_name
 # the name is the new name you want to be on the summary table
-col_names_to_use <- matrix(c("City Type" ,"Rural" ,"city_type_rural",
+col_names_to_use <- matrix(c("Count" ,"Count" ,"n",
+                             "City Type" ,"Rural" ,"city_type_rural",
                       "City Type", "Urban" , "city_type_urban",
                       "Income","Below $50K" , "income_less_50k",
                       "Income", "Between $50K - $75K" , "income_50k_to_75k",
                       "Income", "Between $75K - $100K" , "income_75k_to_100k",
                       "Income", "Between $100K - $200K" , "income_100k_to_200k",
                       "Income", "Above $200K" , "income_more_200k",
-                      "Age", "18 - 34" , "age_ref_18_to_34",
-                      "Age", "35 - 44" , "age_ref_35_to_44",
-                      "Age", "45 - 54" , "age_ref_45_to_54",
-                      "Age", "54+" , "age_ref_more_54",
+                      "Reference Age", "18 - 34" , "age_ref_18_to_34",
+                      "Reference Age", "35 - 44" , "age_ref_35_to_44",
+                      "Reference Age", "45 - 54" , "age_ref_45_to_54",
+                      "Reference Age", "54+" , "age_ref_more_54",
                       "Region", "Northeast" , "region_northeast",
                       "Region", "Midwest" , "region_midwest",
                       "Region", "South" , "region_south",
@@ -341,52 +376,52 @@ col_names_to_use <- matrix(c("City Type" ,"Rural" ,"city_type_rural",
                       "Education", "Masters Degree or higher" , "edu_masters_doctorate",
                       "Education", "Bachelors Degree" , "edu_bachelors",
                       "Education", "Less Than a Bachelors Degree" , "less_bachelors",
-                      "Family Structure","Single Without Children" , "single_no_kids",
-                      "Family Structure","Single With Children" , "single_kids",
-                      "Family Structure","Married Without Children" , "married_no_kids",
-                      "Family Structure","Married With Children" , "married_kids",
+                      "Household Structure","Single Without Children" , "single_no_kids",
+                      "Household Structure","Single With Children" , "single_kids",
+                      "Household Structure","Married Without Children" , "married_no_kids",
+                      "Household Structure","Married With Children" , "married_kids",
                       "City Population","Less Than 1 Million" , "pop_less_1_mil",
                       "City Population","1 Million or More" , "pop_more_1_mil",
                       "Mandatory Spending","Zero" , "mandatory1",
-                      "Mandatory Spending","Between $0 - $100" , "mandatory2",
-                      "Mandatory Spending","Between $200 - $500" , "mandatory3",
-                      "Mandatory Spending","Above $500" , "mandatory4",
+                      "Mandatory Spending","$0.01 - $200.00" , "mandatory2",
+                      "Mandatory Spending","$200.01 - $500.00" , "mandatory3",
+                      "Mandatory Spending","$500.00 +" , "mandatory4",
                       "House-Related Spending","Zero" , "house1",
-                      "House-Related Spending","Between $0 - $100" , "house2",
-                      "House-Related Spending","Between $200 - $500" , "house3",
-                      "House-Related Spending","Above $500" , "house4",
-                      "Food Spending","Below $100" , "food1",
-                      "Food Spending","Between $100 - $500" , "food2",
-                      "Food Spending","Above $500" , "food3",
+                      "House-Related Spending","$0.01 - $200.00" , "house2",
+                      "House-Related Spending","$200.01 - $500.00" , "house3",
+                      "House-Related Spending","$500.01 +" , "house4",
+                      "Food Spending","$0.01 - $100.00" , "food1",
+                      "Food Spending","$100.01 - $500.00" , "food2",
+                      "Food Spending","$500.01 +" , "food3",
                       "Leisure Spending","Zero" , "leisure1",
-                      "Leisure Spending","Between $0 - $100" , "leisure2",
-                      "Leisure Spending","Above $100" , "leisure3"
+                      "Leisure Spending","$0.01 - $100.00" , "leisure2",
+                      "Leisure Spending","$100.01 +" , "leisure3",
+                      "Car Fuel Expense","None" , "carFuel1",
+                      "Car Fuel Expense","$0.01 - $50.00" , "carFuel2",
+                      "Car Fuel Expense","$50.01 - $100.00" , "carFuel3",
+                      "Car Fuel Expense","$100.01 +" , "carFuel4",
+                      "Car Maintenance Expense","None" , "carMain1",
+                      "Car Maintenance Expense","$0.01 - $100.00" , "carMain2",
+                      "Car Maintenance Expense","$100.01 +" , "carMain3",
+                      "Ridesharing Expense","None" , "taxi1",
+                      "Ridesharing Expense","0.01 - $20.00" , "taxi2",
+                      "Ridesharing Expense","20.01 - $50.00" , "taxi3",
+                      "Ridesharing Expense","$50.01 +" , "taxi4",
+                      "Transit (Bus) Expense","None" , "bus1",
+                      "Transit (Bus) Expense","Any" , "bus2",
+                      "Transit (Rail) Expense","None" , "train1",
+                      "Transit (Rail) Expense","$0.01 - $20.00" , "train2",
+                      "Transit (Rail) Expense","$20.01 +" , "train3",
+                      "Microtransit Expense","None" , "micro1",
+                      "Microtransit Expense","Any" , "micro2",
+                      "Air Travel Expense","None" , "air1",
+                      "Air Travel Expense","$0.01 - $500.00" , "air2",
+                      "Air Travel Expense","$501.00 +" , "air3"
                       ), ncol = 3, byrow = T) |>
   as.data.frame()
-
+  
 names(col_names_to_use) <- c("group","nice_name","variable")
 
-print_demographic_shares_tbl <- function(df, col_names_to_use){
-  samplesize <- nrow(df)
-  
-  selected_col_sums <- df |>
-    select(any_of(col_names_to_use$variable)) |>
-    colSums()
-  
-  nice_tbl <- data.frame(variable = names(selected_col_sums),
-                        total = selected_col_sums) |>
-    left_join(col_names_to_use, by = "variable") |>
-    mutate(Share = paste0(round(total * 100 / samplesize,1),"%")) |>
-    select(group, nice_name, Share) |>
-    gt(groupname_col = "group",
-       rowname_col = "nice_name") |>
-    tab_style(
-      style = cell_text(style = "italic"),
-      locations = cells_row_groups(groups = everything())
-    )
-  
-  return(nice_tbl)
-}
 
 
 ```
@@ -394,10 +429,68 @@ print_demographic_shares_tbl <- function(df, col_names_to_use){
 I ended up taking this data, formatting it in excel, and using it from the excel sheet.
 
 ```{r}
-#| label: tbl-data-demographics_old
-#| tbl-cap: "Demograhic distribution of the sample"
-#| tbl-alt: "A table with the shares of different demographic variables in the data"
+#| label: tbl-descriptives-by-hhtype
+#| tbl-cap: "Demograhic distribution grouped by differenct household structures"
+#| tbl-alt: "A table with the shares of different demographic variables in the data split up by household type"
 
-print_demographic_shares_tbl(exp_data_full, col_names_to_use)
+
+profiled_data <- exp_data_full |>
+  mutate(profile = case_when(
+    married_kids == 1 ~ "Married with children",
+    married_no_kids == 1 ~ "Married without children",
+    single_kids == 1 ~ "Not married but with children",
+    single_no_kids == 1 ~ "Not married and no children",
+    TRUE ~ "Other"
+  )) |>
+  select(any_of(col_names_to_use$variable), profile)
+
+new_data <- profiled_data |>
+  group_by(profile) |>
+  summarise(n = n(),across(any_of(col_names_to_use$variable),  \(x) mean(x, na.rm = TRUE)))
+
+transposed_data <- t(new_data) |> as.data.frame()
+
+names(transposed_data) <- transposed_data[1,] |> as.character()
+
+transposed_data <- transposed_data[2:nrow(transposed_data),]
+
+transposed_data[] <- lapply(transposed_data, as.numeric)
+
+nice_data <- transposed_data |>
+  mutate(variable = rownames(transposed_data)) |>
+  left_join(col_names_to_use, by = "variable") |>
+  mutate("Married with children" = paste0(round(`Married with children` *100,1),"%"),
+         "Married without children" = paste0(round(`Married without children` *100,1),"%"),
+         "Not married but with children" = paste0(round(`Not married but with children` *100,1),"%"),
+         "Not married and no children" = paste0(round(`Not married and no children` *100,1),"%"))
+
+row_vals <- nice_data[nice_data$variable == "n",] |> as.character()
+nice_data[nice_data$variable == "n",] <- ifelse(grepl("%",row_vals),
+                                                as.character(as.numeric(substr(row_vals, 1, nchar(row_vals)-1)) / 100),
+                                                row_vals)
+
+nice_data |>
+  select(!variable) |>
+  gt(groupname_col = "group",
+                rowname_col = "nice_name") |>
+  row_group_order(c("Count",
+                                          "Reference Age",
+                                          "Education",
+                                          "Income",
+                                          "Household Structure",
+                                          "Region"  ,
+                                          "City Population" ,
+                    "City Type",
+                                          "Mandatory Spending" ,
+                                          "House-Related Spending"   ,
+                                          "Food Spending",
+                                          "Leisure Spending",
+                                            "Car Fuel Expense",
+                                            "Car Maintenance Expense",
+                                            "Ridesharing Expense",
+                                            "Transit (Bus) Expense",
+                                            "Transit (Rail) Expense",
+                                            "Microtransit Expense",
+                                            "Air Travel Expense"))
 
 ```

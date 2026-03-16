@@ -134,7 +134,7 @@ create_probs_table <- function(model, percent = FALSE, lcm_data){
     as.data.frame()
   
   names(df_totals) <- paste0("class_",c(1:ncol(df_totals)))
-  df_totals$variable <- "Class Probablilty"
+  df_totals$variable <- "Class Probability"
   
   probs <- model$probs
   df_list <- list()
@@ -210,7 +210,8 @@ create_nice_coeff_tbl <- function(model_df,
                                   t_threshold = 1.4,
                                   only_significant = FALSE,
                                   two_vs_one_name = "Class 2 vs. Class 1",
-                                  three_vs_one_name = "Class 3 vs. Class 1"){
+                                  three_vs_one_name = "Class 3 vs. Class 1",
+                                  row_group_order = NULL){
   
   model_df <- left_join(exog_name_key, model_df, by = "exogenous_var") |>
     dplyr::mutate(coeff_1 = paste0(coeff_1, " (",t_stat_1,")"),
@@ -270,6 +271,12 @@ create_nice_coeff_tbl <- function(model_df,
       coeff_2 = three_vs_one_name) |>
     gt::opt_row_striping(row_striping = FALSE)
   
+  if (!is.null(row_group_order)){
+    
+    model_gt <- model_gt  |>
+      row_group_order(groups = row_group_order)
+  }
+  
   return(model_gt)
 }
 
@@ -282,7 +289,9 @@ create_nice_probs_table <- function(model,
                                     lcm_data,
                                     c1_name = "Class 1",
                                     c2_name = "Class 2",
-                                    c3_name = "Class 3"){
+                                    c3_name = "Class 3",
+                                    row_group_order = NULL){
+  
   probs_df <- create_probs_table(model, lcm_data = lcm_data) |> 
     dplyr::mutate(class_1 = round(class_1 * 100,2),
            class_2 = round(class_2 * 100,2),
@@ -291,13 +300,20 @@ create_nice_probs_table <- function(model,
     dplyr::left_join(expense_level_names, by = "level_def") |>
     dplyr::select(nice_var_name, nice_level_name, class_1, class_2, class_3)
   
-  probs_df |>
+  final_table <- probs_df |>
     gt::gt(rowname_col = "nice_level_name",
        groupname_col = "nice_var_name") |>
     gt::cols_label(
       class_1 = c1_name,
       class_2 = c2_name,
       class_3 = c3_name)
+  
+  if (!is.null(row_group_order)){
+    final_table <- final_table |>
+      row_group_order(row_group_order)  
+  }
+  
+  return(final_table)
 }
 
 # Define a function for weighted mean and variance

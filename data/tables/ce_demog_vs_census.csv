@@ -1,25 +1,25 @@
 ﻿Variable,CES,Census,Difference,Source,Notes,Group
-Rural,17.80%,20.00%,-2.20%,2020 Cencus,,City Type
-Urban,82.20%,80.00%,2.20%,2020 Cencus,,City Type
+18 - 34,16.10%,26.50%,-10.40%,ACS S0101,0.20120184884352 (for total population),Age
+35 - 44,17.10%,17.80%,-0.70%,ACS S0101,0.135123199047464 (for total population),Age
+45 - 54,15.50%,15.80%,-0.30%,ACS S0101,0.12002812670064 (for total population),Age
+54+,51.30%,39.90%,11.40%,ACS S0101,0.302643981013374 (for total population),Age
+Masters Degree or higher,22.80%,14.70%,8.10%,ACS DP02,,Education
+Bachelors Degree,29.20%,22.10%,7.10%,ACS DP02,,Education
+Less Than a Bachelors Degree,48.00%,63.20%,-15.20%,ACS DP02,,Education
 Below $50K,42.40%,30.60%,11.80%,ACS S1901,,Income
 Between $50K - $75K,14.80%,15.60%,-0.80%,ACS S1901,,Income
 Between $75K - $100K,10.90%,12.60%,-1.70%,ACS S1901,,Income
 Between $100K - $200K,21.20%,27.50%,-6.30%,ACS S1901,,Income
 Above $200K,10.80%,13.70%,-2.90%,ACS S1901,,Income
-18 - 34,16.10%,26.50%,-10.40%,ACS S0101,0.20120184884352 (for total population),Age
-35 - 44,17.10%,17.80%,-0.70%,ACS S0101,0.135123199047464 (for total population),Age
-45 - 54,15.50%,15.80%,-0.30%,ACS S0101,0.12002812670064 (for total population),Age
-54+,51.30%,39.90%,11.40%,ACS S0101,0.302643981013374 (for total population),Age
+Not Married and Without Children,40.70%,45.20%,-4.50%,ACS DP02,,Household Structure
+Not Married and With Children,6.30%,8.10%,-1.80%,ACS DP02,,Household Structure
+Married Without Children,34.90%,29.40%,5.50%,ACS DP02,,Household Structure
+Married With Children,18.10%,17.30%,0.80%,ACS DP02,,Household Structure
 Northeast,16.50%,17.40%,-0.90%,2020 Cencus,,Region
 Midwest,18.80%,20.80%,-2.00%,2020 Cencus,,Region
 South,35.90%,38.10%,-2.20%,2020 Cencus,,Region
 West,26.60%,23.70%,2.90%,2020 Cencus,,Region
-Masters Degree or higher,22.80%,14.70%,8.10%,ACS DP02,,Education
-Bachelors Degree,29.20%,22.10%,7.10%,ACS DP02,,Education
-Less Than a Bachelors Degree,48.00%,63.20%,-15.20%,ACS DP02,,Education
-Not Married and Without Children,40.70%,45.20%,-4.50%,ACS DP02,,Family Structure
-Not Married and With Children,6.30%,8.10%,-1.80%,ACS DP02,,Family Structure
-Married Without Children,34.90%,29.40%,5.50%,ACS DP02,,Family Structure
-Married With Children,18.10%,17.30%,0.80%,ACS DP02,,Family Structure
 Less Than 1 Million,41.90%,91.90%,-50.00%,https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html,,City Population
 1 Million or More,58.10%,8.10%,50.00%,https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html,,City Population
+Rural,17.80%,20.00%,-2.20%,2020 Cencus,,City Type
+Urban,82.20%,80.00%,2.20%,2020 Cencus,,City Type
