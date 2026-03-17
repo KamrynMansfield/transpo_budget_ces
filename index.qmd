@@ -229,6 +229,7 @@ demog_tbl
 
 ```
 
+### Characteristics of Different Household Structures
 
 @tbl-descriptives-by-hhtype helps compare the demographic distributions and expenditures characteristics of different household structures. 
 
