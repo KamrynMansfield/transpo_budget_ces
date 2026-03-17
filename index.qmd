@@ -147,7 +147,7 @@ categories <- unique(ucc_codes$broad_category)
 
 
 In the expenditures data, there were `r length(expense_types)` unique types of expenditures recorded with each expenditure designated by a Universal Classification Code (UCC). We organized this into `r length(categories)` categories as shown in @tbl-spending-categories (for a more detailed breakdown of the expenditure categories, see [Appendix A](#sec-appendix-a)). 
-Since this study focuses on transportation expenditures, we further split the transportation category into smaller categories: 
+Since this study focuses on transportation expenditures, we further split the transportation category into the following categories: 
 
 - Car Fuel
 
@@ -230,29 +230,25 @@ demog_tbl
 ```
 
 
-@tbl-descriptives-by-hhtype shows the demographic and expenditure characteristics split between different household structures. 
-
-- married without children have the most households with older ages
-- Married with children have more respondents with college degrees 
-- Married with children have more households making higher income and the least households making less than 50K
-- Region was split pretty evenly 
-- City population is pretty similar
-- married with kids have a higher percentage of households spending over $500 on mandatory spending. Makes sense. Not married without kids has the highest percent of households spending nothing on mandatory expenses for the two weeks. 
-- Fairly similar, except a little more noticeable that 20.5% of non-married no kid households who spend nothing on house
-- Married with children spend more on food
-- Food: non-married has more poeple spendin gnothign on food than married
-- Married households have highest percentages spending over $100 on leisure. 
-- Married spend most on gas and maintenance. But non-married with kids is quite different from non-married without kids. 
-- The rest is pretty hard to compare because they are all so close. 
+@tbl-descriptives-by-hhtype helps compare the demographic distributions and expenditures characteristics of different household structures. 
 
 
 Married vs. not married
+- Food: non-married has more poeple spendin gnothign on food than married
+- Married households have highest percentages spending over $100 on leisure. 
+- Married spend most on gas and maintenance. But non-married with kids is quite different from non-married without kids. 
 
 Married with kids vs. others
+- Married with children have more respondents with college degrees 
+- Married with children have more households making higher income and the least households making less than 50K
+- married with kids have a higher percentage of households spending over $500 on mandatory spending. Makes sense. Not married without kids has the highest percent of households spending nothing on mandatory expenses for the two weeks. 
+- Married with children spend more on food
 
 Married without kdis vs. others
+- married without children have the most households with older ages
 
 Not married with kids vs. others
+- Fairly similar, except a little more noticeable that 20.5% of non-married no kid households who spend nothing on house
 
 Not married without kids vs. others
 
